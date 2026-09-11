@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "technology weekly digest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "module",
+    "issue_date",
+    "window",
+    "items"
+  ],
+  "properties": {
+    "module": {
+      "const": "technology"
+    },
+    "issue_date": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "window": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "start",
+        "end"
+      ],
+      "properties": {
+        "start": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "end": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        }
+      }
+    },
+    "items": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "category",
+          "original_title",
+          "source_name",
+          "source_level",
+          "published_at",
+          "url",
+          "summary_zh"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "category": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "original_title": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "source_name": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "source_level": {
+            "enum": [
+              "primary",
+              "media"
+            ]
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "pattern": "^https?://[^\\s/?#]+[^\\s]*$"
+          },
+          "summary_zh": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        }
+      }
+    }
+  }
+}
