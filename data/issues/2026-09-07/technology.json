@@ -1,0 +1,57 @@
+{
+  "module": "technology",
+  "issue_date": "2026-09-07",
+  "window": {"start": "2026-08-31", "end": "2026-09-07"},
+  "items": [
+    {
+      "id": "technology-001",
+      "category": "人工智能模型",
+      "original_title": "GPT-6 Astra: A new generation of intelligence",
+      "source_name": "OpenAI",
+      "source_level": "primary",
+      "published_at": "2026-09-03",
+      "url": "https://openai.com/index/gpt-6-astra/",
+      "summary_zh": "OpenAI 发布 GPT-6 Astra，先向部分机构开放，随后逐步扩展至 ChatGPT 付费用户及 API 等渠道。公司称模型提升了电脑操作、软件工程和科学任务能力，并达到其准备框架中的网络安全 Critical 能力门槛，因此配套加强安全防护；发布版本仍拒绝生成漏洞利用概念验证等高级网络安全任务。"
+    },
+    {
+      "id": "technology-002",
+      "category": "语音识别",
+      "original_title": "MAI-Transcribe-2 is the fastest, most accurate and cheapest speech recognition model in the world",
+      "source_name": "Microsoft AI",
+      "source_level": "primary",
+      "published_at": "2026-09-03",
+      "url": "https://microsoft.ai/news/mai-transcribe-2-is-the-fastest-most-accurate-and-cheapest-speech-recognition-model-in-the-world/",
+      "summary_zh": "微软发布 MAI-Transcribe-2，增加说话人区分、可配置转写风格和逐词时间戳，可通过 Microsoft Foundry 等渠道试用。微软称该模型在覆盖 60 种语言的 FLEURS 测试中平均词错误率为 5.2%，音频转写价格为每小时 0.10 美元；性能和成本比较均为公司的测试与表述。"
+    },
+    {
+      "id": "technology-003",
+      "category": "量子计算",
+      "original_title": "Diraq and Equinix to Deploy Australia’s First Quantum Computer Inside a Data Centre",
+      "source_name": "Equinix",
+      "source_level": "primary",
+      "published_at": "2026-09-01",
+      "url": "https://newsroom.equinix.com/2026-09-01-Diraq-and-Equinix-to-Deploy-Australias-First-Quantum-Computer-Inside-a-Data-Centre",
+      "summary_zh": "Diraq 与 Equinix 宣布计划在悉尼商业数据中心部署一台采用 8 个硅自旋量子比特的量子计算机，安装预计于 2026 年 10 月完成。双方称整套系统包含低温制冷和控制设备，功耗低于 20 千瓦，将测试其与传统 CPU、GPU 和网络基础设施共同运行的表现。"
+    },
+    {
+      "id": "technology-004",
+      "category": "软件供应链安全",
+      "original_title": "Multiple trusted publishing configurations for npm",
+      "source_name": "GitHub",
+      "source_level": "primary",
+      "published_at": "2026-09-03",
+      "url": "https://github.blog/changelog/2026-09-03-multiple-trusted-publishing-configurations-for-npm/",
+      "summary_zh": "GitHub 宣布 npm 的三项发布改进正式开放：每个软件包可配置多个基于 OIDC 的可信发布流程，暂存版本须完成恶意软件扫描后才允许批准，维护者可在版本页查看暂存历史。多个配置独立生效，分别指定仓库、工作流和环境，减少不同发布路径对长期令牌的依赖。"
+    },
+    {
+      "id": "technology-005",
+      "category": "开发者工具",
+      "original_title": "GitHub Actions: Early September 2026 updates",
+      "source_name": "GitHub",
+      "source_level": "primary",
+      "published_at": "2026-09-03",
+      "url": "https://github.blog/changelog/2026-09-03-github-actions-early-september-2026-updates/",
+      "summary_zh": "GitHub Actions 新增查询运行器版本停止注册及停止运行支持时间的 REST API，并为 GITHUB_TOKEN 增加只读访问 Dependabot 警报的独立权限。可复用工作流还获得四个 job 上下文字段，用于识别实际定义当前任务的工作流来源；这些新上下文字段暂不适用于 GitHub Enterprise Server。"
+    }
+  ]
+}

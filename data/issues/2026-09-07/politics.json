@@ -1,0 +1,57 @@
+{
+  "module": "politics",
+  "issue_date": "2026-09-07",
+  "window": {"start": "2026-08-31", "end": "2026-09-07"},
+  "items": [
+    {
+      "id": "politics-001",
+      "category": "欧洲安全与外交",
+      "original_title": "Statement by Foreign Minister Wadephul at a joint press conference with Interior Minister Dobrindt",
+      "source_name": "Federal Foreign Office, Germany",
+      "source_level": "primary",
+      "published_at": "2026-09-01",
+      "url": "https://www.auswaertiges-amt.de/en/newsroom/news/2800600-2800600",
+      "summary_zh": "德国外长瓦德富尔宣布召见俄罗斯大使，并将于 9 月 18 日关闭俄罗斯驻波恩总领馆、终止柏林俄罗斯之家的租约，同时提出新的欧盟制裁名单并收紧俄公民入境检查。德方称这些措施回应莱比锡未遂袭击，并指责俄罗斯负有责任；有关袭击归属为德国政府的指称。"
+    },
+    {
+      "id": "politics-002",
+      "category": "伊朗相关制裁",
+      "original_title": "Treasury Severs Iranian Regime’s Financial Lifelines in Türkiye",
+      "source_name": "U.S. Department of the Treasury",
+      "source_level": "primary",
+      "published_at": "2026-09-04",
+      "url": "https://home.treasury.gov/news/press-releases/sb0622/",
+      "summary_zh": "美国财政部宣布制裁土耳其 Golden Global Bank 及其两家子公司，依据第 13902 号行政令冻结相关美国管辖资产，并原则上禁止美国人士与其交易。财政部指称该银行为伊朗伊斯兰革命卫队圣城旅促成数千万美元交易并提供跨境银行渠道；这些交易指控属于美方表述。"
+    },
+    {
+      "id": "politics-003",
+      "category": "欧盟与南高加索",
+      "original_title": "Council backs temporary trade measures to support Armenia",
+      "source_name": "Council of the European Union",
+      "source_level": "primary",
+      "published_at": "2026-09-02",
+      "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/09/02/council-backs-temporary-trade-measures-to-support-armenia/",
+      "summary_zh": "欧盟理事会支持对亚美尼亚实施临时贸易自由化措施，拟覆盖其对欧盟约 80% 的出口，自法规生效起适用两年，以应对俄罗斯近期贸易限制。方案包含保护欧盟生产者的保障措施，并以遵守原产地规则、民主及人权等条件为前提；仍须完成欧洲议会与理事会的正式通过程序。"
+    },
+    {
+      "id": "politics-004",
+      "category": "古巴相关制裁",
+      "original_title": "Cuba Designations; Russia-related Designation Removal; Issuance of Amended Cuba General License",
+      "source_name": "Office of Foreign Assets Control, U.S. Department of the Treasury",
+      "source_level": "primary",
+      "published_at": "2026-09-03",
+      "url": "https://ofac.treasury.gov/recent-actions/20260903",
+      "summary_zh": "美国财政部海外资产控制办公室更新制裁名单，将古巴的 Fidel Ernesto Castro Calis 及五家实体列入，其中包括 Banco Exterior de Cuba 和石油、镍业相关国有企业。同日发布古巴第 4A 号通用许可，授权第三国驻古巴外交和领事机构的相关交易。"
+    },
+    {
+      "id": "politics-005",
+      "category": "欧盟与海湾外交",
+      "original_title": "Second EU-GCC Summit to take place on 24 October in Saudi Arabia",
+      "source_name": "European Council",
+      "source_level": "primary",
+      "published_at": "2026-09-04",
+      "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/09/04/second-eu-gcc-summit-to-take-place-on-24-october-in-saudi-arabia/",
+      "summary_zh": "欧洲理事会宣布，第二届欧盟—海湾合作委员会峰会定于 2026 年 10 月 24 日在沙特阿拉伯举行，欧盟成员国及海合会国家领导人将参加。欧洲理事会主席科斯塔将代表欧方共同主持，欧委会主席冯德莱恩也将出席；科斯塔表示希望深化双方政治对话及和平、安全与繁荣合作。"
+    }
+  ]
+}
