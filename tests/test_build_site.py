@@ -79,11 +79,11 @@ class BuildTests(unittest.TestCase):
         self.assertNotEqual(self.run_build().returncode, 0)
         self.assertEqual(index.read_bytes(), before)
 
-    def test_history_is_immutable_and_archive_updates(self):
+    def test_existing_reports_are_reused_and_archive_updates(self):
         self.assertEqual(self.run_build().returncode, 0)
-        frozen = self.root / 'reports/2026-09-07.html'
-        before = frozen.read_bytes()
-        modified = frozen.stat().st_mtime_ns
+        existing = self.root / 'reports/2026-09-07.html'
+        before = existing.read_bytes()
+        modified = existing.stat().st_mtime_ns
         older = self.root / 'data/issues/2026-08-31'
         older.mkdir()
         for path in (self.root / 'data/issues/2026-09-07').glob('*.json'):
@@ -95,8 +95,8 @@ class BuildTests(unittest.TestCase):
         self.assertEqual(self.run_build().returncode, 0)
         archive = json.loads((self.root / 'site/archive.json').read_text(encoding='utf-8'))
         self.assertEqual(archive, ['2026-09-07', '2026-08-31'])
-        self.assertEqual(frozen.read_bytes(), before)
-        self.assertEqual(frozen.stat().st_mtime_ns, modified)
+        self.assertEqual(existing.read_bytes(), before)
+        self.assertEqual(existing.stat().st_mtime_ns, modified)
         shutil.rmtree(older)
         self.assertEqual(self.run_build().returncode, 0)
         self.assertTrue((self.root / 'site/reports/2026-08-31.html').exists())
@@ -109,8 +109,8 @@ class BuildTests(unittest.TestCase):
     def test_new_issue_becomes_home_without_changing_old_report(self):
         self.assertNotEqual(self.run_build('--check-published').returncode, 0)
         self.assertEqual(self.run_build().returncode, 0)
-        frozen = self.root / 'reports/2026-09-07.html'
-        original = frozen.read_bytes()
+        existing = self.root / 'reports/2026-09-07.html'
+        original = existing.read_bytes()
         newer = self.root / 'data/issues/2026-09-14'
         newer.mkdir()
         for path in (self.root / 'data/issues/2026-09-07').glob('*.json'):
@@ -122,12 +122,24 @@ class BuildTests(unittest.TestCase):
         result = self.run_build()
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn('Rendered 1 new report(s); preserved 1 report(s)', result.stdout)
-        self.assertEqual(frozen.read_bytes(), original)
+        self.assertEqual(existing.read_bytes(), original)
         self.assertEqual((self.root / 'site/index.html').read_bytes(),
                          (self.root / 'reports/2026-09-14.html').read_bytes())
         self.assertEqual(json.loads((self.root / 'site/archive.json').read_text()),
                          ['2026-09-14', '2026-09-07'])
         self.assertEqual(self.run_build('--check-published').returncode, 0)
+
+    def test_existing_report_can_be_edited_or_regenerated(self):
+        self.assertEqual(self.run_build().returncode, 0)
+        report = self.root / 'reports/2026-09-07.html'
+        original = report.read_bytes()
+        edited = original + b'\n<!-- editorial update -->'
+        report.write_bytes(edited)
+        self.assertEqual(self.run_build('--check-published').returncode, 0)
+        self.assertEqual((self.root / 'site/index.html').read_bytes(), edited)
+        report.unlink()
+        self.assertEqual(self.run_build().returncode, 0)
+        self.assertEqual(report.read_bytes(), original)
 
 
 if __name__ == '__main__':

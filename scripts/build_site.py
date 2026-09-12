@@ -158,7 +158,7 @@ if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--check-published', action='store_true',
-                        help='CI: require all report snapshots to have been generated and committed')
+                        help='CI: require all report HTML files to have been generated and committed')
     args = parser.parse_args()
     try:
         build(check_published=args.check_published)

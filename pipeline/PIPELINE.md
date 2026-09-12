@@ -30,7 +30,7 @@
 
 ## 4. 校验、提交和报告
 
-1. 在三个文件全部生成后运行 `python scripts/build_site.py`。它校验全部期数，按科技、时政、财经顺序在内存中聚合，仅为缺失的新期数生成 reports/YYYY-MM-DD.html 快照，再将最新报告复制为 site/index.html，复制已发布报告并更新 site/archive.json；不得重新渲染或改写已有 reports/。
+1. 在三个文件全部生成后运行 `python scripts/build_site.py`。它校验全部期数，按科技、时政、财经顺序在内存中聚合，仅为缺失的报告生成 reports/YYYY-MM-DD.html，再将最新报告复制为 site/index.html，复用已有报告并更新 site/archive.json。每周新增一期时无需重新渲染旧网页；历史 HTML 可以维护修改，也可移除指定一期 HTML 后运行构建重新生成。此处复用旧网页是构建优化，不限制后续修改历史 HTML；历史新闻 JSON 的编辑规则保持不变。
 2. 失败时依据明确错误修正本期 JSON，再次校验；不要修改历史数据或放宽 schema 来通过校验。若历史数据阻断构建，报告用户处理。
 3. 检查 diff 只包含本期三个 JSON 和新生成的 reports/YYYY-MM-DD.html；不要提交生成的 site/ 或修改规范。将这四个文件放入一个 commit，提交到 main。推送前同步远程，若本期已被其他运行提交则停止，不覆盖。
 4. GitHub Actions 自动再次校验、构建和部署 Pages。检查对应 commit 的 workflow 和 Pages 部署状态，成功或失败均报告本期日期、条数、commit、workflow 和网站链接。
