@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Newsroom — 2026-09-07</title>
+<style>:root{
+  --paper:#f4f0e7;
+  --ink:#11100e;
+  --muted:#6d6962;
+  --line:#1a1916;
+  --soft-line:#b8b2a7;
+  --accent:#9d241e;
+  --page:1320px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+.site-header{
+  max-width:var(--page);
+  margin:0 auto;
+  padding:24px 28px 18px;
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:end;
+  border-bottom:2px solid var(--line);
+}
+.brand{
+  font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;
+  font-weight:700;
+  font-size:28px;
+  letter-spacing:-.03em;
+}
+.header-center{
+  font-size:11px;
+  letter-spacing:.16em;
+  font-weight:700;
+  text-align:center;
+}
+.header-right{
+  text-align:right;
+  font-size:11px;
+  letter-spacing:.10em;
+  color:var(--muted);
+}
+main{max-width:var(--page);margin:0 auto;padding:0 28px 80px}
+.hero{
+  padding:58px 0 36px;
+  display:grid;
+  grid-template-columns:8fr 4fr;
+  gap:54px;
+  border-bottom:1px solid var(--line);
+}
+.eyebrow{
+  margin:0 0 18px;
+  color:var(--accent);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+.hero h1{
+  max-width:780px;
+  margin:0;
+  font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;
+  font-size:clamp(54px,7vw,104px);
+  line-height:.92;
+  letter-spacing:-.055em;
+  font-weight:500;
+}
+.hero-deck{
+  margin:28px 0 0;
+  max-width:700px;
+  font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;
+  font-size:23px;
+  line-height:1.55;
+}
+.hero-side{
+  align-self:end;
+  border-top:1px solid var(--line);
+}
+.fact{
+  display:flex;
+  justify-content:space-between;
+  gap:22px;
+  padding:13px 0;
+  border-bottom:1px solid var(--soft-line);
+  font-size:12px;
+}
+.fact dt{
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:.1em;
+}
+.fact dd{margin:0;text-align:right;font-weight:650}
+.section-nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  min-height:62px;
+  display:flex;
+  gap:30px;
+  align-items:center;
+  border-bottom:1px solid var(--line);
+  background:rgba(244,240,231,.96);
+  backdrop-filter:blur(8px);
+  font-size:10px;
+  font-weight:760;
+  letter-spacing:.09em;
+}
+.section-nav .nav-label{
+  color:var(--muted);
+  letter-spacing:.14em;
+}
+.section-nav a{
+  text-decoration:none;
+  display:flex;
+  align-items:baseline;
+  gap:7px;
+}
+.section-nav .zh{
+  font-size:12px;
+  letter-spacing:.04em;
+}
+.section-nav .en{
+  font-size:9px;
+  letter-spacing:.14em;
+  color:var(--muted);
+}
+.section-nav a:hover,
+.section-nav a:hover .en{color:var(--accent)}
+.news-section{padding-top:70px;scroll-margin-top:60px}
+.section-rule{border-top:4px solid var(--line)}
+.section-header{
+  display:grid;
+  grid-template-columns:95px 1fr auto;
+  align-items:end;
+  gap:18px;
+  padding:12px 0 25px;
+  border-bottom:1px solid var(--line);
+}
+.section-number{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:48px;
+  line-height:1;
+  color:var(--accent);
+}
+.section-en{
+  font-size:11px;
+  letter-spacing:.18em;
+  font-weight:800;
+}
+.section-header h2{
+  margin:3px 0 0;
+  font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;
+  font-size:38px;
+  line-height:1;
+  font-weight:500;
+}
+.section-count{
+  font-size:11px;
+  letter-spacing:.13em;
+  font-weight:750;
+  padding-bottom:4px;
+}
+.lead-grid{
+  display:grid;
+  grid-template-columns:95px 1fr;
+  gap:18px;
+  border-bottom:1px solid var(--line);
+}
+.lead-index{
+  padding-top:34px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:15px;
+  color:var(--muted);
+}
+.story{padding:30px 0 34px}
+.story-kicker{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  color:var(--accent);
+}
+.story-kicker .dot{color:var(--muted)}
+.story h3{
+  font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;
+  font-weight:500;
+  letter-spacing:-.025em;
+  line-height:1.08;
+  margin:12px 0 12px;
+  font-size:30px;
+}
+.lead-story{
+  display:grid;
+  grid-template-columns:minmax(0,7fr) minmax(300px,5fr);
+  column-gap:60px;
+  align-items:start;
+}
+.lead-story .story-kicker,
+.lead-story h3,
+.lead-story .story-meta{grid-column:1}
+.lead-story h3{font-size:52px;line-height:1.02;margin-top:15px}
+.lead-story .story-summary{
+  grid-column:2;
+  grid-row:1 / span 4;
+  margin:0;
+  padding-top:1px;
+  font-size:17px;
+  line-height:1.9;
+  border-left:1px solid var(--soft-line);
+  padding-left:28px;
+}
+.lead-story .source-link{grid-column:1;margin-top:28px}
+.story-meta{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+  color:var(--muted);
+  font-size:11px;
+  letter-spacing:.03em;
+}
+.story-summary{
+  font-size:15px;
+  line-height:1.9;
+  margin:18px 0 22px;
+}
+.source-link{
+  display:inline-block;
+  font-size:10px;
+  font-weight:850;
+  letter-spacing:.13em;
+  text-decoration:none;
+  border-bottom:1px solid var(--ink);
+  padding-bottom:2px;
+}
+.source-link:hover{color:var(--accent);border-color:var(--accent)}
+.secondary-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+}
+.secondary-grid .story{
+  border-bottom:1px solid var(--soft-line);
+  padding-right:40px;
+}
+.secondary-grid .story:nth-child(even){
+  border-left:1px solid var(--line);
+  padding-left:40px;
+  padding-right:0;
+}
+.secondary-grid .story:nth-last-child(-n+2){border-bottom:none}
+.footer{
+  max-width:var(--page);
+  margin:0 auto;
+  padding:20px 28px 42px;
+  border-top:2px solid var(--line);
+  display:flex;
+  justify-content:space-between;
+  gap:24px;
+  font-size:11px;
+  color:var(--muted);
+  letter-spacing:.04em;
+}
+
+/* --- Sidebar + two-level sticky navigation preview --- */
+.top-shell{
+  position:sticky;
+  top:0;
+  z-index:180;
+  background:rgba(244,240,231,.97);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.top-shell .site-header{
+  max-width:var(--page);
+  border-bottom:1px solid var(--soft-line);
+}
+.top-shell .section-nav{
+  position:static;
+  max-width:var(--page);
+  margin:0 auto;
+  padding:0 28px;
+  border-bottom:0;
+  background:transparent;
+  backdrop-filter:none;
+}
+.header-left{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  min-width:0;
+}
+.menu-button{
+  text-decoration:none;
+  appearance:none;
+  border:0;
+  background:transparent;
+  color:var(--ink);
+  width:34px;
+  height:34px;
+  padding:0;
+  cursor:pointer;
+  display:grid;
+  place-items:center;
+}
+.menu-icon,
+.menu-icon::before,
+.menu-icon::after{
+  content:"";
+  display:block;
+  width:20px;
+  height:1.5px;
+  background:currentColor;
+}
+.menu-icon{position:relative}
+.menu-icon::before{position:absolute;top:-6px;left:0}
+.menu-icon::after{position:absolute;top:6px;left:0}
+.menu-button:hover{color:var(--accent)}
+.brand a{text-decoration:none}
+.brand a:hover{color:var(--accent)}
+
+.archive-overlay{
+  position:fixed;
+  inset:0;
+  z-index:240;
+  background:rgba(17,16,14,.28);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .22s ease;
+}
+.archive-drawer{
+  position:fixed;
+  inset:0 auto 0 0;
+  z-index:250;
+  width:min(390px,88vw);
+  background:var(--paper);
+  border-right:1px solid var(--line);
+  transform:translateX(-100%);
+  transition:transform .24s ease;
+  display:flex;
+  flex-direction:column;
+}
+#archive-drawer:target{transform:translateX(0)}
+#archive-drawer:target + .archive-overlay{
+  opacity:1;
+  pointer-events:auto;
+}
+.drawer-head{
+  min-height:78px;
+  padding:20px 24px;
+  border-bottom:2px solid var(--line);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+.drawer-kicker{
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.16em;
+  color:var(--muted);
+  text-transform:uppercase;
+}
+.drawer-title{
+  margin-top:2px;
+  font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;
+  font-size:24px;
+  font-weight:700;
+  letter-spacing:-.03em;
+}
+.drawer-close{
+  text-decoration:none;
+  appearance:none;
+  border:0;
+  background:transparent;
+  color:var(--ink);
+  font-size:28px;
+  line-height:1;
+  cursor:pointer;
+  padding:6px;
+}
+.drawer-close:hover{color:var(--accent)}
+.archive-list{padding:38px 24px 48px;overflow:auto}
+.archive-year{
+  margin:0;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:54px;
+  line-height:.95;
+  font-weight:500;
+  letter-spacing:-.045em;
+  padding-bottom:18px;
+  border-bottom:1px solid var(--line);
+}
+.archive-dates{list-style:none;padding:0;margin:0}
+.archive-dates li{border-bottom:1px solid var(--soft-line)}
+.archive-dates a{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:19px 0;
+  text-decoration:none;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:28px;
+  letter-spacing:-.02em;
+}
+.archive-dates a::after{
+  content:"↗";
+  font-family:Inter,ui-sans-serif,sans-serif;
+  font-size:13px;
+  color:var(--muted);
+}
+.archive-dates a:hover{color:var(--accent)}
+.archive-dates a[aria-current="page"]{color:var(--accent)}
+.archive-dates a[aria-current="page"]::after{
+  content:"CURRENT";
+  font-size:9px;
+  letter-spacing:.14em;
+  font-weight:800;
+  color:var(--accent);
+}
+.news-section{scroll-margin-top:124px}
+
+@media(max-width:900px){
+  .top-shell .site-header{grid-template-columns:1fr auto;padding:14px 18px 12px}
+  .top-shell .section-nav{padding:0 18px}
+  .menu-button{width:30px;height:30px}
+  .header-left{gap:10px}
+}
+
+@media(max-width:900px){
+  .site-header{grid-template-columns:1fr auto;padding:18px 18px 14px}
+  .header-center{display:none}
+  .header-right{font-size:10px}
+  main{padding:0 18px 56px}
+  .hero{grid-template-columns:1fr;padding-top:38px;gap:36px}
+  .hero h1{font-size:58px}
+  .hero-side{max-width:none}
+  .section-nav{overflow:auto;white-space:nowrap}
+  .section-header{grid-template-columns:58px 1fr;gap:12px}
+  .section-number{font-size:35px}
+  .section-count{display:none}
+  .lead-grid{grid-template-columns:1fr}
+  .lead-index{display:none}
+  .lead-story{display:block}
+  .lead-story h3{font-size:38px}
+  .lead-story .story-summary{
+    border-left:0;
+    padding-left:0;
+    margin-top:22px;
+    font-size:16px;
+  }
+  .secondary-grid{grid-template-columns:1fr}
+  .secondary-grid .story,
+  .secondary-grid .story:nth-child(even){
+    border-left:0;
+    border-bottom:1px solid var(--soft-line);
+    padding-left:0;
+    padding-right:0;
+  }
+  .secondary-grid .story:last-child{border-bottom:none}
+  .footer{padding-left:18px;padding-right:18px;flex-direction:column}
+}
+@media(max-width:560px){
+  .brand{font-size:23px}
+  .hero h1{font-size:46px}
+  .hero-deck{font-size:19px}
+  .section-header h2{font-size:31px}
+  .lead-story h3{font-size:32px}
+  .story h3{font-size:25px}
+}
+.archive-drawer{visibility:hidden}
+#archive-drawer:target{visibility:visible}
+.story h3,.story-summary{overflow-wrap:anywhere}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.archive-drawer,.archive-overlay{transition:none}}
+</style>
+</head>
+<body id="page-top" data-issue="2026-09-07">
+<div class="top-shell">
+  <header class="site-header">
+    <div class="header-left">
+      <a class="menu-button" href="#archive-drawer" aria-label="打开期刊归档" aria-controls="archive-drawer"><span class="menu-icon" aria-hidden="true"></span></a>
+      <div class="brand"><a href="#page-top" aria-label="返回页面顶部">NEWSROOM</a></div>
+    </div>
+    <div class="header-center">INTERNATIONAL DIGEST</div>
+    <div class="header-right">ISSUE 001 · 2026-09-07</div>
+  </header>
+  <nav class="section-nav" aria-label="sections">
+    <a href="#technology"><span class="zh">01 科技</span><span class="en">TECHNOLOGY</span></a>
+    <a href="#politics"><span class="zh">02 时政</span><span class="en">POLITICS</span></a>
+    <a href="#finance"><span class="zh">03 财经</span><span class="en">FINANCE</span></a>
+  </nav>
+</div>
+
+<aside class="archive-drawer" id="archive-drawer" aria-label="期刊归档">
+  <div class="drawer-head">
+    <div>
+      <div class="drawer-kicker">ARCHIVE</div>
+      <div class="drawer-title">期刊归档</div>
+    </div>
+    <a class="drawer-close" href="#page-top" aria-label="关闭期刊归档">×</a>
+  </div>
+  <div class="archive-list">
+<section><h2 class="archive-year">2026</h2>
+          <ul class="archive-dates"><li><a href="#page-top" aria-current="page">09.07</a></li></ul></section>
+          <noscript>完整归档导航需要启用 JavaScript。</noscript>
+</div>
+</aside>
+<a class="archive-overlay" href="#page-top" aria-label="关闭期刊归档" tabindex="-1"></a>
+
+<main>
+  <section class="hero">
+    <div>
+      <p class="eyebrow">International briefing / 7-day edition</p>
+      <h1>一周世界，<br>三个视角。</h1>
+      <p class="hero-deck">聚焦科技、时政与财经的重要国际信息。中文摘要保留事实边界，并始终附上原始来源。</p>
+    </div>
+    <dl class="hero-side">
+      <div class="fact"><dt>Observation window</dt><dd>2026-08-31 — 2026-09-07</dd></div>
+      <div class="fact"><dt>Stories</dt><dd>15</dd></div>
+      <div class="fact"><dt>Primary sources</dt><dd>15/15</dd></div>
+      <div class="fact"><dt>Distinct sources</dt><dd>13</dd></div>
+    </dl>
+  </section>
+
+  <section class="news-section" id="technology">
+      <div class="section-rule"></div>
+      <header class="section-header">
+        <div class="section-number">01</div>
+        <div class="section-title-wrap"><div class="section-en">TECHNOLOGY</div><h2>科技</h2></div>
+        <div class="section-count">05 STORIES</div>
+      </header>
+      <div class="lead-grid"><div class="lead-index">A</div><article class="story lead-story">
+      <div class="story-kicker"><span>人工智能模型</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
+      <h3>GPT-6 Astra: A new generation of intelligence</h3>
+      <div class="story-meta"><span>OpenAI</span><time datetime="2026-09-03">2026-09-03</time></div>
+      <p class="story-summary">OpenAI 发布 GPT-6 Astra，先向部分机构开放，随后逐步扩展至 ChatGPT 付费用户及 API 等渠道。公司称模型提升了电脑操作、软件工程和科学任务能力，并达到其准备框架中的网络安全 Critical 能力门槛，因此配套加强安全防护；发布版本仍拒绝生成漏洞利用概念验证等高级网络安全任务。</p>
+      <a class="source-link" href="https://openai.com/index/gpt-6-astra/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article></div>
+      <div class="secondary-grid"><article class="story">
+      <div class="story-kicker"><span>语音识别</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
+      <h3>MAI-Transcribe-2 is the fastest, most accurate and cheapest speech recognition model in the world</h3>
+      <div class="story-meta"><span>Microsoft AI</span><time datetime="2026-09-03">2026-09-03</time></div>
+      <p class="story-summary">微软发布 MAI-Transcribe-2，增加说话人区分、可配置转写风格和逐词时间戳，可通过 Microsoft Foundry 等渠道试用。微软称该模型在覆盖 60 种语言的 FLEURS 测试中平均词错误率为 5.2%，音频转写价格为每小时 0.10 美元；性能和成本比较均为公司的测试与表述。</p>
+      <a class="source-link" href="https://microsoft.ai/news/mai-transcribe-2-is-the-fastest-most-accurate-and-cheapest-speech-recognition-model-in-the-world/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
+      <div class="story-kicker"><span>量子计算</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
+      <h3>Diraq and Equinix to Deploy Australia’s First Quantum Computer Inside a Data Centre</h3>
+      <div class="story-meta"><span>Equinix</span><time datetime="2026-09-01">2026-09-01</time></div>
+      <p class="story-summary">Diraq 与 Equinix 宣布计划在悉尼商业数据中心部署一台采用 8 个硅自旋量子比特的量子计算机，安装预计于 2026 年 10 月完成。双方称整套系统包含低温制冷和控制设备，功耗低于 20 千瓦，将测试其与传统 CPU、GPU 和网络基础设施共同运行的表现。</p>
+      <a class="source-link" href="https://newsroom.equinix.com/2026-09-01-Diraq-and-Equinix-to-Deploy-Australias-First-Quantum-Computer-Inside-a-Data-Centre" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
+      <div class="story-kicker"><span>软件供应链安全</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
+      <h3>Multiple trusted publishing configurations for npm</h3>
+      <div class="story-meta"><span>GitHub</span><time datetime="2026-09-03">2026-09-03</time></div>
+      <p class="story-summary">GitHub 宣布 npm 的三项发布改进正式开放：每个软件包可配置多个基于 OIDC 的可信发布流程，暂存版本须完成恶意软件扫描后才允许批准，维护者可在版本页查看暂存历史。多个配置独立生效，分别指定仓库、工作流和环境，减少不同发布路径对长期令牌的依赖。</p>
+      <a class="source-link" href="https://github.blog/changelog/2026-09-03-multiple-trusted-publishing-configurations-for-npm/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
+      <div class="story-kicker"><span>开发者工具</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
+      <h3>GitHub Actions: Early September 2026 updates</h3>
+      <div class="story-meta"><span>GitHub</span><time datetime="2026-09-03">2026-09-03</time></div>
+      <p class="story-summary">GitHub Actions 新增查询运行器版本停止注册及停止运行支持时间的 REST API，并为 GITHUB_TOKEN 增加只读访问 Dependabot 警报的独立权限。可复用工作流还获得四个 job 上下文字段，用于识别实际定义当前任务的工作流来源；这些新上下文字段暂不适用于 GitHub Enterprise Server。</p>
+      <a class="source-link" href="https://github.blog/changelog/2026-09-03-github-actions-early-september-2026-updates/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article></div>
+    </section>
+<section class="news-section" id="politics">
+      <div class="section-rule"></div>
+      <header class="section-header">
+        <div class="section-number">02</div>
+        <div class="section-title-wrap"><div class="section-en">POLITICS</div><h2>时政</h2></div>
+        <div class="section-count">05 STORIES</div>
+      </header>
+      <div class="lead-grid"><div class="lead-index">A</div><article class="story lead-story">
+      <div class="story-kicker"><span>欧洲安全与外交</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
+      <h3>Statement by Foreign Minister Wadephul at a joint press conference with Interior Minister Dobrindt</h3>
+      <div class="story-meta"><span>Federal Foreign Office, Germany</span><time datetime="2026-09-01">2026-09-01</time></div>
+      <p class="story-summary">德国外长瓦德富尔宣布召见俄罗斯大使，并将于 9 月 18 日关闭俄罗斯驻波恩总领馆、终止柏林俄罗斯之家的租约，同时提出新的欧盟制裁名单并收紧俄公民入境检查。德方称这些措施回应莱比锡未遂袭击，并指责俄罗斯负有责任；有关袭击归属为德国政府的指称。</p>
+      <a class="source-link" href="https://www.auswaertiges-amt.de/en/newsroom/news/2800600-2800600" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article></div>
+      <div class="secondary-grid"><article class="story">
+      <div class="story-kicker"><span>伊朗相关制裁</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
+      <h3>Treasury Severs Iranian Regime’s Financial Lifelines in Türkiye</h3>
+      <div class="story-meta"><span>U.S. Department of the Treasury</span><time datetime="2026-09-04">2026-09-04</time></div>
+      <p class="story-summary">美国财政部宣布制裁土耳其 Golden Global Bank 及其两家子公司，依据第 13902 号行政令冻结相关美国管辖资产，并原则上禁止美国人士与其交易。财政部指称该银行为伊朗伊斯兰革命卫队圣城旅促成数千万美元交易并提供跨境银行渠道；这些交易指控属于美方表述。</p>
+      <a class="source-link" href="https://home.treasury.gov/news/press-releases/sb0622/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
+      <div class="story-kicker"><span>欧盟与南高加索</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
+      <h3>Council backs temporary trade measures to support Armenia</h3>
+      <div class="story-meta"><span>Council of the European Union</span><time datetime="2026-09-02">2026-09-02</time></div>
+      <p class="story-summary">欧盟理事会支持对亚美尼亚实施临时贸易自由化措施，拟覆盖其对欧盟约 80% 的出口，自法规生效起适用两年，以应对俄罗斯近期贸易限制。方案包含保护欧盟生产者的保障措施，并以遵守原产地规则、民主及人权等条件为前提；仍须完成欧洲议会与理事会的正式通过程序。</p>
+      <a class="source-link" href="https://www.consilium.europa.eu/en/press/press-releases/2026/09/02/council-backs-temporary-trade-measures-to-support-armenia/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
+      <div class="story-kicker"><span>古巴相关制裁</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
+      <h3>Cuba Designations; Russia-related Designation Removal; Issuance of Amended Cuba General License</h3>
+      <div class="story-meta"><span>Office of Foreign Assets Control, U.S. Department of the Treasury</span><time datetime="2026-09-03">2026-09-03</time></div>
+      <p class="story-summary">美国财政部海外资产控制办公室更新制裁名单，将古巴的 Fidel Ernesto Castro Calis 及五家实体列入，其中包括 Banco Exterior de Cuba 和石油、镍业相关国有企业。同日发布古巴第 4A 号通用许可，授权第三国驻古巴外交和领事机构的相关交易。</p>
+      <a class="source-link" href="https://ofac.treasury.gov/recent-actions/20260903" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
+      <div class="story-kicker"><span>欧盟与海湾外交</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
+      <h3>Second EU-GCC Summit to take place on 24 October in Saudi Arabia</h3>
+      <div class="story-meta"><span>European Council</span><time datetime="2026-09-04">2026-09-04</time></div>
+      <p class="story-summary">欧洲理事会宣布，第二届欧盟—海湾合作委员会峰会定于 2026 年 10 月 24 日在沙特阿拉伯举行，欧盟成员国及海合会国家领导人将参加。欧洲理事会主席科斯塔将代表欧方共同主持，欧委会主席冯德莱恩也将出席；科斯塔表示希望深化双方政治对话及和平、安全与繁荣合作。</p>
+      <a class="source-link" href="https://www.consilium.europa.eu/en/press/press-releases/2026/09/04/second-eu-gcc-summit-to-take-place-on-24-october-in-saudi-arabia/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article></div>
+    </section>
+<section class="news-section" id="finance">
+      <div class="section-rule"></div>
+      <header class="section-header">
+        <div class="section-number">03</div>
+        <div class="section-title-wrap"><div class="section-en">FINANCE</div><h2>财经</h2></div>
+        <div class="section-count">05 STORIES</div>
+      </header>
+      <div class="lead-grid"><div class="lead-index">A</div><article class="story lead-story">
+      <div class="story-kicker"><span>美国就业</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
+      <h3>THE EMPLOYMENT SITUATION - AUGUST 2026</h3>
+      <div class="story-meta"><span>U.S. Bureau of Labor Statistics</span><time datetime="2026-09-04">2026-09-04</time></div>
+      <p class="story-summary">美国劳工统计局公布，8 月非农就业增加 16.2 万人，失业率维持 4.1%。就业增长集中在餐饮及地方政府教育，信息行业就业减少。私营非农平均时薪环比上涨 0.3% 至 37.75 美元，同比上涨 3.1%；6 月和 7 月非农就业增量合计上修 5.5 万人。</p>
+      <a class="source-link" href="https://www.bls.gov/news.release/archives/empsit_09042026.htm" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article></div>
+      <div class="secondary-grid"><article class="story">
+      <div class="story-kicker"><span>欧元区通胀</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
+      <h3>Euro area annual inflation up to 3.3%</h3>
+      <div class="story-meta"><span>Eurostat</span><time datetime="2026-09-01">2026-09-01</time></div>
+      <p class="story-summary">欧盟统计局初步估计，欧元区 8 月通胀率为 3.3%，高于 7 月的 2.9%。能源价格同比涨幅预计从 10.3% 升至 14.3%，服务价格涨幅由 3.3% 降至 3.0%；非能源工业品上涨 1.2%，食品、酒类及烟草亦上涨 1.2%。完整的 8 月数据计划于 9 月 17 日公布。</p>
+      <a class="source-link" href="https://ec.europa.eu/eurostat/web/products-euro-indicators/w/2-01092026-ap" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
+      <div class="story-kicker"><span>加拿大货币政策</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
+      <h3>Bank of Canada maintains the policy rate at 2¼%</h3>
+      <div class="story-meta"><span>Bank of Canada</span><time datetime="2026-09-02">2026-09-02</time></div>
+      <p class="story-summary">加拿大央行维持隔夜利率目标 2.25%，银行利率与存款利率分别为 2.5% 和 2.20%。央行称经济和通胀总体符合 7 月预测，但持续高油价增加通胀上行风险，新的美国关税使增长前景更不确定；将评估经济反弹的可持续性，并准备按需要调整政策。</p>
+      <a class="source-link" href="https://www.bankofcanada.ca/2026/09/fad-press-release-2026-09-02/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
+      <div class="story-kicker"><span>澳大利亚经济增长</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
+      <h3>Australian National Accounts: National Income, Expenditure and Product</h3>
+      <div class="story-meta"><span>Australian Bureau of Statistics</span><time datetime="2026-09-02">2026-09-02</time></div>
+      <p class="story-summary">澳大利亚统计局公布，经季节调整的实际 GDP 在 2026 年第二季度环比增长 0.4%、同比增长 2.1%，人均 GDP 环比基本持平。名义 GDP 环比增长 0.8%，贸易条件下降 1.6%，家庭储蓄收入比由 6.4% 升至 6.5%。统计局称部分私人需求和矿业出口支撑了本季增长。</p>
+      <a class="source-link" href="https://www.abs.gov.au/statistics/economy/national-accounts/australian-national-accounts-national-income-expenditure-and-product/jun-2026" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
+      <div class="story-kicker"><span>国际贸易政策</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
+      <h3>EU customs: Council greenlights landmark reform</h3>
+      <div class="story-meta"><span>Council of the European Union</span><time datetime="2026-09-03">2026-09-03</time></div>
+      <p class="story-summary">欧盟理事会批准海关改革文本，明确向欧盟销售的境外电商平台承担进口商的申报和缴税责任，并设立欧盟海关机构及统一数据中心。文本还安排在 2026 年 11 月 1 日前引入小包裹处理费，金额由欧委会确定；欧洲议会仍需批准最终文本，随后签署并公布。</p>
+      <a class="source-link" href="https://www.consilium.europa.eu/en/press/press-releases/2026/09/03/eu-customs-council-greenlights-landmark-reform/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article></div>
+    </section>
+</main>
+
+<footer class="footer">
+  <span>NEWSROOM · AI-assisted international news digest</span>
+  <span>AI 辅助整理 · 请以原始来源为准</span>
+</footer>
+
+<script data-archive>
+(() => {
+  const drawer = document.querySelector('#archive-drawer');
+  const menu = document.querySelector('.menu-button');
+  const current = document.body.dataset.issue;
+  const archiveURL = new URL(
+    /\/reports\/\d{4}-\d{2}-\d{2}\.html$/.test(location.pathname)
+      ? '../archive.json' : './archive.json', location.href);
+
+  function syncDrawer() {
+    const open = location.hash === '#archive-drawer';
+    drawer.inert = !open;
+    menu.setAttribute('aria-expanded', String(open));
+    document.body.style.overflow = open ? 'hidden' : '';
+    if (open) drawer.querySelector('.drawer-close').focus({preventScroll: true});
+  }
+  addEventListener('hashchange', syncDrawer);
+  syncDrawer();
+  document.addEventListener('keydown', event => {
+    if (location.hash !== '#archive-drawer') return;
+    if (event.key === 'Escape') {
+      location.hash = 'page-top';
+      menu.focus({preventScroll: true});
+    }
+    if (event.key === 'Tab') {
+      const links = [...drawer.querySelectorAll('a[href]')];
+      const first = links[0], last = links[links.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault(); last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault(); first.focus();
+      }
+    }
+  });
+
+  async function refreshArchive() {
+    try {
+      const response = await fetch(archiveURL, {cache: 'no-store'});
+      if (!response.ok) throw new Error('Archive unavailable');
+      const dates = await response.json();
+      if (!Array.isArray(dates) || !dates.every(day => typeof day === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(day))) {
+        throw new Error('Invalid archive');
+      }
+      const fragment = document.createDocumentFragment();
+      let year, list;
+      for (const day of [...new Set(dates)].sort().reverse()) {
+        if (year !== day.slice(0, 4)) {
+          year = day.slice(0, 4);
+          const section = document.createElement('section');
+          const heading = document.createElement('h2');
+          heading.className = 'archive-year'; heading.textContent = year;
+          list = document.createElement('ul'); list.className = 'archive-dates';
+          section.append(heading, list); fragment.append(section);
+        }
+        const li = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = new URL(`reports/${day}.html`, archiveURL).href;
+        link.textContent = day.slice(5).replace('-', '.');
+        if (day === current) link.setAttribute('aria-current', 'page');
+        li.append(link); list.append(li);
+      }
+      document.querySelector('.archive-list').replaceChildren(fragment);
+    } catch {
+      // The current-issue fallback remains usable when offline or opened via file://.
+    }
+  }
+  refreshArchive();
+  addEventListener('pageshow', refreshArchive);
+})();
+
+</script>
+</body>
+</html>

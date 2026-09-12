@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Newsroom — {{date}}</title>
+<style>{{style}}</style>
+</head>
+<body id="page-top" data-issue="{{date}}">
+<div class="top-shell">
+  <header class="site-header">
+    <div class="header-left">
+      <a class="menu-button" href="#archive-drawer" aria-label="打开期刊归档" aria-controls="archive-drawer"><span class="menu-icon" aria-hidden="true"></span></a>
+      <div class="brand"><a href="#page-top" aria-label="返回页面顶部">NEWSROOM</a></div>
+    </div>
+    <div class="header-center">INTERNATIONAL DIGEST</div>
+    <div class="header-right">ISSUE {{number}} · {{date}}</div>
+  </header>
+  <nav class="section-nav" aria-label="sections">
+    <a href="#technology"><span class="zh">01 科技</span><span class="en">TECHNOLOGY</span></a>
+    <a href="#politics"><span class="zh">02 时政</span><span class="en">POLITICS</span></a>
+    <a href="#finance"><span class="zh">03 财经</span><span class="en">FINANCE</span></a>
+  </nav>
+</div>
+
+<aside class="archive-drawer" id="archive-drawer" aria-label="期刊归档">
+  <div class="drawer-head">
+    <div>
+      <div class="drawer-kicker">ARCHIVE</div>
+      <div class="drawer-title">期刊归档</div>
+    </div>
+    <a class="drawer-close" href="#page-top" aria-label="关闭期刊归档">×</a>
+  </div>
+  <div class="archive-list">
+{{archive_fallback}}
+</div>
+</aside>
+<a class="archive-overlay" href="#page-top" aria-label="关闭期刊归档" tabindex="-1"></a>
+
+<main>
+  <section class="hero">
+    <div>
+      <p class="eyebrow">International briefing / 7-day edition</p>
+      <h1>一周世界，<br>三个视角。</h1>
+      <p class="hero-deck">聚焦科技、时政与财经的重要国际信息。中文摘要保留事实边界，并始终附上原始来源。</p>
+    </div>
+    <dl class="hero-side">
+      <div class="fact"><dt>Observation window</dt><dd>{{window}}</dd></div>
+      <div class="fact"><dt>Stories</dt><dd>{{count}}</dd></div>
+      <div class="fact"><dt>Primary sources</dt><dd>{{primary}}/{{count}}</dd></div>
+      <div class="fact"><dt>Distinct sources</dt><dd>{{sources}}</dd></div>
+    </dl>
+  </section>
+
+  {{sections}}
+</main>
+
+<footer class="footer">
+  <span>NEWSROOM · AI-assisted international news digest</span>
+  <span>AI 辅助整理 · 请以原始来源为准</span>
+</footer>
+
+<script data-archive>
+{{archive_script}}
+</script>
+</body>
+</html>

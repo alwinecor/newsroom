@@ -1,0 +1,2 @@
+# Published snapshots must retain identical bytes across Windows and Linux.
+reports/*.html -text
