@@ -1,6 +1,6 @@
 # Editorial policy
 
-以下新闻筛选、primary/media 层级和 item 字段规则适用于 technology、politics、finance。Markets 遵循 modules/markets/MODULE.md 的专用规则：snapshot 使用一手市场数据；institutional_views 使用可直接阅读的机构分析，允许明确归属的观点和预测。机构分析不自动归为 primary 或 media；World Gold Council / Goldhub 等行业研究不等同于交易所或监管机构的一手市场数据。机构观点优先观察窗口内，不足时可回溯至 issue_date 前 30 天；snapshot 来源页无需 published_at。来源可靠、直接阅读、保留不确定性和不得虚构的原则仍适用。
+以下新闻筛选、primary/media 层级和 item 字段规则适用于 technology、politics、finance。Markets 遵循 modules/markets/MODULE.md 的专用规则：每个市场仅收录 2–3 条可直接阅读的权威机构最新分析，允许明确归属的观点和预测。机构分析不自动归为 primary 或 media。全部文章必须在观察窗口内发布。来源可靠、直接阅读、保留不确定性和不得虚构的原则仍适用。
 
 选择在观察窗口内首次发布、具有国际意义的具体事件。优先事实进展与重大政策、产品或数据发布；不收录纯观点、重复跟进或营销噪声。阅读原始来源后才写摘要。
 

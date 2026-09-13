@@ -7,68 +7,63 @@
   },
   "markets": {
     "us_equities": {
-      "snapshot": {
-        "as_of": "2026-09-04",
-        "summary_zh": "截至9月4日，S&P 500价格指数报7,718.60点，9月至今上涨0.42%，年初至今上涨12.75%，过去一年上涨18.71%。S&P Dow Jones Indices说明该指数由500家美国大型上市公司组成，覆盖约80%的可投资市值，可作为美国大型股市场的核心宽基指标。",
-        "sources": [
-          {
-            "source_name": "S&P Dow Jones Indices",
-            "source_title": "S&P 500",
-            "url": "https://www.spglobal.com/spdji/en/indices/equity/sp-500/"
-          }
-        ]
-      },
       "institutional_views": [
         {
-          "institution": "Goldman Sachs",
-          "original_title": "Why US Equity Returns Are Broadening Beyond AI Stocks",
-          "published_at": "2026-08-21",
-          "url": "https://www.goldmansachs.com/insights/the-markets/why-us-equity-returns-are-broadening-beyond-ai-stocks",
-          "summary_zh": "Goldman Sachs的Shawn Tuteja认为，美国股票回报正在从少数AI相关公司向更广泛行业扩散。他指出，标普500的11个行业中有9个盈利表现强劲，而AI相关主题的波动仍然较高；油价、长期债券收益率以及美联储政策仍是影响这种市场扩散能否延续的重要因素。"
+          "institution": "UBS CIO",
+          "original_title": "What a more hawkish Fed means for investors",
+          "published_at": "2026-09-04",
+          "url": "https://www.ubs.com/global/en/wealthmanagement/insights/chief-investment-office/house-view/daily/2026/latest-04092026.html",
+          "summary_zh": "UBS CIO认为，美联储是否加息本身并不是判断美股前景的唯一关键，更重要的是加息发生时的增长和盈利背景。如果利率上升伴随AI相关资本开支、就业和企业利润保持强劲，股票市场仍可能维持较有支撑的环境；相反，如果通胀黏性与增长疲弱同时出现，紧缩政策对股票的压力会明显增大。UBS因此继续关注企业盈利、AI投资和经济韧性，同时把更高利率及增长放缓视为主要风险。"
+        },
+        {
+          "institution": "Standard Chartered CIO",
+          "original_title": "Rising risk of a Fed rate hike",
+          "published_at": "2026-09-04",
+          "url": "https://www.sc.com/ke/market-outlook/weekly-market-view-4-9-2026/?mvog=1",
+          "summary_zh": "渣打首席投资办公室认为，美联储主席Warsh近期的鹰派表态提高了年内、甚至9月加息的可能性，但其基准判断仍是后续通胀有望随关税和高油价影响消退而逐步回落，因此连续多次加息的空间有限。该机构认为，如果加息属于在经济和企业盈利仍具韧性背景下的“防御性”紧缩，对股票市场的冲击可能较为有限；其对美股的主要支撑因素仍是盈利前景，而风险集中在政策和利率波动。"
         }
       ]
     },
     "china_equities": {
-      "snapshot": {
-        "as_of": "2026-08-31",
-        "summary_zh": "截至8月31日，S&P China A 300价格指数过去1个月上涨1.58%，过去3个月下跌6.78%，年初至今上涨0.62%，过去一年上涨4.65%。S&P Dow Jones Indices说明该指数由沪深两市300只规模较大且流动性较高的A股组成；本期以这一可直接核实的月末宽基数据作为中国A股市场快照。",
-        "sources": [
-          {
-            "source_name": "S&P Dow Jones Indices",
-            "source_title": "S&P China A 300 Index",
-            "url": "https://www.spglobal.com/spdji/en/indices/equity/sp-china-a-300-index/"
-          }
-        ]
-      },
       "institutional_views": [
         {
-          "institution": "UBS CIO",
-          "original_title": "Looking beyond the obvious in stocks",
-          "published_at": "2026-08-19",
-          "url": "https://www.ubs.com/global/en/wealthmanagement/insights/marketnews/article.3655459.html",
-          "summary_zh": "UBS CIO认为全球股票上涨正在从美国和AI主题向其他地区扩散，并对亚洲（日本除外）保持积极观点。就中国而言，UBS表示仍对中国内地股票持建设性看法，并偏好A股胜于H股；其判断同时强调应通过更广泛的地区和行业配置降低市场集中风险。"
+          "institution": "HSBC Private Bank and Premier Wealth",
+          "original_title": "Investment Outlook: HSBC Perspectives Q4 2026",
+          "published_at": "2026-09-03",
+          "url": "https://www.hsbc.com.hk/wealth/insights/market-outlook/investment-outlook/accelerating-ai-adoption-powers-further-upside-for-global-markets/",
+          "summary_zh": "汇丰私人银行在第四季度展望中继续对中国内地股票持积极配置观点，认为中国在AI、先进制造、绿色技术、电动车和生物科技等领域的创新能力构成重要支撑。其分析同时指出，中国及亚洲多地的公司治理改革正在改善资本回报，预计亚洲整体股本回报率未来仍有上升空间；不过文章讨论的是更广泛的亚洲与中国股票机会，并非只针对A股。"
+        },
+        {
+          "institution": "UOB Kay Hian",
+          "original_title": "Strategy - Alpha Picks: September Conviction Calls",
+          "published_at": "2026-09-03",
+          "url": "https://uobkh.com.sg/en/research/gc-strategy-alpha-picks-03092026",
+          "summary_zh": "大华继显研究指出，中国股票在8月进入整理阶段，恒生指数和MSCI中国指数分别环比下跌约1.2%和0.4%，但仍保留了7月的大部分涨幅。该机构认为近期缺乏足以推动整个市场重新定价的单一重大催化剂，但对科技、媒体与通信以及IT硬件相关板块的基本面仍保持积极判断。该报告覆盖香港及中国股票市场，因此其结论不应被理解为仅针对A股。"
         }
       ]
     },
     "gold": {
-      "snapshot": {
-        "as_of": "2026-09-04",
-        "summary_zh": "截至9月4日，上海黄金交易所沪纽金合约参考价格表列示的COMEX期货亚洲标记价格为4,481.7美元/盎司；NYAuTN06和NYAuTN12参考结算价分别为4,624.6和4,516.7美元/盎司。交易所说明其中COMEX信息来自延时数据，因此这些数字仅作为该交易日国际黄金市场的官方参考快照。",
-        "sources": [
-          {
-            "source_name": "Shanghai Gold Exchange",
-            "source_title": "沪纽金合约2026年09月04日参考价格表",
-            "url": "https://www.sge.com.cn/h5_zdygz/pdfxq/10007545?h=3&topic=xjjg"
-          }
-        ]
-      },
       "institutional_views": [
+        {
+          "institution": "Goldman Sachs",
+          "original_title": "Why Gold Is Expected to Rise to Record Highs",
+          "published_at": "2026-09-04",
+          "url": "https://www.goldmansachs.com/insights/the-markets/why-gold-is-expected-to-rise-to-record-highs",
+          "summary_zh": "高盛的Tony Kim认为，美国利率路径不确定以及伊朗战争造成的市场扰动使黄金此前的上涨进入较长时间的停顿，但持续的央行购金仍可能成为推动金价重新走强的重要结构性力量。他还指出，市场对财政可持续性的担忧可能增加黄金作为非主权储值资产的吸引力；与此同时，亚洲投资需求减弱是这一判断面临的重要下行风险。"
+        },
+        {
+          "institution": "UBS CIO",
+          "original_title": "What can commodities add to a portfolio?",
+          "published_at": "2026-09-02",
+          "url": "https://www.ubs.com/global/en/wealthmanagement/insights/marketnews/article.3701819.html",
+          "summary_zh": "UBS CIO指出，黄金在8月大约上涨10%，此前受到通胀意外、地缘政治不确定性以及主要经济体高财政赤字背景下货币贬值担忧的支持。该机构认为，黄金仍具有对冲通胀和地缘风险的作用，但在经历快速上涨后，投资者对贵金属与更广泛大宗商品之间的相对配置需求可能发生变化；其文章同时强调能源扰动和供给约束会影响整个商品资产类别的表现。"
+        },
         {
           "institution": "World Gold Council",
           "original_title": "Weekly Markets Monitor - Talking tough",
           "published_at": "2026-09-01",
           "url": "https://www.gold.org/goldhub/gold-focus/2026/09/weekly-markets-monitor-talking-tough",
-          "summary_zh": "World Gold Council指出，美联储主席Warsh在Jackson Hole发表偏鹰派言论后，短端美债收益率明显上行、市场重新评估未来紧缩路径，黄金随之跌破200日移动平均线；较高的期权仓位也增加了短期压力。该机构将利率预期变化视为当时黄金走势的重要驱动因素之一。"
+          "summary_zh": "世界黄金协会认为，美联储主席Warsh在Jackson Hole释放更鹰派的政策信号后，市场迅速提高了对进一步紧缩的预期，短端美债收益率上升并推动黄金跌破200日移动平均线；偏高的期权仓位也增加了短期价格压力。该机构同时指出，当周地缘政治、伊朗制裁、贸易摩擦以及美国通胀黏性仍在影响黄金市场，因此利率预期与避险需求之间的拉扯仍是主要驱动因素。"
         }
       ]
     }

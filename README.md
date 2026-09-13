@@ -19,7 +19,7 @@ AI-generated modular international news digest. 一个最小可用的国际新�
 - Finance / 宏观经济与金融
 - Markets / 美国股市、中国股市、国际金价
 
-入口是 [PIPELINE.md](pipeline/PIPELINE.md)，各模块在 modules/ 下分别拥有 MODULE.md 和 schema.json。前三个新闻模块使用相同的 items 结构；markets 使用独立结构，固定包含三个市场，每个市场有 snapshot（1–3 个一手来源）和 institutional_views（1–2 篇机构公开分析），详见 [Markets 规范](modules/markets/MODULE.md)。不向 markets 套用新闻模块的 5–8 条或 primary/media 枚举。
+入口是 [PIPELINE.md](pipeline/PIPELINE.md)，各模块在 modules/ 下分别拥有 MODULE.md 和 schema.json。前三个新闻模块使用相同的 items 结构；markets 使用独立结构，固定包含三个市场，每个市场仅有 institutional_views（2–3 篇观察窗口内发布的权威机构最新公开分析），详见 [Markets 规范](modules/markets/MODULE.md)。不向 markets 套用新闻模块的 5–8 条或 primary/media 枚举。
 
 接入代码不会自动刷新已有 HTML；经授权补齐数据后，若需更新旧页面，可移除对应报告并运行构建。
 
@@ -34,7 +34,7 @@ python -m http.server 8000 --directory site
 
 浏览器访问 http://localhost:8000。根 URL 直接显示最新一期。完整归档导航通过 HTTP(S) 加载 archive.json；直接打开本地 HTML 时仅保留当期导航。CI 使用 requirements.txt 中的 jsonschema 主版本范围。
 
-正式数据位于 data/issues/YYYY-MM-DD/。每期按科技、时政、财经、市场顺序使用 editorial / newspaper 版式，左侧抽屉按年份和日期倒序展示归档。Markets 沿用衬线标题、分隔线及双列布局，分开展示市场现状与机构观点；观察窗口前的文章标注“回溯分析”。顶部新闻条数和新闻来源统计仅计算前三个模块，另列市场板块数与机构观点数，避免混淆来源角色。
+正式数据位于 data/issues/YYYY-MM-DD/。每期按科技、时政、财经、市场顺序使用 editorial / newspaper 版式，左侧抽屉按年份和日期倒序展示归档。Markets 沿用衬线标题、分隔线及双列布局，三个市场分别展示机构观点及原文链接。顶部新闻条数和新闻来源统计仅计算前三个模块，另列市场板块数与机构观点数，避免混淆来源角色。
 
 发布源为 Git 跟踪的 `reports/YYYY-MM-DD.html`。默认构建只渲染不存在的报告，已有网页直接复用，避免发布新一期时重复渲染历史。历史 HTML 可以修改；也可以移除需要重新生成的那一期 HTML，再运行构建，使用现有 JSON 和当前模板重新生成该期。其他报告仍直接复用。CSS 与归档脚本继续内嵌在报告中，因此模板调整在该期重新生成后生效。
 
@@ -42,7 +42,7 @@ python -m http.server 8000 --directory site
 
 每次新增一期：运行构建，将本期四个 JSON 与新生成的 `reports/YYYY-MM-DD.html` 一起提交。CI 使用 `python scripts/build_site.py --check-published`，缺少报告 HTML 会失败；全新 checkout 也直接使用 Git 中的已有网页，不依赖 Actions cache 或过期 artifact。构建仍会打包上传全部静态文件，但不会重新渲染已有 reports。修改或重新生成历史 HTML 后，提交对应文件即可发布更新。
 
-校验包含 schema、真实日期、四个模块日期/窗口一致、目录日期一致、7 天 UTC 半开窗口、新闻日期在窗口内、模块内 ID/URL 唯一和 HTTP(S) URL。所有 JSON 字符串在 HTML 中转义。任何数据校验失败都会输出文件与字段信息并非零退出，且不会改写已有 site/。结构校验不会核实新闻真实性或识别不同 URL 对应的同一事件，研究者仍负责语义去重。Markets 额外检查 snapshot.as_of 在观察窗口内、机构文章 published_at 位于 `[issue_date - 30 天, issue_date)`，以及每个市场的来源列表和观点列表各自 URL 唯一；同一来源跨市场复用是允许的。是否需要回溯、是否确为一手数据和观点归属仍由研究者核实。
+校验包含 schema、真实日期、四个模块日期/窗口一致、目录日期一致、7 天 UTC 半开窗口、新闻日期在窗口内、模块内 ID/URL 唯一和 HTTP(S) URL。所有 JSON 字符串在 HTML 中转义。任何数据校验失败都会输出文件与字段信息并非零退出，且不会改写已有 site/。结构校验不会核实新闻真实性或识别不同 URL 对应的同一事件，研究者仍负责语义去重。Markets 额外检查每个市场有 2–3 条观点、机构文章 published_at 位于 `[window.start, window.end)`，以及每个市场的观点 URL 唯一；同一分析跨市场复用是允许的。机构权威性、是否为最新分析和观点归属仍由研究者核实。
 
 ## Production workflow
 

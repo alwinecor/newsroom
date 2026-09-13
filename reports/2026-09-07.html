@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Newsroom — 2026-09-07</title>
-<style>:root{
+<style>
+:root{
   --paper:#f4f0e7;
   --ink:#11100e;
   --muted:#6d6962;
@@ -274,173 +275,6 @@ main{max-width:var(--page);margin:0 auto;padding:0 28px 80px}
   color:var(--muted);
   letter-spacing:.04em;
 }
-
-/* --- Sidebar + two-level sticky navigation preview --- */
-.top-shell{
-  position:sticky;
-  top:0;
-  z-index:180;
-  background:rgba(244,240,231,.97);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--line);
-}
-.top-shell .site-header{
-  max-width:var(--page);
-  border-bottom:1px solid var(--soft-line);
-}
-.top-shell .section-nav{
-  position:static;
-  max-width:var(--page);
-  margin:0 auto;
-  padding:0 28px;
-  border-bottom:0;
-  background:transparent;
-  backdrop-filter:none;
-}
-.header-left{
-  display:flex;
-  align-items:center;
-  gap:14px;
-  min-width:0;
-}
-.menu-button{
-  text-decoration:none;
-  appearance:none;
-  border:0;
-  background:transparent;
-  color:var(--ink);
-  width:34px;
-  height:34px;
-  padding:0;
-  cursor:pointer;
-  display:grid;
-  place-items:center;
-}
-.menu-icon,
-.menu-icon::before,
-.menu-icon::after{
-  content:"";
-  display:block;
-  width:20px;
-  height:1.5px;
-  background:currentColor;
-}
-.menu-icon{position:relative}
-.menu-icon::before{position:absolute;top:-6px;left:0}
-.menu-icon::after{position:absolute;top:6px;left:0}
-.menu-button:hover{color:var(--accent)}
-.brand a{text-decoration:none}
-.brand a:hover{color:var(--accent)}
-
-.archive-overlay{
-  position:fixed;
-  inset:0;
-  z-index:240;
-  background:rgba(17,16,14,.28);
-  opacity:0;
-  pointer-events:none;
-  transition:opacity .22s ease;
-}
-.archive-drawer{
-  position:fixed;
-  inset:0 auto 0 0;
-  z-index:250;
-  width:min(390px,88vw);
-  background:var(--paper);
-  border-right:1px solid var(--line);
-  transform:translateX(-100%);
-  transition:transform .24s ease;
-  display:flex;
-  flex-direction:column;
-}
-#archive-drawer:target{transform:translateX(0)}
-#archive-drawer:target + .archive-overlay{
-  opacity:1;
-  pointer-events:auto;
-}
-.drawer-head{
-  min-height:78px;
-  padding:20px 24px;
-  border-bottom:2px solid var(--line);
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:24px;
-}
-.drawer-kicker{
-  font-size:10px;
-  font-weight:800;
-  letter-spacing:.16em;
-  color:var(--muted);
-  text-transform:uppercase;
-}
-.drawer-title{
-  margin-top:2px;
-  font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;
-  font-size:24px;
-  font-weight:700;
-  letter-spacing:-.03em;
-}
-.drawer-close{
-  text-decoration:none;
-  appearance:none;
-  border:0;
-  background:transparent;
-  color:var(--ink);
-  font-size:28px;
-  line-height:1;
-  cursor:pointer;
-  padding:6px;
-}
-.drawer-close:hover{color:var(--accent)}
-.archive-list{padding:38px 24px 48px;overflow:auto}
-.archive-year{
-  margin:0;
-  font-family:Georgia,"Times New Roman",serif;
-  font-size:54px;
-  line-height:.95;
-  font-weight:500;
-  letter-spacing:-.045em;
-  padding-bottom:18px;
-  border-bottom:1px solid var(--line);
-}
-.archive-dates{list-style:none;padding:0;margin:0}
-.archive-dates li{border-bottom:1px solid var(--soft-line)}
-.archive-dates a{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-  padding:19px 0;
-  text-decoration:none;
-  font-family:Georgia,"Times New Roman",serif;
-  font-size:28px;
-  letter-spacing:-.02em;
-}
-.archive-dates a::after{
-  content:"↗";
-  font-family:Inter,ui-sans-serif,sans-serif;
-  font-size:13px;
-  color:var(--muted);
-}
-.archive-dates a:hover{color:var(--accent)}
-.archive-dates a[aria-current="page"]{color:var(--accent)}
-.archive-dates a[aria-current="page"]::after{
-  content:"CURRENT";
-  font-size:9px;
-  letter-spacing:.14em;
-  font-weight:800;
-  color:var(--accent);
-}
-.news-section{scroll-margin-top:124px}
-
-@media(max-width:900px){
-  .top-shell .site-header{grid-template-columns:1fr auto;padding:14px 18px 12px}
-  .top-shell .section-nav{padding:0 18px}
-  .menu-button{width:30px;height:30px}
-  .header-left{gap:10px}
-}
-
 @media(max-width:900px){
   .site-header{grid-template-columns:1fr auto;padding:18px 18px 14px}
   .header-center{display:none}
@@ -482,28 +316,31 @@ main{max-width:var(--page);margin:0 auto;padding:0 28px 80px}
   .lead-story h3{font-size:32px}
   .story h3{font-size:25px}
 }
-.archive-drawer{visibility:hidden}
-#archive-drawer:target{visibility:visible}
-.story h3,.story-summary{overflow-wrap:anywhere}
-a:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.archive-drawer,.archive-overlay{transition:none}}
 
-/* Markets use the same paper, rules, serif headings and two-column stories. */
-.market-report{padding:30px 0;border-bottom:1px solid var(--line)}
-.market-report:last-child{border-bottom:0}
-.market-title{font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;font-size:30px;font-weight:500;margin:0 0 14px}
-.story h4{font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;font-size:30px;font-weight:500;letter-spacing:-.025em;line-height:1.08;margin:12px 0;overflow-wrap:anywhere}
-.market-snapshot{border-bottom:1px solid var(--soft-line)}
-.market-snapshot h4{grid-column:1;font-size:42px}
-.snapshot-sources{grid-column:1;margin-top:24px;font-size:12px;overflow-wrap:anywhere}
-.snapshot-sources ul{list-style:none;margin:10px 0 0;padding:0}
-.snapshot-sources li{margin-top:8px}
-.snapshot-sources a{text-decoration:none;border-bottom:1px solid var(--soft-line)}
-.snapshot-sources a:hover{color:var(--accent)}
-.views-heading{font-size:13px;font-weight:750;margin:24px 0 0}
-.views-heading span{font-size:10px;letter-spacing:.13em;color:var(--muted);margin-left:12px}
-@media(max-width:900px){.market-snapshot h4{font-size:32px}}
+
+/* Sidebar + two-level sticky navigation */
+.top-shell{position:sticky;top:0;z-index:180;background:rgba(244,240,231,.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top-shell .site-header{max-width:var(--page);border-bottom:1px solid var(--soft-line)}
+.top-shell .section-nav{position:static;max-width:var(--page);margin:0 auto;padding:0 28px;border-bottom:0;background:transparent;backdrop-filter:none}
+.header-left{display:flex;align-items:center;gap:14px;min-width:0}
+.menu-button{text-decoration:none;appearance:none;border:0;background:transparent;color:var(--ink);width:34px;height:34px;padding:0;cursor:pointer;display:grid;place-items:center}
+.menu-icon,.menu-icon::before,.menu-icon::after{content:"";display:block;width:20px;height:1.5px;background:currentColor}
+.menu-icon{position:relative}.menu-icon::before{position:absolute;top:-6px;left:0}.menu-icon::after{position:absolute;top:6px;left:0}
+.menu-button:hover{color:var(--accent)}.brand a{text-decoration:none}.brand a:hover{color:var(--accent)}
+.archive-overlay{position:fixed;inset:0;z-index:240;background:rgba(17,16,14,.28);opacity:0;pointer-events:none;transition:opacity .22s ease}
+.archive-drawer{position:fixed;inset:0 auto 0 0;z-index:250;width:min(390px,88vw);background:var(--paper);border-right:1px solid var(--line);transform:translateX(-100%);transition:transform .24s ease;display:flex;flex-direction:column;visibility:hidden}
+#archive-drawer:target{transform:translateX(0);visibility:visible}#archive-drawer:target + .archive-overlay{opacity:1;pointer-events:auto}
+.drawer-head{min-height:78px;padding:20px 24px;border-bottom:2px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:24px}
+.drawer-kicker{font-size:10px;font-weight:800;letter-spacing:.16em;color:var(--muted);text-transform:uppercase}.drawer-title{margin-top:2px;font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;font-size:24px;font-weight:700;letter-spacing:-.03em}
+.drawer-close{text-decoration:none;appearance:none;border:0;background:transparent;color:var(--ink);font-size:28px;line-height:1;cursor:pointer;padding:6px}.drawer-close:hover{color:var(--accent)}
+.archive-list{padding:38px 24px 48px;overflow:auto}.archive-year{margin:0;font-family:Georgia,"Times New Roman",serif;font-size:54px;line-height:.95;font-weight:500;letter-spacing:-.045em;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.archive-dates{list-style:none;padding:0;margin:0}.archive-dates li{border-bottom:1px solid var(--soft-line)}.archive-dates a{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:19px 0;text-decoration:none;font-family:Georgia,"Times New Roman",serif;font-size:28px;letter-spacing:-.02em}.archive-dates a::after{content:"↗";font-family:Inter,ui-sans-serif,sans-serif;font-size:13px;color:var(--muted)}.archive-dates a:hover{color:var(--accent)}.archive-dates a[aria-current="page"]{color:var(--accent)}.archive-dates a[aria-current="page"]::after{content:"CURRENT";font-size:9px;letter-spacing:.14em;font-weight:800;color:var(--accent)}
+.news-section{scroll-margin-top:124px}.story h3,.story-summary{overflow-wrap:anywhere}a:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+/* Markets */
+.market-report{padding:30px 0;border-bottom:1px solid var(--line)}.market-report:last-child{border-bottom:0}.market-title{font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;font-size:30px;font-weight:500;margin:0 0 14px}.story h4{font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;font-size:30px;font-weight:500;letter-spacing:-.025em;line-height:1.08;margin:12px 0;overflow-wrap:anywhere}.views-heading{font-size:13px;font-weight:750;margin:24px 0 0}.views-heading span{font-size:10px;letter-spacing:.13em;color:var(--muted);margin-left:12px}
+@media(max-width:900px){.top-shell .site-header{grid-template-columns:1fr auto;padding:14px 18px 12px}.top-shell .section-nav{padding:0 18px}.menu-button{width:30px;height:30px}.header-left{gap:10px}}
 @media(max-width:560px){.story h4{font-size:25px}.market-title{font-size:27px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.archive-drawer,.archive-overlay{transition:none}}
 </style>
 </head>
 <body id="page-top" data-issue="2026-09-07">
@@ -516,46 +353,22 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
     <div class="header-center">INTERNATIONAL DIGEST</div>
     <div class="header-right">ISSUE 001 · 2026-09-07</div>
   </header>
-  <nav class="section-nav" aria-label="sections">
-    <a href="#technology"><span class="zh">01 科技</span><span class="en">TECHNOLOGY</span></a>
+  <nav class="section-nav" aria-label="sections"><a href="#technology"><span class="zh">01 科技</span><span class="en">TECHNOLOGY</span></a>
 <a href="#politics"><span class="zh">02 时政</span><span class="en">POLITICS</span></a>
 <a href="#finance"><span class="zh">03 财经</span><span class="en">FINANCE</span></a>
-<a href="#markets"><span class="zh">04 市场</span><span class="en">MARKETS</span></a>
-  </nav>
+<a href="#markets"><span class="zh">04 市场</span><span class="en">MARKETS</span></a></nav>
 </div>
-
 <aside class="archive-drawer" id="archive-drawer" aria-label="期刊归档">
-  <div class="drawer-head">
-    <div>
-      <div class="drawer-kicker">ARCHIVE</div>
-      <div class="drawer-title">期刊归档</div>
-    </div>
-    <a class="drawer-close" href="#page-top" aria-label="关闭期刊归档">×</a>
-  </div>
-  <div class="archive-list">
-<section><h2 class="archive-year">2026</h2>
+  <div class="drawer-head"><div><div class="drawer-kicker">ARCHIVE</div><div class="drawer-title">期刊归档</div></div><a class="drawer-close" href="#page-top" aria-label="关闭期刊归档">×</a></div>
+  <div class="archive-list"><section><h2 class="archive-year">2026</h2>
           <ul class="archive-dates"><li><a href="#page-top" aria-current="page">09.07</a></li></ul></section>
-          <noscript>完整归档导航需要启用 JavaScript。</noscript>
-</div>
+          <noscript>完整归档导航需要启用 JavaScript。</noscript></div>
 </aside>
 <a class="archive-overlay" href="#page-top" aria-label="关闭期刊归档" tabindex="-1"></a>
-
 <main>
-  <section class="hero">
-    <div>
-      <p class="eyebrow">International briefing / 7-day edition</p>
-      <h1>一周世界，<br>四个视角。</h1>
-      <p class="hero-deck">聚焦科技、时政、财经与市场。中文摘要保留事实边界，区分市场现状与机构观点，并始终附上原始来源。</p>
-    </div>
-    <dl class="hero-side">
-      <div class="fact"><dt>Observation window</dt><dd>2026-08-31 — 2026-09-07</dd></div>
-      <div class="fact"><dt>News stories</dt><dd>15</dd></div>
-      <div class="fact"><dt>News primary sources</dt><dd>15/15</dd></div>
-      <div class="fact"><dt>News distinct sources</dt><dd>13</dd></div>
-      <div class="fact"><dt>Market sections</dt><dd>3</dd></div><div class="fact"><dt>Institutional views</dt><dd>3</dd></div>
-    </dl>
+  <section class="hero"><div><p class="eyebrow">International briefing / 7-day edition</p><h1>一周世界，<br>四个视角。</h1><p class="hero-deck">聚焦科技、时政、财经与市场。中文摘要保留事实边界，明确机构观点归属，并始终附上原始来源。</p></div>
+    <dl class="hero-side"><div class="fact"><dt>Observation window</dt><dd>2026-08-31 — 2026-09-07</dd></div><div class="fact"><dt>News stories</dt><dd>15</dd></div><div class="fact"><dt>News primary sources</dt><dd>15/15</dd></div><div class="fact"><dt>News distinct sources</dt><dd>13</dd></div><div class="fact"><dt>Market sections</dt><dd>3</dd></div><div class="fact"><dt>Institutional views</dt><dd>7</dd></div></dl>
   </section>
-
   <section class="news-section" id="technology">
       <div class="section-rule"></div>
       <header class="section-header">
@@ -683,133 +496,69 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
         <div class="section-count">03 MARKETS</div>
       </header><section class="market-report" id="market-us_equities">
           <h3 class="market-title">美国股市</h3>
-          <article class="story lead-story market-snapshot">
-            <div class="story-kicker"><span>US EQUITIES</span><span class="dot">•</span><span>PRIMARY DATA</span></div>
-            <h4>市场现状</h4>
-            <div class="story-meta">截至 <time datetime="2026-09-04">2026-09-04</time></div>
-            <p class="story-summary">截至9月4日，S&amp;P 500价格指数报7,718.60点，9月至今上涨0.42%，年初至今上涨12.75%，过去一年上涨18.71%。S&amp;P Dow Jones Indices说明该指数由500家美国大型上市公司组成，覆盖约80%的可投资市值，可作为美国大型股市场的核心宽基指标。</p>
-            <div class="snapshot-sources"><span class="story-kicker">一手数据来源</span><ul><li><a href="https://www.spglobal.com/spdji/en/indices/equity/sp-500/" target="_blank" rel="noopener noreferrer">S&amp;P Dow Jones Indices · S&amp;P 500 ↗</a></li></ul></div>
-          </article>
-          <h4 class="views-heading">机构观点 <span>INSTITUTIONAL VIEWS</span></h4>
-          <div class="secondary-grid"><article class="story institutional-view">
-              <div class="story-kicker"><span>Goldman Sachs</span><span class="dot">•</span><span>INSTITUTIONAL ANALYSIS</span></div>
-              <h4>Why US Equity Returns Are Broadening Beyond AI Stocks</h4>
-              <div class="story-meta"><span>Goldman Sachs</span><time datetime="2026-08-21">2026-08-21</time><span>回溯分析（观察窗口前）</span></div>
-              <p class="story-summary">Goldman Sachs的Shawn Tuteja认为，美国股票回报正在从少数AI相关公司向更广泛行业扩散。他指出，标普500的11个行业中有9个盈利表现强劲，而AI相关主题的波动仍然较高；油价、长期债券收益率以及美联储政策仍是影响这种市场扩散能否延续的重要因素。</p>
-              <a class="source-link" href="https://www.goldmansachs.com/insights/the-markets/why-us-equity-returns-are-broadening-beyond-ai-stocks" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
-            </article></div>
-        </section><section class="market-report" id="market-china_equities">
-          <h3 class="market-title">中国股市</h3>
-          <article class="story lead-story market-snapshot">
-            <div class="story-kicker"><span>CHINA EQUITIES</span><span class="dot">•</span><span>PRIMARY DATA</span></div>
-            <h4>市场现状</h4>
-            <div class="story-meta">截至 <time datetime="2026-08-31">2026-08-31</time></div>
-            <p class="story-summary">截至8月31日，S&amp;P China A 300价格指数过去1个月上涨1.58%，过去3个月下跌6.78%，年初至今上涨0.62%，过去一年上涨4.65%。S&amp;P Dow Jones Indices说明该指数由沪深两市300只规模较大且流动性较高的A股组成；本期以这一可直接核实的月末宽基数据作为中国A股市场快照。</p>
-            <div class="snapshot-sources"><span class="story-kicker">一手数据来源</span><ul><li><a href="https://www.spglobal.com/spdji/en/indices/equity/sp-china-a-300-index/" target="_blank" rel="noopener noreferrer">S&amp;P Dow Jones Indices · S&amp;P China A 300 Index ↗</a></li></ul></div>
-          </article>
           <h4 class="views-heading">机构观点 <span>INSTITUTIONAL VIEWS</span></h4>
           <div class="secondary-grid"><article class="story institutional-view">
               <div class="story-kicker"><span>UBS CIO</span><span class="dot">•</span><span>INSTITUTIONAL ANALYSIS</span></div>
-              <h4>Looking beyond the obvious in stocks</h4>
-              <div class="story-meta"><span>UBS CIO</span><time datetime="2026-08-19">2026-08-19</time><span>回溯分析（观察窗口前）</span></div>
-              <p class="story-summary">UBS CIO认为全球股票上涨正在从美国和AI主题向其他地区扩散，并对亚洲（日本除外）保持积极观点。就中国而言，UBS表示仍对中国内地股票持建设性看法，并偏好A股胜于H股；其判断同时强调应通过更广泛的地区和行业配置降低市场集中风险。</p>
-              <a class="source-link" href="https://www.ubs.com/global/en/wealthmanagement/insights/marketnews/article.3655459.html" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+              <h4>What a more hawkish Fed means for investors</h4>
+              <div class="story-meta"><span>UBS CIO</span><time datetime="2026-09-04">2026-09-04</time></div>
+              <p class="story-summary">UBS CIO认为，美联储是否加息本身并不是判断美股前景的唯一关键，更重要的是加息发生时的增长和盈利背景。如果利率上升伴随AI相关资本开支、就业和企业利润保持强劲，股票市场仍可能维持较有支撑的环境；相反，如果通胀黏性与增长疲弱同时出现，紧缩政策对股票的压力会明显增大。UBS因此继续关注企业盈利、AI投资和经济韧性，同时把更高利率及增长放缓视为主要风险。</p>
+              <a class="source-link" href="https://www.ubs.com/global/en/wealthmanagement/insights/chief-investment-office/house-view/daily/2026/latest-04092026.html" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+            </article><article class="story institutional-view">
+              <div class="story-kicker"><span>Standard Chartered CIO</span><span class="dot">•</span><span>INSTITUTIONAL ANALYSIS</span></div>
+              <h4>Rising risk of a Fed rate hike</h4>
+              <div class="story-meta"><span>Standard Chartered CIO</span><time datetime="2026-09-04">2026-09-04</time></div>
+              <p class="story-summary">渣打首席投资办公室认为，美联储主席Warsh近期的鹰派表态提高了年内、甚至9月加息的可能性，但其基准判断仍是后续通胀有望随关税和高油价影响消退而逐步回落，因此连续多次加息的空间有限。该机构认为，如果加息属于在经济和企业盈利仍具韧性背景下的“防御性”紧缩，对股票市场的冲击可能较为有限；其对美股的主要支撑因素仍是盈利前景，而风险集中在政策和利率波动。</p>
+              <a class="source-link" href="https://www.sc.com/ke/market-outlook/weekly-market-view-4-9-2026/?mvog=1" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+            </article></div>
+        </section><section class="market-report" id="market-china_equities">
+          <h3 class="market-title">中国股市</h3>
+          <h4 class="views-heading">机构观点 <span>INSTITUTIONAL VIEWS</span></h4>
+          <div class="secondary-grid"><article class="story institutional-view">
+              <div class="story-kicker"><span>HSBC Private Bank and Premier Wealth</span><span class="dot">•</span><span>INSTITUTIONAL ANALYSIS</span></div>
+              <h4>Investment Outlook: HSBC Perspectives Q4 2026</h4>
+              <div class="story-meta"><span>HSBC Private Bank and Premier Wealth</span><time datetime="2026-09-03">2026-09-03</time></div>
+              <p class="story-summary">汇丰私人银行在第四季度展望中继续对中国内地股票持积极配置观点，认为中国在AI、先进制造、绿色技术、电动车和生物科技等领域的创新能力构成重要支撑。其分析同时指出，中国及亚洲多地的公司治理改革正在改善资本回报，预计亚洲整体股本回报率未来仍有上升空间；不过文章讨论的是更广泛的亚洲与中国股票机会，并非只针对A股。</p>
+              <a class="source-link" href="https://www.hsbc.com.hk/wealth/insights/market-outlook/investment-outlook/accelerating-ai-adoption-powers-further-upside-for-global-markets/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+            </article><article class="story institutional-view">
+              <div class="story-kicker"><span>UOB Kay Hian</span><span class="dot">•</span><span>INSTITUTIONAL ANALYSIS</span></div>
+              <h4>Strategy - Alpha Picks: September Conviction Calls</h4>
+              <div class="story-meta"><span>UOB Kay Hian</span><time datetime="2026-09-03">2026-09-03</time></div>
+              <p class="story-summary">大华继显研究指出，中国股票在8月进入整理阶段，恒生指数和MSCI中国指数分别环比下跌约1.2%和0.4%，但仍保留了7月的大部分涨幅。该机构认为近期缺乏足以推动整个市场重新定价的单一重大催化剂，但对科技、媒体与通信以及IT硬件相关板块的基本面仍保持积极判断。该报告覆盖香港及中国股票市场，因此其结论不应被理解为仅针对A股。</p>
+              <a class="source-link" href="https://uobkh.com.sg/en/research/gc-strategy-alpha-picks-03092026" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
             </article></div>
         </section><section class="market-report" id="market-gold">
           <h3 class="market-title">国际金价</h3>
-          <article class="story lead-story market-snapshot">
-            <div class="story-kicker"><span>GOLD</span><span class="dot">•</span><span>PRIMARY DATA</span></div>
-            <h4>市场现状</h4>
-            <div class="story-meta">截至 <time datetime="2026-09-04">2026-09-04</time></div>
-            <p class="story-summary">截至9月4日，上海黄金交易所沪纽金合约参考价格表列示的COMEX期货亚洲标记价格为4,481.7美元/盎司；NYAuTN06和NYAuTN12参考结算价分别为4,624.6和4,516.7美元/盎司。交易所说明其中COMEX信息来自延时数据，因此这些数字仅作为该交易日国际黄金市场的官方参考快照。</p>
-            <div class="snapshot-sources"><span class="story-kicker">一手数据来源</span><ul><li><a href="https://www.sge.com.cn/h5_zdygz/pdfxq/10007545?h=3&amp;topic=xjjg" target="_blank" rel="noopener noreferrer">Shanghai Gold Exchange · 沪纽金合约2026年09月04日参考价格表 ↗</a></li></ul></div>
-          </article>
           <h4 class="views-heading">机构观点 <span>INSTITUTIONAL VIEWS</span></h4>
           <div class="secondary-grid"><article class="story institutional-view">
+              <div class="story-kicker"><span>Goldman Sachs</span><span class="dot">•</span><span>INSTITUTIONAL ANALYSIS</span></div>
+              <h4>Why Gold Is Expected to Rise to Record Highs</h4>
+              <div class="story-meta"><span>Goldman Sachs</span><time datetime="2026-09-04">2026-09-04</time></div>
+              <p class="story-summary">高盛的Tony Kim认为，美国利率路径不确定以及伊朗战争造成的市场扰动使黄金此前的上涨进入较长时间的停顿，但持续的央行购金仍可能成为推动金价重新走强的重要结构性力量。他还指出，市场对财政可持续性的担忧可能增加黄金作为非主权储值资产的吸引力；与此同时，亚洲投资需求减弱是这一判断面临的重要下行风险。</p>
+              <a class="source-link" href="https://www.goldmansachs.com/insights/the-markets/why-gold-is-expected-to-rise-to-record-highs" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+            </article><article class="story institutional-view">
+              <div class="story-kicker"><span>UBS CIO</span><span class="dot">•</span><span>INSTITUTIONAL ANALYSIS</span></div>
+              <h4>What can commodities add to a portfolio?</h4>
+              <div class="story-meta"><span>UBS CIO</span><time datetime="2026-09-02">2026-09-02</time></div>
+              <p class="story-summary">UBS CIO指出，黄金在8月大约上涨10%，此前受到通胀意外、地缘政治不确定性以及主要经济体高财政赤字背景下货币贬值担忧的支持。该机构认为，黄金仍具有对冲通胀和地缘风险的作用，但在经历快速上涨后，投资者对贵金属与更广泛大宗商品之间的相对配置需求可能发生变化；其文章同时强调能源扰动和供给约束会影响整个商品资产类别的表现。</p>
+              <a class="source-link" href="https://www.ubs.com/global/en/wealthmanagement/insights/marketnews/article.3701819.html" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+            </article><article class="story institutional-view">
               <div class="story-kicker"><span>World Gold Council</span><span class="dot">•</span><span>INSTITUTIONAL ANALYSIS</span></div>
               <h4>Weekly Markets Monitor - Talking tough</h4>
               <div class="story-meta"><span>World Gold Council</span><time datetime="2026-09-01">2026-09-01</time></div>
-              <p class="story-summary">World Gold Council指出，美联储主席Warsh在Jackson Hole发表偏鹰派言论后，短端美债收益率明显上行、市场重新评估未来紧缩路径，黄金随之跌破200日移动平均线；较高的期权仓位也增加了短期压力。该机构将利率预期变化视为当时黄金走势的重要驱动因素之一。</p>
+              <p class="story-summary">世界黄金协会认为，美联储主席Warsh在Jackson Hole释放更鹰派的政策信号后，市场迅速提高了对进一步紧缩的预期，短端美债收益率上升并推动黄金跌破200日移动平均线；偏高的期权仓位也增加了短期价格压力。该机构同时指出，当周地缘政治、伊朗制裁、贸易摩擦以及美国通胀黏性仍在影响黄金市场，因此利率预期与避险需求之间的拉扯仍是主要驱动因素。</p>
               <a class="source-link" href="https://www.gold.org/goldhub/gold-focus/2026/09/weekly-markets-monitor-talking-tough" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
             </article></div>
         </section></section>
 </main>
-
-<footer class="footer">
-  <span>NEWSROOM · AI-assisted international news digest</span>
-  <span>© 2026 alwinecor</span>
-</footer>
-
-<script data-archive>
-(() => {
+<footer class="footer"><span>NEWSROOM · AI-assisted international news digest</span><span>© 2026 alwinecor</span></footer>
+<script data-archive>(() => {
   const drawer = document.querySelector('#archive-drawer');
   const menu = document.querySelector('.menu-button');
   const current = document.body.dataset.issue;
-  const archiveURL = new URL(
-    /\/reports\/\d{4}-\d{2}-\d{2}\.html$/.test(location.pathname)
-      ? '../archive.json' : './archive.json', location.href);
-
-  function syncDrawer() {
-    const open = location.hash === '#archive-drawer';
-    drawer.inert = !open;
-    menu.setAttribute('aria-expanded', String(open));
-    document.body.style.overflow = open ? 'hidden' : '';
-    if (open) drawer.querySelector('.drawer-close').focus({preventScroll: true});
-  }
-  addEventListener('hashchange', syncDrawer);
-  syncDrawer();
-  document.addEventListener('keydown', event => {
-    if (location.hash !== '#archive-drawer') return;
-    if (event.key === 'Escape') {
-      location.hash = 'page-top';
-      menu.focus({preventScroll: true});
-    }
-    if (event.key === 'Tab') {
-      const links = [...drawer.querySelectorAll('a[href]')];
-      const first = links[0], last = links[links.length - 1];
-      if (event.shiftKey && document.activeElement === first) {
-        event.preventDefault(); last.focus();
-      } else if (!event.shiftKey && document.activeElement === last) {
-        event.preventDefault(); first.focus();
-      }
-    }
-  });
-
-  async function refreshArchive() {
-    try {
-      const response = await fetch(archiveURL, {cache: 'no-store'});
-      if (!response.ok) throw new Error('Archive unavailable');
-      const dates = await response.json();
-      if (!Array.isArray(dates) || !dates.every(day => typeof day === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(day))) {
-        throw new Error('Invalid archive');
-      }
-      const fragment = document.createDocumentFragment();
-      let year, list;
-      for (const day of [...new Set(dates)].sort().reverse()) {
-        if (year !== day.slice(0, 4)) {
-          year = day.slice(0, 4);
-          const section = document.createElement('section');
-          const heading = document.createElement('h2');
-          heading.className = 'archive-year'; heading.textContent = year;
-          list = document.createElement('ul'); list.className = 'archive-dates';
-          section.append(heading, list); fragment.append(section);
-        }
-        const li = document.createElement('li');
-        const link = document.createElement('a');
-        link.href = new URL(`reports/${day}.html`, archiveURL).href;
-        link.textContent = day.slice(5).replace('-', '.');
-        if (day === current) link.setAttribute('aria-current', 'page');
-        li.append(link); list.append(li);
-      }
-      document.querySelector('.archive-list').replaceChildren(fragment);
-    } catch {
-      // The current-issue fallback remains usable when offline or opened via file://.
-    }
-  }
-  refreshArchive();
-  addEventListener('pageshow', refreshArchive);
-})();
-
-</script>
-</body>
-</html>
+  const archiveURL = new URL(/\/reports\/\d{4}-\d{2}-\d{2}\.html$/.test(location.pathname) ? '../archive.json' : './archive.json', location.href);
+  function syncDrawer(){const open=location.hash==='#archive-drawer';drawer.inert=!open;menu.setAttribute('aria-expanded',String(open));document.body.style.overflow=open?'hidden':'';}
+  addEventListener('hashchange',syncDrawer);syncDrawer();
+  async function refreshArchive(){try{const response=await fetch(archiveURL,{cache:'no-store'});if(!response.ok)throw new Error();const dates=await response.json();const fragment=document.createDocumentFragment();let year,list;for(const day of [...new Set(dates)].sort().reverse()){if(year!==day.slice(0,4)){year=day.slice(0,4);const section=document.createElement('section');const heading=document.createElement('h2');heading.className='archive-year';heading.textContent=year;list=document.createElement('ul');list.className='archive-dates';section.append(heading,list);fragment.append(section);}const li=document.createElement('li');const link=document.createElement('a');link.href=new URL(`reports/${day}.html`,archiveURL).href;link.textContent=day.slice(5).replace('-','.');if(day===current)link.setAttribute('aria-current','page');li.append(link);list.append(li);}document.querySelector('.archive-list').replaceChildren(fragment);}catch{}}
+  refreshArchive();addEventListener('pageshow',refreshArchive);
+})();</script>
+</body></html>

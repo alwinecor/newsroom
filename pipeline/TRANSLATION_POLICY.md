@@ -13,4 +13,4 @@
 9. 不添加模型自己的分析、推测或投资建议。
 10. 每条摘要建议约 80–250 个中文字符；schema 不严格限制长度。
 
-Markets 补充：snapshot.summary_zh 描述一手数据支持的市场现状，并保留指标口径及截至日期；institutional_views[].summary_zh 概括该机构自身判断、理由和风险，明确归属，不能把预测改成事实或模型建议。机构文章的 original_title 及 snapshot 来源的 source_title 均保留原文。
+Markets 补充：institutional_views[].summary_zh 概括该机构自身判断、理由和风险，明确归属，不能把预测改成事实或模型建议。机构文章的 original_title 保留原文。

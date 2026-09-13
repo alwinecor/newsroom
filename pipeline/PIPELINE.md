@@ -5,7 +5,7 @@
 ## 1. 确定本期
 
 - issue_date 为本次约定的周一日期，格式 YYYY-MM-DD。默认采用运行时最近一个已到达的 UTC 周一；延迟执行仍使用该期日期。
-- observation window 为 UTC `[issue_date - 7 天, issue_date)`，起始日包含、结束日不包含；四个模块完全一致。published_at 使用来源发布时间转换为 UTC 后的日期，不使用检索日期。Markets 的 snapshot.as_of 必须在观察窗口内；机构观点允许按 MODULE.md 使用 issue_date 前 30 天内的文章，不得改写真实发布日期。
+- observation window 为 UTC `[issue_date - 7 天, issue_date)`，起始日包含、结束日不包含；四个模块完全一致。published_at 使用来源发布时间转换为 UTC 后的日期，不使用检索日期。
 - 目标目录：data/issues/YYYY-MM-DD/。历史期数不得修改。若本期已存在，不覆盖、不追加；报告已存在并停止，任何修订由用户另行授权。
 
 ## 2. 读取规范
@@ -25,10 +25,9 @@
 
 - technology、politics、finance 各 5–8 条；不得为凑数虚构事实、日期、来源或链接。找不到足够可靠新闻时报告失败，不提交不完整期数。
 - 前三个新闻模块将同一事件的多篇报道合并为一个 item；保留最可靠、最直接的原始链接。跨模块允许同一事件，不做跨模块语义去重。
-- markets 按其 MODULE.md 与 schema.json 固定生成 us_equities、china_equities、gold。每个市场包含一个 snapshot（1–3 个一手来源）及 1–2 条 institutional_views，不使用新闻 items 结构或 5–8 条规则。
-- Snapshot 只依据 primary sources 描述观察窗口内最新可用交易日的市场现状，来源保存 source_name、source_title、url，不强制 published_at。
-- 机构观点必须直接阅读机构公开原文，优先观察窗口内发布；不足时才回溯到 `[issue_date - 30 天, issue_date)`。保留 institution、original_title、published_at、url、summary_zh，明确观点归属，不改写成事实或合成市场共识，不添加模型预测或投资建议。
-- Markets 在每个市场的 snapshot.sources 和 institutional_views 各自内部去重；同一来源或分析实质涉及多个市场时允许跨市场引用。新闻模块的 primary/media 标签不套用到机构观点。
+- markets 按其 MODULE.md 与 schema.json 固定生成 us_equities、china_equities、gold。每个市场仅包含 2–3 条 institutional_views，不使用新闻 items 结构或 5–8 条规则。
+- 机构观点必须直接阅读权威机构公开原文，选择观察窗口内最新分析，按发布日期倒序输出。任一市场不足 2 条时报告失败，不向窗口外回溯凑数。保留 institution、original_title、published_at、url、summary_zh，明确观点归属，不改写成事实或合成市场共识，不添加模型预测或投资建议。
+- Markets 在每个市场的 institutional_views 内部去重；同一分析实质涉及多个市场时允许跨市场引用。新闻模块的 primary/media 标签不套用到机构观点。
 - 严格使用对应 schema 的字段和类型，保留原始标题和 URL，不添加 Markdown 代码围栏。
 - 分别写入 data/issues/YYYY-MM-DD/technology.json、politics.json、finance.json、markets.json。三个市场全部成功才算 markets 完成，四个模块全部成功才提交本期。
 
