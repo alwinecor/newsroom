@@ -6,8 +6,30 @@
     /\/reports\/\d{4}-\d{2}-\d{2}\.html$/.test(location.pathname)
       ? '../archive.json' : './archive.json', location.href);
 
+  let returnURL = location.hash === '#archive-drawer'
+    ? location.href.replace(/#.*$/, '') : location.href;
+
+  function closeDrawer(event) {
+    event.preventDefault();
+    history.replaceState(history.state, '', returnURL);
+    syncDrawer();
+    menu.focus({preventScroll: true});
+  }
+
+  menu.addEventListener('click', event => {
+    event.preventDefault();
+    returnURL = location.href;
+    history.replaceState(history.state, '', '#archive-drawer');
+    syncDrawer();
+  });
+  drawer.querySelector('.drawer-close').addEventListener('click', closeDrawer);
+  document.querySelector('.archive-overlay').addEventListener('click', closeDrawer);
+
+  document.body.classList.add('archive-enhanced');
+
   function syncDrawer() {
     const open = location.hash === '#archive-drawer';
+    drawer.classList.toggle('is-open', open);
     drawer.inert = !open;
     menu.setAttribute('aria-expanded', String(open));
     document.body.style.overflow = open ? 'hidden' : '';
@@ -18,8 +40,7 @@
   document.addEventListener('keydown', event => {
     if (location.hash !== '#archive-drawer') return;
     if (event.key === 'Escape') {
-      location.hash = 'page-top';
-      menu.focus({preventScroll: true});
+      closeDrawer(event);
     }
     if (event.key === 'Tab') {
       const links = [...drawer.querySelectorAll('a[href]')];

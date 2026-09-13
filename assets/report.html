@@ -13,12 +13,9 @@
       <a class="menu-button" href="#archive-drawer" aria-label="打开期刊归档" aria-controls="archive-drawer"><span class="menu-icon" aria-hidden="true"></span></a>
       <div class="brand"><a href="#page-top" aria-label="返回页面顶部">NEWSROOM</a></div>
     </div>
-    <div class="header-center">INTERNATIONAL DIGEST</div>
+    <div class="header-center">WEEKLY INTERNATIONAL DIGEST</div>
     <div class="header-right">ISSUE {{number}} · {{date}}</div>
   </header>
-  <nav class="section-nav" aria-label="sections">
-    {{section_nav}}
-  </nav>
 </div>
 
 <aside class="archive-drawer" id="archive-drawer" aria-label="期刊归档">
@@ -44,12 +41,15 @@
     </div>
     <dl class="hero-side">
       <div class="fact"><dt>Observation window</dt><dd>{{window}}</dd></div>
-      <div class="fact"><dt>{{stories_label}}</dt><dd>{{count}}</dd></div>
-      <div class="fact"><dt>{{primary_label}}</dt><dd>{{primary}}/{{count}}</dd></div>
-      <div class="fact"><dt>{{sources_label}}</dt><dd>{{sources}}</dd></div>
-      {{market_facts}}
+      <div class="fact"><dt>Published · UTC</dt><dd>{{date}} · 06:00</dd></div>
+      <div class="fact"><dt>Berlin · 柏林</dt><dd>{{date}} · 08:00</dd></div>
+      <div class="fact"><dt>Beijing · 北京</dt><dd>{{date}} · 14:00</dd></div>
     </dl>
   </section>
+
+  <nav class="section-nav" aria-label="sections">
+    {{section_nav}}
+  </nav>
 
   {{sections}}
 </main>
@@ -61,6 +61,21 @@
 
 <script data-archive>
 {{archive_script}}
+</script>
+<script data-navigation>
+(() => {
+  const root = document.documentElement;
+  const masthead = document.querySelector('.top-shell');
+  const nav = document.querySelector('.section-nav');
+  const syncHeights = () => {
+    root.style.setProperty('--masthead-height', `${masthead.getBoundingClientRect().height}px`);
+    root.style.setProperty('--section-nav-height', `${nav.getBoundingClientRect().height}px`);
+  };
+  syncHeights();
+  const observer = new ResizeObserver(syncHeights);
+  observer.observe(masthead);
+  observer.observe(nav);
+})();
 </script>
 </body>
 </html>

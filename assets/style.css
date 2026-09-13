@@ -6,9 +6,11 @@
   --soft-line:#b8b2a7;
   --accent:#9d241e;
   --page:1320px;
+  --masthead-height:88px;
+  --section-nav-height:62px;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scrollbar-gutter:stable}
 body{
   margin:0;
   background:var(--paper);
@@ -269,7 +271,7 @@ main{max-width:var(--page);margin:0 auto;padding:0 28px 80px}
   letter-spacing:.04em;
 }
 
-/* --- Sidebar + two-level sticky navigation preview --- */
+/* --- Sidebar + two-level sticky navigation --- */
 .top-shell{
   position:sticky;
   top:0;
@@ -282,15 +284,7 @@ main{max-width:var(--page);margin:0 auto;padding:0 28px 80px}
   max-width:var(--page);
   border-bottom:1px solid var(--soft-line);
 }
-.top-shell .section-nav{
-  position:static;
-  max-width:var(--page);
-  margin:0 auto;
-  padding:0 28px;
-  border-bottom:0;
-  background:transparent;
-  backdrop-filter:none;
-}
+main > .section-nav{top:var(--masthead-height)}
 .header-left{
   display:flex;
   align-items:center;
@@ -347,8 +341,10 @@ main{max-width:var(--page);margin:0 auto;padding:0 28px 80px}
   display:flex;
   flex-direction:column;
 }
-#archive-drawer:target{transform:translateX(0)}
-#archive-drawer:target + .archive-overlay{
+body:not(.archive-enhanced) #archive-drawer:target,
+#archive-drawer.is-open{transform:translateX(0)}
+body:not(.archive-enhanced) #archive-drawer:target + .archive-overlay,
+#archive-drawer.is-open + .archive-overlay{
   opacity:1;
   pointer-events:auto;
 }
@@ -426,11 +422,11 @@ main{max-width:var(--page);margin:0 auto;padding:0 28px 80px}
   font-weight:800;
   color:var(--accent);
 }
-.news-section{scroll-margin-top:124px}
+.news-section{scroll-margin-top:calc(var(--masthead-height) + var(--section-nav-height) + 12px)}
 
 @media(max-width:900px){
   .top-shell .site-header{grid-template-columns:1fr auto;padding:14px 18px 12px}
-  .top-shell .section-nav{padding:0 18px}
+  :root{--masthead-height:68px}
   .menu-button{width:30px;height:30px}
   .header-left{gap:10px}
 }
@@ -477,7 +473,8 @@ main{max-width:var(--page);margin:0 auto;padding:0 28px 80px}
   .story h3{font-size:25px}
 }
 .archive-drawer{visibility:hidden}
-#archive-drawer:target{visibility:visible}
+body:not(.archive-enhanced) #archive-drawer:target,
+#archive-drawer.is-open{visibility:visible}
 .story h3,.story-summary{overflow-wrap:anywhere}
 a:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.archive-drawer,.archive-overlay{transition:none}}
