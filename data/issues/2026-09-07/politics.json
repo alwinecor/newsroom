@@ -1,57 +1,80 @@
 {
   "module": "politics",
   "issue_date": "2026-09-07",
-  "window": {"start": "2026-08-31", "end": "2026-09-07"},
+  "window": {
+    "start": "2026-08-31",
+    "end": "2026-09-07"
+  },
   "items": [
     {
       "id": "politics-001",
+      "category": "德国政治",
+      "original_title": "Far-right Alternative for Germany party wins big in regional election but falls short of majority",
+      "source_name": "Associated Press",
+      "source_level": "media",
+      "published_at": "2026-09-06",
+      "url": "https://apnews.com/article/c538060710a2495c72425b6468df0d40",
+      "summary_zh": "德国选择党 AfD 在萨克森-安哈尔特州议会选举中获得 43.8% 选票和 83 席中的 39 席，成为第一大党，但距离单独执政所需多数仍差 3 席；总理 Friedrich Merz 所属 CDU 仅获 17.2%。主流政党继续拒绝与 AfD 合作，因此新政府如何组成仍不确定。该结果是 AfD 建党以来最强的州级选举表现之一，并对联邦政府构成明显政治压力。"
+    },
+    {
+      "id": "politics-002",
+      "category": "俄乌战争与外交",
+      "original_title": "Witkoff, Kushner heading abroad to discuss Ukraine peace, Trump says",
+      "source_name": "Reuters",
+      "source_level": "media",
+      "published_at": "2026-09-04",
+      "url": "https://www.reuters.com/world/europe/trump-says-witkoff-kushner-heading-russia-ukraine-present-peace-proposal-2026-09-04/",
+      "summary_zh": "美国总统 Donald Trump 表示，特使 Steve Witkoff 与 Jared Kushner 将赴海外推动俄乌和平谈判，并称美方已有一项新的“具体方案”，但未公开内容。乌克兰总统 Volodymyr Zelenskiy 称两人计划在访问莫斯科后于周日抵达乌克兰；Reuters 指出行程仍可能调整，而此前数月的谈判基本陷入停滞，俄乌战场行动也仍在继续。"
+    },
+    {
+      "id": "politics-003",
+      "category": "伊朗核问题",
+      "original_title": "US and allies push IAEA board to report Iran to UN Security Council, diplomats say",
+      "source_name": "Reuters",
+      "source_level": "media",
+      "published_at": "2026-09-04",
+      "url": "https://www.reuters.com/world/europe/us-allies-want-iaea-board-report-iran-un-security-council-diplomats-say-2026-09-04/",
+      "summary_zh": "据 Reuters 引述外交官和决议草案，美国、英国、法国与德国准备推动国际原子能机构理事会把伊朗核问题报告联合国安理会，这将是约 20 年来首次。草案要求伊朗履行保障监督义务，并恢复对受袭核设施及高丰度浓缩铀库存的充分核查；决议预计较可能通过，但俄罗斯和中国拥有安理会否决权，后续是否形成实质行动仍不确定。"
+    },
+    {
+      "id": "politics-004",
+      "category": "乌克兰核安全",
+      "original_title": "Brokered ceasefire takes effect for repairs at Zaporizhzhia nuclear plant",
+      "source_name": "Reuters",
+      "source_level": "media",
+      "published_at": "2026-09-05",
+      "url": "https://www.reuters.com/business/energy/brokered-ceasefire-takes-effect-repairs-zaporizhzhia-nuclear-plant-2026-09-05/",
+      "summary_zh": "国际原子能机构斡旋的局部停火在扎波罗热核电站周边生效，以便维修受损输电线路并恢复外部供电。该核电站自 8 月 20 日起依靠应急柴油发电机维持关键安全系统冷却，IAEA 警告燃料储备下降可能带来全站断电风险。维修人员需先完成相关区域排雷；俄乌双方长期互相指责对方危及核安全，停火能否带来稳定供电仍待观察。"
+    },
+    {
+      "id": "politics-005",
       "category": "欧洲安全与外交",
       "original_title": "Statement by Foreign Minister Wadephul at a joint press conference with Interior Minister Dobrindt",
       "source_name": "Federal Foreign Office, Germany",
       "source_level": "primary",
       "published_at": "2026-09-01",
       "url": "https://www.auswaertiges-amt.de/en/newsroom/news/2800600-2800600",
-      "summary_zh": "德国外长瓦德富尔宣布召见俄罗斯大使，并将于 9 月 18 日关闭俄罗斯驻波恩总领馆、终止柏林俄罗斯之家的租约，同时提出新的欧盟制裁名单并收紧俄公民入境检查。德方称这些措施回应莱比锡未遂袭击，并指责俄罗斯负有责任；有关袭击归属为德国政府的指称。"
+      "summary_zh": "德国外长 Johann Wadephul 宣布召见俄罗斯大使，并将于 9 月 18 日关闭俄罗斯驻波恩总领馆、终止柏林俄罗斯之家的租约，同时提出新的欧盟制裁名单、收紧俄罗斯公民入境检查并加大对“影子船队”的压力。德方把这些措施与莱比锡未遂袭击及更广泛的俄罗斯混合威胁联系起来；有关袭击责任与俄罗斯行为的归属属于德国政府的指称。"
     },
     {
-      "id": "politics-002",
+      "id": "politics-006",
+      "category": "美中关系与人工智能安全",
+      "original_title": "US, China gear up for mid-September AI safety talks",
+      "source_name": "Reuters",
+      "source_level": "media",
+      "published_at": "2026-09-04",
+      "url": "https://www.reuters.com/legal/litigation/us-china-gear-up-mid-september-ai-safety-dialogue-2026-09-04/",
+      "summary_zh": "Reuters 引述知情人士称，美国与中国正筹备 9 月中旬举行以 AI 安全风险为主题的双边对话，美方拟讨论高级 AI、AI 驱动网络攻击监测及实验室间信息共享等议题；美方一名官员同时表示，目前尚无已经确定的 9 月中旬 AI 会议。相关议程、地点和中方代表仍在磋商，这一渠道被视为 9 月 24 日美中领导人会晤前可能推进的议题之一。"
+    },
+    {
+      "id": "politics-007",
       "category": "伊朗相关制裁",
       "original_title": "Treasury Severs Iranian Regime’s Financial Lifelines in Türkiye",
       "source_name": "U.S. Department of the Treasury",
       "source_level": "primary",
       "published_at": "2026-09-04",
       "url": "https://home.treasury.gov/news/press-releases/sb0622/",
-      "summary_zh": "美国财政部宣布制裁土耳其 Golden Global Bank 及其两家子公司，依据第 13902 号行政令冻结相关美国管辖资产，并原则上禁止美国人士与其交易。财政部指称该银行为伊朗伊斯兰革命卫队圣城旅促成数千万美元交易并提供跨境银行渠道；这些交易指控属于美方表述。"
-    },
-    {
-      "id": "politics-003",
-      "category": "欧盟与南高加索",
-      "original_title": "Council backs temporary trade measures to support Armenia",
-      "source_name": "Council of the European Union",
-      "source_level": "primary",
-      "published_at": "2026-09-02",
-      "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/09/02/council-backs-temporary-trade-measures-to-support-armenia/",
-      "summary_zh": "欧盟理事会支持对亚美尼亚实施临时贸易自由化措施，拟覆盖其对欧盟约 80% 的出口，自法规生效起适用两年，以应对俄罗斯近期贸易限制。方案包含保护欧盟生产者的保障措施，并以遵守原产地规则、民主及人权等条件为前提；仍须完成欧洲议会与理事会的正式通过程序。"
-    },
-    {
-      "id": "politics-004",
-      "category": "古巴相关制裁",
-      "original_title": "Cuba Designations; Russia-related Designation Removal; Issuance of Amended Cuba General License",
-      "source_name": "Office of Foreign Assets Control, U.S. Department of the Treasury",
-      "source_level": "primary",
-      "published_at": "2026-09-03",
-      "url": "https://ofac.treasury.gov/recent-actions/20260903",
-      "summary_zh": "美国财政部海外资产控制办公室更新制裁名单，将古巴的 Fidel Ernesto Castro Calis 及五家实体列入，其中包括 Banco Exterior de Cuba 和石油、镍业相关国有企业。同日发布古巴第 4A 号通用许可，授权第三国驻古巴外交和领事机构的相关交易。"
-    },
-    {
-      "id": "politics-005",
-      "category": "欧盟与海湾外交",
-      "original_title": "Second EU-GCC Summit to take place on 24 October in Saudi Arabia",
-      "source_name": "European Council",
-      "source_level": "primary",
-      "published_at": "2026-09-04",
-      "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/09/04/second-eu-gcc-summit-to-take-place-on-24-october-in-saudi-arabia/",
-      "summary_zh": "欧洲理事会宣布，第二届欧盟—海湾合作委员会峰会定于 2026 年 10 月 24 日在沙特阿拉伯举行，欧盟成员国及海合会国家领导人将参加。欧洲理事会主席科斯塔将代表欧方共同主持，欧委会主席冯德莱恩也将出席；科斯塔表示希望深化双方政治对话及和平、安全与繁荣合作。"
+      "summary_zh": "美国财政部海外资产控制办公室宣布制裁土耳其金融机构 Golden Global Bank 及其子公司。财政部称这些机构为伊朗伊斯兰革命卫队圣城旅促成数千万美元交易，并向伊朗方面提供关键的国际代理银行渠道；相关交易和关系为美方指控。被指定实体在美国管辖范围内的财产原则上被冻结，美国人士通常不得与其进行相关交易。"
     }
   ]
 }

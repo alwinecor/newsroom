@@ -4,8 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Newsroom — 2026-09-07</title>
-<style>
-:root{
+<style>:root{
   --paper:#f4f0e7;
   --ink:#11100e;
   --muted:#6d6962;
@@ -275,6 +274,173 @@ main{max-width:var(--page);margin:0 auto;padding:0 28px 80px}
   color:var(--muted);
   letter-spacing:.04em;
 }
+
+/* --- Sidebar + two-level sticky navigation preview --- */
+.top-shell{
+  position:sticky;
+  top:0;
+  z-index:180;
+  background:rgba(244,240,231,.97);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.top-shell .site-header{
+  max-width:var(--page);
+  border-bottom:1px solid var(--soft-line);
+}
+.top-shell .section-nav{
+  position:static;
+  max-width:var(--page);
+  margin:0 auto;
+  padding:0 28px;
+  border-bottom:0;
+  background:transparent;
+  backdrop-filter:none;
+}
+.header-left{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  min-width:0;
+}
+.menu-button{
+  text-decoration:none;
+  appearance:none;
+  border:0;
+  background:transparent;
+  color:var(--ink);
+  width:34px;
+  height:34px;
+  padding:0;
+  cursor:pointer;
+  display:grid;
+  place-items:center;
+}
+.menu-icon,
+.menu-icon::before,
+.menu-icon::after{
+  content:"";
+  display:block;
+  width:20px;
+  height:1.5px;
+  background:currentColor;
+}
+.menu-icon{position:relative}
+.menu-icon::before{position:absolute;top:-6px;left:0}
+.menu-icon::after{position:absolute;top:6px;left:0}
+.menu-button:hover{color:var(--accent)}
+.brand a{text-decoration:none}
+.brand a:hover{color:var(--accent)}
+
+.archive-overlay{
+  position:fixed;
+  inset:0;
+  z-index:240;
+  background:rgba(17,16,14,.28);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .22s ease;
+}
+.archive-drawer{
+  position:fixed;
+  inset:0 auto 0 0;
+  z-index:250;
+  width:min(390px,88vw);
+  background:var(--paper);
+  border-right:1px solid var(--line);
+  transform:translateX(-100%);
+  transition:transform .24s ease;
+  display:flex;
+  flex-direction:column;
+}
+#archive-drawer:target{transform:translateX(0)}
+#archive-drawer:target + .archive-overlay{
+  opacity:1;
+  pointer-events:auto;
+}
+.drawer-head{
+  min-height:78px;
+  padding:20px 24px;
+  border-bottom:2px solid var(--line);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+.drawer-kicker{
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.16em;
+  color:var(--muted);
+  text-transform:uppercase;
+}
+.drawer-title{
+  margin-top:2px;
+  font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;
+  font-size:24px;
+  font-weight:700;
+  letter-spacing:-.03em;
+}
+.drawer-close{
+  text-decoration:none;
+  appearance:none;
+  border:0;
+  background:transparent;
+  color:var(--ink);
+  font-size:28px;
+  line-height:1;
+  cursor:pointer;
+  padding:6px;
+}
+.drawer-close:hover{color:var(--accent)}
+.archive-list{padding:38px 24px 48px;overflow:auto}
+.archive-year{
+  margin:0;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:54px;
+  line-height:.95;
+  font-weight:500;
+  letter-spacing:-.045em;
+  padding-bottom:18px;
+  border-bottom:1px solid var(--line);
+}
+.archive-dates{list-style:none;padding:0;margin:0}
+.archive-dates li{border-bottom:1px solid var(--soft-line)}
+.archive-dates a{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:19px 0;
+  text-decoration:none;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:28px;
+  letter-spacing:-.02em;
+}
+.archive-dates a::after{
+  content:"↗";
+  font-family:Inter,ui-sans-serif,sans-serif;
+  font-size:13px;
+  color:var(--muted);
+}
+.archive-dates a:hover{color:var(--accent)}
+.archive-dates a[aria-current="page"]{color:var(--accent)}
+.archive-dates a[aria-current="page"]::after{
+  content:"CURRENT";
+  font-size:9px;
+  letter-spacing:.14em;
+  font-weight:800;
+  color:var(--accent);
+}
+.news-section{scroll-margin-top:124px}
+
+@media(max-width:900px){
+  .top-shell .site-header{grid-template-columns:1fr auto;padding:14px 18px 12px}
+  .top-shell .section-nav{padding:0 18px}
+  .menu-button{width:30px;height:30px}
+  .header-left{gap:10px}
+}
+
 @media(max-width:900px){
   .site-header{grid-template-columns:1fr auto;padding:18px 18px 14px}
   .header-center{display:none}
@@ -316,31 +482,21 @@ main{max-width:var(--page);margin:0 auto;padding:0 28px 80px}
   .lead-story h3{font-size:32px}
   .story h3{font-size:25px}
 }
-
-
-/* Sidebar + two-level sticky navigation */
-.top-shell{position:sticky;top:0;z-index:180;background:rgba(244,240,231,.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.top-shell .site-header{max-width:var(--page);border-bottom:1px solid var(--soft-line)}
-.top-shell .section-nav{position:static;max-width:var(--page);margin:0 auto;padding:0 28px;border-bottom:0;background:transparent;backdrop-filter:none}
-.header-left{display:flex;align-items:center;gap:14px;min-width:0}
-.menu-button{text-decoration:none;appearance:none;border:0;background:transparent;color:var(--ink);width:34px;height:34px;padding:0;cursor:pointer;display:grid;place-items:center}
-.menu-icon,.menu-icon::before,.menu-icon::after{content:"";display:block;width:20px;height:1.5px;background:currentColor}
-.menu-icon{position:relative}.menu-icon::before{position:absolute;top:-6px;left:0}.menu-icon::after{position:absolute;top:6px;left:0}
-.menu-button:hover{color:var(--accent)}.brand a{text-decoration:none}.brand a:hover{color:var(--accent)}
-.archive-overlay{position:fixed;inset:0;z-index:240;background:rgba(17,16,14,.28);opacity:0;pointer-events:none;transition:opacity .22s ease}
-.archive-drawer{position:fixed;inset:0 auto 0 0;z-index:250;width:min(390px,88vw);background:var(--paper);border-right:1px solid var(--line);transform:translateX(-100%);transition:transform .24s ease;display:flex;flex-direction:column;visibility:hidden}
-#archive-drawer:target{transform:translateX(0);visibility:visible}#archive-drawer:target + .archive-overlay{opacity:1;pointer-events:auto}
-.drawer-head{min-height:78px;padding:20px 24px;border-bottom:2px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:24px}
-.drawer-kicker{font-size:10px;font-weight:800;letter-spacing:.16em;color:var(--muted);text-transform:uppercase}.drawer-title{margin-top:2px;font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;font-size:24px;font-weight:700;letter-spacing:-.03em}
-.drawer-close{text-decoration:none;appearance:none;border:0;background:transparent;color:var(--ink);font-size:28px;line-height:1;cursor:pointer;padding:6px}.drawer-close:hover{color:var(--accent)}
-.archive-list{padding:38px 24px 48px;overflow:auto}.archive-year{margin:0;font-family:Georgia,"Times New Roman",serif;font-size:54px;line-height:.95;font-weight:500;letter-spacing:-.045em;padding-bottom:18px;border-bottom:1px solid var(--line)}
-.archive-dates{list-style:none;padding:0;margin:0}.archive-dates li{border-bottom:1px solid var(--soft-line)}.archive-dates a{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:19px 0;text-decoration:none;font-family:Georgia,"Times New Roman",serif;font-size:28px;letter-spacing:-.02em}.archive-dates a::after{content:"↗";font-family:Inter,ui-sans-serif,sans-serif;font-size:13px;color:var(--muted)}.archive-dates a:hover{color:var(--accent)}.archive-dates a[aria-current="page"]{color:var(--accent)}.archive-dates a[aria-current="page"]::after{content:"CURRENT";font-size:9px;letter-spacing:.14em;font-weight:800;color:var(--accent)}
-.news-section{scroll-margin-top:124px}.story h3,.story-summary{overflow-wrap:anywhere}a:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
-/* Markets */
-.market-report{padding:30px 0;border-bottom:1px solid var(--line)}.market-report:last-child{border-bottom:0}.market-title{font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;font-size:30px;font-weight:500;margin:0 0 14px}.story h4{font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;font-size:30px;font-weight:500;letter-spacing:-.025em;line-height:1.08;margin:12px 0;overflow-wrap:anywhere}.views-heading{font-size:13px;font-weight:750;margin:24px 0 0}.views-heading span{font-size:10px;letter-spacing:.13em;color:var(--muted);margin-left:12px}
-@media(max-width:900px){.top-shell .site-header{grid-template-columns:1fr auto;padding:14px 18px 12px}.top-shell .section-nav{padding:0 18px}.menu-button{width:30px;height:30px}.header-left{gap:10px}}
-@media(max-width:560px){.story h4{font-size:25px}.market-title{font-size:27px}}
+.archive-drawer{visibility:hidden}
+#archive-drawer:target{visibility:visible}
+.story h3,.story-summary{overflow-wrap:anywhere}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.archive-drawer,.archive-overlay{transition:none}}
+
+/* Markets use the same paper, rules, serif headings and two-column stories. */
+.market-report{padding:30px 0;border-bottom:1px solid var(--line)}
+.market-report:last-child{border-bottom:0}
+.market-title{font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;font-size:30px;font-weight:500;margin:0 0 14px}
+.story h4{font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;font-size:30px;font-weight:500;letter-spacing:-.025em;line-height:1.08;margin:12px 0;overflow-wrap:anywhere}
+.lead-story h4{grid-column:1;font-size:52px;line-height:1.02;margin-top:15px}
+@media(max-width:900px){.lead-story h4{font-size:38px}}
+@media(max-width:560px){.story h4{font-size:25px}.market-title{font-size:27px}}
+@media(max-width:560px){.lead-story h4{font-size:32px}}
 </style>
 </head>
 <body id="page-top" data-issue="2026-09-07">
@@ -353,59 +509,95 @@ main{max-width:var(--page);margin:0 auto;padding:0 28px 80px}
     <div class="header-center">INTERNATIONAL DIGEST</div>
     <div class="header-right">ISSUE 001 · 2026-09-07</div>
   </header>
-  <nav class="section-nav" aria-label="sections"><a href="#technology"><span class="zh">01 科技</span><span class="en">TECHNOLOGY</span></a>
+  <nav class="section-nav" aria-label="sections">
+    <a href="#technology"><span class="zh">01 科技</span><span class="en">TECHNOLOGY</span></a>
 <a href="#politics"><span class="zh">02 时政</span><span class="en">POLITICS</span></a>
 <a href="#finance"><span class="zh">03 财经</span><span class="en">FINANCE</span></a>
-<a href="#markets"><span class="zh">04 市场</span><span class="en">MARKETS</span></a></nav>
+<a href="#markets"><span class="zh">04 市场</span><span class="en">MARKETS</span></a>
+  </nav>
 </div>
+
 <aside class="archive-drawer" id="archive-drawer" aria-label="期刊归档">
-  <div class="drawer-head"><div><div class="drawer-kicker">ARCHIVE</div><div class="drawer-title">期刊归档</div></div><a class="drawer-close" href="#page-top" aria-label="关闭期刊归档">×</a></div>
-  <div class="archive-list"><section><h2 class="archive-year">2026</h2>
+  <div class="drawer-head">
+    <div>
+      <div class="drawer-kicker">ARCHIVE</div>
+      <div class="drawer-title">期刊归档</div>
+    </div>
+    <a class="drawer-close" href="#page-top" aria-label="关闭期刊归档">×</a>
+  </div>
+  <div class="archive-list">
+<section><h2 class="archive-year">2026</h2>
           <ul class="archive-dates"><li><a href="#page-top" aria-current="page">09.07</a></li></ul></section>
-          <noscript>完整归档导航需要启用 JavaScript。</noscript></div>
+          <noscript>完整归档导航需要启用 JavaScript。</noscript>
+</div>
 </aside>
 <a class="archive-overlay" href="#page-top" aria-label="关闭期刊归档" tabindex="-1"></a>
+
 <main>
-  <section class="hero"><div><p class="eyebrow">International briefing / 7-day edition</p><h1>一周世界，<br>四个视角。</h1><p class="hero-deck">聚焦科技、时政、财经与市场。中文摘要保留事实边界，明确机构观点归属，并始终附上原始来源。</p></div>
-    <dl class="hero-side"><div class="fact"><dt>Observation window</dt><dd>2026-08-31 — 2026-09-07</dd></div><div class="fact"><dt>News stories</dt><dd>15</dd></div><div class="fact"><dt>News primary sources</dt><dd>15/15</dd></div><div class="fact"><dt>News distinct sources</dt><dd>13</dd></div><div class="fact"><dt>Market sections</dt><dd>3</dd></div><div class="fact"><dt>Institutional views</dt><dd>7</dd></div></dl>
+  <section class="hero">
+    <div>
+      <p class="eyebrow">International briefing / 7-day edition</p>
+      <h1>一周世界，<br>四个视角。</h1>
+      <p class="hero-deck">聚焦科技、时政、财经与市场。中文摘要保留事实边界，明确机构观点归属，并始终附上原始来源。</p>
+    </div>
+    <dl class="hero-side">
+      <div class="fact"><dt>Observation window</dt><dd>2026-08-31 — 2026-09-07</dd></div>
+      <div class="fact"><dt>News stories</dt><dd>21</dd></div>
+      <div class="fact"><dt>News primary sources</dt><dd>16/21</dd></div>
+      <div class="fact"><dt>News distinct sources</dt><dd>15</dd></div>
+      <div class="fact"><dt>Market sections</dt><dd>3</dd></div><div class="fact"><dt>Institutional views</dt><dd>7</dd></div>
+    </dl>
   </section>
+
   <section class="news-section" id="technology">
       <div class="section-rule"></div>
       <header class="section-header">
         <div class="section-number">01</div>
         <div class="section-title-wrap"><div class="section-en">TECHNOLOGY</div><h2>科技</h2></div>
-        <div class="section-count">05 STORIES</div>
+        <div class="section-count">07 STORIES</div>
       </header>
       <div class="lead-grid"><div class="lead-index">A</div><article class="story lead-story">
       <div class="story-kicker"><span>人工智能模型</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
       <h3>GPT-6 Astra: A new generation of intelligence</h3>
       <div class="story-meta"><span>OpenAI</span><time datetime="2026-09-03">2026-09-03</time></div>
-      <p class="story-summary">OpenAI 发布 GPT-6 Astra，先向部分机构开放，随后逐步扩展至 ChatGPT 付费用户及 API 等渠道。公司称模型提升了电脑操作、软件工程和科学任务能力，并达到其准备框架中的网络安全 Critical 能力门槛，因此配套加强安全防护；发布版本仍拒绝生成漏洞利用概念验证等高级网络安全任务。</p>
+      <p class="story-summary">OpenAI 发布 GPT-6 Astra，重点提升电脑操作、网页浏览、软件工程、网络安全与科学研究能力，并先向部分机构开放，再逐步扩展至 ChatGPT 付费用户及 API 等渠道。公司同时表示 Astra 达到其 Preparedness Framework 中网络安全 Critical 能力门槛，因此配套部署更严格的安全措施；相关性能与安全结论均来自 OpenAI 的发布与评测。</p>
       <a class="source-link" href="https://openai.com/index/gpt-6-astra/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
     </article></div>
       <div class="secondary-grid"><article class="story">
+      <div class="story-kicker"><span>人工智能模型</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
+      <h3>Claude Fable 5.1 and Mythos 5.1</h3>
+      <div class="story-meta"><span>Anthropic</span><time datetime="2026-09-01">2026-09-01</time></div>
+      <p class="story-summary">Anthropic 发布 Claude Fable 5.1 与 Mythos 5.1，两者使用相同底层模型，但 Mythos 通过受信任访问计划提供更宽松的网络安全与生命科学防护。公司称 Fable 5.1 在编码、知识工作和长程任务上较前代提升，并把缓存读取价格降至每百万 token 0.25 美元；典型按量计费工作负载成本预计下降约 25%，这些性能与成本比较均为 Anthropic 的测试与估算。</p>
+      <a class="source-link" href="https://www.anthropic.com/claude-fable-and-mythos-5-1" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
+      <div class="story-kicker"><span>医疗人工智能</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
+      <h3>Healthcare organizations can now connect EHR and additional industry data to ChatGPT</h3>
+      <div class="story-meta"><span>OpenAI</span><time datetime="2026-09-01">2026-09-01</time></div>
+      <p class="story-summary">OpenAI 为 ChatGPT for Healthcare 推出 Epic 电子健康记录集成和 Healthcare Public Data plugin。获授权的医疗机构可在受控工作区内调用患者病历上下文，并结构化访问 ClinicalTrials.gov、CMS Coverage、RxNorm、DailyMed、PubMed 等九类官方医疗数据源；OpenAI 表示这些功能保留现有权限控制，并面向临床、研究与行政工作流使用。</p>
+      <a class="source-link" href="https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
       <div class="story-kicker"><span>语音识别</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
       <h3>MAI-Transcribe-2 is the fastest, most accurate and cheapest speech recognition model in the world</h3>
       <div class="story-meta"><span>Microsoft AI</span><time datetime="2026-09-03">2026-09-03</time></div>
-      <p class="story-summary">微软发布 MAI-Transcribe-2，增加说话人区分、可配置转写风格和逐词时间戳，可通过 Microsoft Foundry 等渠道试用。微软称该模型在覆盖 60 种语言的 FLEURS 测试中平均词错误率为 5.2%，音频转写价格为每小时 0.10 美元；性能和成本比较均为公司的测试与表述。</p>
+      <p class="story-summary">Microsoft AI 发布 MAI-Transcribe-2，新增说话人区分、可配置转写风格和逐词时间戳，并可通过 Microsoft Foundry 等渠道使用。微软称该模型在覆盖 60 种语言的 FLEURS 测试中平均词错误率为 5.2%，音频转写价格为每小时 0.10 美元；“最快、最准确、最便宜”等比较性结论来自公司的测试和表述。</p>
       <a class="source-link" href="https://microsoft.ai/news/mai-transcribe-2-is-the-fastest-most-accurate-and-cheapest-speech-recognition-model-in-the-world/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
     </article><article class="story">
       <div class="story-kicker"><span>量子计算</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
       <h3>Diraq and Equinix to Deploy Australia’s First Quantum Computer Inside a Data Centre</h3>
       <div class="story-meta"><span>Equinix</span><time datetime="2026-09-01">2026-09-01</time></div>
-      <p class="story-summary">Diraq 与 Equinix 宣布计划在悉尼商业数据中心部署一台采用 8 个硅自旋量子比特的量子计算机，安装预计于 2026 年 10 月完成。双方称整套系统包含低温制冷和控制设备，功耗低于 20 千瓦，将测试其与传统 CPU、GPU 和网络基础设施共同运行的表现。</p>
+      <p class="story-summary">Diraq 与 Equinix 宣布计划在悉尼商业数据中心部署一台采用 8 个硅自旋量子比特的量子计算机，预计 2026 年 10 月完成安装。双方称整套系统包括低温制冷与控制设备，功耗低于 20 千瓦，将用于测试量子硬件与传统 CPU、GPU 及数据中心网络共同运行；“澳大利亚首台部署于数据中心的量子计算机”等定位来自双方公告。</p>
       <a class="source-link" href="https://newsroom.equinix.com/2026-09-01-Diraq-and-Equinix-to-Deploy-Australias-First-Quantum-Computer-Inside-a-Data-Centre" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
     </article><article class="story">
       <div class="story-kicker"><span>软件供应链安全</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
       <h3>Multiple trusted publishing configurations for npm</h3>
       <div class="story-meta"><span>GitHub</span><time datetime="2026-09-03">2026-09-03</time></div>
-      <p class="story-summary">GitHub 宣布 npm 的三项发布改进正式开放：每个软件包可配置多个基于 OIDC 的可信发布流程，暂存版本须完成恶意软件扫描后才允许批准，维护者可在版本页查看暂存历史。多个配置独立生效，分别指定仓库、工作流和环境，减少不同发布路径对长期令牌的依赖。</p>
+      <p class="story-summary">GitHub 宣布 npm 可信发布机制的三项更新正式可用：每个软件包可配置多个基于 OIDC 的可信发布流程，暂存版本必须完成恶意软件扫描后才能批准发布，维护者还可在版本页面查看暂存历史。多个配置可分别指定仓库、工作流与环境，使不同发布路径减少对长期 npm 访问令牌的依赖。</p>
       <a class="source-link" href="https://github.blog/changelog/2026-09-03-multiple-trusted-publishing-configurations-for-npm/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
     </article><article class="story">
-      <div class="story-kicker"><span>开发者工具</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
+      <div class="story-kicker"><span>开发者平台</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
       <h3>GitHub Actions: Early September 2026 updates</h3>
       <div class="story-meta"><span>GitHub</span><time datetime="2026-09-03">2026-09-03</time></div>
-      <p class="story-summary">GitHub Actions 新增查询运行器版本停止注册及停止运行支持时间的 REST API，并为 GITHUB_TOKEN 增加只读访问 Dependabot 警报的独立权限。可复用工作流还获得四个 job 上下文字段，用于识别实际定义当前任务的工作流来源；这些新上下文字段暂不适用于 GitHub Enterprise Server。</p>
+      <p class="story-summary">GitHub Actions 发布 9 月初平台更新：新增 REST API 以查询托管运行器镜像停止注册和停止运行的时间，为 GITHUB_TOKEN 增加只读访问 Dependabot 警报的独立权限，并为可复用工作流加入用于识别实际定义当前 job 的四个上下文字段。GitHub 表示这些新的可复用工作流上下文字段暂不适用于 GitHub Enterprise Server。</p>
       <a class="source-link" href="https://github.blog/changelog/2026-09-03-github-actions-early-september-2026-updates/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
     </article></div>
     </section>
@@ -414,39 +606,51 @@ main{max-width:var(--page);margin:0 auto;padding:0 28px 80px}
       <header class="section-header">
         <div class="section-number">02</div>
         <div class="section-title-wrap"><div class="section-en">POLITICS</div><h2>时政</h2></div>
-        <div class="section-count">05 STORIES</div>
+        <div class="section-count">07 STORIES</div>
       </header>
       <div class="lead-grid"><div class="lead-index">A</div><article class="story lead-story">
+      <div class="story-kicker"><span>德国政治</span><span class="dot">•</span><span>MEDIA SOURCE</span></div>
+      <h3>Far-right Alternative for Germany party wins big in regional election but falls short of majority</h3>
+      <div class="story-meta"><span>Associated Press</span><time datetime="2026-09-06">2026-09-06</time></div>
+      <p class="story-summary">德国选择党 AfD 在萨克森-安哈尔特州议会选举中获得 43.8% 选票和 83 席中的 39 席，成为第一大党，但距离单独执政所需多数仍差 3 席；总理 Friedrich Merz 所属 CDU 仅获 17.2%。主流政党继续拒绝与 AfD 合作，因此新政府如何组成仍不确定。该结果是 AfD 建党以来最强的州级选举表现之一，并对联邦政府构成明显政治压力。</p>
+      <a class="source-link" href="https://apnews.com/article/c538060710a2495c72425b6468df0d40" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article></div>
+      <div class="secondary-grid"><article class="story">
+      <div class="story-kicker"><span>俄乌战争与外交</span><span class="dot">•</span><span>MEDIA SOURCE</span></div>
+      <h3>Witkoff, Kushner heading abroad to discuss Ukraine peace, Trump says</h3>
+      <div class="story-meta"><span>Reuters</span><time datetime="2026-09-04">2026-09-04</time></div>
+      <p class="story-summary">美国总统 Donald Trump 表示，特使 Steve Witkoff 与 Jared Kushner 将赴海外推动俄乌和平谈判，并称美方已有一项新的“具体方案”，但未公开内容。乌克兰总统 Volodymyr Zelenskiy 称两人计划在访问莫斯科后于周日抵达乌克兰；Reuters 指出行程仍可能调整，而此前数月的谈判基本陷入停滞，俄乌战场行动也仍在继续。</p>
+      <a class="source-link" href="https://www.reuters.com/world/europe/trump-says-witkoff-kushner-heading-russia-ukraine-present-peace-proposal-2026-09-04/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
+      <div class="story-kicker"><span>伊朗核问题</span><span class="dot">•</span><span>MEDIA SOURCE</span></div>
+      <h3>US and allies push IAEA board to report Iran to UN Security Council, diplomats say</h3>
+      <div class="story-meta"><span>Reuters</span><time datetime="2026-09-04">2026-09-04</time></div>
+      <p class="story-summary">据 Reuters 引述外交官和决议草案，美国、英国、法国与德国准备推动国际原子能机构理事会把伊朗核问题报告联合国安理会，这将是约 20 年来首次。草案要求伊朗履行保障监督义务，并恢复对受袭核设施及高丰度浓缩铀库存的充分核查；决议预计较可能通过，但俄罗斯和中国拥有安理会否决权，后续是否形成实质行动仍不确定。</p>
+      <a class="source-link" href="https://www.reuters.com/world/europe/us-allies-want-iaea-board-report-iran-un-security-council-diplomats-say-2026-09-04/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
+      <div class="story-kicker"><span>乌克兰核安全</span><span class="dot">•</span><span>MEDIA SOURCE</span></div>
+      <h3>Brokered ceasefire takes effect for repairs at Zaporizhzhia nuclear plant</h3>
+      <div class="story-meta"><span>Reuters</span><time datetime="2026-09-05">2026-09-05</time></div>
+      <p class="story-summary">国际原子能机构斡旋的局部停火在扎波罗热核电站周边生效，以便维修受损输电线路并恢复外部供电。该核电站自 8 月 20 日起依靠应急柴油发电机维持关键安全系统冷却，IAEA 警告燃料储备下降可能带来全站断电风险。维修人员需先完成相关区域排雷；俄乌双方长期互相指责对方危及核安全，停火能否带来稳定供电仍待观察。</p>
+      <a class="source-link" href="https://www.reuters.com/business/energy/brokered-ceasefire-takes-effect-repairs-zaporizhzhia-nuclear-plant-2026-09-05/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
       <div class="story-kicker"><span>欧洲安全与外交</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
       <h3>Statement by Foreign Minister Wadephul at a joint press conference with Interior Minister Dobrindt</h3>
       <div class="story-meta"><span>Federal Foreign Office, Germany</span><time datetime="2026-09-01">2026-09-01</time></div>
-      <p class="story-summary">德国外长瓦德富尔宣布召见俄罗斯大使，并将于 9 月 18 日关闭俄罗斯驻波恩总领馆、终止柏林俄罗斯之家的租约，同时提出新的欧盟制裁名单并收紧俄公民入境检查。德方称这些措施回应莱比锡未遂袭击，并指责俄罗斯负有责任；有关袭击归属为德国政府的指称。</p>
+      <p class="story-summary">德国外长 Johann Wadephul 宣布召见俄罗斯大使，并将于 9 月 18 日关闭俄罗斯驻波恩总领馆、终止柏林俄罗斯之家的租约，同时提出新的欧盟制裁名单、收紧俄罗斯公民入境检查并加大对“影子船队”的压力。德方把这些措施与莱比锡未遂袭击及更广泛的俄罗斯混合威胁联系起来；有关袭击责任与俄罗斯行为的归属属于德国政府的指称。</p>
       <a class="source-link" href="https://www.auswaertiges-amt.de/en/newsroom/news/2800600-2800600" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
-    </article></div>
-      <div class="secondary-grid"><article class="story">
+    </article><article class="story">
+      <div class="story-kicker"><span>美中关系与人工智能安全</span><span class="dot">•</span><span>MEDIA SOURCE</span></div>
+      <h3>US, China gear up for mid-September AI safety talks</h3>
+      <div class="story-meta"><span>Reuters</span><time datetime="2026-09-04">2026-09-04</time></div>
+      <p class="story-summary">Reuters 引述知情人士称，美国与中国正筹备 9 月中旬举行以 AI 安全风险为主题的双边对话，美方拟讨论高级 AI、AI 驱动网络攻击监测及实验室间信息共享等议题；美方一名官员同时表示，目前尚无已经确定的 9 月中旬 AI 会议。相关议程、地点和中方代表仍在磋商，这一渠道被视为 9 月 24 日美中领导人会晤前可能推进的议题之一。</p>
+      <a class="source-link" href="https://www.reuters.com/legal/litigation/us-china-gear-up-mid-september-ai-safety-dialogue-2026-09-04/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
       <div class="story-kicker"><span>伊朗相关制裁</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
       <h3>Treasury Severs Iranian Regime’s Financial Lifelines in Türkiye</h3>
       <div class="story-meta"><span>U.S. Department of the Treasury</span><time datetime="2026-09-04">2026-09-04</time></div>
-      <p class="story-summary">美国财政部宣布制裁土耳其 Golden Global Bank 及其两家子公司，依据第 13902 号行政令冻结相关美国管辖资产，并原则上禁止美国人士与其交易。财政部指称该银行为伊朗伊斯兰革命卫队圣城旅促成数千万美元交易并提供跨境银行渠道；这些交易指控属于美方表述。</p>
+      <p class="story-summary">美国财政部海外资产控制办公室宣布制裁土耳其金融机构 Golden Global Bank 及其子公司。财政部称这些机构为伊朗伊斯兰革命卫队圣城旅促成数千万美元交易，并向伊朗方面提供关键的国际代理银行渠道；相关交易和关系为美方指控。被指定实体在美国管辖范围内的财产原则上被冻结，美国人士通常不得与其进行相关交易。</p>
       <a class="source-link" href="https://home.treasury.gov/news/press-releases/sb0622/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
-    </article><article class="story">
-      <div class="story-kicker"><span>欧盟与南高加索</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
-      <h3>Council backs temporary trade measures to support Armenia</h3>
-      <div class="story-meta"><span>Council of the European Union</span><time datetime="2026-09-02">2026-09-02</time></div>
-      <p class="story-summary">欧盟理事会支持对亚美尼亚实施临时贸易自由化措施，拟覆盖其对欧盟约 80% 的出口，自法规生效起适用两年，以应对俄罗斯近期贸易限制。方案包含保护欧盟生产者的保障措施，并以遵守原产地规则、民主及人权等条件为前提；仍须完成欧洲议会与理事会的正式通过程序。</p>
-      <a class="source-link" href="https://www.consilium.europa.eu/en/press/press-releases/2026/09/02/council-backs-temporary-trade-measures-to-support-armenia/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
-    </article><article class="story">
-      <div class="story-kicker"><span>古巴相关制裁</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
-      <h3>Cuba Designations; Russia-related Designation Removal; Issuance of Amended Cuba General License</h3>
-      <div class="story-meta"><span>Office of Foreign Assets Control, U.S. Department of the Treasury</span><time datetime="2026-09-03">2026-09-03</time></div>
-      <p class="story-summary">美国财政部海外资产控制办公室更新制裁名单，将古巴的 Fidel Ernesto Castro Calis 及五家实体列入，其中包括 Banco Exterior de Cuba 和石油、镍业相关国有企业。同日发布古巴第 4A 号通用许可，授权第三国驻古巴外交和领事机构的相关交易。</p>
-      <a class="source-link" href="https://ofac.treasury.gov/recent-actions/20260903" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
-    </article><article class="story">
-      <div class="story-kicker"><span>欧盟与海湾外交</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
-      <h3>Second EU-GCC Summit to take place on 24 October in Saudi Arabia</h3>
-      <div class="story-meta"><span>European Council</span><time datetime="2026-09-04">2026-09-04</time></div>
-      <p class="story-summary">欧洲理事会宣布，第二届欧盟—海湾合作委员会峰会定于 2026 年 10 月 24 日在沙特阿拉伯举行，欧盟成员国及海合会国家领导人将参加。欧洲理事会主席科斯塔将代表欧方共同主持，欧委会主席冯德莱恩也将出席；科斯塔表示希望深化双方政治对话及和平、安全与繁荣合作。</p>
-      <a class="source-link" href="https://www.consilium.europa.eu/en/press/press-releases/2026/09/04/second-eu-gcc-summit-to-take-place-on-24-october-in-saudi-arabia/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
     </article></div>
     </section>
 <section class="news-section" id="finance">
@@ -454,39 +658,51 @@ main{max-width:var(--page);margin:0 auto;padding:0 28px 80px}
       <header class="section-header">
         <div class="section-number">03</div>
         <div class="section-title-wrap"><div class="section-en">FINANCE</div><h2>财经</h2></div>
-        <div class="section-count">05 STORIES</div>
+        <div class="section-count">07 STORIES</div>
       </header>
       <div class="lead-grid"><div class="lead-index">A</div><article class="story lead-story">
       <div class="story-kicker"><span>美国就业</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
       <h3>THE EMPLOYMENT SITUATION - AUGUST 2026</h3>
       <div class="story-meta"><span>U.S. Bureau of Labor Statistics</span><time datetime="2026-09-04">2026-09-04</time></div>
-      <p class="story-summary">美国劳工统计局公布，8 月非农就业增加 16.2 万人，失业率维持 4.1%。就业增长集中在餐饮及地方政府教育，信息行业就业减少。私营非农平均时薪环比上涨 0.3% 至 37.75 美元，同比上涨 3.1%；6 月和 7 月非农就业增量合计上修 5.5 万人。</p>
+      <p class="story-summary">美国劳工统计局公布，8 月非农就业增加 16.2 万人，失业率维持在 4.1%。就业增长主要来自餐饮服务及地方政府教育，信息行业就业减少；私营非农平均时薪环比上涨 0.3% 至 37.75 美元，同比上涨 3.1%。同时，6 月和 7 月非农就业增量合计上修 5.5 万人，为判断美国劳动力市场与美联储政策路径提供了新的关键数据。</p>
       <a class="source-link" href="https://www.bls.gov/news.release/archives/empsit_09042026.htm" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
     </article></div>
       <div class="secondary-grid"><article class="story">
       <div class="story-kicker"><span>欧元区通胀</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
       <h3>Euro area annual inflation up to 3.3%</h3>
       <div class="story-meta"><span>Eurostat</span><time datetime="2026-09-01">2026-09-01</time></div>
-      <p class="story-summary">欧盟统计局初步估计，欧元区 8 月通胀率为 3.3%，高于 7 月的 2.9%。能源价格同比涨幅预计从 10.3% 升至 14.3%，服务价格涨幅由 3.3% 降至 3.0%；非能源工业品上涨 1.2%，食品、酒类及烟草亦上涨 1.2%。完整的 8 月数据计划于 9 月 17 日公布。</p>
-      <a class="source-link" href="https://ec.europa.eu/eurostat/web/products-euro-indicators/w/2-01092026-ap" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+      <p class="story-summary">Eurostat 初步估计，欧元区 8 月年度通胀率升至 3.3%，高于 7 月的 2.9%。其中能源价格同比涨幅预计由 10.3% 升至 14.3%，服务价格涨幅则由 3.3% 降至 3.0%；非能源工业品以及食品、酒类和烟草价格均同比上涨约 1.2%。该数据表明能源仍是当月通胀上行的重要推动因素，完整 8 月数据计划于 9 月 17 日公布。</p>
+      <a class="source-link" href="https://ec.europa.eu/eurostat/en/web/products-euro-indicators/w/2-01092026-ap" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
     </article><article class="story">
       <div class="story-kicker"><span>加拿大货币政策</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
       <h3>Bank of Canada maintains the policy rate at 2¼%</h3>
       <div class="story-meta"><span>Bank of Canada</span><time datetime="2026-09-02">2026-09-02</time></div>
-      <p class="story-summary">加拿大央行维持隔夜利率目标 2.25%，银行利率与存款利率分别为 2.5% 和 2.20%。央行称经济和通胀总体符合 7 月预测，但持续高油价增加通胀上行风险，新的美国关税使增长前景更不确定；将评估经济反弹的可持续性，并准备按需要调整政策。</p>
+      <p class="story-summary">加拿大央行维持隔夜利率目标在 2.25%，银行利率和存款利率分别为 2.5% 与 2.20%。央行称国内经济和通胀总体符合 7 月预测，但持续偏高的油价增加通胀上行风险，美国新关税及加拿大反制措施也令增长前景更不确定。央行表示将继续评估经济反弹的可持续性与潜在通胀压力，并准备按需要调整政策。</p>
       <a class="source-link" href="https://www.bankofcanada.ca/2026/09/fad-press-release-2026-09-02/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
+      <div class="story-kicker"><span>美国国际贸易</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
+      <h3>Monthly U.S. International Trade in Goods and Services, July 2026</h3>
+      <div class="story-meta"><span>U.S. Census Bureau and U.S. Bureau of Economic Analysis</span><time datetime="2026-09-03">2026-09-03</time></div>
+      <p class="story-summary">美国 Census Bureau 与 Bureau of Economic Analysis 公布，7 月商品和服务贸易逆差扩大至 886 亿美元，较经修订的 6 月 712 亿美元增加 174 亿美元。出口降至 3107 亿美元，环比减少 66 亿美元；进口升至 3993 亿美元，增加 108 亿美元。年初至 7 月的累计逆差仍比 2025 年同期减少 1884 亿美元，即下降 29.6%。</p>
+      <a class="source-link" href="https://www.census.gov/foreign-trade/current/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
     </article><article class="story">
       <div class="story-kicker"><span>澳大利亚经济增长</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
       <h3>Australian National Accounts: National Income, Expenditure and Product</h3>
       <div class="story-meta"><span>Australian Bureau of Statistics</span><time datetime="2026-09-02">2026-09-02</time></div>
-      <p class="story-summary">澳大利亚统计局公布，经季节调整的实际 GDP 在 2026 年第二季度环比增长 0.4%、同比增长 2.1%，人均 GDP 环比基本持平。名义 GDP 环比增长 0.8%，贸易条件下降 1.6%，家庭储蓄收入比由 6.4% 升至 6.5%。统计局称部分私人需求和矿业出口支撑了本季增长。</p>
+      <p class="story-summary">澳大利亚统计局公布，2026 年第二季度经季节调整的实际 GDP 环比增长 0.4%、同比增长 2.1%，人均 GDP 环比基本持平；名义 GDP 环比增长 0.8%，贸易条件下降 1.6%，家庭储蓄收入比由 6.4% 升至 6.5%。统计局称，部分私人需求与矿业出口支撑增长，而中东冲突推高油价并增加多个能源和燃料密集行业的投入成本。</p>
       <a class="source-link" href="https://www.abs.gov.au/statistics/economy/national-accounts/australian-national-accounts-national-income-expenditure-and-product/jun-2026" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
     </article><article class="story">
-      <div class="story-kicker"><span>国际贸易政策</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
+      <div class="story-kicker"><span>欧盟贸易与海关政策</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
       <h3>EU customs: Council greenlights landmark reform</h3>
       <div class="story-meta"><span>Council of the European Union</span><time datetime="2026-09-03">2026-09-03</time></div>
-      <p class="story-summary">欧盟理事会批准海关改革文本，明确向欧盟销售的境外电商平台承担进口商的申报和缴税责任，并设立欧盟海关机构及统一数据中心。文本还安排在 2026 年 11 月 1 日前引入小包裹处理费，金额由欧委会确定；欧洲议会仍需批准最终文本，随后签署并公布。</p>
+      <p class="story-summary">欧盟理事会批准海关制度改革文本，明确向欧盟销售商品的非欧盟电商平台承担进口商责任，并设立新的欧盟海关机构和统一海关数据中心。改革还要求成员国最迟在 2026 年 11 月 1 日对小包裹征收全欧统一处理费，具体金额由欧委会确定。欧洲议会预计于 9 月批准最终文本，之后还需正式签署和公布。</p>
       <a class="source-link" href="https://www.consilium.europa.eu/en/press/press-releases/2026/09/03/eu-customs-council-greenlights-landmark-reform/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
+      <div class="story-kicker"><span>欧元区生产者价格</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
+      <h3>Industrial producer prices up by 1.6% in the euro area and by 1.4% in the EU</h3>
+      <div class="story-meta"><span>Eurostat</span><time datetime="2026-09-03">2026-09-03</time></div>
+      <p class="story-summary">Eurostat 初步数据显示，欧元区 7 月工业生产者价格环比上涨 1.6%、同比上涨 5.8%；欧盟分别上涨 1.4% 和 5.6%。欧元区能源生产者价格环比大涨 5.6%、同比上涨 12.9%，而剔除能源后的工业价格环比持平、同比上涨 3.1%。数据表明当月生产端价格上行主要受到能源推动，与同期消费者价格中的能源压力相呼应。</p>
+      <a class="source-link" href="https://ec.europa.eu/eurostat/en/web/products-euro-indicators/w/4-03092026-ap" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
     </article></div>
     </section>
 <section class="news-section" id="markets">
@@ -496,69 +712,136 @@ main{max-width:var(--page);margin:0 auto;padding:0 28px 80px}
         <div class="section-count">03 MARKETS</div>
       </header><section class="market-report" id="market-us_equities">
           <h3 class="market-title">美国股市</h3>
-          <h4 class="views-heading">机构观点 <span>INSTITUTIONAL VIEWS</span></h4>
-          <div class="secondary-grid"><article class="story institutional-view">
+          <div class="lead-grid"><div class="lead-index">A</div><article class="story institutional-view lead-story">
               <div class="story-kicker"><span>UBS CIO</span><span class="dot">•</span><span>INSTITUTIONAL ANALYSIS</span></div>
               <h4>What a more hawkish Fed means for investors</h4>
               <div class="story-meta"><span>UBS CIO</span><time datetime="2026-09-04">2026-09-04</time></div>
-              <p class="story-summary">UBS CIO认为，美联储是否加息本身并不是判断美股前景的唯一关键，更重要的是加息发生时的增长和盈利背景。如果利率上升伴随AI相关资本开支、就业和企业利润保持强劲，股票市场仍可能维持较有支撑的环境；相反，如果通胀黏性与增长疲弱同时出现，紧缩政策对股票的压力会明显增大。UBS因此继续关注企业盈利、AI投资和经济韧性，同时把更高利率及增长放缓视为主要风险。</p>
+              <p class="story-summary">UBS CIO 认为，美联储是否加息并不是判断美股前景的唯一关键，更重要的是政策收紧发生时的增长与盈利背景。若利率上升同时伴随 AI 相关资本开支、就业和企业利润保持韧性，美股仍可能得到基本面支撑；若通胀黏性与增长疲弱并存，紧缩对估值和风险偏好的压力则会明显上升。该机构因此继续把企业盈利、AI 投资与经济韧性视为核心支撑，并把更高利率和增长放缓列为主要风险。</p>
               <a class="source-link" href="https://www.ubs.com/global/en/wealthmanagement/insights/chief-investment-office/house-view/daily/2026/latest-04092026.html" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
-            </article><article class="story institutional-view">
+            </article></div>
+          <div class="secondary-grid"><article class="story institutional-view">
               <div class="story-kicker"><span>Standard Chartered CIO</span><span class="dot">•</span><span>INSTITUTIONAL ANALYSIS</span></div>
               <h4>Rising risk of a Fed rate hike</h4>
               <div class="story-meta"><span>Standard Chartered CIO</span><time datetime="2026-09-04">2026-09-04</time></div>
-              <p class="story-summary">渣打首席投资办公室认为，美联储主席Warsh近期的鹰派表态提高了年内、甚至9月加息的可能性，但其基准判断仍是后续通胀有望随关税和高油价影响消退而逐步回落，因此连续多次加息的空间有限。该机构认为，如果加息属于在经济和企业盈利仍具韧性背景下的“防御性”紧缩，对股票市场的冲击可能较为有限；其对美股的主要支撑因素仍是盈利前景，而风险集中在政策和利率波动。</p>
-              <a class="source-link" href="https://www.sc.com/ke/market-outlook/weekly-market-view-4-9-2026/?mvog=1" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+              <p class="story-summary">Standard Chartered CIO 认为，美联储主席 Warsh 的鹰派表态提高了年内乃至 9 月加息的可能性，但其基准判断仍是关税与高油价影响消退后通胀会逐步回落，因此连续多次加息的空间有限。该机构认为，如果加息发生在经济活动和企业盈利仍具韧性的环境中，对股票市场的冲击可能相对有限；美股后续表现仍主要取决于盈利能否延续，以及利率与政策预期是否出现进一步上调。</p>
+              <a class="source-link" href="https://www.sc.com/ke/market-outlook/weekly-market-view-4-9-2026/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
             </article></div>
         </section><section class="market-report" id="market-china_equities">
           <h3 class="market-title">中国股市</h3>
-          <h4 class="views-heading">机构观点 <span>INSTITUTIONAL VIEWS</span></h4>
-          <div class="secondary-grid"><article class="story institutional-view">
+          <div class="lead-grid"><div class="lead-index">A</div><article class="story institutional-view lead-story">
               <div class="story-kicker"><span>HSBC Private Bank and Premier Wealth</span><span class="dot">•</span><span>INSTITUTIONAL ANALYSIS</span></div>
               <h4>Investment Outlook: HSBC Perspectives Q4 2026</h4>
               <div class="story-meta"><span>HSBC Private Bank and Premier Wealth</span><time datetime="2026-09-03">2026-09-03</time></div>
-              <p class="story-summary">汇丰私人银行在第四季度展望中继续对中国内地股票持积极配置观点，认为中国在AI、先进制造、绿色技术、电动车和生物科技等领域的创新能力构成重要支撑。其分析同时指出，中国及亚洲多地的公司治理改革正在改善资本回报，预计亚洲整体股本回报率未来仍有上升空间；不过文章讨论的是更广泛的亚洲与中国股票机会，并非只针对A股。</p>
+              <p class="story-summary">HSBC Private Bank 在第四季度展望中继续对中国内地股票持积极配置观点，认为 AI、先进制造、绿色技术、电动车与生物科技等领域的创新能力是重要支撑。其分析还指出，中国及亚洲多地的公司治理改革正在改善资本回报，并预计亚洲整体股本回报率仍有上升空间。该文章讨论的是更广泛的亚洲与中国股票机会，而非只针对 A 股，因此相关判断应按其覆盖范围理解。</p>
               <a class="source-link" href="https://www.hsbc.com.hk/wealth/insights/market-outlook/investment-outlook/accelerating-ai-adoption-powers-further-upside-for-global-markets/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
-            </article><article class="story institutional-view">
+            </article></div>
+          <div class="secondary-grid"><article class="story institutional-view">
               <div class="story-kicker"><span>UOB Kay Hian</span><span class="dot">•</span><span>INSTITUTIONAL ANALYSIS</span></div>
               <h4>Strategy - Alpha Picks: September Conviction Calls</h4>
               <div class="story-meta"><span>UOB Kay Hian</span><time datetime="2026-09-03">2026-09-03</time></div>
-              <p class="story-summary">大华继显研究指出，中国股票在8月进入整理阶段，恒生指数和MSCI中国指数分别环比下跌约1.2%和0.4%，但仍保留了7月的大部分涨幅。该机构认为近期缺乏足以推动整个市场重新定价的单一重大催化剂，但对科技、媒体与通信以及IT硬件相关板块的基本面仍保持积极判断。该报告覆盖香港及中国股票市场，因此其结论不应被理解为仅针对A股。</p>
+              <p class="story-summary">UOB Kay Hian 研究指出，中国股票在 8 月进入整理阶段，恒生指数和 MSCI 中国指数分别环比下跌约 1.2% 和 0.4%，但仍保留 7 月的大部分涨幅。该机构认为近期缺乏足以推动整体市场重新定价的单一重大催化剂，但对科技、媒体与通信以及 IT 硬件相关板块的基本面仍持积极看法。报告覆盖香港及更广泛的中国股票市场，因此不能把其判断等同于只针对 A 股。</p>
               <a class="source-link" href="https://uobkh.com.sg/en/research/gc-strategy-alpha-picks-03092026" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
             </article></div>
         </section><section class="market-report" id="market-gold">
           <h3 class="market-title">国际金价</h3>
-          <h4 class="views-heading">机构观点 <span>INSTITUTIONAL VIEWS</span></h4>
-          <div class="secondary-grid"><article class="story institutional-view">
+          <div class="lead-grid"><div class="lead-index">A</div><article class="story institutional-view lead-story">
               <div class="story-kicker"><span>Goldman Sachs</span><span class="dot">•</span><span>INSTITUTIONAL ANALYSIS</span></div>
               <h4>Why Gold Is Expected to Rise to Record Highs</h4>
               <div class="story-meta"><span>Goldman Sachs</span><time datetime="2026-09-04">2026-09-04</time></div>
-              <p class="story-summary">高盛的Tony Kim认为，美国利率路径不确定以及伊朗战争造成的市场扰动使黄金此前的上涨进入较长时间的停顿，但持续的央行购金仍可能成为推动金价重新走强的重要结构性力量。他还指出，市场对财政可持续性的担忧可能增加黄金作为非主权储值资产的吸引力；与此同时，亚洲投资需求减弱是这一判断面临的重要下行风险。</p>
+              <p class="story-summary">Goldman Sachs 的 Tony Kim 认为，美国利率路径不确定以及伊朗战争造成的市场扰动使黄金此前的上涨进入较长时间停顿，但持续的央行购金仍可能成为推动金价重新走强的重要结构性力量。他同时指出，市场对财政可持续性的担忧可能提高黄金作为非主权储值资产的吸引力；另一方面，亚洲投资需求减弱会削弱这一上行情景，是该机构判断中的重要下行风险。</p>
               <a class="source-link" href="https://www.goldmansachs.com/insights/the-markets/why-gold-is-expected-to-rise-to-record-highs" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
-            </article><article class="story institutional-view">
+            </article></div>
+          <div class="secondary-grid"><article class="story institutional-view">
               <div class="story-kicker"><span>UBS CIO</span><span class="dot">•</span><span>INSTITUTIONAL ANALYSIS</span></div>
               <h4>What can commodities add to a portfolio?</h4>
               <div class="story-meta"><span>UBS CIO</span><time datetime="2026-09-02">2026-09-02</time></div>
-              <p class="story-summary">UBS CIO指出，黄金在8月大约上涨10%，此前受到通胀意外、地缘政治不确定性以及主要经济体高财政赤字背景下货币贬值担忧的支持。该机构认为，黄金仍具有对冲通胀和地缘风险的作用，但在经历快速上涨后，投资者对贵金属与更广泛大宗商品之间的相对配置需求可能发生变化；其文章同时强调能源扰动和供给约束会影响整个商品资产类别的表现。</p>
+              <p class="story-summary">UBS CIO 指出，黄金在 8 月约上涨 10%，此前受到通胀意外、地缘政治不确定性以及主要经济体高财政赤字背景下货币贬值担忧的支持。该机构认为，黄金仍具有对冲通胀和地缘风险的作用，但快速上涨后，投资者在贵金属与更广泛大宗商品之间的相对配置可能发生变化。文章也强调能源扰动和供给约束会影响整个商品资产类别，因此其黄金观点置于更广泛的商品配置框架中。</p>
               <a class="source-link" href="https://www.ubs.com/global/en/wealthmanagement/insights/marketnews/article.3701819.html" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
             </article><article class="story institutional-view">
               <div class="story-kicker"><span>World Gold Council</span><span class="dot">•</span><span>INSTITUTIONAL ANALYSIS</span></div>
               <h4>Weekly Markets Monitor - Talking tough</h4>
               <div class="story-meta"><span>World Gold Council</span><time datetime="2026-09-01">2026-09-01</time></div>
-              <p class="story-summary">世界黄金协会认为，美联储主席Warsh在Jackson Hole释放更鹰派的政策信号后，市场迅速提高了对进一步紧缩的预期，短端美债收益率上升并推动黄金跌破200日移动平均线；偏高的期权仓位也增加了短期价格压力。该机构同时指出，当周地缘政治、伊朗制裁、贸易摩擦以及美国通胀黏性仍在影响黄金市场，因此利率预期与避险需求之间的拉扯仍是主要驱动因素。</p>
+              <p class="story-summary">World Gold Council 认为，美联储主席 Warsh 在 Jackson Hole 释放更鹰派的政策信号后，市场迅速提高进一步紧缩的预期，短端美债收益率上升并推动黄金跌破 200 日移动平均线，偏高的期权仓位也增加短期价格压力。该机构同时指出，地缘政治、对伊朗制裁、贸易摩擦以及美国通胀黏性仍在影响黄金，因此利率预期与避险需求之间的拉扯继续构成主要驱动因素。</p>
               <a class="source-link" href="https://www.gold.org/goldhub/gold-focus/2026/09/weekly-markets-monitor-talking-tough" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
             </article></div>
         </section></section>
 </main>
-<footer class="footer"><span>NEWSROOM · AI-assisted international news digest</span><span>© 2026 alwinecor</span></footer>
-<script data-archive>(() => {
+
+<footer class="footer">
+  <span>NEWSROOM · AI-assisted international news digest</span>
+  <span>© 2026 alwinecor</span>
+</footer>
+
+<script data-archive>
+(() => {
   const drawer = document.querySelector('#archive-drawer');
   const menu = document.querySelector('.menu-button');
   const current = document.body.dataset.issue;
-  const archiveURL = new URL(/\/reports\/\d{4}-\d{2}-\d{2}\.html$/.test(location.pathname) ? '../archive.json' : './archive.json', location.href);
-  function syncDrawer(){const open=location.hash==='#archive-drawer';drawer.inert=!open;menu.setAttribute('aria-expanded',String(open));document.body.style.overflow=open?'hidden':'';}
-  addEventListener('hashchange',syncDrawer);syncDrawer();
-  async function refreshArchive(){try{const response=await fetch(archiveURL,{cache:'no-store'});if(!response.ok)throw new Error();const dates=await response.json();const fragment=document.createDocumentFragment();let year,list;for(const day of [...new Set(dates)].sort().reverse()){if(year!==day.slice(0,4)){year=day.slice(0,4);const section=document.createElement('section');const heading=document.createElement('h2');heading.className='archive-year';heading.textContent=year;list=document.createElement('ul');list.className='archive-dates';section.append(heading,list);fragment.append(section);}const li=document.createElement('li');const link=document.createElement('a');link.href=new URL(`reports/${day}.html`,archiveURL).href;link.textContent=day.slice(5).replace('-','.');if(day===current)link.setAttribute('aria-current','page');li.append(link);list.append(li);}document.querySelector('.archive-list').replaceChildren(fragment);}catch{}}
-  refreshArchive();addEventListener('pageshow',refreshArchive);
-})();</script>
-</body></html>
+  const archiveURL = new URL(
+    /\/reports\/\d{4}-\d{2}-\d{2}\.html$/.test(location.pathname)
+      ? '../archive.json' : './archive.json', location.href);
+
+  function syncDrawer() {
+    const open = location.hash === '#archive-drawer';
+    drawer.inert = !open;
+    menu.setAttribute('aria-expanded', String(open));
+    document.body.style.overflow = open ? 'hidden' : '';
+    if (open) drawer.querySelector('.drawer-close').focus({preventScroll: true});
+  }
+  addEventListener('hashchange', syncDrawer);
+  syncDrawer();
+  document.addEventListener('keydown', event => {
+    if (location.hash !== '#archive-drawer') return;
+    if (event.key === 'Escape') {
+      location.hash = 'page-top';
+      menu.focus({preventScroll: true});
+    }
+    if (event.key === 'Tab') {
+      const links = [...drawer.querySelectorAll('a[href]')];
+      const first = links[0], last = links[links.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault(); last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault(); first.focus();
+      }
+    }
+  });
+
+  async function refreshArchive() {
+    try {
+      const response = await fetch(archiveURL, {cache: 'no-store'});
+      if (!response.ok) throw new Error('Archive unavailable');
+      const dates = await response.json();
+      if (!Array.isArray(dates) || !dates.every(day => typeof day === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(day))) {
+        throw new Error('Invalid archive');
+      }
+      const fragment = document.createDocumentFragment();
+      let year, list;
+      for (const day of [...new Set(dates)].sort().reverse()) {
+        if (year !== day.slice(0, 4)) {
+          year = day.slice(0, 4);
+          const section = document.createElement('section');
+          const heading = document.createElement('h2');
+          heading.className = 'archive-year'; heading.textContent = year;
+          list = document.createElement('ul'); list.className = 'archive-dates';
+          section.append(heading, list); fragment.append(section);
+        }
+        const li = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = new URL(`reports/${day}.html`, archiveURL).href;
+        link.textContent = day.slice(5).replace('-', '.');
+        if (day === current) link.setAttribute('aria-current', 'page');
+        li.append(link); list.append(li);
+      }
+      document.querySelector('.archive-list').replaceChildren(fragment);
+    } catch {
+      // The current-issue fallback remains usable when offline or opened via file://.
+    }
+  }
+  refreshArchive();
+  addEventListener('pageshow', refreshArchive);
+})();
+
+</script>
+</body>
+</html>
