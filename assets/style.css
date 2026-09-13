@@ -487,6 +487,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
 .market-report:last-child{border-bottom:0}
 .market-title{font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;font-size:30px;font-weight:500;margin:0 0 14px}
 .story h4{font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;font-size:30px;font-weight:500;letter-spacing:-.025em;line-height:1.08;margin:12px 0;overflow-wrap:anywhere}
-.views-heading{font-size:13px;font-weight:750;margin:24px 0 0}
-.views-heading span{font-size:10px;letter-spacing:.13em;color:var(--muted);margin-left:12px}
+.lead-story h4{grid-column:1;font-size:52px;line-height:1.02;margin-top:15px}
+@media(max-width:900px){.lead-story h4{font-size:38px}}
 @media(max-width:560px){.story h4{font-size:25px}.market-title{font-size:27px}}
+@media(max-width:560px){.lead-story h4{font-size:32px}}

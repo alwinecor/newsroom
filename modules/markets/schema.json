@@ -70,7 +70,7 @@
         "institutional_views": {
           "type": "array",
           "minItems": 2,
-          "maxItems": 3,
+          "maxItems": 4,
           "items": {
             "type": "object",
             "additionalProperties": false,

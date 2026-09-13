@@ -70,6 +70,19 @@ class BuildTests(unittest.TestCase):
         self.assertEqual(len(parser.classes), news_count + len(views))
         self.assertEqual(sum('market-snapshot' in classes for classes in parser.classes), 0)
         self.assertEqual(sum('institutional-view' in classes for classes in parser.classes), len(views))
+        self.assertEqual(sum('lead-story' in classes for classes in parser.classes), 6)
+        self.assertNotIn('views-heading', report)
+        self.assertNotIn('INSTITUTIONAL VIEWS', report)
+        # Every news section and market keeps the editor's first item as its lead.
+        offset = 0
+        groups = [json.loads((folder / f'{name}.json').read_text(encoding='utf-8'))['items']
+                  for name in ('technology', 'politics', 'finance')]
+        groups += [market['institutional_views'] for market in markets.values()]
+        for entries in groups:
+            classes = parser.classes[offset:offset + len(entries)]
+            self.assertIn('lead-story', classes[0])
+            self.assertTrue(all('lead-story' not in item for item in classes[1:]))
+            offset += len(entries)
         self.assertEqual(sum(not classes.intersection({'market-snapshot', 'institutional-view'})
                              for classes in parser.classes), news_count)
         for view in views:
@@ -211,7 +224,7 @@ class BuildTests(unittest.TestCase):
     def test_valid_news_and_institutional_view_counts(self):
         folder = self.root / 'data/issues/2026-09-07'
         for news_count, view_counts in ((5, (2, 2, 2)), (5, (2, 2, 3)),
-                                        (8, (3, 2, 3)), (8, (3, 3, 3))):
+                                        (7, (3, 3, 3)), (8, (4, 2, 4))):
             with self.subTest(news=news_count, views=view_counts):
                 for name in ('technology', 'politics', 'finance'):
                     path = folder / f'{name}.json'
@@ -248,7 +261,7 @@ class BuildTests(unittest.TestCase):
             lambda d: d['markets']['gold'].update(institutional_views=[]),
             lambda d: d['markets']['gold'].update(institutional_views=[
                 {**d['markets']['gold']['institutional_views'][0], 'url': f'https://research.test/{i}'}
-                for i in range(4)]),
+                for i in range(5)]),
             lambda d: d['markets']['gold']['institutional_views'].append(d['markets']['gold']['institutional_views'][0].copy()),
             lambda d: d['markets']['gold']['institutional_views'].pop(),
         ]
@@ -277,13 +290,15 @@ class BuildTests(unittest.TestCase):
         result = self.run_build()
         self.assertEqual(result.returncode, 0, result.stderr)
         report = (self.root / 'site/index.html').read_text(encoding='utf-8')
-        for text in ('美国股市', '中国股市', '国际金价', '机构观点',
+        for text in ('美国股市', '中国股市', '国际金价',
                      '2026-08-31', '2026-09-06', '&lt;img', '&lt;script&gt;institution',
                      '&lt;b&gt;outlook', '&lt;script&gt;view', 'a=1&amp;b=2'):
             self.assertIn(text, report)
         self.assertNotIn('<img src=x', report)
         self.assertNotIn('市场现状', report)
         self.assertNotIn('回溯分析', report)
+        # An older first article must stay ahead of a newer article.
+        self.assertLess(report.index('&lt;b&gt;outlook'), report.index('&lt;script&gt;view'))
         self.assert_article_counts(report)
 
 

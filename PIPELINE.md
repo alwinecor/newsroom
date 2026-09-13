@@ -10,7 +10,7 @@
 
 ## 2. 读取规范
 
-依次读取 pipeline/EDITORIAL_POLICY.md、pipeline/TRANSLATION_POLICY.md，然后按以下顺序读取每个 enabled module 的 MODULE.md 和 schema.json：
+读完本总纲后，按以下顺序直接读取每个 enabled module 的 MODULE.md，再读取同目录 schema.json。MODULE.md 独立定义该模块的全部内容规则，包括范围、来源、筛选、排序、中文摘要、字段与失败条件；不得将其他模块的内容规范自动套用到本模块。schema.json 定义可执行的结构约束，若与模块规范冲突应报告用户处理，不自行放宽规则：
 
 1. technology：modules/technology/（enabled）
 2. politics：modules/politics/（enabled）
@@ -21,15 +21,10 @@
 
 ## 3. 依次完成四个模块
 
-前三个新闻模块独立完成：新闻搜索 → 阅读原始来源 → 来源核实 → 重要性筛选 → 模块内部事件去重 → 中文摘要 → JSON 输出。执行顺序为 technology → politics → finance → markets。
-
-- technology、politics、finance 各 5–8 条；不得为凑数虚构事实、日期、来源或链接。找不到足够可靠新闻时报告失败，不提交不完整期数。
-- 前三个新闻模块将同一事件的多篇报道合并为一个 item；保留最可靠、最直接的原始链接。跨模块允许同一事件，不做跨模块语义去重。
-- markets 按其 MODULE.md 与 schema.json 固定生成 us_equities、china_equities、gold。每个市场仅包含 2–3 条 institutional_views，不使用新闻 items 结构或 5–8 条规则。
-- 机构观点必须直接阅读权威机构公开原文，选择观察窗口内最新分析，按发布日期倒序输出。任一市场不足 2 条时报告失败，不向窗口外回溯凑数。保留 institution、original_title、published_at、url、summary_zh，明确观点归属，不改写成事实或合成市场共识，不添加模型预测或投资建议。
-- Markets 在每个市场的 institutional_views 内部去重；同一分析实质涉及多个市场时允许跨市场引用。新闻模块的 primary/media 标签不套用到机构观点。
-- 严格使用对应 schema 的字段和类型，保留原始标题和 URL，不添加 Markdown 代码围栏。
-- 分别写入 data/issues/YYYY-MM-DD/technology.json、politics.json、finance.json、markets.json。三个市场全部成功才算 markets 完成，四个模块全部成功才提交本期。
+- 按第 2 节顺序分别执行模块自己的 MODULE.md，完成其研究、核实、筛选、去重、摘要、排序和 JSON 输出要求。条数、来源层级、内容字段和主文选择均以该模块规范为准。
+- 每个模块写入 `data/issues/YYYY-MM-DD/<module>.json`；日期与共享窗口保持一致，结构严格符合对应 schema，不添加 Markdown 代码围栏。
+- 模块独立完成，不做跨模块语义去重；不得虚构内容或替其他模块放宽要求。
+- 所有 enabled modules 全部成功才进入本期校验与发布。任一模块失败，报告具体模块及原因，不提交不完整期数。
 
 ## 4. 校验、提交和报告
 

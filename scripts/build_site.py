@@ -109,9 +109,9 @@ def render_markets(module, index):
     for name, title in MARKETS.items():
         market = module['markets'][name]
         views = []
-        for view in market['institutional_views']:
+        for position, view in enumerate(market['institutional_views']):
             text = {key: escape(value, quote=True) for key, value in view.items()}
-            views.append(f'''<article class="story institutional-view">
+            views.append(f'''<article class="story institutional-view{' lead-story' if position == 0 else ''}">
               <div class="story-kicker"><span>{text['institution']}</span><span class="dot">•</span><span>INSTITUTIONAL ANALYSIS</span></div>
               <h4>{text['original_title']}</h4>
               <div class="story-meta"><span>{text['institution']}</span><time datetime="{text['published_at']}">{text['published_at']}</time></div>
@@ -120,8 +120,8 @@ def render_markets(module, index):
             </article>''')
         sections.append(f'''<section class="market-report" id="market-{name}">
           <h3 class="market-title">{title}</h3>
-          <h4 class="views-heading">机构观点 <span>INSTITUTIONAL VIEWS</span></h4>
-          <div class="secondary-grid">{''.join(views)}</div>
+          <div class="lead-grid"><div class="lead-index">A</div>{views[0]}</div>
+          <div class="secondary-grid">{''.join(views[1:])}</div>
         </section>''')
     return f'''<section class="news-section" id="markets">
       <div class="section-rule"></div><header class="section-header">
