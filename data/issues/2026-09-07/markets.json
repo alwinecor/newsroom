@@ -1,0 +1,83 @@
+{
+  "module": "markets",
+  "issue_date": "2026-09-07",
+  "window": {
+    "start": "2026-08-31",
+    "end": "2026-09-07"
+  },
+  "markets": {
+    "us_equities": {
+      "snapshot": {
+        "as_of": "2026-09-04",
+        "summary_zh": "截至9月4日，S&P 500价格指数报7,718.60点，9月至今上涨0.42%，年初至今上涨12.75%，过去一年上涨18.71%。S&P Dow Jones Indices说明该指数由500家美国大型上市公司组成，覆盖约80%的可投资市值，可作为美国大型股市场的核心宽基指标。",
+        "sources": [
+          {
+            "source_name": "S&P Dow Jones Indices",
+            "source_title": "S&P 500",
+            "url": "https://www.spglobal.com/spdji/en/indices/equity/sp-500/"
+          }
+        ]
+      },
+      "institutional_views": [
+        {
+          "institution": "Goldman Sachs",
+          "original_title": "Why US Equity Returns Are Broadening Beyond AI Stocks",
+          "published_at": "2026-08-21",
+          "url": "https://www.goldmansachs.com/insights/the-markets/why-us-equity-returns-are-broadening-beyond-ai-stocks",
+          "summary_zh": "Goldman Sachs的Shawn Tuteja认为，美国股票回报正在从少数AI相关公司向更广泛行业扩散。他指出，标普500的11个行业中有9个盈利表现强劲，而AI相关主题的波动仍然较高；油价、长期债券收益率以及美联储政策仍是影响这种市场扩散能否延续的重要因素。"
+        }
+      ]
+    },
+    "china_equities": {
+      "snapshot": {
+        "as_of": "2026-08-31",
+        "summary_zh": "截至8月31日，S&P China A 300价格指数过去1个月上涨1.58%，过去3个月下跌6.78%，年初至今上涨0.62%，过去一年上涨4.65%。S&P Dow Jones Indices说明该指数由沪深两市300只规模较大且流动性较高的A股组成；本期以这一可直接核实的月末宽基数据作为中国A股市场快照。",
+        "sources": [
+          {
+            "source_name": "S&P Dow Jones Indices",
+            "source_title": "S&P China A 300 Index",
+            "url": "https://www.spglobal.com/spdji/en/indices/equity/sp-china-a-300-index/"
+          }
+        ]
+      },
+      "institutional_views": [
+        {
+          "institution": "UBS CIO",
+          "original_title": "Looking beyond the obvious in stocks",
+          "published_at": "2026-08-19",
+          "url": "https://www.ubs.com/global/en/wealthmanagement/insights/marketnews/article.3655459.html",
+          "summary_zh": "UBS CIO认为全球股票上涨正在从美国和AI主题向其他地区扩散，并对亚洲（日本除外）保持积极观点。就中国而言，UBS表示仍对中国内地股票持建设性看法，并偏好A股胜于H股；其判断同时强调应通过更广泛的地区和行业配置降低市场集中风险。"
+        }
+      ]
+    },
+    "gold": {
+      "snapshot": {
+        "as_of": "2026-09-04",
+        "summary_zh": "截至9月4日，上海黄金交易所沪纽金合约参考价格表列示的COMEX期货亚洲标记价格为4,481.7美元/盎司；NYAuTN06和NYAuTN12参考结算价分别为4,624.6和4,516.7美元/盎司。交易所说明其中COMEX信息来自延时数据，因此这些数字仅作为该交易日国际黄金市场的官方参考快照。",
+        "sources": [
+          {
+            "source_name": "Shanghai Gold Exchange",
+            "source_title": "沪纽金合约2026年09月04日参考价格表",
+            "url": "https://www.sge.com.cn/h5_zdygz/pdfxq/10007545?h=3&topic=xjjg"
+          }
+        ]
+      },
+      "institutional_views": [
+        {
+          "institution": "World Gold Council",
+          "original_title": "Weekly Markets Monitor - Talking tough",
+          "published_at": "2026-09-01",
+          "url": "https://www.gold.org/goldhub/gold-focus/2026/09/weekly-markets-monitor-talking-tough",
+          "summary_zh": "World Gold Council指出，美联储主席Warsh在Jackson Hole发表偏鹰派言论后，短端美债收益率明显上行、市场重新评估未来紧缩路径，黄金随之跌破200日移动平均线；较高的期权仓位也增加了短期压力。该机构将利率预期变化视为当时黄金走势的重要驱动因素之一。"
+        },
+        {
+          "institution": "Goldman Sachs",
+          "original_title": "Why Gold Is Expected to Rise to Record Highs",
+          "published_at": "2026-09-04",
+          "url": "https://www.goldmansachs.com/insights/the-markets/why-gold-is-expected-to-rise-to-record-highs",
+          "summary_zh": "Goldman Sachs的Tony Kim认为，美国利率不确定性和伊朗战争相关扰动令黄金此前的涨势经历了较长停顿，但持续的央行购金最终仍可能推动金价再创新高。他同时指出，财政可持续性担忧可能强化黄金配置需求，而亚洲投资需求减弱则是需要关注的制约因素。"
+        }
+      ]
+    }
+  }
+}
