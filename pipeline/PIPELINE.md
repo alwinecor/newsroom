@@ -26,7 +26,6 @@
 - 同一事件的多篇报道合并为一个 item；保留最可靠、最直接的原始链接。跨模块允许同一事件，不做跨模块语义去重。
 - 严格使用对应 schema 的字段和类型，保留原始标题和 URL，不添加 Markdown 代码围栏。
 - 分别写入 data/issues/YYYY-MM-DD/technology.json、politics.json、finance.json。
-- 正式数据不得复用 demo 新闻或 example.com 占位链接。
 
 ## 4. 校验、提交和报告
 
@@ -36,4 +35,4 @@
 4. GitHub Actions 自动再次校验、构建和部署 Pages。检查对应 commit 的 workflow 和 Pages 部署状态，成功或失败均报告本期日期、条数、commit、workflow 和网站链接。
 5. 无法执行 Python、提交 GitHub 或查看部署时，如实报告阻断步骤，不声称完成。执行环境必须具备联网阅读、仓库读写、Python 3.12 和 jsonschema 能力；普通定时提醒不等同于这些工具权限。
 
-不要修改历史期数、不要自动补做旧期数、不要修改 workflow 或 repo 规则。示例期 2026-09-07 是虚构演示，不属于生产新闻。
+不要修改历史期数、不要自动补做旧期数、不要修改 workflow 或 repo 规则。
