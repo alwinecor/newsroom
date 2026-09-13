@@ -55,26 +55,6 @@
       "published_at": "2026-09-01",
       "url": "https://newsroom.equinix.com/2026-09-01-Diraq-and-Equinix-to-Deploy-Australias-First-Quantum-Computer-Inside-a-Data-Centre",
       "summary_zh": "Diraq 与 Equinix 宣布计划在悉尼商业数据中心部署一台采用 8 个硅自旋量子比特的量子计算机，预计 2026 年 10 月完成安装。双方称整套系统包括低温制冷与控制设备，功耗低于 20 千瓦，将用于测试量子硬件与传统 CPU、GPU 及数据中心网络共同运行；“澳大利亚首台部署于数据中心的量子计算机”等定位来自双方公告。"
-    },
-    {
-      "id": "technology-006",
-      "category": "软件供应链安全",
-      "original_title": "Multiple trusted publishing configurations for npm",
-      "source_name": "GitHub",
-      "source_level": "primary",
-      "published_at": "2026-09-03",
-      "url": "https://github.blog/changelog/2026-09-03-multiple-trusted-publishing-configurations-for-npm/",
-      "summary_zh": "GitHub 宣布 npm 可信发布机制的三项更新正式可用：每个软件包可配置多个基于 OIDC 的可信发布流程，暂存版本必须完成恶意软件扫描后才能批准发布，维护者还可在版本页面查看暂存历史。多个配置可分别指定仓库、工作流与环境，使不同发布路径减少对长期 npm 访问令牌的依赖。"
-    },
-    {
-      "id": "technology-007",
-      "category": "开发者平台",
-      "original_title": "GitHub Actions: Early September 2026 updates",
-      "source_name": "GitHub",
-      "source_level": "primary",
-      "published_at": "2026-09-03",
-      "url": "https://github.blog/changelog/2026-09-03-github-actions-early-september-2026-updates/",
-      "summary_zh": "GitHub Actions 发布 9 月初平台更新：新增 REST API 以查询托管运行器镜像停止注册和停止运行的时间，为 GITHUB_TOKEN 增加只读访问 Dependabot 警报的独立权限，并为可复用工作流加入用于识别实际定义当前 job 的四个上下文字段。GitHub 表示这些新的可复用工作流上下文字段暂不适用于 GitHub Enterprise Server。"
     }
   ]
 }
