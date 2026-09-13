@@ -10,15 +10,18 @@ AI-generated modular international news digest. 一个最小可用的国际新�
 - Repository：rules + schemas + validation + rendering。
 - GitHub Actions：build + deploy。
 
-本仓库不联网搜索新闻，不包含爬虫或 LLM API。三个模块独立生成 JSON，Python 校验全部历史期数，在内存中按固定顺序聚合新期数，复用已有报告并组装静态发布目录；不额外保存聚合 JSON。
+本仓库不联网搜索新闻，不包含爬虫或 LLM API。四个模块独立生成 JSON，Python 校验全部历史期数，在内存中按固定顺序聚合新期数，复用已有报告并组装静态发布目录；不额外保存聚合 JSON。
 
 ## Modules
 
 - Technology / 科技
 - Politics / 时政
 - Finance / 宏观经济与金融
+- Markets / 美国股市、中国股市、国际金价
 
-入口是 [PIPELINE.md](pipeline/PIPELINE.md)，各模块在 modules/ 下分别拥有 MODULE.md 和 schema.json。三个 schema 独立且结构一致，不使用继承。
+入口是 [PIPELINE.md](pipeline/PIPELINE.md)，各模块在 modules/ 下分别拥有 MODULE.md 和 schema.json。前三个新闻模块使用相同的 items 结构；markets 使用独立结构，固定包含三个市场，每个市场有 snapshot（1–3 个一手来源）和 institutional_views（1–2 篇机构公开分析），详见 [Markets 规范](modules/markets/MODULE.md)。不向 markets 套用新闻模块的 5–8 条或 primary/media 枚举。
+
+接入代码不会自动刷新已有 HTML；经授权补齐数据后，若需更新旧页面，可移除对应报告并运行构建。
 
 ## Manual test
 
@@ -31,15 +34,15 @@ python -m http.server 8000 --directory site
 
 浏览器访问 http://localhost:8000。根 URL 直接显示最新一期。完整归档导航通过 HTTP(S) 加载 archive.json；直接打开本地 HTML 时仅保留当期导航。CI 使用 requirements.txt 中的 jsonschema 主版本范围。
 
-正式数据位于 data/issues/YYYY-MM-DD/。每期使用 editorial / newspaper 版式，左侧抽屉按年份和日期倒序展示归档。
+正式数据位于 data/issues/YYYY-MM-DD/。每期按科技、时政、财经、市场顺序使用 editorial / newspaper 版式，左侧抽屉按年份和日期倒序展示归档。Markets 沿用衬线标题、分隔线及双列布局，分开展示市场现状与机构观点；观察窗口前的文章标注“回溯分析”。顶部新闻条数和新闻来源统计仅计算前三个模块，另列市场板块数与机构观点数，避免混淆来源角色。
 
 发布源为 Git 跟踪的 `reports/YYYY-MM-DD.html`。默认构建只渲染不存在的报告，已有网页直接复用，避免发布新一期时重复渲染历史。历史 HTML 可以修改；也可以移除需要重新生成的那一期 HTML，再运行构建，使用现有 JSON 和当前模板重新生成该期。其他报告仍直接复用。CSS 与归档脚本继续内嵌在报告中，因此模板调整在该期重新生成后生效。
 
 `site/` 是不提交 Git 的部署产物，包含最新报告的完整副本 `index.html`、全部报告的字节副本 `reports/`、动态归档清单 `archive.json` 和 `.nojekyll`。历史页每次打开时用少量原生 JavaScript 读取最新清单，因此更新 sidebar 不需要重写任何旧报告。请求失败时保留当期链接。支持 GitHub project Pages 子路径，无额外依赖。
 
-每次新增一期：运行构建，将本期三个 JSON 与新生成的 `reports/YYYY-MM-DD.html` 一起提交。CI 使用 `python scripts/build_site.py --check-published`，缺少报告 HTML 会失败；全新 checkout 也直接使用 Git 中的已有网页，不依赖 Actions cache 或过期 artifact。构建仍会打包上传全部静态文件，但不会重新渲染已有 reports。修改或重新生成历史 HTML 后，提交对应文件即可发布更新。
+每次新增一期：运行构建，将本期四个 JSON 与新生成的 `reports/YYYY-MM-DD.html` 一起提交。CI 使用 `python scripts/build_site.py --check-published`，缺少报告 HTML 会失败；全新 checkout 也直接使用 Git 中的已有网页，不依赖 Actions cache 或过期 artifact。构建仍会打包上传全部静态文件，但不会重新渲染已有 reports。修改或重新生成历史 HTML 后，提交对应文件即可发布更新。
 
-校验包含 schema、真实日期、三个模块日期/窗口一致、目录日期一致、7 天 UTC 半开窗口、新闻日期在窗口内、模块内 ID/URL 唯一和 HTTP(S) URL。所有 JSON 字符串在 HTML 中转义。任何数据校验失败都会输出文件与字段信息并非零退出，且不会改写已有 site/。结构校验不会核实新闻真实性或识别不同 URL 对应的同一事件，研究者仍负责语义去重。
+校验包含 schema、真实日期、四个模块日期/窗口一致、目录日期一致、7 天 UTC 半开窗口、新闻日期在窗口内、模块内 ID/URL 唯一和 HTTP(S) URL。所有 JSON 字符串在 HTML 中转义。任何数据校验失败都会输出文件与字段信息并非零退出，且不会改写已有 site/。结构校验不会核实新闻真实性或识别不同 URL 对应的同一事件，研究者仍负责语义去重。Markets 额外检查 snapshot.as_of 在观察窗口内、机构文章 published_at 位于 `[issue_date - 30 天, issue_date)`，以及每个市场的来源列表和观点列表各自 URL 唯一；同一来源跨市场复用是允许的。是否需要回溯、是否确为一手数据和观点归属仍由研究者核实。
 
 ## Production workflow
 
@@ -53,7 +56,7 @@ Scheduled Task → reads PIPELINE.md → generates JSON → local validation / a
 
 建议 Scheduled Task prompt：
 
-> 读取本仓库 pipeline/PIPELINE.md 并严格执行完整 weekly newsroom pipeline。根据其中定义依次处理所有 enabled modules，将结构化结果写入本期 data/issues/YYYY-MM-DD/，不得修改历史期数。使用约定 UTC 周一作为 issue_date，并遵循半开观察窗口。完成后运行校验，将三个 JSON 和新生成的本期 reports/YYYY-MM-DD.html 一次性提交 GitHub，并检查对应 commit 的 GitHub Actions 和 Pages 部署状态。成功或失败均向我报告最终结果。若本期已存在，不覆盖；若缺少联网、执行、仓库写入或部署检查权限，明确报告阻断步骤，不声称成功。
+> 读取本仓库 pipeline/PIPELINE.md 并严格执行完整 weekly newsroom pipeline。根据其中定义依次处理所有 enabled modules，将结构化结果写入本期 data/issues/YYYY-MM-DD/，不得修改历史期数。使用约定 UTC 周一作为 issue_date，并遵循半开观察窗口。完成后运行校验，将四个 JSON 和新生成的本期 reports/YYYY-MM-DD.html 一次性提交 GitHub，并检查对应 commit 的 GitHub Actions 和 Pages 部署状态。成功或失败均向我报告最终结果。若本期已存在，不覆盖；若缺少联网、执行、仓库写入或部署检查权限，明确报告阻断步骤，不声称成功。
 
 没有 cron；定时由外部任务负责。工作流支持 push main 和 workflow_dispatch。Pages 配置参考 [GitHub 官方自定义工作流文档](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)。
 

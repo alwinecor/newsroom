@@ -11,7 +11,8 @@ from urllib.parse import urlsplit
 from jsonschema import Draft202012Validator, FormatChecker
 
 ROOT = Path(__file__).resolve().parents[1]
-MODULES = {'technology': '科技', 'politics': '时政', 'finance': '财经'}
+MODULES = {'technology': '科技', 'politics': '时政', 'finance': '财经', 'markets': '市场'}
+MARKETS = {'us_equities': '美国股市', 'china_equities': '中国股市', 'gold': '国际金价'}
 
 
 def read_json(path):
@@ -19,6 +20,35 @@ def read_json(path):
         return json.loads(path.read_text(encoding='utf-8'))
     except (OSError, ValueError) as exc:
         raise ValueError(f'{path}: {exc}') from exc
+
+
+def validate_url(value, location):
+    try:
+        url = urlsplit(value)
+        valid = url.scheme in ('http', 'https') and url.hostname and not url.username and not url.password
+    except ValueError:
+        valid = False
+    if not valid:
+        raise ValueError(f'{location}: must be an HTTP(S) URL without credentials')
+
+
+def validate_markets(data, path, start, end):
+    for name, market in data['markets'].items():
+        location = f'{path}: markets/{name}'
+        if not start <= date.fromisoformat(market['snapshot']['as_of']) < end:
+            raise ValueError(f'{location}/snapshot/as_of outside observation window')
+        # Reuse across markets is allowed; one institution may cover multiple markets.
+        for group, entries in (('snapshot/sources', market['snapshot']['sources']),
+                               ('institutional_views', market['institutional_views'])):
+            urls = [entry['url'] for entry in entries]
+            if len(urls) != len(set(urls)):
+                raise ValueError(f'{location}/{group}: duplicate url')
+            for index, entry in enumerate(entries):
+                validate_url(entry['url'], f'{location}/{group}/{index}/url')
+        for index, view in enumerate(market['institutional_views']):
+            if not end - timedelta(days=30) <= date.fromisoformat(view['published_at']) < end:
+                raise ValueError(f'{location}/institutional_views/{index}/published_at '
+                                 'must be within the 30 days before issue_date')
 
 
 def load_issues():
@@ -49,14 +79,16 @@ def load_issues():
                 raise ValueError(f'{path}: window must be [issue_date - 7 days, issue_date)')
             if modules and data['window'] != modules[0]['window']:
                 raise ValueError(f'{path}: module observation windows differ')
+            if module == 'markets':
+                validate_markets(data, path, start, end)
+                modules.append(data)
+                continue
             for key in ('url', 'id'):
                 values = [item[key] for item in data['items']]
                 if len(values) != len(set(values)):
                     raise ValueError(f'{path}: duplicate {key} within module')
             for index, item in enumerate(data['items']):
-                url = urlsplit(item['url'])
-                if url.scheme not in ('http', 'https') or not url.hostname or url.username or url.password:
-                    raise ValueError(f'{path}: items/{index}/url must be an HTTP(S) URL without credentials')
+                validate_url(item['url'], f'{path}: items/{index}/url')
                 if not start <= date.fromisoformat(item['published_at']) < end:
                     raise ValueError(f'{path}: items/{index}/published_at outside observation window')
             modules.append(data)
@@ -76,10 +108,53 @@ def render_story(item, lead=False):
     </article>'''
 
 
+def render_markets(module, index):
+    sections = []
+    for name, title in MARKETS.items():
+        market = module['markets'][name]
+        snapshot = market['snapshot']
+        sources = ''.join(
+            f'<li><a href="{escape(source["url"], quote=True)}" target="_blank" rel="noopener noreferrer">'
+            f'{escape(source["source_name"])} · {escape(source["source_title"])} ↗</a></li>'
+            for source in snapshot['sources'])
+        views = []
+        for view in market['institutional_views']:
+            text = {key: escape(value, quote=True) for key, value in view.items()}
+            lookback = '<span>回溯分析（观察窗口前）</span>' if view['published_at'] < module['window']['start'] else ''
+            views.append(f'''<article class="story institutional-view">
+              <div class="story-kicker"><span>{text['institution']}</span><span class="dot">•</span><span>INSTITUTIONAL ANALYSIS</span></div>
+              <h4>{text['original_title']}</h4>
+              <div class="story-meta"><span>{text['institution']}</span><time datetime="{text['published_at']}">{text['published_at']}</time>{lookback}</div>
+              <p class="story-summary">{text['summary_zh']}</p>
+              <a class="source-link" href="{text['url']}" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+            </article>''')
+        sections.append(f'''<section class="market-report" id="market-{name}">
+          <h3 class="market-title">{title}</h3>
+          <article class="story lead-story market-snapshot">
+            <div class="story-kicker"><span>{name.replace('_', ' ').upper()}</span><span class="dot">•</span><span>PRIMARY DATA</span></div>
+            <h4>市场现状</h4>
+            <div class="story-meta">截至 <time datetime="{escape(snapshot['as_of'])}">{escape(snapshot['as_of'])}</time></div>
+            <p class="story-summary">{escape(snapshot['summary_zh'])}</p>
+            <div class="snapshot-sources"><span class="story-kicker">一手数据来源</span><ul>{sources}</ul></div>
+          </article>
+          <h4 class="views-heading">机构观点 <span>INSTITUTIONAL VIEWS</span></h4>
+          <div class="secondary-grid">{''.join(views)}</div>
+        </section>''')
+    return f'''<section class="news-section" id="markets">
+      <div class="section-rule"></div><header class="section-header">
+        <div class="section-number">{index:02d}</div>
+        <div class="section-title-wrap"><div class="section-en">MARKETS</div><h2>市场</h2></div>
+        <div class="section-count">03 MARKETS</div>
+      </header>{''.join(sections)}</section>'''
+
+
 def render_report(issue_date, modules, number):
     sections = []
     for index, module in enumerate(modules, 1):
         name = module['module']
+        if name == 'markets':
+            sections.append(render_markets(module, index))
+            continue
         items = module['items']
         sections.append(f'''<section class="news-section" id="{name}">
       <div class="section-rule"></div>
@@ -91,7 +166,8 @@ def render_report(issue_date, modules, number):
       <div class="lead-grid"><div class="lead-index">A</div>{render_story(items[0], lead=True)}</div>
       <div class="secondary-grid">{''.join(render_story(item) for item in items[1:])}</div>
     </section>''')
-    items = [item for module in modules for item in module['items']]
+    items = [item for module in modules if module['module'] != 'markets' for item in module['items']]
+    markets = next((module['markets'] for module in modules if module['module'] == 'markets'), {})
     window = modules[0]['window']
     values = {
         'style': (ROOT / 'assets/style.css').read_text(encoding='utf-8'),
@@ -103,6 +179,17 @@ def render_report(issue_date, modules, number):
         'primary': str(sum(item['source_level'] == 'primary' for item in items)),
         'sources': str(len({item['source_name'] for item in items})),
         'sections': '\n'.join(sections),
+        'section_nav': '\n'.join(
+            f'<a href="#{module["module"]}"><span class="zh">{index:02d} {MODULES[module["module"]]}</span>'
+            f'<span class="en">{module["module"].upper()}</span></a>' for index, module in enumerate(modules, 1)),
+        'perspectives': '四个' if markets else '三个',
+        'intro': '聚焦科技、时政、财经与市场。中文摘要保留事实边界，区分市场现状与机构观点，并始终附上原始来源。' if markets else
+                 '聚焦科技、时政与财经的重要国际信息。中文摘要保留事实边界，并始终附上原始来源。',
+        'stories_label': 'News stories' if markets else 'Stories',
+        'primary_label': 'News primary sources' if markets else 'Primary sources',
+        'sources_label': 'News distinct sources' if markets else 'Distinct sources',
+        'market_facts': (f'<div class="fact"><dt>Market sections</dt><dd>{len(markets)}</dd></div>'
+                         f'<div class="fact"><dt>Institutional views</dt><dd>{sum(len(m["institutional_views"]) for m in markets.values())}</dd></div>') if markets else '',
         'archive_fallback': f'''<section><h2 class="archive-year">{issue_date[:4]}</h2>
           <ul class="archive-dates"><li><a href="#page-top" aria-current="page">{issue_date[5:].replace('-', '.')}</a></li></ul></section>
           <noscript>完整归档导航需要启用 JavaScript。</noscript>''',

@@ -481,3 +481,20 @@ main{max-width:var(--page);margin:0 auto;padding:0 28px 80px}
 .story h3,.story-summary{overflow-wrap:anywhere}
 a:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.archive-drawer,.archive-overlay{transition:none}}
+
+/* Markets use the same paper, rules, serif headings and two-column stories. */
+.market-report{padding:30px 0;border-bottom:1px solid var(--line)}
+.market-report:last-child{border-bottom:0}
+.market-title{font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;font-size:30px;font-weight:500;margin:0 0 14px}
+.story h4{font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;font-size:30px;font-weight:500;letter-spacing:-.025em;line-height:1.08;margin:12px 0;overflow-wrap:anywhere}
+.market-snapshot{border-bottom:1px solid var(--soft-line)}
+.market-snapshot h4{grid-column:1;font-size:42px}
+.snapshot-sources{grid-column:1;margin-top:24px;font-size:12px;overflow-wrap:anywhere}
+.snapshot-sources ul{list-style:none;margin:10px 0 0;padding:0}
+.snapshot-sources li{margin-top:8px}
+.snapshot-sources a{text-decoration:none;border-bottom:1px solid var(--soft-line)}
+.snapshot-sources a:hover{color:var(--accent)}
+.views-heading{font-size:13px;font-weight:750;margin:24px 0 0}
+.views-heading span{font-size:10px;letter-spacing:.13em;color:var(--muted);margin-left:12px}
+@media(max-width:900px){.market-snapshot h4{font-size:32px}}
+@media(max-width:560px){.story h4{font-size:25px}.market-title{font-size:27px}}

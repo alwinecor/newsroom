@@ -1,4 +1,5 @@
 import json
+from datetime import date, timedelta
 from pathlib import Path
 import shutil
 import subprocess
@@ -9,6 +10,25 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def markets_fixture(issue_date='2026-09-07'):
+    end = date.fromisoformat(issue_date)
+    return {
+        'module': 'markets', 'issue_date': issue_date,
+        'window': {'start': (end - timedelta(days=7)).isoformat(), 'end': issue_date},
+        'markets': {name: {
+            'snapshot': {
+                'as_of': (end - timedelta(days=3)).isoformat(),
+                'summary_zh': '测试市场现状，依据一手数据。',
+                'sources': [{'source_name': 'Test Exchange', 'source_title': 'Official index data',
+                             'url': f'https://exchange.test/{name}'}]},
+            'institutional_views': [{'institution': 'Test Research', 'original_title': 'Market outlook',
+                                     'published_at': (end - timedelta(days=10)).isoformat(),
+                                     'url': f'https://research.test/{name}',
+                                     'summary_zh': '测试机构认为市场仍存在风险。'}]
+        } for name in ('us_equities', 'china_equities', 'gold')}
+    }
+
+
 class BuildTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
@@ -17,6 +37,10 @@ class BuildTests(unittest.TestCase):
         for folder in ('scripts', 'modules', 'data', 'assets'):
             if (ROOT / folder).exists():
                 shutil.copytree(ROOT / folder, self.root / folder)
+        # Fixtures live only in the temporary checkout, never in project data/.
+        for folder in (self.root / 'data/issues').iterdir():
+            if folder.is_dir() and not (folder / 'markets.json').exists():
+                (folder / 'markets.json').write_text(json.dumps(markets_fixture(folder.name)), encoding='utf-8')
 
     def run_build(self, *args):
         return subprocess.run([sys.executable, '-X', 'utf8', str(self.root / 'scripts/build_site.py'), *args],
@@ -35,10 +59,13 @@ class BuildTests(unittest.TestCase):
         report = (self.root / 'site/reports/2026-09-07.html').read_text(encoding='utf-8')
         self.assertIn('&lt;script&gt;', report)
         self.assertNotIn('<script>', report)
-        self.assertEqual(report.count('<article'), 15)
+        self.assertEqual(report.count('<article'), 21)
         self.assertLess(report.index('id="technology"'), report.index('id="politics"'))
         self.assertEqual(report, (self.root / 'site/index.html').read_text(encoding='utf-8'))
         self.assertIn('archive-drawer', report)
+        self.assertIn('id="markets"', report)
+        self.assertIn('href="#markets"', report)
+        self.assertLess(report.index('id="finance"'), report.index('id="markets"'))
 
     def test_invalid_data_does_not_replace_site(self):
         changes = [
@@ -87,6 +114,9 @@ class BuildTests(unittest.TestCase):
         older = self.root / 'data/issues/2026-08-31'
         older.mkdir()
         for path in (self.root / 'data/issues/2026-09-07').glob('*.json'):
+            if path.name == 'markets.json':
+                (older / path.name).write_text(json.dumps(markets_fixture('2026-08-31')), encoding='utf-8')
+                continue
             data = json.loads(path.read_text(encoding='utf-8'))
             data.update(issue_date='2026-08-31', window={'start': '2026-08-24', 'end': '2026-08-31'})
             for item in data['items']:
@@ -114,6 +144,9 @@ class BuildTests(unittest.TestCase):
         newer = self.root / 'data/issues/2026-09-14'
         newer.mkdir()
         for path in (self.root / 'data/issues/2026-09-07').glob('*.json'):
+            if path.name == 'markets.json':
+                (newer / path.name).write_text(json.dumps(markets_fixture('2026-09-14')), encoding='utf-8')
+                continue
             data = json.loads(path.read_text(encoding='utf-8'))
             data.update(issue_date='2026-09-14', window={'start': '2026-09-07', 'end': '2026-09-14'})
             for item in data['items']:
@@ -140,6 +173,68 @@ class BuildTests(unittest.TestCase):
         report.unlink()
         self.assertEqual(self.run_build().returncode, 0)
         self.assertEqual(report.read_bytes(), original)
+
+    def test_markets_required_for_all_issues(self):
+        (self.root / 'data/issues/2026-09-07/markets.json').unlink()
+        result = self.run_build()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn('markets.json', result.stderr)
+        self.assertFalse((self.root / 'reports').exists())
+
+    def test_markets_dates_structure_and_urls(self):
+        changes = [
+            lambda d: d['markets'].pop('gold'),
+            lambda d: d.update(issue_date='2026-09-08'),
+            lambda d: d['window'].update(start='2026-08-30'),
+            lambda d: d['markets']['gold']['snapshot'].update(as_of='2026-08-30'),
+            lambda d: d['markets']['gold']['snapshot'].update(as_of='2026-09-07'),
+            lambda d: d['markets']['gold']['snapshot'].update(as_of='2026-02-30'),
+            lambda d: d['markets']['gold']['snapshot'].update(sources=[]),
+            lambda d: d['markets']['gold']['snapshot']['sources'][0].update(url='javascript:alert(1)'),
+            lambda d: d['markets']['gold']['institutional_views'][0].update(url='https://user:pass@research.test'),
+            lambda d: d['markets']['gold']['institutional_views'][0].update(published_at='2026-08-07'),
+            lambda d: d['markets']['gold']['institutional_views'][0].update(published_at='2026-09-07'),
+            lambda d: d['markets']['gold'].update(institutional_views=[]),
+            lambda d: d['markets']['gold']['institutional_views'].append(d['markets']['gold']['institutional_views'][0].copy()),
+            lambda d: d['markets']['gold']['snapshot']['sources'].append(d['markets']['gold']['snapshot']['sources'][0].copy()),
+        ]
+        path = self.root / 'data/issues/2026-09-07/markets.json'
+        for index, change in enumerate(changes):
+            with self.subTest(case=index):
+                data = markets_fixture()
+                change(data)
+                path.write_text(json.dumps(data), encoding='utf-8')
+                result = self.run_build()
+                self.assertNotEqual(result.returncode, 0)
+                self.assertIn('markets.json', result.stderr)
+                self.assertIn('ERROR:', result.stderr)
+                self.assertFalse((self.root / 'reports').exists())
+
+    def test_markets_rendering_and_lookback_boundary(self):
+        data = markets_fixture()
+        gold = data['markets']['gold']
+        gold['snapshot']['as_of'] = '2026-08-31'
+        gold['snapshot']['summary_zh'] = '<img src=x onerror=alert(1)>'
+        gold['snapshot']['sources'][0]['source_title'] = '<script>source</script>'
+        gold['snapshot']['sources'][0]['url'] = 'https://exchange.test/?a=1&b=2'
+        gold['institutional_views'][0].update(institution='<script>institution</script>',
+                                             original_title='<b>outlook</b>', published_at='2026-08-08')
+        gold['institutional_views'].append({**gold['institutional_views'][0],
+                                           'url': 'https://research.test/second', 'published_at': '2026-09-06',
+                                           'summary_zh': '<script>view</script>'})
+        path = self.root / 'data/issues/2026-09-07/markets.json'
+        path.write_text(json.dumps(data), encoding='utf-8')
+        result = self.run_build()
+        self.assertEqual(result.returncode, 0, result.stderr)
+        report = (self.root / 'site/index.html').read_text(encoding='utf-8')
+        for text in ('美国股市', '中国股市', '国际金价', '市场现状', '机构观点',
+                     '2026-08-08', '回溯分析', '&lt;img', '&lt;script&gt;institution',
+                     '&lt;b&gt;outlook', '&lt;script&gt;source', '&lt;script&gt;view', 'a=1&amp;b=2'):
+            self.assertIn(text, report)
+        self.assertNotIn('<img src=x', report)
+        self.assertIn('News stories</dt><dd>15', report)
+        self.assertIn('Market sections</dt><dd>3', report)
+        self.assertIn('Institutional views</dt><dd>4', report)
 
 
 if __name__ == '__main__':
