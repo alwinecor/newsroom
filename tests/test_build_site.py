@@ -109,7 +109,10 @@ class BuildTests(unittest.TestCase):
 
     def test_invalid_data_does_not_replace_site(self):
         changes = [
-            lambda d: d['items'].pop(),
+            lambda d: d.update(items=d['items'][:4]),
+            lambda d: d.update(items=[
+                {**d['items'][0], 'id': f'technology-{i}', 'url': f'https://news.test/{i}'}
+                for i in range(9)]),
             lambda d: d['items'][1].update(id=d['items'][0]['id']),
             lambda d: d['items'][1].update(url=d['items'][0]['url']),
             lambda d: d.update(issue_date='2026-09-08'),
@@ -121,15 +124,21 @@ class BuildTests(unittest.TestCase):
             lambda d: d.update(extra=True),
         ]
         path = self.root / 'data/issues/2026-09-07/technology.json'
-        original = path.read_text(encoding='utf-8')
-        for change in changes:
-            with self.subTest(change=changes.index(change)):
-                path.write_text(original, encoding='utf-8')
-                self.mutate(change)
-                result = self.run_build()
-                self.assertNotEqual(result.returncode, 0)
-                self.assertIn('ERROR:', result.stderr)
-                self.assertFalse((self.root / 'site').exists())
+        original = json.loads(path.read_text(encoding='utf-8'))
+        # Invalid mutations must work for every legal starting count, not only five.
+        for count in range(5, 9):
+            baseline = {**original, 'items': [
+                {**original['items'][0], 'id': f'technology-{i}', 'url': f'https://news.test/{i}'}
+                for i in range(count)]}
+            for index, change in enumerate(changes):
+                with self.subTest(starting_count=count, change=index):
+                    path.write_text(json.dumps(baseline), encoding='utf-8')
+                    self.mutate(change)
+                    result = self.run_build()
+                    self.assertNotEqual(result.returncode, 0)
+                    self.assertIn('ERROR:', result.stderr)
+                    self.assertIn('technology.json', result.stderr)
+                    self.assertFalse((self.root / 'site').exists())
 
     def test_missing_module(self):
         (self.root / 'data/issues/2026-09-07/finance.json').unlink()
@@ -223,7 +232,7 @@ class BuildTests(unittest.TestCase):
 
     def test_valid_news_and_institutional_view_counts(self):
         folder = self.root / 'data/issues/2026-09-07'
-        for news_count, view_counts in ((5, (2, 2, 2)), (5, (2, 2, 3)),
+        for news_count, view_counts in ((5, (2, 2, 2)), (6, (2, 2, 3)),
                                         (7, (3, 3, 3)), (8, (4, 2, 4))):
             with self.subTest(news=news_count, views=view_counts):
                 for name in ('technology', 'politics', 'finance'):
