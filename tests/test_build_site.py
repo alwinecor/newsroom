@@ -1,5 +1,7 @@
 import json
 from datetime import date, timedelta
+from html import escape
+from html.parser import HTMLParser
 from pathlib import Path
 import shutil
 import subprocess
@@ -8,6 +10,16 @@ import tempfile
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+class ArticleParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.classes = []
+
+    def handle_starttag(self, tag, attrs):
+        if tag == 'article':
+            self.classes.append(set((dict(attrs).get('class') or '').split()))
 
 
 def markets_fixture(issue_date='2026-09-07'):
@@ -52,6 +64,26 @@ class BuildTests(unittest.TestCase):
         change(data)
         path.write_text(json.dumps(data), encoding='utf-8')
 
+    def assert_article_counts(self, report, issue_date='2026-09-07'):
+        folder = self.root / 'data/issues' / issue_date
+        news_count = sum(len(json.loads((folder / f'{name}.json').read_text(encoding='utf-8'))['items'])
+                         for name in ('technology', 'politics', 'finance'))
+        markets = json.loads((folder / 'markets.json').read_text(encoding='utf-8'))['markets']
+        views = [view for market in markets.values() for view in market['institutional_views']]
+        parser = ArticleParser()
+        parser.feed(report)
+        self.assertEqual(len(parser.classes), news_count + len(markets) + len(views))
+        self.assertEqual(sum('market-snapshot' in classes for classes in parser.classes), len(markets))
+        self.assertEqual(sum('institutional-view' in classes for classes in parser.classes), len(views))
+        self.assertEqual(sum(not classes.intersection({'market-snapshot', 'institutional-view'})
+                             for classes in parser.classes), news_count)
+        for view in views:
+            self.assertIn(escape(view['original_title']), report)
+            self.assertIn(f'href="{escape(view["url"], quote=True)}"', report)
+        self.assertIn(f'News stories</dt><dd>{news_count}', report)
+        self.assertIn(f'Market sections</dt><dd>{len(markets)}', report)
+        self.assertIn(f'Institutional views</dt><dd>{len(views)}', report)
+
     def test_build_and_escape(self):
         self.mutate(lambda d: d['items'][0].update(original_title='<script>alert("x")</script>'))
         result = self.run_build()
@@ -59,7 +91,7 @@ class BuildTests(unittest.TestCase):
         report = (self.root / 'site/reports/2026-09-07.html').read_text(encoding='utf-8')
         self.assertIn('&lt;script&gt;', report)
         self.assertNotIn('<script>', report)
-        self.assertEqual(report.count('<article'), 21)
+        self.assert_article_counts(report)
         self.assertLess(report.index('id="technology"'), report.index('id="politics"'))
         self.assertEqual(report, (self.root / 'site/index.html').read_text(encoding='utf-8'))
         self.assertIn('archive-drawer', report)
@@ -181,6 +213,32 @@ class BuildTests(unittest.TestCase):
         self.assertIn('markets.json', result.stderr)
         self.assertFalse((self.root / 'reports').exists())
 
+    def test_valid_news_and_institutional_view_counts(self):
+        folder = self.root / 'data/issues/2026-09-07'
+        for news_count, view_counts in ((5, (1, 1, 1)), (5, (1, 1, 2)),
+                                        (8, (2, 1, 2)), (8, (2, 2, 2))):
+            with self.subTest(news=news_count, views=view_counts):
+                for name in ('technology', 'politics', 'finance'):
+                    path = folder / f'{name}.json'
+                    data = json.loads(path.read_text(encoding='utf-8'))
+                    data['items'] = [{**data['items'][0], 'id': f'{name}-{index}',
+                                      'url': f'https://news.test/{name}/{index}'}
+                                     for index in range(news_count)]
+                    path.write_text(json.dumps(data), encoding='utf-8')
+                data = markets_fixture()
+                for name, count in zip(('us_equities', 'china_equities', 'gold'), view_counts):
+                    market = data['markets'][name]
+                    market['institutional_views'] = [
+                        {**market['institutional_views'][0], 'original_title': f'{name} outlook {index}',
+                         'url': f'https://research.test/{name}/{index}'} for index in range(count)]
+                (folder / 'markets.json').write_text(json.dumps(data), encoding='utf-8')
+                # Each scenario must render its changed temporary data, not reuse the prior HTML.
+                (self.root / 'reports/2026-09-07.html').unlink(missing_ok=True)
+                result = self.run_build()
+                self.assertEqual(result.returncode, 0, result.stderr)
+                report = (self.root / 'site/reports/2026-09-07.html').read_text(encoding='utf-8')
+                self.assert_article_counts(report)
+
     def test_markets_dates_structure_and_urls(self):
         changes = [
             lambda d: d['markets'].pop('gold'),
@@ -195,6 +253,9 @@ class BuildTests(unittest.TestCase):
             lambda d: d['markets']['gold']['institutional_views'][0].update(published_at='2026-08-07'),
             lambda d: d['markets']['gold']['institutional_views'][0].update(published_at='2026-09-07'),
             lambda d: d['markets']['gold'].update(institutional_views=[]),
+            lambda d: d['markets']['gold'].update(institutional_views=[
+                {**d['markets']['gold']['institutional_views'][0], 'url': f'https://research.test/{i}'}
+                for i in range(3)]),
             lambda d: d['markets']['gold']['institutional_views'].append(d['markets']['gold']['institutional_views'][0].copy()),
             lambda d: d['markets']['gold']['snapshot']['sources'].append(d['markets']['gold']['snapshot']['sources'][0].copy()),
         ]
@@ -232,9 +293,7 @@ class BuildTests(unittest.TestCase):
                      '&lt;b&gt;outlook', '&lt;script&gt;source', '&lt;script&gt;view', 'a=1&amp;b=2'):
             self.assertIn(text, report)
         self.assertNotIn('<img src=x', report)
-        self.assertIn('News stories</dt><dd>15', report)
-        self.assertIn('Market sections</dt><dd>3', report)
-        self.assertIn('Institutional views</dt><dd>4', report)
+        self.assert_article_counts(report)
 
 
 if __name__ == '__main__':
