@@ -3,7 +3,7 @@
 ## 1. 模块身份与目标
 
 - module：`markets`；状态：enabled。
-- 固定包含美国股市、中国股市、国际金价三个市场；每个市场通常收录 3 条机构观点，允许 2–4 条。
+- 固定包含美国股市、中国股市、国际金价三个市场；每个市场通常收录 3 篇机构分析，允许 2–4 篇。
 - 仅收录观察窗口内权威机构的最新公开分析，不生成市场现状或模型自己的预测、投资建议、买卖建议、目标仓位与综合“共识”。
 - 本文件独立定义本模块的内容要求；执行前读取同目录 `schema.json`。期数、共享窗口和发布流程由 `PIPELINE.md` 定义。
 
@@ -11,57 +11,67 @@
 
 ### 美国股市 / us_equities
 
-重点：机构对美国股票市场、主要指数、估值、盈利前景及风险的分析。不要扩展为个股推荐。
+收录国际权威机构对美国股票市场的实质性分析，包括 S&P 500、Nasdaq、Russell 2000、美国大盘股与小盘股、市场估值、企业盈利、市场广度及其他明确界定的美国股票市场范围。候选文章必须以美国股市为核心分析对象，或在更广泛的全球资产配置文章中包含内容充分、可以独立概括的美国股票分析部分。
 
-建议优先：BlackRock Investment Institute、Goldman Sachs Research / Insights、UBS CIO、J.P. Morgan Asset Management、MSCI Research 等。
+按以下优先级寻找候选来源：
+
+1. **S+**：BlackRock Investment Institute、UBS CIO / UBS Investment Research、J.P. Morgan Asset Management。
+2. **S**：Goldman Sachs Research / Insights、Morgan Stanley Research。
+3. **A+**：Fidelity International、Capital Group、State Street Global Advisors、MSCI Research。
+4. **A**：Vanguard Investment Strategy Group、Schroders、Amundi Investment Institute、T. Rowe Price，以及具有同等国际研究能力的大型全球资产管理或研究机构。
 
 ### 中国股市 / china_equities
 
-重点：机构对中国股票市场的分析。不要把香港市场自动等同于中国 A 股；若文章覆盖更广泛的 China equities，摘要中应明确其范围。
+收录国际权威机构对中国股票市场的实质性分析，包括 A-shares、H-shares、offshore China equities、MSCI China、China Tech 或其他明确界定的中国股票市场范围。候选文章必须以中国股市为核心分析对象，或在更广泛的全球、亚洲或新兴市场文章中包含内容充分、可以独立概括的中国股票分析部分。
 
-建议优先：Goldman Sachs Research / Insights、UBS CIO、BlackRock Investment Institute、MSCI Research、J.P. Morgan Asset Management 等。文章必须实质讨论 China equities / A-shares / Chinese stocks，不因全球资产配置文章仅顺带提及中国就收录。
+按以下优先级寻找候选来源：
+
+1. **S+**：UBS CIO / UBS Investment Research、HSBC Global Research / HSBC Private Bank、J.P. Morgan Asset Management。
+2. **S**：Goldman Sachs Research / Insights、Morgan Stanley Research。
+3. **A+**：BlackRock Investment Institute、MSCI Research。
+4. **A**：Fidelity International、Schroders、Capital Group、Amundi Investment Institute，以及具有同等国际研究能力的大型全球资产管理或研究机构。
 
 ### 国际金价 / gold
 
-重点：机构对国际金价、供需、驱动因素、前景及风险的分析。
+收录国际权威机构对黄金市场及国际金价的实质性分析，包括央行购金、投资需求与 ETF 资金流、期货及市场仓位、实际利率、美元、通胀、地缘政治、供需关系及其他重要价格驱动因素。候选文章必须以黄金为核心分析对象，或在更广泛的大宗商品、宏观经济或资产配置文章中包含内容充分、可以独立概括的黄金分析部分。
 
-建议优先：World Gold Council / Goldhub、Goldman Sachs Research / Insights、UBS CIO、BlackRock Investment Institute 等。
+按以下优先级寻找候选来源：
 
-以上为候选来源，不要求每周所有机构出现。
+1. **S+**：World Gold Council / Goldhub、UBS CIO / UBS Investment Research。
+2. **S**：Goldman Sachs Research / Insights、J.P. Morgan Global Research。
+3. **A+**：BlackRock Investment Institute、Standard Chartered CIO、Morgan Stanley Research。
+4. **A**：State Street Global Advisors、WisdomTree Research、Amundi Investment Institute、Schroders，以及具有同等国际研究能力的大型全球资产管理、商品研究或投资机构。
+
+建议将 World Gold Council 持续发布的 Weekly Markets Monitor 作为本市场排序最高的稳定核心源。
 
 ## 3. 来源与核实
 
-- 必须来自权威研究机构、资产管理机构、投行研究部门、官方行业研究机构或同等可信的 institutional source。
-- 本模块仅使用 institutional analysis，不使用 primary / media 来源层级或新闻 items 结构。
+- 筛选时遵循 **分析相关性、公开可读性与深度优先，机构权威性用于同等候选之间排序** 的原则。一篇来自较低优先级机构、但深度完整分析美国股票/中国股票/黄金市场的文章，可以优于一篇顶级机构仅顺带提及相关市场的文章；但在相关性和分析深度相当时，应优先收录更高优先级机构。
 - 必须直接阅读正文或足够完整的官方原文；不得只依据搜索摘要、转载摘要或二手媒体转述生成。
-- 不使用低质量聚合站、匿名社交媒体、内容农场或无法核实正文的来源。
-- 来源可靠性、机构专业权威性和分析是否为最新，均由研究者核实，不能交给结构校验判断。
 
 ## 4. 筛选、日期与去重
 
 - 独立执行搜索 → 阅读机构原文 → 来源核实 → 相关性筛选 → 各市场内去重 → 中文摘要 → JSON 输出。
 - published_at 使用原始发布时间转换为 UTC 后的 YYYY-MM-DD 日期，必须位于 `[window.start, window.end)`；包含起始日，不包含结束日，不使用检索日期或窗口外文章凑数。
-- 同一机构对同一主题的重复或更新分析保留最新一篇，尽量覆盖不同机构。
-- 每个市场内按分析内容去重，URL 唯一；同一分析实质涉及多个市场时允许跨市场引用。
+- 每个市场内按分析内容去重，URL 唯一。
 - 去除 URL 非必要追踪参数，不破坏有效查询参数。结构校验不能替代内容核查或语义去重。
 
 ## 5. 排序与主文选择
 
 - 按机构在该市场的专业权威性、分析的重要性与代表性排序，不按发布时间排序。
-- 各市场将最权威且高度相关的机构文章放在 institutional_views 第一条，作为顶部单栏主文；其余在下方双栏展示。
+- 各市场将最权威且高度相关的机构文章放在第一条，作为顶部单栏主文；其余在下方双栏展示。
 - GPT 负责选择与排序；Python 保留数组顺序，不自行评估或重排观点。
 
 ## 6. 中文摘要规范
 
 1. 中文内容是忠实的信息摘要，不是逐句机器翻译；使用自然、清晰、完整的中文。
 2. original_title 保留来源原始语言和标题，不翻译。
-3. 摘要中，通常不做翻译的专属名词（如人名和ChatGPT等）保留原文，其他内容全部使用中文表述。
-4. 摘要说明机构提出了什么判断、依据与主要风险，让中文读者可以直接了解机构观点。
+3. 摘要中除通常不作翻译的特殊名词（如 AI、ChatGPT 等），其他内容全部使用中文表述。
+4. 摘要说明机构提出了什么判断、依据与主要风险，让读者可以直接了解机构观点。
 5. 保留重要数字、单位、时间及统计口径，不扩大原文结论。
 6. 保留 may / reportedly / according to 等不确定性，可表述为“可能”“据报道”“据某方称”。
 7. 不添加模型自己的分析、推测或投资建议。
-8. 每条 summary_zh 建议约 120-300 个中文字符；schema 不严格限制长度。
-9. 不同机构观点不一致时分别呈现，不强行合成为“市场共识”。
+8. 每条 summary_zh 建议约 160-300 个中文字符；schema 不严格限制长度。
 
 ## 7. JSON 输出规范
 
