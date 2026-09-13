@@ -14,7 +14,7 @@
       "source_level": "primary",
       "published_at": "2026-09-03",
       "url": "https://openai.com/index/gpt-6-astra/",
-      "summary_zh": "OpenAI 发布 GPT-6 Astra，重点提升电脑操作、网页浏览、软件工程、网络安全与科学研究能力，并先向部分机构开放，再逐步扩展至 ChatGPT 付费用户及 API 等渠道。公司同时表示 Astra 达到其 Preparedness Framework 中网络安全 Critical 能力门槛，因此配套部署更严格的安全措施；相关性能与安全结论均来自 OpenAI 的发布与评测。"
+      "summary_zh": "OpenAI 发布 GPT-6 Astra，重点提升电脑操作、网页浏览、软件工程、网络安全和科学研究能力，并先向部分机构开放，再逐步扩展至 ChatGPT 付费用户和应用程序接口等渠道。公司称该模型已达到其准备框架中的“关键”网络安全能力门槛，因此同步加强安全防护，并继续拒绝生成漏洞利用概念验证等高风险内容。相关能力和安全判断均来自 OpenAI 自身发布与评测。"
     },
     {
       "id": "technology-002",
@@ -24,7 +24,7 @@
       "source_level": "primary",
       "published_at": "2026-09-01",
       "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
-      "summary_zh": "Anthropic 发布 Claude Fable 5.1 与 Mythos 5.1，两者使用相同底层模型，但 Mythos 通过受信任访问计划提供更宽松的网络安全与生命科学防护。公司称 Fable 5.1 在编码、知识工作和长程任务上较前代提升，并把缓存读取价格降至每百万 token 0.25 美元；典型按量计费工作负载成本预计下降约 25%，这些性能与成本比较均为 Anthropic 的测试与估算。"
+      "summary_zh": "Anthropic 发布 Claude Fable 5.1 与 Claude Mythos 5.1，两者使用相同底层模型，但 Mythos 通过受信任访问计划，为经过审核的网络安全和生命科学用途提供更宽松的能力限制。公司称 Fable 5.1 在编程、知识工作和长程任务上较前代提升，并将缓存读取价格降至每百万词元 0.25 美元，典型按量工作负载成本预计下降约 25%；相关性能和成本比较均来自 Anthropic 的测试与估算。"
     },
     {
       "id": "technology-003",
@@ -34,7 +34,7 @@
       "source_level": "primary",
       "published_at": "2026-09-01",
       "url": "https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources/",
-      "summary_zh": "OpenAI 为 ChatGPT for Healthcare 推出 Epic 电子健康记录集成和 Healthcare Public Data plugin。获授权的医疗机构可在受控工作区内调用患者病历上下文，并结构化访问 ClinicalTrials.gov、CMS Coverage、RxNorm、DailyMed、PubMed 等九类官方医疗数据源；OpenAI 表示这些功能保留现有权限控制，并面向临床、研究与行政工作流使用。"
+      "summary_zh": "OpenAI 为 ChatGPT 医疗版推出 Epic 电子健康记录集成和医疗公共数据插件。获授权的医疗机构可在受控工作区内调用患者病历上下文，并结构化访问临床试验、医疗保险覆盖、药品标准名称、药品说明书和医学文献等九类官方医疗数据源。OpenAI 表示这些功能沿用现有权限控制，面向临床、科研和行政工作流程，旨在减少医疗人员在不同系统之间查找和整理信息的负担。"
     },
     {
       "id": "technology-004",
@@ -44,7 +44,7 @@
       "source_level": "primary",
       "published_at": "2026-09-03",
       "url": "https://microsoft.ai/news/mai-transcribe-2-is-the-fastest-most-accurate-and-cheapest-speech-recognition-model-in-the-world/",
-      "summary_zh": "Microsoft AI 发布 MAI-Transcribe-2，新增说话人区分、可配置转写风格和逐词时间戳，并可通过 Microsoft Foundry 等渠道使用。微软称该模型在覆盖 60 种语言的 FLEURS 测试中平均词错误率为 5.2%，音频转写价格为每小时 0.10 美元；“最快、最准确、最便宜”等比较性结论来自公司的测试和表述。"
+      "summary_zh": "微软人工智能部门发布 MAI-Transcribe-2，新增说话人区分、可配置转写风格和逐词时间戳，并可通过微软云端模型平台等渠道使用。微软称，该模型在覆盖 60 种语言的 FLEURS 语音识别测试中平均词错误率为 5.2%，音频转写价格为每小时 0.10 美元；公司还宣称其速度、准确率和成本均领先同类模型，但这些比较结论来自微软自身测试，仍应按发布方口径理解。"
     },
     {
       "id": "technology-005",
@@ -54,7 +54,27 @@
       "source_level": "primary",
       "published_at": "2026-09-01",
       "url": "https://newsroom.equinix.com/2026-09-01-Diraq-and-Equinix-to-Deploy-Australias-First-Quantum-Computer-Inside-a-Data-Centre",
-      "summary_zh": "Diraq 与 Equinix 宣布计划在悉尼商业数据中心部署一台采用 8 个硅自旋量子比特的量子计算机，预计 2026 年 10 月完成安装。双方称整套系统包括低温制冷与控制设备，功耗低于 20 千瓦，将用于测试量子硬件与传统 CPU、GPU 及数据中心网络共同运行；“澳大利亚首台部署于数据中心的量子计算机”等定位来自双方公告。"
+      "summary_zh": "Diraq 与 Equinix 宣布计划在悉尼商业数据中心部署一台采用 8 个硅自旋量子比特的量子计算机，预计 2026 年 10 月完成安装。双方称整套系统包括低温制冷与控制设备，总功耗低于 20 千瓦，将用于测试量子硬件与传统中央处理器、图形处理器及数据中心网络协同运行的表现。公告将其称为澳大利亚首台部署在商业数据中心内的量子计算机，这一定位来自参与企业自身表述。"
+    },
+    {
+      "id": "technology-006",
+      "category": "软件供应链安全",
+      "original_title": "Multiple trusted publishing configurations for npm",
+      "source_name": "GitHub",
+      "source_level": "primary",
+      "published_at": "2026-09-03",
+      "url": "https://github.blog/changelog/2026-09-03-multiple-trusted-publishing-configurations-for-npm/",
+      "summary_zh": "GitHub 宣布 npm 可信发布机制的三项更新正式可用：每个软件包现在可以配置多个基于开放身份连接的可信发布流程；暂存版本只有完成恶意软件扫描后才能批准；维护者还能在版本页面查看暂存历史。每个配置可分别指定代码仓库、工作流程和运行环境，发布请求只要匹配其中一个配置即可，从而减少不同发布路径对长期访问令牌的依赖，并提高软件供应链发布环节的安全性。"
+    },
+    {
+      "id": "technology-007",
+      "category": "开发者平台",
+      "original_title": "GitHub Actions: Early September 2026 updates",
+      "source_name": "GitHub",
+      "source_level": "primary",
+      "published_at": "2026-09-03",
+      "url": "https://github.blog/changelog/2026-09-03-github-actions-early-september-2026-updates/",
+      "summary_zh": "GitHub Actions 发布 9 月初平台更新：新增应用程序接口，用于查询托管运行器版本停止注册和停止运行支持的时间；为工作流程令牌增加只读访问 Dependabot 安全警报的独立权限；可复用工作流程还新增四个作业上下文字段，用于识别实际定义当前任务的工作流程来源。GitHub 表示这些新的作业上下文字段暂不适用于 GitHub 企业服务器版本。"
     }
   ]
 }
