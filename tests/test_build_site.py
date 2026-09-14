@@ -8,8 +8,23 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def news_fixture(module, issue_date='2026-09-07'):
+    end = date.fromisoformat(issue_date)
+    return {
+        'module': module, 'issue_date': issue_date,
+        'window': {'start': (end - timedelta(days=7)).isoformat(), 'end': issue_date},
+        'items': [
+            {'id': f'{module}-{index}', 'category': 'Test category',
+             'original_title': f'{module} test story {index}', 'source_name': 'Test source',
+             'source_level': 'primary', 'published_at': (end - timedelta(days=1)).isoformat(),
+             'url': f'https://news.test/{module}/{index}', 'summary_zh': '测试新闻摘要。'}
+            for index in range(7)]
+    }
 
 
 class ArticleParser(HTMLParser):
@@ -47,13 +62,39 @@ class BuildTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
-        for folder in ('scripts', 'modules', 'data', 'assets'):
+        for folder in ('scripts', 'modules', 'assets'):
             if (ROOT / folder).exists():
                 shutil.copytree(ROOT / folder, self.root / folder)
-        # Fixtures live only in the temporary checkout, never in project data/.
-        for folder in (self.root / 'data/issues').iterdir():
-            if folder.is_dir():
-                (folder / 'markets.json').write_text(json.dumps(markets_fixture(folder.name)), encoding='utf-8')
+        # Synthetic dates belong only to this sandbox; never read production issues/reports.
+        folder = self.root / 'data/issues/2026-09-07'
+        folder.mkdir(parents=True)
+        for module in ('technology', 'politics', 'finance', 'markets'):
+            data = markets_fixture() if module == 'markets' else news_fixture(module)
+            (folder / f'{module}.json').write_text(json.dumps(data), encoding='utf-8')
+
+    def test_setup_ignores_production_issues(self):
+        # Extra real issue dates (including test dates) and invalid data must not leak in.
+        with tempfile.TemporaryDirectory() as directory:
+            checkout = Path(directory)
+            for folder in ('scripts', 'modules', 'assets'):
+                shutil.copytree(ROOT / folder, checkout / folder)
+            for day in ('2026-09-07', '2026-09-14', '2027-01-04'):
+                folder = checkout / 'data/issues' / day
+                folder.mkdir(parents=True)
+                (folder / 'technology.json').write_text('invalid production data', encoding='utf-8')
+            (checkout / 'reports').mkdir()
+            (checkout / 'reports/2027-01-04.html').write_text('production report', encoding='utf-8')
+            probe = BuildTests()
+            try:
+                with patch(__name__ + '.ROOT', checkout):
+                    probe.setUp()
+                self.assertEqual([p.name for p in (probe.root / 'data/issues').iterdir()], ['2026-09-07'])
+                self.assertFalse((probe.root / 'reports').exists())
+                result = probe.run_build()
+                self.assertEqual(result.returncode, 0, result.stderr)
+                self.assertEqual(json.loads((probe.root / 'site/archive.json').read_text()), ['2026-09-07'])
+            finally:
+                probe.doCleanups()
 
     def run_build(self, *args):
         return subprocess.run([sys.executable, '-X', 'utf8', str(self.root / 'scripts/build_site.py'), *args],
