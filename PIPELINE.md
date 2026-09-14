@@ -14,7 +14,7 @@
 
 1. technology：modules/technology/（enabled）
 2. politics：modules/politics/（enabled）
-3. finance：modules/finance/（enabled）
+3. finance：modules/finance/（enabled，机构宏观经济与金融分析；按本模块规范筛选，不套用其他模块的新闻条数、事件合并或来源分级规则）
 4. markets：modules/markets/（enabled）；内部分区为国际金价（gold）→ 美国股市（us_equities）→ 中国股市（china_equities）。
 
 四个模块固定启用，所有期数（包括 2026-09-07）都必须提供 markets.json，缺少时校验失败。不要自动补写历史数据，应报告用户处理；这里不是动态插件注册系统。增删模块时需同步修改构建脚本的 MODULES 和测试。

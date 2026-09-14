@@ -92,9 +92,10 @@ def load_issues():
     return issues
 
 
-def render_story(item, lead=False):
+def render_story(item, lead=False, analysis=False):
     text = {key: escape(value, quote=True) for key, value in item.items()}
-    level = 'PRIMARY SOURCE' if item['source_level'] == 'primary' else 'MEDIA SOURCE'
+    level = ('INSTITUTIONAL ANALYSIS' if analysis else
+             'PRIMARY SOURCE' if item['source_level'] == 'primary' else 'MEDIA SOURCE')
     return f'''<article class="story{' lead-story' if lead else ''}">
       <div class="story-kicker"><span>{text['category']}</span><span class="dot">•</span><span>{level}</span></div>
       <h3>{text['original_title']}</h3>
@@ -144,12 +145,12 @@ def render_report(issue_date, modules, number):
       <header class="section-header">
         <div class="section-number">{index:02d}</div>
         <div class="section-title-wrap"><div class="section-en">{name.upper()}</div><h2>{MODULES[name]}</h2></div>
-        <div class="section-count">{len(items):02d} STORIES</div>
+        <div class="section-count">{len(items):02d} {'ANALYSES' if name == 'finance' else 'STORIES'}</div>
       </header>
-      <div class="lead-grid"><div class="lead-index">A</div>{render_story(items[0], lead=True)}</div>
-      <div class="secondary-grid">{''.join(render_story(item) for item in items[1:])}</div>
+      <div class="lead-grid"><div class="lead-index">A</div>{render_story(items[0], lead=True, analysis=name == 'finance')}</div>
+      <div class="secondary-grid">{''.join(render_story(item, analysis=name == 'finance') for item in items[1:])}</div>
     </section>''')
-    items = [item for module in modules if module['module'] != 'markets' for item in module['items']]
+    items = [item for module in modules if module['module'] in ('technology', 'politics') for item in module['items']]
     markets = next((module['markets'] for module in modules if module['module'] == 'markets'), {})
     window = modules[0]['window']
     values = {

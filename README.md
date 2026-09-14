@@ -19,7 +19,7 @@ AI-generated modular international news digest. 一个最小可用的国际新�
 - Finance / 宏观经济与金融
 - Markets / 国际金价、美国股市、中国股市
 
-入口是 [PIPELINE.md](PIPELINE.md)，各模块在 modules/ 下分别拥有 MODULE.md 和 schema.json。前三个新闻模块使用相同的 items 结构，通常各 7 条（校验保留 5–8 条以兼容已有数据）；markets 使用独立结构，固定包含三个市场，institutional_views 收录观察窗口内发布的权威机构最新公开分析：国际金价与美国股市通常 3 篇、允许 2–4 篇，中国股市允许 1–3 篇，详见 [Markets 规范](modules/markets/MODULE.md)。
+入口是 [PIPELINE.md](PIPELINE.md)，各模块在 modules/ 下分别拥有 MODULE.md 和 schema.json。Technology 与 Politics 通常各 7 条新闻（允许 5–8 条）；Finance 使用 items 数组，但不含 source_level 字段，通常收录 5 篇机构宏观分析（允许 4–6 篇），按相关性、公开可读性、深度与国际影响筛选，同等候选再比较机构权威性；markets 使用独立结构，固定包含三个市场，institutional_views 收录观察窗口内发布的权威机构最新公开分析：国际金价与美国股市通常 3 篇、允许 2–4 篇，中国股市允许 1–3 篇，详见 [Markets 规范](modules/markets/MODULE.md)。
 
 阅读路径为 `PIPELINE.md → modules/<module>/MODULE.md → schema.json`。Pipeline 只定义期数、共享窗口、模块执行顺序和发布流程；各 MODULE.md 独立包含该模块的完整编辑与中文摘要规范，不继承全局内容政策，也不依赖其他模块。
 
@@ -38,7 +38,7 @@ python -m http.server 8000 --directory site
 
 浏览器访问 http://localhost:8000。根 URL 直接显示最新一期。完整归档导航通过 HTTP(S) 加载 archive.json；直接打开本地 HTML 时仅保留当期导航。CI 使用 requirements.txt 中的 jsonschema 主版本范围。
 
-正式数据位于 data/issues/YYYY-MM-DD/。每期按科技、时政、财经、市场顺序使用 editorial / newspaper 版式，左侧抽屉按年份和日期倒序展示归档。Markets 沿用衬线标题、分隔线及双列布局，三个市场分别展示机构观点及原文链接，各以首条为顶部单栏主文，其余在下方双栏展示，不再显示重复的机构观点副标题。所有模块按重要性与权威性排序；前三模块首条是最重要的代表性新闻，每个市场首条是最权威的机构文章。GPT 写入数组顺序，Python 保留顺序，不按日期重排。顶部新闻条数和新闻来源统计仅计算前三个模块，另列市场板块数与机构观点数，避免混淆来源角色。
+正式数据位于 data/issues/YYYY-MM-DD/。每期按科技、时政、财经、市场顺序使用 editorial / newspaper 版式，左侧抽屉按年份和日期倒序展示归档。Markets 沿用衬线标题、分隔线及双列布局，三个市场分别展示机构观点及原文链接，各以首条为顶部单栏主文，其余在下方双栏展示，不再显示重复的机构观点副标题。所有模块按重要性与权威性排序；Technology、Politics 首条是最重要的代表性新闻，Finance 首条是最重要的代表性宏观分析，每个市场首条是最权威的机构文章。GPT 写入数组顺序，Python 保留顺序，不按日期重排。新闻条数和来源分级统计仅计算 Technology、Politics，另列市场板块数与机构观点数，避免混淆来源角色。
 
 发布源为 Git 跟踪的 `reports/YYYY-MM-DD.html`。默认构建只渲染不存在的报告，已有网页直接复用，避免发布新一期时重复渲染历史。历史 HTML 可以修改；也可以移除需要重新生成的那一期 HTML，再运行构建，使用现有 JSON 和当前模板重新生成该期。其他报告仍直接复用。CSS 与归档脚本继续内嵌在报告中，因此模板调整在该期重新生成后生效。
 
@@ -75,3 +75,5 @@ gh repo create newsroom --private --source=. --remote=origin --push
 ```
 
 私有仓库使用 Pages 需相应 GitHub 套餐；如需公开仓库请明确选择 `--public`。仓库是否私有与 Pages 网站访问权限是不同设置，发布前检查 Pages 配置。
+
+Finance 的 S+ / S / A+ 为研究者选择来源时的优先级，不新增 JSON 字段；不再区分 primary/media，也不输出 source_level；页面统一标注 INSTITUTIONAL ANALYSIS。主题或经济体覆盖、观点差异和摘要质量由 GPT 按 MODULE.md 判断，Python 只验证结构、4–6 篇数量、日期及链接等约束。旧 finance JSON 若仍包含 source_level 或超过 6 篇，将无法通过新校验，需要经授权另行整理；构建不会自动删改旧数据或报告。

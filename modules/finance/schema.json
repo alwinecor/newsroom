@@ -40,8 +40,8 @@
     },
     "items": {
       "type": "array",
-      "minItems": 5,
-      "maxItems": 8,
+      "minItems": 4,
+      "maxItems": 6,
       "items": {
         "type": "object",
         "additionalProperties": false,
@@ -50,7 +50,6 @@
           "category",
           "original_title",
           "source_name",
-          "source_level",
           "published_at",
           "url",
           "summary_zh"
@@ -75,12 +74,6 @@
             "type": "string",
             "minLength": 1,
             "pattern": "\\S"
-          },
-          "source_level": {
-            "enum": [
-              "primary",
-              "media"
-            ]
           },
           "published_at": {
             "type": "string",

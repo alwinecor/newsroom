@@ -21,9 +21,10 @@ def news_fixture(module, issue_date='2026-09-07'):
         'items': [
             {'id': f'{module}-{index}', 'category': 'Test category',
              'original_title': f'{module} test story {index}', 'source_name': 'Test source',
-             'source_level': 'primary', 'published_at': (end - timedelta(days=1)).isoformat(),
+             **({'source_level': 'primary'} if module != 'finance' else {}),
+             'published_at': (end - timedelta(days=1)).isoformat(),
              'url': f'https://news.test/{module}/{index}', 'summary_zh': '测试新闻摘要。'}
-            for index in range(7)]
+            for index in range(5 if module == 'finance' else 7)]
     }
 
 
@@ -289,7 +290,7 @@ class BuildTests(unittest.TestCase):
                     data = json.loads(path.read_text(encoding='utf-8'))
                     data['items'] = [{**data['items'][0], 'id': f'{name}-{index}',
                                       'url': f'https://news.test/{name}/{index}'}
-                                     for index in range(news_count)]
+                                     for index in range(min(6, news_count - 1) if name == 'finance' else news_count)]
                     path.write_text(json.dumps(data), encoding='utf-8')
                 data = markets_fixture()
                 for name, count in zip(('us_equities', 'china_equities', 'gold'), view_counts):
@@ -303,6 +304,40 @@ class BuildTests(unittest.TestCase):
                 result = self.run_build()
                 self.assertEqual(result.returncode, 0, result.stderr)
                 report = (self.root / 'site/reports/2026-09-07.html').read_text(encoding='utf-8')
+                self.assert_article_counts(report)
+
+    def test_finance_rejects_source_level(self):
+        path = self.root / 'data/issues/2026-09-07/finance.json'
+        for level in ('primary', 'media'):
+            with self.subTest(level=level):
+                data = news_fixture('finance')
+                data['items'][0]['source_level'] = level
+                path.write_text(json.dumps(data), encoding='utf-8')
+                result = self.run_build()
+                self.assertNotEqual(result.returncode, 0)
+                self.assertIn('source_level', result.stderr)
+                self.assertIn('finance.json', result.stderr)
+
+    def test_finance_analysis_counts_and_rendering(self):
+        path = self.root / 'data/issues/2026-09-07/finance.json'
+        for count in (3, 4, 5, 6, 7):
+            with self.subTest(count=count):
+                data = news_fixture('finance')
+                data['items'] = [{**data['items'][0], 'id': f'finance-{i}',
+                                  'url': f'https://research.test/finance/{i}'} for i in range(count)]
+                path.write_text(json.dumps(data), encoding='utf-8')
+                (self.root / 'reports/2026-09-07.html').unlink(missing_ok=True)
+                result = self.run_build()
+                if count in (3, 7):
+                    self.assertNotEqual(result.returncode, 0)
+                    self.assertIn('finance.json', result.stderr)
+                    continue
+                self.assertEqual(result.returncode, 0, result.stderr)
+                report = (self.root / 'site/index.html').read_text(encoding='utf-8')
+                section = report.split('id="finance"', 1)[1].split('id="markets"', 1)[0]
+                self.assertIn(f'{count:02d} ANALYSES', section)
+                self.assertEqual(section.count('INSTITUTIONAL ANALYSIS'), count)
+                self.assertNotIn('PRIMARY SOURCE', section)
                 self.assert_article_counts(report)
 
     def test_markets_dates_structure_and_urls(self):
