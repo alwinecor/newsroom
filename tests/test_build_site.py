@@ -281,7 +281,7 @@ class BuildTests(unittest.TestCase):
 
     def test_valid_news_and_institutional_view_counts(self):
         folder = self.root / 'data/issues/2026-09-07'
-        for news_count, view_counts in ((5, (2, 2, 2)), (6, (2, 2, 3)),
+        for news_count, view_counts in ((5, (2, 1, 2)), (6, (2, 2, 3)),
                                         (7, (3, 3, 3)), (8, (4, 2, 4))):
             with self.subTest(news=news_count, views=view_counts):
                 for name in ('technology', 'politics', 'finance'):
@@ -307,6 +307,10 @@ class BuildTests(unittest.TestCase):
 
     def test_markets_dates_structure_and_urls(self):
         changes = [
+            lambda d: d['markets']['china_equities'].update(institutional_views=[]),
+            lambda d: d['markets']['china_equities'].update(institutional_views=[
+                {**d['markets']['china_equities']['institutional_views'][0],
+                 'url': f'https://research.test/china/{i}'} for i in range(4)]),
             lambda d: d['markets'].pop('gold'),
             lambda d: d.update(issue_date='2026-09-08'),
             lambda d: d['window'].update(start='2026-08-30'),
