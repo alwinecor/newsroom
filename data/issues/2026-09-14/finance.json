@@ -8,73 +8,48 @@
   "items": [
     {
       "id": "finance-001",
-      "category": "欧洲央行货币政策",
-      "original_title": "Monetary policy decisions",
-      "source_name": "European Central Bank",
-      "source_level": "primary",
-      "published_at": "2026-09-10",
-      "url": "https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.mp260910~314e508016.en.html",
-      "summary_zh": "欧洲中央银行将三项关键利率均上调 25 个基点，自 9 月 16 日起存款机制利率、主要再融资利率和边际贷款利率分别升至 2.50%、2.65% 和 2.90%。ECB 表示中东冲突推高能源成本并重新增加通胀压力；最新预测将欧元区总体通胀率估计为 2026 年 3.0%、2027 年 2.5%、2028 年 2.1%，同时预计经济增长率分别为 0.9%、1.4% 和 1.5%。"
+      "category": "货币政策与财政约束",
+      "original_title": "Monetary Policy with Supply Shocks and High Debt",
+      "source_name": "International Monetary Fund",
+      "published_at": "2026-09-07",
+      "url": "https://www.imf.org/en/news/articles/2026/09/07/sp090726-md-monetary-policy-with-supply-shocks-and-high-debt",
+      "summary_zh": "国际货币基金组织总裁格奥尔基耶娃指出，在供给冲击更频繁、公共债务高企的环境中，传统宏观政策缓冲空间正在缩小，货币与财政政策之间的相互作用更为重要。相关研究认为，反复的大型供给冲击可能加剧通胀持续性并削弱预期锚定，因此央行不能总是假定冲击短暂而完全“看穿”；财政支持则应更有针对性，并维持可信的债务可持续路径，以免在货币政策收紧时进一步放大脆弱性。"
     },
     {
       "id": "finance-002",
-      "category": "美国通胀",
-      "original_title": "CONSUMER PRICE INDEX - AUGUST 2026",
-      "source_name": "U.S. Bureau of Labor Statistics",
-      "source_level": "primary",
-      "published_at": "2026-09-11",
-      "url": "https://www.bls.gov/news.release/archives/cpi_09112026.htm",
-      "summary_zh": "美国劳工统计局公布，8 月消费者价格指数经季节调整后环比上涨 0.4%，过去 12 个月同比上涨 3.4%。能源指数环比上涨 2.1%，其中汽油上涨 3.9%，贡献了当月总体涨幅的三分之一以上；剔除食品和能源的核心指数环比上涨 0.3%、同比上涨 2.4%。数据表明能源价格重新成为短期通胀的重要推动因素，而核心通胀仍保持正增长。"
+      "category": "财政与税收",
+      "original_title": "Tax Policy Reforms 2026",
+      "source_name": "OECD",
+      "published_at": "2026-09-08",
+      "url": "https://www.oecd.org/en/publications/tax-policy-reforms-2026_43d18a55-en.html",
+      "summary_zh": "经济合作与发展组织汇总92个司法辖区在2025年实施或宣布的税制改革，指出各国政策目标较疫情和能源危机时期更加分化。许多改革继续以促进投资、增长和就业为导向，但高公共债务、利息支出、人口老龄化、国防和公共服务需求正在增加财政压力。报告认为，增收措施总体仍较温和，各国越来越需要在竞争力、分配目标与中期财政可持续性之间权衡。"
     },
     {
       "id": "finance-003",
-      "category": "美国生产者价格",
-      "original_title": "PRODUCER PRICE INDEXES - AUGUST 2026",
-      "source_name": "U.S. Bureau of Labor Statistics",
-      "source_level": "primary",
-      "published_at": "2026-09-10",
-      "url": "https://www.bls.gov/news.release/archives/ppi_09102026.htm",
-      "summary_zh": "美国劳工统计局公布，8 月最终需求生产者价格指数经季节调整后环比上涨 0.4%，同比上涨 5.4%。最终需求商品价格环比上涨 1.1%，服务价格上涨 0.1%；剔除食品、能源和贸易服务的指数环比上涨 0.3%、同比上涨 4.7%。能源是商品价格上涨的重要来源，其中柴油价格单月上涨 24.1%，显示生产端仍面临明显的能源成本压力。"
+      "category": "欧洲增长与金融一体化",
+      "original_title": "The choice facing Europeans",
+      "source_name": "European Central Bank",
+      "published_at": "2026-09-09",
+      "url": "https://www.ecb.europa.eu/press/key/date/2026/html/ecb.sp260909~59a07e6f05.en.html",
+      "summary_zh": "欧洲央行行长拉加德认为，欧洲正面对更具对抗性的全球经济环境，继续依赖外部技术、能源和安全保障会削弱增长与经济主权，而回到各国分散行动同样会削弱规模优势。她主张深化单一市场和欧洲层面的协同，通过储蓄与投资联盟把欧洲庞大储蓄引向技术、能源和防务等战略投资，并以数字欧元降低关键支付基础设施的外部依赖，从而提升长期增长和抗压能力。"
     },
     {
       "id": "finance-004",
-      "category": "英国经济增长",
-      "original_title": "GDP monthly estimate, UK: July 2026",
-      "source_name": "Office for National Statistics",
-      "source_level": "primary",
+      "category": "劳动力市场与自动化",
+      "original_title": "How Automation Impacts the Lives and Careers of Displaced Workers",
+      "source_name": "Goldman Sachs Research",
       "published_at": "2026-09-11",
-      "url": "https://www.ons.gov.uk/economy/grossdomesticproductgdp/bulletins/gdpmonthlyestimateuk/july2026",
-      "summary_zh": "英国国家统计局估计，英国实际国内生产总值 7 月环比增长 0.4%，继 6 月增长 0.3% 和 5 月基本持平后继续扩张。7 月服务业增长 0.4%，生产增长 0.2%，建筑业增长 0.1%；截至 7 月的三个月内，实际国内生产总值较前三个月增长 0.4%。该数据为英国经济在新政府初期的增长动能提供了新的月度衡量。"
+      "url": "https://www.goldmansachs.com/insights/articles/how-automation-impacts-the-lives-and-careers-of-displaced-workers",
+      "summary_zh": "高盛研究利用以往自动化冲击分析人工智能可能带来的就业转型，发现因技术变化失业的劳动者通常比其他失业者需要更长时间重新就业，并承受更大的实际收入损失。年轻、受教育程度较高及城市劳动者调整相对更快；失业后三年内接受至少四周再培训的劳动者，此后十年累计实际工资增长约高2个百分点，再次失业概率也更低。该研究估计未来十年约6%至7%的美国劳动者可能因人工智能面临岗位调整。"
     },
     {
       "id": "finance-005",
-      "category": "中国通胀",
-      "original_title": "2026年8月份居民消费价格同比上涨0.8%",
-      "source_name": "国家统计局",
-      "source_level": "primary",
-      "published_at": "2026-09-09",
-      "url": "https://www.stats.gov.cn/sj/zxfb/202609/t20260909_1965263.html",
-      "summary_zh": "中国国家统计局公布，8 月居民消费价格指数同比上涨 0.8%、环比上涨 0.4%。食品价格同比下降 1.4%，非食品价格上涨 1.2%；扣除食品和能源价格的核心消费者价格指数同比上涨 1.0%。数据表明总体消费价格继续温和回升，但食品价格仍构成下拉因素，非食品和核心价格的同比涨幅高于总体水平。"
-    },
-    {
-      "id": "finance-006",
-      "category": "中国生产者价格",
-      "original_title": "2026年8月份工业生产者出厂价格同比上涨3.8% 环比上涨0.4%",
-      "source_name": "国家统计局",
-      "source_level": "primary",
-      "published_at": "2026-09-09",
-      "url": "https://www.stats.gov.cn/sj/zxfbhjd/202609/t20260909_1965262.html",
-      "summary_zh": "中国国家统计局公布，8 月工业生产者出厂价格同比上涨 3.8%、环比上涨 0.4%，工业生产者购进价格同比上涨 5.8%。生产资料价格同比上涨 5.0%，其中采掘工业上涨 17.8%、原材料工业上涨 6.7%、加工工业上涨 3.1%；生活资料价格同比下降 0.5%。数据反映上游原材料和能源相关价格上涨明显快于消费品出厂价格。"
-    },
-    {
-      "id": "finance-007",
-      "category": "中国外汇储备",
-      "original_title": "国家外汇管理局公布2026年8月末外汇储备规模数据",
-      "source_name": "国家外汇管理局",
-      "source_level": "primary",
-      "published_at": "2026-09-07",
-      "url": "https://www.safe.gov.cn/safe/2026/0907/27859.html",
-      "summary_zh": "国家外汇管理局公布，截至 8 月末中国外汇储备规模为 3.4383 万亿美元，较 7 月末增加 195 亿美元，升幅 0.57%。外汇局表示，8 月美元指数下跌、全球主要金融资产价格表现分化，汇率折算和资产价格变化等因素共同推动储备规模上升，并称国内经济总体平稳为外汇储备保持基本稳定提供支撑。"
+      "category": "国际贸易与就业",
+      "original_title": "How services trade creates jobs and reshapes labour markets",
+      "source_name": "OECD",
+      "published_at": "2026-09-10",
+      "url": "https://www.oecd.org/en/blogs/2026/09/how-services-trade-creates-jobs-and-reshapes-labour-markets.html",
+      "summary_zh": "经济合作与发展组织研究认为，数字化正在扩大可跨境交易的服务范围，并通过出口、进口投入和本地溢出改变就业结构。其结果显示，服务出口增加10%与相关行业就业约增加0.5%相关，进口服务投入增长也可提高部分行业就业；在巴西、法国和美国，每新增一个可贸易服务岗位还可带来约0.6至1.6个本地不可贸易服务岗位。文章强调技能培训、终身学习和劳动力市场制度需要同步适应这种变化。"
     }
   ]
 }

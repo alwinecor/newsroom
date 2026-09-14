@@ -8,73 +8,48 @@
   "items": [
     {
       "id": "finance-001",
-      "category": "美国就业",
-      "original_title": "THE EMPLOYMENT SITUATION - AUGUST 2026",
-      "source_name": "U.S. Bureau of Labor Statistics",
-      "source_level": "primary",
-      "published_at": "2026-09-04",
-      "url": "https://www.bls.gov/news.release/archives/empsit_09042026.htm",
-      "summary_zh": "美国劳工统计局公布，8 月非农就业增加 16.2 万人，失业率维持在 4.1%。就业增长主要来自餐饮服务及地方政府教育，信息行业就业减少；私营非农平均时薪环比上涨 0.3% 至 37.75 美元，同比上涨 3.1%。同时，6 月和 7 月非农就业增量合计上修 5.5 万人。数据为判断美国劳动力市场状况和美联储后续利率路径提供了新的关键依据。"
+      "category": "全球经济与政策协调",
+      "original_title": "IMF Managing Director Kristalina Georgieva’s Statement at the Conclusion of the G20 Finance Ministers and Central Bank Governors Meeting in Asheville, North Carolina",
+      "source_name": "International Monetary Fund",
+      "published_at": "2026-09-01",
+      "url": "https://www.imf.org/en/news/articles/2026/09/01/pr26284-imf-md-statement-conclusion-g20-finance-ministers-central-bank-governors-meeting",
+      "summary_zh": "国际货币基金组织总裁格奥尔基耶娃在二十国集团财长和央行行长会议后指出，全球经济在能源冲击下仍展现一定韧性，增长预计维持在约3%，但各经济体表现明显分化。她强调中东能源冲击尚未结束、霍尔木兹海峡受限和冬季能源需求仍构成风险，并主张通过结构性改革、稳健财政与货币政策以及债务和全球失衡方面的国际合作提高潜在增长。"
     },
     {
       "id": "finance-002",
-      "category": "欧元区通胀",
-      "original_title": "Euro area annual inflation up to 3.3%",
-      "source_name": "Eurostat",
-      "source_level": "primary",
+      "category": "欧元区通胀与货币政策",
+      "original_title": "Why the drivers of inflation matter for monetary policy",
+      "source_name": "European Central Bank",
       "published_at": "2026-09-01",
-      "url": "https://ec.europa.eu/eurostat/en/web/products-euro-indicators/w/2-01092026-ap",
-      "summary_zh": "欧盟统计局初步估计，欧元区 8 月年度通胀率升至 3.3%，高于 7 月的 2.9%。其中能源价格同比涨幅预计由 10.3% 升至 14.3%，服务价格涨幅则由 3.3% 降至 3.0%；非能源工业品以及食品、酒类和烟草价格均同比上涨约 1.2%。能源仍是当月总体通胀上行的主要来源，而服务价格涨幅有所放缓；完整的 8 月数据计划于 9 月 17 日公布。"
+      "url": "https://www.ecb.europa.eu/press/blog/date/2026/html/ecb.blog20260901~8d48e51f14.en.html",
+      "summary_zh": "欧洲央行研究认为，2026年欧元区通胀再度上升与2021—2022年的情形不同：本轮主要由中东战争引发的能源供给冲击推动，而需求和公共政策刺激作用较小。其模型显示年初至5月总体通胀上升几乎全部来自不利能源供给冲击，因此供给型通胀对产出和物价产生相反影响，货币政策更适合采取渐进、灵活的反应，而非机械复制上一轮大幅连续加息。"
     },
     {
       "id": "finance-003",
-      "category": "加拿大货币政策",
-      "original_title": "Bank of Canada maintains the policy rate at 2¼%",
-      "source_name": "Bank of Canada",
-      "source_level": "primary",
-      "published_at": "2026-09-02",
-      "url": "https://www.bankofcanada.ca/2026/09/fad-press-release-2026-09-02/",
-      "summary_zh": "加拿大央行维持隔夜利率目标在 2.25%，银行利率和存款利率分别为 2.5% 与 2.20%。央行称国内经济和通胀总体符合 7 月预测，但持续偏高的油价增加通胀上行风险，美国新关税及加拿大反制措施也令增长前景更不确定。央行表示将继续评估经济反弹能否持续以及潜在通胀压力，并准备根据新数据和风险变化调整政策。"
+      "category": "全球就业与人工智能",
+      "original_title": "Is AI Impacting Global Labor Markets?",
+      "source_name": "Goldman Sachs Research",
+      "published_at": "2026-09-03",
+      "url": "https://www.goldmansachs.com/insights/articles/is-ai-impacting-global-labor-markets",
+      "summary_zh": "高盛研究认为，人工智能对劳动力市场的影响已在部分高暴露行业和初级岗位中出现，但整体就业冲击仍较有限。其跨国、覆盖800多个职业的分析显示，职业对人工智能的暴露度每提高10%，法国、加拿大和美国的年度就业人数增长仅减少约0.1个百分点；与此同时，信息通信、呼叫中心、软件出版和广告等高暴露行业招聘明显放缓，年轻和初级劳动者面临更强压力。"
     },
     {
       "id": "finance-004",
-      "category": "美国国际贸易",
-      "original_title": "Monthly U.S. International Trade in Goods and Services, July 2026",
-      "source_name": "U.S. Census Bureau and U.S. Bureau of Economic Analysis",
-      "source_level": "primary",
+      "category": "亚洲企业债务与跨境传导",
+      "original_title": "Zombie firms in emerging Asia: domestic and cross border implications",
+      "source_name": "Bank for International Settlements",
       "published_at": "2026-09-03",
-      "url": "https://www.census.gov/foreign-trade/current/",
-      "summary_zh": "美国人口普查局与经济分析局公布，7 月商品和服务贸易逆差扩大至 886 亿美元，较经修订的 6 月 712 亿美元增加 174 亿美元。出口降至 3107 亿美元，环比减少 66 亿美元；进口升至 3993 亿美元，增加 108 亿美元。年初至 7 月累计贸易逆差仍比 2025 年同期减少 1884 亿美元，即下降 29.6%。"
+      "url": "https://www.bis.org/publications/working-paper-1375-zombie-firms-emerging-asia-domestic-and-cross-border-implications",
+      "summary_zh": "国际清算银行工作论文利用十个亚洲新兴经济体2005—2021年的企业与银行配对数据发现，僵尸企业数量长期上升，并受到较弱银行续贷行为支持。这类企业在国内会挤压健康企业、拖累企业表现、通胀和国内生产总值增长；其影响还可经全球价值链和中间品进口价格向发达经济体传导，压低当地通胀与增长，而跨境银行贷款渠道的宏观效应并不显著。"
     },
     {
       "id": "finance-005",
-      "category": "澳大利亚经济增长",
-      "original_title": "Australian National Accounts: National Income, Expenditure and Product",
-      "source_name": "Australian Bureau of Statistics",
-      "source_level": "primary",
+      "category": "欧洲银行信贷与证券化",
+      "original_title": "Can synthetic securitisation support economic growth?",
+      "source_name": "European Central Bank",
       "published_at": "2026-09-02",
-      "url": "https://www.abs.gov.au/statistics/economy/national-accounts/australian-national-accounts-national-income-expenditure-and-product/jun-2026",
-      "summary_zh": "澳大利亚统计局公布，2026 年第二季度经季节调整的实际国内生产总值环比增长 0.4%、同比增长 2.1%，人均国内生产总值环比基本持平；名义国内生产总值环比增长 0.8%，贸易条件下降 1.6%，家庭储蓄收入比由 6.4% 升至 6.5%。统计局称，部分私人需求与矿业出口支撑本季度增长，而中东冲突推高油价并增加多个能源和燃料密集行业的投入成本。"
-    },
-    {
-      "id": "finance-006",
-      "category": "欧盟贸易与海关政策",
-      "original_title": "EU customs: Council greenlights landmark reform",
-      "source_name": "Council of the European Union",
-      "source_level": "primary",
-      "published_at": "2026-09-03",
-      "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/09/03/eu-customs-council-greenlights-landmark-reform/",
-      "summary_zh": "欧盟理事会批准海关制度改革文本，明确向欧盟销售商品的非欧盟电子商务平台承担进口商责任，并设立新的欧盟海关机构和统一海关数据中心。改革还要求成员国最迟在 2026 年 11 月 1 日对小包裹征收全欧统一处理费，具体金额由欧盟委员会确定。欧洲议会仍需批准最终文本，随后才能正式签署并公布。"
-    },
-    {
-      "id": "finance-007",
-      "category": "欧元区生产者价格",
-      "original_title": "Industrial producer prices up by 1.6% in the euro area and by 1.4% in the EU",
-      "source_name": "Eurostat",
-      "source_level": "primary",
-      "published_at": "2026-09-03",
-      "url": "https://ec.europa.eu/eurostat/en/web/products-euro-indicators/w/4-03092026-ap",
-      "summary_zh": "欧盟统计局初步数据显示，欧元区 7 月工业生产者价格环比上涨 1.6%、同比上涨 5.8%；欧盟分别上涨 1.4% 和 5.6%。欧元区能源生产者价格环比上涨 5.6%、同比上涨 12.9%，而剔除能源后的工业价格环比持平、同比上涨 3.1%。当月生产端价格上行主要由能源推动，非能源工业品价格压力相对稳定。"
+      "url": "https://www.ecb.europa.eu/press/blog/date/2026/html/ecb.blog20260902~4ea10b9f9a.en.html",
+      "summary_zh": "欧洲央行研究指出，合成证券化自2021年以来快速扩张，能够转移银行信贷风险并释放监管资本，但其对实体经济贷款的促进作用有限。模型估计，合成证券化发行增加1%仅使企业贷款增长约0.02%，而股息支付增加约0.07%，说明释放的资本相当部分并未转化为新增信贷。文章认为证券化有助于风险管理和资本效率，但不应高估其填补欧洲投资缺口的能力，并需关注杠杆和风险传染。"
     }
   ]
 }
