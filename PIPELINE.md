@@ -26,12 +26,12 @@
 - 模块独立完成，不做跨模块语义去重；不得虚构内容或替其他模块放宽要求。
 - 所有 enabled modules 全部成功才进入本期校验与发布。任一模块失败，报告具体模块及原因，不提交不完整期数。
 
-## 4. 校验、提交和报告
+## 4. 提交 JSON 与自动发布
 
-1. 在四个文件全部生成后运行 `python scripts/build_site.py`。它校验全部期数，按科技、时政、财经、市场顺序在内存中聚合，市场内部按国际金价、美国股市、中国股市顺序渲染，仅为缺失的报告生成 reports/YYYY-MM-DD.html，再将最新报告复制为 site/index.html，复用已有报告并更新 site/archive.json。每周新增一期时无需重新渲染旧网页；历史 HTML 可以维护修改，也可移除指定一期 HTML 后运行构建重新生成。此处复用旧网页是构建优化，不限制后续修改历史 HTML；历史新闻 JSON 的编辑规则保持不变。
-2. 失败时依据明确错误修正本期 JSON，再次校验；不要修改历史数据或放宽 schema 来通过校验。若历史数据阻断构建，报告用户处理。
-3. 检查 diff 只包含本期四个 JSON 和新生成的 reports/YYYY-MM-DD.html；不要提交生成的 site/ 或修改规范。将这五个文件放入一个 commit，提交到 main。推送前同步远程，若本期已被其他运行提交则停止，不覆盖。
-4. GitHub Actions 自动再次校验、构建和部署 Pages。检查对应 commit 的 workflow 和 Pages 部署状态，成功或失败均报告本期日期、条数、commit、workflow 和网站链接。
-5. 无法执行 Python、提交 GitHub 或查看部署时，如实报告阻断步骤，不声称完成。执行环境必须具备联网阅读、仓库读写、Python 和 jsonschema 能力；普通定时提醒不等同于这些工具权限。
-
-不要修改历史期数、不要自动补做旧期数、不要修改 workflow 或 repo 规则。
+1. 四个模块完成后，检查字段、条数、来源和数组顺序符合各 MODULE.md 与 schema.json。
+2. 推送前同步 main；若本期已被其他运行提交则停止，不覆盖。检查 diff 只包含本期四个 JSON，将它们放在一个 commit 中推送到 main。
+3. GitHub Actions 自动运行测试、校验全部期数，并只为缺失报告生成 reports/YYYY-MM-DD.html。已有网页直接复用；最新报告复制到 site/index.html，归档导航自动更新。
+4. Actions 使用 GITHUB_TOKEN 将新报告自动提交回 main，然后上传网站并部署 Pages。报告提交失败或远程发生并发更新时停止部署，不强推；由后续运行或手动 workflow_dispatch 基于最新 main 重试。
+5. 检查 JSON commit 对应的 Actions 运行，确认测试、报告回写与 Pages 部署完成；成功或失败均报告本期日期、各模块条数、JSON commit、workflow 和网站链接。失败时报告具体错误，当前网站保持上次成功部署版本。
+6. 校验失败后，不自动修改历史期数或放宽规则。本期 JSON 已提交后的修订同样需要用户授权；修订后再次推送触发自动构建。若只需重试临时部署失败，可重跑 workflow，无需改写数据。
+7. 不要修改历史期数、不要自动补做旧期数、不要修改 workflow 或 repo 规则。

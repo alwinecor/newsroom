@@ -8,7 +8,7 @@ AI-generated modular international news digest. 一个最小可用的国际新�
 
 - ChatGPT：research + selection + deduplication + Chinese summaries。
 - Repository：rules + schemas + validation + rendering。
-- GitHub Actions：build + deploy。
+- GitHub Actions：test + validate + render + commit reports + deploy。
 
 本仓库不联网搜索新闻，不包含爬虫或 LLM API。四个模块独立生成 JSON，Python 校验全部历史期数，在内存中按固定顺序聚合新期数，复用已有报告并组装静态发布目录；不额外保存聚合 JSON。
 
@@ -44,23 +44,25 @@ python -m http.server 8000 --directory site
 
 `site/` 是不提交 Git 的部署产物，包含最新报告的完整副本 `index.html`、全部报告的字节副本 `reports/`、动态归档清单 `archive.json` 和 `.nojekyll`。历史页每次打开时用少量原生 JavaScript 读取最新清单，因此更新 sidebar 不需要重写任何旧报告。请求失败时保留当期链接。支持 GitHub project Pages 子路径，无额外依赖。
 
-每次新增一期：运行构建，将本期四个 JSON 与新生成的 `reports/YYYY-MM-DD.html` 一起提交。CI 使用 `python scripts/build_site.py --check-published`，缺少报告 HTML 会失败；全新 checkout 也直接使用 Git 中的已有网页，不依赖 Actions cache 或过期 artifact。构建仍会打包上传全部静态文件，但不会重新渲染已有 reports。修改或重新生成历史 HTML 后，提交对应文件即可发布更新。
+每次新增一期：GPT 只提交本期四个 JSON。Actions 运行测试和构建检查，使用 Python 生成缺失报告。机器人仅将 reports/ 的新增报告提交回 main，然后部署 site/；没有新报告时跳过自动 commit，仍可重新部署。已有报告直接复用，不依赖缓存或过期 artifact。`--check-published` 保留为可选本地检查。
+
+报告回写使用 GITHUB_TOKEN 的 contents: write 权限，自动提交不会再次触发 push workflow。发布任务串行执行；若 main 在构建期间变化，则停止该次发布，等待后续运行或手动重跑。普通 git push 也会拒绝并发更新，不强推或覆盖。分支保护规则必须允许机器人直接提交 reports/；如果组织策略禁止，回写会失败并停止部署，需要管理员调整策略。测试、数据校验或回写失败时不会部署，线上继续保留上次成功版本。
 
 校验包含 schema、真实日期、四个模块日期/窗口一致、目录日期一致、7 天 UTC 半开窗口、新闻日期在窗口内、模块内 ID/URL 唯一和 HTTP(S) URL。所有 JSON 字符串在 HTML 中转义。任何数据校验失败都会输出文件与字段信息并非零退出，且不会改写已有 site/。结构校验不会核实新闻真实性或识别不同 URL 对应的同一事件，研究者仍负责语义去重。Markets 额外检查每个市场有 2–4 条观点、机构文章 published_at 位于 `[window.start, window.end)`，以及每个市场的观点 URL 唯一；同一分析跨市场复用是允许的。机构权威性、是否为最新分析和观点归属仍由研究者核实。
 
 ## Production workflow
 
-Scheduled Task → reads PIPELINE.md → generates JSON → local validation / aggregate / render → commits → GitHub Actions → GitHub Pages。
+Scheduled Task → reads PIPELINE.md → generates JSON → commits JSON → GitHub Actions tests / validates / renders → commits reports → GitHub Pages。
 
 最少接入步骤：
 
 1. 将仓库推送到 GitHub 的 main。在 Settings → Pages → Build and deployment 中选择 **GitHub Actions**，运行一次 Pages workflow 并确认部署。
-2. 为执行任务的环境提供仓库读取、仅本期数据写入/commit/push、联网阅读、Python 和 jsonschema、Actions 状态读取能力。优先使用已有解释器；如只有 python3 命令，则统一用 python3 执行。依赖缺失才安装 requirements.txt。
+2. 为 GPT 执行环境提供仓库读取、本期 JSON 写入/commit/push、联网阅读和 Actions 状态读取能力。确保仓库允许 Actions 使用 contents: write 将生成报告提交到 main。
 3. 创建每周任务（建议周一 UTC 早间），提供仓库地址和以下 prompt。先手动完整运行一次确认可提交和部署，再启用每周运行。
 
 建议 Scheduled Task prompt：
 
-> 读取 alwinecor/newsroom 仓库 PIPELINE.md 并严格执行完整 weekly newsroom pipeline。根据其中定义依次处理所有 enabled modules，将结构化结果写入本期 data/issues/YYYY-MM-DD/，不得修改历史期数。使用约定 UTC 周一作为 issue_date，并遵循半开观察窗口。完成后运行校验，将四个 JSON 和新生成的本期 reports/YYYY-MM-DD.html 一次性提交 GitHub，并检查对应 commit 的 GitHub Actions 和 Pages 部署状态。成功或失败均向我报告最终结果。若本期已存在，不覆盖；若缺少联网、执行、仓库写入或部署检查权限，明确报告阻断步骤，不声称成功。
+> 读取 alwinecor/newsroom 仓库 PIPELINE.md 并严格执行完整 weekly newsroom pipeline。根据其中定义依次处理所有 enabled modules，将结构化结果写入本期 data/issues/YYYY-MM-DD/，不得修改历史期数。使用约定 UTC 周一作为 issue_date，并遵循半开观察窗口。完成后将本期四个 JSON 一次性提交 GitHub。等待对应 GitHub Actions 自动测试、校验、生成并提交 reports 及部署 Pages，检查最终状态。成功或失败均向我报告最终结果。若本期已存在，不覆盖；若缺少联网、仓库写入或部署检查权限，明确报告阻断步骤，不声称成功。
 
 没有 cron；定时由外部任务负责。工作流支持 push main 和 workflow_dispatch。Pages 配置参考 [GitHub 官方自定义工作流文档](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)。
 
