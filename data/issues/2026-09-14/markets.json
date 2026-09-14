@@ -1,0 +1,78 @@
+{
+  "module": "markets",
+  "issue_date": "2026-09-14",
+  "window": {
+    "start": "2026-09-07",
+    "end": "2026-09-14"
+  },
+  "markets": {
+    "gold": {
+      "institutional_views": [
+        {
+          "institution": "World Gold Council",
+          "original_title": "Weekly Markets Monitor - Treasury tribalism",
+          "published_at": "2026-09-07",
+          "url": "https://www.gold.org/goldhub/gold-focus/2026/09/weekly-markets-monitor-treasury-tribalism",
+          "summary_zh": "世界黄金协会本周重点讨论美国短端与长端国债收益率对美元和黄金环境产生的不同含义。该机构指出，强劲美国数据重新抬升加息预期，但美元与 30 年期收益率的相关性明显减弱，而与 2 年期收益率的关系仍较稳定；市场可能把短端上行视为货币政策可信度和收紧需要，把长端上行更多理解为财政与通胀风险补偿。协会同时把美国与伊朗紧张局势和制裁列为本周影响黄金的重要宏观背景。"
+        },
+        {
+          "institution": "UBS CIO",
+          "original_title": "Look beyond rates to gold’s long-term support",
+          "published_at": "2026-09-08",
+          "url": "https://www.ubs.com/global/en/wealthmanagement/insights/chief-investment-office/house-view/daily/2026/latest-08092026.html",
+          "summary_zh": "瑞银首席投资办公室指出，黄金在 8 月前三周大涨后出现约 5.5% 的回调，短期面临更高实际利率和美元走强压力；瑞银预计美联储年内仍可能累计加息 50 个基点。不过该机构认为央行购金、财政可持续性担忧、通胀与地缘政治风险仍构成长期结构性支撑，并预计全球央行年度购金量约为 750 至 1000 吨，因此并未改变其对黄金长期配置价值的积极判断。"
+        },
+        {
+          "institution": "Amundi Investment Institute",
+          "original_title": "Global Investment Views - September 2026",
+          "published_at": "2026-09-09",
+          "url": "https://research-center.amundi.com/article/global-investment-views-september-2026",
+          "summary_zh": "Amundi 投资研究院在 9 月全球观点中上调对黄金的积极程度。该机构认为，持续强劲的央行购金、地缘政治不确定性、政府债务可持续性担忧以及较弱美元共同支撑黄金的结构性需求；美国长期国债收益率升至多年高位、财政可信度受到更多关注，也强化了黄金作为非主权储值资产的角色。Amundi 同时提醒，更长时间维持高利率仍可能收紧全球金融条件。"
+        }
+      ]
+    },
+    "us_equities": {
+      "institutional_views": [
+        {
+          "institution": "J.P. Morgan Asset Management",
+          "original_title": "Charting an earnings surge, powered by AI capex",
+          "published_at": "2026-09-10",
+          "url": "https://am.jpmorgan.com/ch/en/asset-management/adv/insights/portfolio-insights/research-report/charting-an-earnings-surge-powered-by-ai-capex/",
+          "summary_zh": "摩根资产管理认为，美国企业盈利仍有较强上修动力，核心原因是市场持续低估 AI 资本开支。其统计显示，2026 年以来市场对当年 AI 资本开支预期已从 6500 亿美元升至 8000 亿美元，对 2027 年的预期从 8000 亿美元升至 1.1 万亿美元，推动标普 500 今年和明年每股收益预期分别上修约 17% 和 15%。该机构仍把美国列为最偏好的股票市场，但指出 AI 收益可持续性、超大规模云厂商投资回报和估值仍是主要风险。"
+        },
+        {
+          "institution": "UBS CIO",
+          "original_title": "Equities should withstand higher yields",
+          "published_at": "2026-09-11",
+          "url": "https://www.ubs.com/global/en/wealthmanagement/insights/chief-investment-office/house-view/daily/2026/latest-11092026.html",
+          "summary_zh": "瑞银首席投资办公室认为，油价上涨和美国国债收益率接近高位正在考验股票估值，但美国股市仍受到经济增长、企业盈利和 AI 投资的支撑。瑞银预计标普 500 企业盈利 2026 年增长约 25%、2027 年增长约 14%，并认为只要利率上升没有伴随明显的增长和利润恶化，股市仍可承受更高收益率。主要风险在于能源价格进一步推高通胀并迫使货币政策比预期更紧。"
+        },
+        {
+          "institution": "Amundi Investment Institute",
+          "original_title": "Global Investment Views - September 2026",
+          "published_at": "2026-09-09",
+          "url": "https://research-center.amundi.com/article/global-investment-views-september-2026",
+          "summary_zh": "Amundi 对美国股票保持谨慎而非全面看空，主要顾虑是高估值和市场集中度。其多资产组合在美国市场采用标普 500 等权指数与市值加权标普 500 的均衡配置，以降低少数大型科技股主导带来的集中风险。Amundi 同时指出，美国企业盈利修正仍然强劲，但长期利率上行可能继续压缩部分行业估值，因此更强调具有韧性的商业模式、资产负债表质量和跨地区分散。"
+        }
+      ]
+    },
+    "china_equities": {
+      "institutional_views": [
+        {
+          "institution": "Eastspring Investments",
+          "original_title": "Key insights from Eastsprings 2026 China Investment Summit",
+          "published_at": "2026-09-08",
+          "url": "https://www.eastspring.com/hk/insights/deep-dives/key-insights-from-eastsprings-2026-china-investment-summit",
+          "summary_zh": "瀚亚投资在 2026 年中国投资峰会总结中认为，中国股票的叙事正从高度政策驱动和周期性市场，转向由股东回报、公司治理改善与结构性增长共同支撑。其指出，南向资金和长期配置资金参与提高后，企业对分红、现金流和回购更加重视；AI、出口韧性与国产替代也推动高端制造和 AI 供应链企业发展。该机构强调 A 股和 H 股提供互补敞口：前者更偏先进制造和国内周期，后者更集中于高股息国企及互联网、云和大模型应用。"
+        },
+        {
+          "institution": "Amundi Investment Institute",
+          "original_title": "Global Investment Views - September 2026",
+          "published_at": "2026-09-09",
+          "url": "https://research-center.amundi.com/article/global-investment-views-september-2026",
+          "summary_zh": "Amundi 对中国股票维持中性观点。该机构认为，政府投资可能加快，但新增资金很大一部分仍会流向基础设施和计算能力建设，对居民消费的支持预计较为渐进；与此同时，部分行业产能过剩令企业盈利前景仍存在不确定性，“反内卷”政策需要时间才能改善竞争和利润结构。Amundi 因此没有把中国市场列为当前最积极的区域配置，而是强调行业和公司层面的选择。"
+        }
+      ]
+    }
+  }
+}

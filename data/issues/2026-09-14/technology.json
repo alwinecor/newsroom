@@ -1,0 +1,80 @@
+{
+  "module": "technology",
+  "issue_date": "2026-09-14",
+  "window": {
+    "start": "2026-09-07",
+    "end": "2026-09-14"
+  },
+  "items": [
+    {
+      "id": "technology-001",
+      "category": "人工智能与数学研究",
+      "original_title": "On the Navier–Stokes Millennium Prize Problem",
+      "source_name": "OpenAI",
+      "source_level": "primary",
+      "published_at": "2026-09-08",
+      "url": "https://openai.com/index/navier-stokes-solution/",
+      "summary_zh": "OpenAI 公布一套针对三维不可压缩 Navier–Stokes 方程千禧年难题的有限时间奇性证明，并同步提供 Lean 形式化验证。公司称研究过程中使用了一个比 GPT-6 Astra 更强的内部系统，组织约一万个并发智能体，产生约 270 万条消息和 1300 亿个输出词元。OpenAI 表示目前无意自行申领千禧年大奖；证明的最终学术有效性仍需独立数学界审查，后续更新也披露其正在调查与同期外部工作的潜在影响。"
+    },
+    {
+      "id": "technology-002",
+      "category": "人工智能智能体",
+      "original_title": "Introducing Muse: The World’s First Personal AI Agent Built for Everyone",
+      "source_name": "Meta",
+      "source_level": "primary",
+      "published_at": "2026-09-08",
+      "url": "https://ai.meta.com/muse/",
+      "summary_zh": "Meta 推出个人 AI 智能体 Muse，可在应用内或 WhatsApp 中接收任务，并通过专用、持续存在的安全虚拟机和浏览器执行预约、填写表格、联系客户服务等操作。Meta 表示 Muse 会在执行过程中保留任务上下文，并把网页操作隔离在安全环境中，以降低访问外部网站时的风险；这些能力、安全设计和产品定位均来自 Meta 的官方发布。"
+    },
+    {
+      "id": "technology-003",
+      "category": "人工智能与基因组学",
+      "original_title": "AlphaGenome Atlas: A predictive map of every possible DNA letter change in the human genome",
+      "source_name": "Google DeepMind",
+      "source_level": "primary",
+      "published_at": "2026-09-08",
+      "url": "https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/",
+      "summary_zh": "Google DeepMind 发布 AlphaGenome Atlas，为人类基因组约 90 亿种可能的单核苷酸变异预先计算功能影响预测，形成约 1 PB 的数据资源，规模超过 AlphaFold 数据库 30 倍。Atlas 同时提供综合变异影响评分，并向学术研究者开放网页门户与接口。DeepMind 称 AlphaGenome 在其基准测试中达到领先表现，并展示其在罕见病和大规模生物样本研究中的潜在用途；这些性能结论来自发布方评测。"
+    },
+    {
+      "id": "technology-004",
+      "category": "人工智能开发平台",
+      "original_title": "Introducing the Agents API",
+      "source_name": "OpenAI",
+      "source_level": "primary",
+      "published_at": "2026-09-10",
+      "url": "https://openai.com/index/introducing-the-agents-api/",
+      "summary_zh": "OpenAI 发布 Agents API 公测版，把 Codex 使用的智能体运行框架与基础设施开放给开发者。该接口可托管长时间运行的云端智能体任务，也支持开发者自有运行环境，并提供持续会话、上下文管理、工具调用、子智能体编排和状态持久化等能力。OpenAI 还将相关基础组件开源，目标是让软件工程之外的生产级智能体工作流能够采用同一套执行与编排机制。"
+    },
+    {
+      "id": "technology-005",
+      "category": "人工智能安全",
+      "original_title": "Detecting and countering misuse of AI: September 2026",
+      "source_name": "Anthropic",
+      "source_level": "primary",
+      "published_at": "2026-09-10",
+      "url": "https://www.anthropic.com/threat-intelligence-report-september-2026",
+      "summary_zh": "Anthropic 发布 2026 年 9 月威胁情报报告，汇总其在 2025 年 12 月至 2026 年 8 月间发现并处置的 AI 滥用案例，涉及网络攻击、影响行动、监控、诈骗、生物与常规武器研究以及模型蒸馏。报告举例称曾发现中国相关行为者利用 Claude 协助开发电子战软件，并记录多起大规模蒸馏活动；这些行为归属、规模和处置效果均为 Anthropic 自身调查结论。"
+    },
+    {
+      "id": "technology-006",
+      "category": "实时语音人工智能",
+      "original_title": "Build more natural voice experiences with GPT‑Live‑1 in the API",
+      "source_name": "OpenAI",
+      "source_level": "primary",
+      "published_at": "2026-09-10",
+      "url": "https://openai.com/index/introducing-gpt-live-1-in-the-api/",
+      "summary_zh": "OpenAI 在应用程序接口中推出 GPT‑Live‑1，主打全双工实时语音，可在说话的同时继续监听用户输入，从而更自然地处理中断、重叠发言和长时间通话。模型还支持把复杂任务委派给后端模型，并改进语气、节奏、噪声环境和电话场景表现。OpenAI 称其在自建全双工评测中相较 GPT‑Realtime‑2.1 提升约 30 个百分点，并在配对的智能体评测中取得领先结果；这些数字来自公司测试。"
+    },
+    {
+      "id": "technology-007",
+      "category": "人工智能安全研究",
+      "original_title": "Repeat-After-Me: Black-Box Adaptive Visual Prompt Injection",
+      "source_name": "Meta AI Research",
+      "source_level": "primary",
+      "published_at": "2026-09-07",
+      "url": "https://ai.meta.com/research/publications/repeat-after-me-black-box-adaptive-visual-prompt-injection/",
+      "summary_zh": "Meta 研究人员发布一种针对多模态智能体的黑盒自适应视觉提示注入攻击 Repeat-After-Me，通过迭代修改图像中的恶意指令来绕过模型防护。论文称其在测试中对 Qwen3.6-27B 的攻击成功率超过 80%，对 GPT-5.5 约为 47%；研究者还在真实 OpenClaw Discord 场景中展示了覆盖工具配置、进而为远程代码执行和秘密信息外泄创造条件的攻击链，并讨论了相应防御方法。"
+    }
+  ]
+}

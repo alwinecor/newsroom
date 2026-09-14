@@ -1,0 +1,80 @@
+{
+  "module": "politics",
+  "issue_date": "2026-09-14",
+  "window": {
+    "start": "2026-09-07",
+    "end": "2026-09-14"
+  },
+  "items": [
+    {
+      "id": "politics-001",
+      "category": "中东安全与能源通道",
+      "original_title": "Gulf states call off meeting with Iran, Houthis launch new attack on Saudi",
+      "source_name": "Reuters",
+      "source_level": "media",
+      "published_at": "2026-09-13",
+      "url": "https://www.reuters.com/business/energy/diplomacy-stumbles-with-postponement-meeting-strait-hormuz-proposal-2026-09-13/",
+      "summary_zh": "路透社报道，原定由海湾国家与伊朗讨论霍尔木兹海峡安排的会议被取消，同时也门胡塞武装再次对沙特发动袭击，使地区降温努力受挫。沙特方面此前指责伊朗支持的伊拉克武装袭击其东西向输油管道，交易商称若管道不能恢复，可能影响相当于全球供应约 4% 的运输能力；伊朗则公布一份被指违反其航运要求的船只名单。各方关于袭击责任的说法仍需分别归属。"
+    },
+    {
+      "id": "politics-002",
+      "category": "BRICS与国际秩序",
+      "original_title": "BRICS leaders voice concern over Middle East, condemn unilateral sanctions at India summit",
+      "source_name": "Associated Press",
+      "source_level": "media",
+      "published_at": "2026-09-12",
+      "url": "https://apnews.com/article/india-brics-modi-russia-china-iran-wars-5393274f87a16461b195d13f324e747a",
+      "summary_zh": "BRICS 领导人在印度峰会联合声明中表达对中东战争升级的严重关切，谴责针对平民及核设施的袭击，并反对未经联合国安理会授权的单边制裁。会议同时再次提出改革全球治理机构、扩大“全球南方”代表性的主张。印度总理纳伦德拉·莫迪强调 BRICS 并非针对任何国家；联合声明反映成员国共同文本，不等同于对具体冲突责任的独立事实认定。"
+    },
+    {
+      "id": "politics-003",
+      "category": "俄乌战争与美俄外交",
+      "original_title": "Trump told Putin he wants swift end to Ukraine war and US-Russia ties restored, Kremlin says",
+      "source_name": "Reuters",
+      "source_level": "media",
+      "published_at": "2026-09-08",
+      "url": "https://www.reuters.com/world/europe/kremlin-says-it-does-not-rule-out-restart-peace-talks-with-ukraine-us-2026-09-07/",
+      "summary_zh": "据克里姆林宫转述，美国总统唐纳德·特朗普在与俄罗斯总统弗拉基米尔·普京通话时表示，希望尽快结束乌克兰战争并恢复美俄关系。通话发生在美国特使史蒂夫·威特科夫和贾里德·库什纳赴俄推动新一轮外交之后；俄方称不排除恢复与乌克兰谈判以及举行更高层会谈，但当时没有宣布实质性突破。有关通话内容主要依据俄方公开说明。"
+    },
+    {
+      "id": "politics-004",
+      "category": "俄乌战争",
+      "original_title": "Russia hits Kyiv after pause for US envoys' visit, killing five",
+      "source_name": "Reuters",
+      "source_level": "media",
+      "published_at": "2026-09-08",
+      "url": "https://www.reuters.com/world/europe/russian-ballistic-missiles-hit-kyiv-us-envoys-leave-2026-09-08/",
+      "summary_zh": "俄罗斯在美国特使访问期间短暂停火后重新对基辅发动导弹袭击。乌克兰国家紧急服务部门称，袭击造成至少 5 人死亡、35 人受伤，并导致多处住宅和基础设施受损。俄罗斯国防部称打击目标是军事和后勤设施，而乌克兰方面强调大量民用区域受波及；双方关于目标性质和战果的表述存在分歧，应分别视为各自声明。"
+    },
+    {
+      "id": "politics-005",
+      "category": "台海与亚太安全",
+      "original_title": "Conflict over Taiwan would be disastrous, de facto US ambassador says",
+      "source_name": "Reuters",
+      "source_level": "media",
+      "published_at": "2026-09-09",
+      "url": "https://www.reuters.com/world/china/conflict-over-taiwan-would-be-disastrous-de-facto-us-ambassador-says-2026-09-09/",
+      "summary_zh": "美国在台协会处长 Raymond Greene 在台北一场防务论坛表示，台海冲突将对全球经济与安全造成灾难性后果，并称美国将继续强化区域军事存在、支持台湾提升防卫能力。他还把即将举行的美中领导人会晤视为降低风险的机会。相关风险判断和政策表述代表美方立场；台湾方面同时计划进一步提高防务支出。"
+    },
+    {
+      "id": "politics-006",
+      "category": "北约与欧洲安全",
+      "original_title": "NATO Secretary General in Berlin: Germany and NATO 3.0, strengthening Europe, delivering for the Alliance",
+      "source_name": "NATO",
+      "source_level": "primary",
+      "published_at": "2026-09-10",
+      "url": "https://www.nato.int/en/news-and-events/articles/news/2026/09/10/nato-secretary-general-in-berlin-germany-and-nato-30-strengthening-europe-delivering-for-the-alliance",
+      "summary_zh": "北约秘书长马克·吕特访问柏林时强调德国在北约欧洲防务中的扩大角色，包括永久驻扎立陶宛的新装甲旅、德荷第一军在北约东翼承担新的指挥任务，以及德国飞机和舰艇参与威慑与防御行动。吕特还就德国政府所称俄罗斯针对莱比锡机场的混合攻击表达联盟声援，并称北约的回应之一将是继续加强对乌克兰的支持；相关袭击归属属于北约和德国方面的指称。"
+    },
+    {
+      "id": "politics-007",
+      "category": "以色列与黎巴嫩外交",
+      "original_title": "Israel and Lebanon to meet in Rome in October, US State Department official says",
+      "source_name": "Reuters",
+      "source_level": "media",
+      "published_at": "2026-09-13",
+      "url": "https://www.reuters.com/world/middle-east/israel-lebanon-meet-rome-october-us-state-department-official-says-2026-09-13/",
+      "summary_zh": "美国国务院官员称，以色列和黎巴嫩计划 10 月在罗马举行新一轮由美国斡旋的安全谈判，两国驻美大使还将先在华盛顿会面。此前第七轮谈判未能在领土安排上取得突破；自 3 月战事恢复以来，以色列在黎巴嫩境内维持约 10 公里的缓冲区，并称这是安全需要。黎巴嫩卫生部门表示，本轮冲突中已有数千人死于以色列空袭；各方对安全责任和边界安排仍有重大分歧。"
+    }
+  ]
+}
