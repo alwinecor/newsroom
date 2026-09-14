@@ -42,18 +42,18 @@
       "type": "object",
       "additionalProperties": false,
       "required": [
+        "gold",
         "us_equities",
-        "china_equities",
-        "gold"
+        "china_equities"
       ],
       "properties": {
+        "gold": {
+          "$ref": "#/$defs/market_report"
+        },
         "us_equities": {
           "$ref": "#/$defs/market_report"
         },
         "china_equities": {
-          "$ref": "#/$defs/market_report"
-        },
-        "gold": {
           "$ref": "#/$defs/market_report"
         }
       }

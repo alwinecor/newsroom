@@ -12,7 +12,7 @@ from jsonschema import Draft202012Validator, FormatChecker
 
 ROOT = Path(__file__).resolve().parents[1]
 MODULES = {'technology': '科技', 'politics': '时政', 'finance': '财经', 'markets': '市场'}
-MARKETS = {'us_equities': '美国股市', 'china_equities': '中国股市', 'gold': '国际金价'}
+MARKETS = {'gold': '国际金价', 'us_equities': '美国股市', 'china_equities': '中国股市'}
 
 
 def read_json(path):

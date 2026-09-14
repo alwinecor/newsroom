@@ -17,7 +17,7 @@ AI-generated modular international news digest. 一个最小可用的国际新�
 - Technology / 科技
 - Politics / 时政
 - Finance / 宏观经济与金融
-- Markets / 美国股市、中国股市、国际金价
+- Markets / 国际金价、美国股市、中国股市
 
 入口是 [PIPELINE.md](PIPELINE.md)，各模块在 modules/ 下分别拥有 MODULE.md 和 schema.json。前三个新闻模块使用相同的 items 结构，通常各 7 条（校验保留 5–8 条以兼容已有数据）；markets 使用独立结构，固定包含三个市场，每个市场的 institutional_views 通常 3 篇、允许 2–4 篇观察窗口内发布的权威机构最新公开分析，详见 [Markets 规范](modules/markets/MODULE.md)。
 

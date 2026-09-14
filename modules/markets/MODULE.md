@@ -3,11 +3,24 @@
 ## 1. 模块身份与目标
 
 - module：`markets`；状态：enabled。
-- 固定包含美国股市、中国股市、国际金价三个市场；每个市场通常收录 3 篇机构分析，允许 2–4 篇。
+- 固定按国际金价、美国股市、中国股市的顺序展示三个市场；每个市场通常收录 3 篇机构分析，允许 2–4 篇。
 - 仅收录观察窗口内权威机构的最新公开分析，不生成市场现状或模型自己的预测、投资建议、买卖建议、目标仓位与综合“共识”。
 - 本文件独立定义本模块的内容要求；执行前读取同目录 `schema.json`。期数、共享窗口和发布流程由 `PIPELINE.md` 定义。
 
 ## 2. 内容范围
+
+### 国际金价 / gold
+
+收录国际权威机构对黄金市场及国际金价的实质性分析，包括央行购金、投资需求与 ETF 资金流、期货及市场仓位、实际利率、美元、通胀、地缘政治、供需关系及其他重要价格驱动因素。候选文章必须以黄金为核心分析对象，或在更广泛的大宗商品、宏观经济或资产配置文章中包含内容充分、可以独立概括的黄金分析部分。
+
+按以下优先级寻找候选来源：
+
+1. **S+**：World Gold Council / Goldhub、UBS CIO / UBS Investment Research。
+2. **S**：Goldman Sachs Research / Insights、J.P. Morgan Global Research。
+3. **A+**：BlackRock Investment Institute、Standard Chartered CIO、Morgan Stanley Research。
+4. **A**：State Street Global Advisors、WisdomTree Research、Amundi Investment Institute、Schroders，以及具有同等国际研究能力的大型全球资产管理、商品研究或投资机构。
+
+建议将 World Gold Council 持续发布的 Weekly Markets Monitor 作为本市场排序最高的稳定核心源。
 
 ### 美国股市 / us_equities
 
@@ -30,19 +43,6 @@
 2. **S**：Goldman Sachs Research / Insights、Morgan Stanley Research。
 3. **A+**：BlackRock Investment Institute、MSCI Research。
 4. **A**：Fidelity International、Schroders、Capital Group、Amundi Investment Institute，以及具有同等国际研究能力的大型全球资产管理或研究机构。
-
-### 国际金价 / gold
-
-收录国际权威机构对黄金市场及国际金价的实质性分析，包括央行购金、投资需求与 ETF 资金流、期货及市场仓位、实际利率、美元、通胀、地缘政治、供需关系及其他重要价格驱动因素。候选文章必须以黄金为核心分析对象，或在更广泛的大宗商品、宏观经济或资产配置文章中包含内容充分、可以独立概括的黄金分析部分。
-
-按以下优先级寻找候选来源：
-
-1. **S+**：World Gold Council / Goldhub、UBS CIO / UBS Investment Research。
-2. **S**：Goldman Sachs Research / Insights、J.P. Morgan Global Research。
-3. **A+**：BlackRock Investment Institute、Standard Chartered CIO、Morgan Stanley Research。
-4. **A**：State Street Global Advisors、WisdomTree Research、Amundi Investment Institute、Schroders，以及具有同等国际研究能力的大型全球资产管理、商品研究或投资机构。
-
-建议将 World Gold Council 持续发布的 Weekly Markets Monitor 作为本市场排序最高的稳定核心源。
 
 ## 3. 来源与核实
 
@@ -77,7 +77,7 @@
 
 - 输出路径：`data/issues/YYYY-MM-DD/markets.json`，不添加 Markdown 代码围栏。
 - 顶层必须包含 module（固定为 markets）、issue_date、window、markets；issue_date 与目录一致，window 与本期其他模块一致。
-- markets 固定包含 us_equities、china_equities、gold；每个市场对象只包含 institutional_views 数组，每个数组 2–4 条。
+- markets 固定按 gold、us_equities、china_equities 顺序输出；每个市场对象只包含 institutional_views 数组，每个数组 2–4 条。
 - 每条观点必须包含下表全部字段。字段类型和额外字段限制以同目录 schema.json 为准，不得自行增添字段。
 
 | 字段 | 要求 |

@@ -17,6 +17,7 @@ class ArticleParser(HTMLParser):
         super().__init__()
         self.classes = []
         self.market_sections = 0
+        self.market_ids = []
 
     def handle_starttag(self, tag, attrs):
         classes = set((dict(attrs).get('class') or '').split())
@@ -24,6 +25,7 @@ class ArticleParser(HTMLParser):
             self.classes.append(classes)
         elif tag == 'section' and 'market-report' in classes:
             self.market_sections += 1
+            self.market_ids.append(dict(attrs).get('id'))
 
 
 def markets_fixture(issue_date='2026-09-07'):
@@ -81,7 +83,8 @@ class BuildTests(unittest.TestCase):
         offset = 0
         groups = [json.loads((folder / f'{name}.json').read_text(encoding='utf-8'))['items']
                   for name in ('technology', 'politics', 'finance')]
-        groups += [market['institutional_views'] for market in markets.values()]
+        groups += [markets[name]['institutional_views']
+                   for name in ('gold', 'us_equities', 'china_equities')]
         for entries in groups:
             classes = parser.classes[offset:offset + len(entries)]
             self.assertIn('lead-story', classes[0])
@@ -94,6 +97,8 @@ class BuildTests(unittest.TestCase):
             self.assertIn(f'href="{escape(view["url"], quote=True)}"', report)
         # Validate rendered content independently of the hero's display fields.
         self.assertEqual(parser.market_sections, len(markets))
+        self.assertEqual(parser.market_ids,
+                         ['market-gold', 'market-us_equities', 'market-china_equities'])
 
     def test_build_and_escape(self):
         self.mutate(lambda d: d['items'][0].update(original_title='<script>alert("x")</script>'))
