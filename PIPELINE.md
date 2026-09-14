@@ -32,6 +32,6 @@
 2. 失败时依据明确错误修正本期 JSON，再次校验；不要修改历史数据或放宽 schema 来通过校验。若历史数据阻断构建，报告用户处理。
 3. 检查 diff 只包含本期四个 JSON 和新生成的 reports/YYYY-MM-DD.html；不要提交生成的 site/ 或修改规范。将这五个文件放入一个 commit，提交到 main。推送前同步远程，若本期已被其他运行提交则停止，不覆盖。
 4. GitHub Actions 自动再次校验、构建和部署 Pages。检查对应 commit 的 workflow 和 Pages 部署状态，成功或失败均报告本期日期、条数、commit、workflow 和网站链接。
-5. 无法执行 Python、提交 GitHub 或查看部署时，如实报告阻断步骤，不声称完成。执行环境必须具备联网阅读、仓库读写、Python 3.12 和 jsonschema 能力；普通定时提醒不等同于这些工具权限。
+5. 无法执行 Python、提交 GitHub 或查看部署时，如实报告阻断步骤，不声称完成。执行环境必须具备联网阅读、仓库读写、Python 和 jsonschema 能力；普通定时提醒不等同于这些工具权限。
 
 不要修改历史期数、不要自动补做旧期数、不要修改 workflow 或 repo 规则。

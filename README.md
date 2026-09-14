@@ -2,7 +2,7 @@
 
 ## What it is
 
-AI-generated modular international news digest. 一个最小可用的国际新闻周报 pipeline，提供中文摘要并保留原始标题与来源。纯静态 HTML + CSS，Python 3.12，唯一直接依赖为 jsonschema。
+AI-generated modular international news digest. 一个最小可用的国际新闻周报 pipeline，提供中文摘要并保留原始标题与来源。纯静态 HTML + CSS，支持 Python 3.12 / 3.13，唯一直接依赖为 jsonschema。
 
 ## Architecture
 
@@ -30,7 +30,7 @@ MODULE.md 统一采用八节格式：模块身份与目标、内容范围、来�
 ## Manual test
 
 ```sh
-python -m pip install jsonschema
+python -m pip install -r requirements.txt
 python scripts/build_site.py
 python -m unittest discover -s tests
 python -m http.server 8000 --directory site
@@ -55,7 +55,7 @@ Scheduled Task → reads PIPELINE.md → generates JSON → local validation / a
 最少接入步骤：
 
 1. 将仓库推送到 GitHub 的 main。在 Settings → Pages → Build and deployment 中选择 **GitHub Actions**，运行一次 Pages workflow 并确认部署。
-2. 为执行任务的环境提供仓库读取、仅本期数据写入/commit/push、联网阅读、Python 3.12 和 jsonschema、Actions 状态读取能力。确认当前产品、账号和任务模式支持这些工具；本仓库不能赋予普通 ChatGPT Scheduled Task GitHub 写入或 shell 权限。若不支持，需改用具备这些能力的任务执行环境，或人工提交 JSON。
+2. 为执行任务的环境提供仓库读取、仅本期数据写入/commit/push、联网阅读、Python 和 jsonschema、Actions 状态读取能力。优先使用已有解释器；如只有 python3 命令，则统一用 python3 执行。依赖缺失才安装 requirements.txt。
 3. 创建每周任务（建议周一 UTC 早间），提供仓库地址和以下 prompt。先手动完整运行一次确认可提交和部署，再启用每周运行。
 
 建议 Scheduled Task prompt：
