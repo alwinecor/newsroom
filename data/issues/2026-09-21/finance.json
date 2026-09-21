@@ -1,0 +1,55 @@
+{
+  "module": "finance",
+  "issue_date": "2026-09-21",
+  "window": {
+    "start": "2026-09-14",
+    "end": "2026-09-21"
+  },
+  "items": [
+    {
+      "id": "finance-001",
+      "category": "美国货币政策",
+      "original_title": "Federal Reserve issues FOMC statement",
+      "source_name": "Federal Reserve",
+      "published_at": "2026-09-16",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm",
+      "summary_zh": "美国联邦公开市场委员会一致投票把联邦基金利率目标区间上调 25 个基点至 3.75%—4.00%。声明认为经济活动仍以稳健速度扩张，国内支出具有韧性、生产率增长较强、资本投资活跃，就业增幅与劳动力规模大致匹配，但通胀仍然偏高。委员会称本次加息旨在支持通胀更及时回到 2% 目标，并继续维持银行体系“充足准备金”的操作框架。"
+    },
+    {
+      "id": "finance-002",
+      "category": "英国货币政策与资产负债表",
+      "original_title": "Bank rate maintained at 3.75% - September 2026 Monetary Policy Summary and Minutes",
+      "source_name": "Bank of England",
+      "published_at": "2026-09-17",
+      "url": "https://www.bankofengland.co.uk/monetary-policy-summary-and-minutes/2026/september-2026",
+      "summary_zh": "英格兰银行货币政策委员会以 6 比 3 决定把银行利率维持在 3.75%，三名委员主张加息至 4%。委员会指出，中东冲突推高能源价格后，英国 8 月消费者价格指数同比升至 3.1%，未来数季仍可能进一步走高，通胀风险较 7 月更加偏向上行。同时，委员会一致决定把货币政策目的持有的英国国债库存逐步降至零，计划到 2034 年底以年均约 460 亿英镑的速度完成剩余资产退出。"
+    },
+    {
+      "id": "finance-003",
+      "category": "主权债务与信用评级",
+      "original_title": "Ratings, Debt, and Deficits: An Exploration",
+      "source_name": "International Monetary Fund",
+      "published_at": "2026-09-18",
+      "url": "https://www.imf.org/en/publications/wp/issues/2026/09/18/ratings-debt-and-deficits-an-exploration-579729",
+      "summary_zh": "国际货币基金组织工作论文研究债务、预期初级财政余额与主权信用评级之间的关系。作者发现，实际评级相较一个简单债务动态模型更重视债务存量、较少反映未来初级财政余额，对利率与增长率之差的影响估计也偏低，同时存在很强的国家固定效应；因此即使债务和财政余额相似，不同国家也可能对应显著不同的评级和可承受债务水平。该文属于作者研究成果，不代表基金组织执行董事会或管理层正式立场。"
+    },
+    {
+      "id": "finance-004",
+      "category": "欧洲经济一体化与贸易",
+      "original_title": "Deepening EU–Western Balkans Economic Integration: Scope and Economic Gains",
+      "source_name": "International Monetary Fund",
+      "published_at": "2026-09-18",
+      "url": "https://www.imf.org/en/publications/wp/issues/2026/09/18/deepening-euwestern-balkans-economic-integration-scope-and-economic-gains-579390",
+      "summary_zh": "国际货币基金组织工作论文估算，西巴尔干与欧盟工业品贸易中的监管、海关和边境物流等非关税壁垒，相当于约 8%—14% 的从价成本。作者认为，若降低这些摩擦，并进一步推进农食产品与服务业一体化，西巴尔干可能在正式加入欧盟之前获得相当于完整成员资格经济收益约四分之一至二分之一的效益，同时提升欧盟近岸外包、供应链韧性和区域互联。该结论为论文作者分析，并非基金组织正式政策承诺。"
+    },
+    {
+      "id": "finance-005",
+      "category": "银行监管与人工智能风险",
+      "original_title": "Supervising banks in an AI-shaped economy",
+      "source_name": "Bank for International Settlements",
+      "published_at": "2026-09-18",
+      "url": "https://www.bis.org/speeches/20260918-supervising-banks-ai-shaped-economy",
+      "summary_zh": "金融稳定研究所主席 Fernando Restoy 指出，银行监管不能只关注银行内部如何使用 AI，还需评估 AI 在整个经济中扩散后对运营与商业模式韧性的影响。其认为，前沿模型正在压缩网络漏洞从发现到被利用的时间窗口，传统模型风险管理框架也面临可解释性不足等挑战；除资本和流动性指标外，监管者可能需要更依赖商业模式分析、情景分析、趋势扫描和跨行业情报等工具。演讲注明观点为作者个人意见，并不必然代表国际清算银行成员机构。"
+    }
+  ]
+}

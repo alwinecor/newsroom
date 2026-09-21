@@ -1,0 +1,71 @@
+{
+  "module": "markets",
+  "issue_date": "2026-09-21",
+  "window": {
+    "start": "2026-09-14",
+    "end": "2026-09-21"
+  },
+  "markets": {
+    "gold": {
+      "institutional_views": [
+        {
+          "institution": "World Gold Council",
+          "original_title": "Weekly Markets Monitor - No release",
+          "published_at": "2026-09-14",
+          "url": "https://www.gold.org/goldhub/gold-focus/2026/09/weekly-markets-monitor-no-release",
+          "summary_zh": "世界黄金协会认为，本周黄金可能夹在两股相反力量之间：美国通胀高于预期和加息预期升温构成近端压力，而中期的经济与股票市场风险又继续支持避险需求。其周报同时指出，美伊紧张局势扩大、油价与成品油裂解价差上升、全球库存下降及中国重新增加原油进口，使能源价格与通胀风险偏高；在这种背景下，黄金短期更受政策收紧约束，但中期仍可能受宏观不确定性支撑。"
+        },
+        {
+          "institution": "UBS CIO",
+          "original_title": "What's next for commodities?",
+          "published_at": "2026-09-14",
+          "url": "https://www.ubs.com/us/en/wealth-management/insights/market-news/article.3754139.html",
+          "summary_zh": "瑞银首席投资办公室认为，黄金近期面临更具挑战性的利率和市场环境，但央行购金与外汇储备多元化仍提供结构性支撑，因此继续把黄金视为有用的战略分散工具。瑞银把这一判断放在更广泛的大宗商品配置框架中：中东局势影响能源市场，AI 基础设施和电气化支撑工业金属需求，而厄尔尼诺风险可能影响农产品。其核心观点不是追逐单一商品，而是在商品内部采用主动、分散并动态再平衡的敞口。"
+        }
+      ]
+    },
+    "us_equities": {
+      "institutional_views": [
+        {
+          "institution": "BlackRock Investment Institute",
+          "original_title": "EM equities: back to overweight",
+          "published_at": "2026-09-14",
+          "url": "https://www.blackrock.com/us/individual/insights/blackrock-investment-institute/weekly-commentary",
+          "summary_zh": "BlackRock Investment Institute 在 9 月战术配置中继续超配美国股票，理由是 AI 基础设施建设推动的企业盈利增长与相对有利的宏观环境，仍快于更高利率预期对估值造成的拖累。其周评强调，利率上升是否伤害股票取决于背后的增长和盈利原因；如果收益率因投资与增长加速而上升，强劲盈利可以部分抵消融资成本提高。该机构因此维持风险偏好，但同时把高利率环境视为需要持续监测的约束。"
+        },
+        {
+          "institution": "UBS CIO",
+          "original_title": "Stock outlook remains constructive",
+          "published_at": "2026-09-14",
+          "url": "https://www.ubs.com/global/en/wealthmanagement/insights/chief-investment-office/house-view/daily/2026/latest-14092026.html",
+          "summary_zh": "瑞银首席投资办公室在美国核心通胀高于预期、市场显著提高美联储加息概率后，仍维持对美国股票的建设性看法。其认为，加息本身并不会自动破坏股票基本面，真正关键的是经济增长是否同步恶化；目前美国制造业活动仍处扩张阶段，企业盈利与 AI 投资也提供支撑。瑞银同时承认，更高融资成本、AI 资本开支可持续性和能源供应扰动会提高波动并构成下行风险。"
+        },
+        {
+          "institution": "Morgan Stanley",
+          "original_title": "Can Stocks Keep Defying Higher Rates?",
+          "published_at": "2026-09-16",
+          "url": "https://www.morganstanley.com/insights/articles/stock-rally-rising-rates-risks-2026",
+          "summary_zh": "摩根士丹利认为，美国股市当前仍受到强劲企业盈利、持续的 AI 投资以及上涨范围从超大市值科技股向能源、医疗、金融和工业等板块扩散的支持，因此本轮行情的基础比高度集中的上涨阶段更健康。不过该机构强调，债券收益率上升、油价高企、政策不确定性和低收入消费者压力正在增加，尤其需要观察更高实际利率是否开始压缩估值和利润。其配置观点更偏向现金流可靠、资产负债表质量较高的大型公司。"
+        },
+        {
+          "institution": "J.P. Morgan Private Bank",
+          "original_title": "The cost of capital is rising. Did stocks get the memo?",
+          "published_at": "2026-09-18",
+          "url": "https://www.chase.com/personal/investments/learning-and-insights/article/tmt-september-eighteen-twenty-six",
+          "summary_zh": "摩根大通私人银行指出，9 月美联储加息后美国股票仍表现出韧性，原因在于企业盈利、经济增长和 AI 投资暂时抵消了实际利率上升带来的估值压力。其数据显示，标普 500 净利润率约 17%，处于历史高位，而股权风险溢价大致仍在年初附近。不过该机构认为，资本成本上升的平衡会随着实际收益率继续走高而变得更困难；当前是盈利在对冲利率压力，而不是利率风险已经消失。"
+        }
+      ]
+    },
+    "china_equities": {
+      "institutional_views": [
+        {
+          "institution": "BlackRock Investment Institute",
+          "original_title": "EM equities: back to overweight",
+          "published_at": "2026-09-14",
+          "url": "https://www.blackrock.com/us/individual/insights/blackrock-investment-institute/weekly-commentary",
+          "summary_zh": "BlackRock Investment Institute 本周把新兴市场股票整体上调至超配，但对中国股票仍维持中性战术观点，因此并未把更积极的新兴市场判断直接延伸到中国。该机构认为，中国在实体 AI 相关领域存在机会，低成本开源 AI 可能推动更广泛采用；但采用增长不一定转化为 AI 提供商的盈利能力。其中国观点因此更偏向结构性主题和选择性机会，而非对整个中国股票市场作广泛上调。"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "module": "politics",
+  "issue_date": "2026-09-21",
+  "window": {
+    "start": "2026-09-14",
+    "end": "2026-09-21"
+  },
+  "items": [
+    {
+      "id": "politics-001",
+      "category": "中东安全与能源通道",
+      "original_title": "Iran and US trade threats after Houthi attacks escalate regional conflict",
+      "source_name": "Reuters",
+      "source_level": "media",
+      "published_at": "2026-09-20",
+      "url": "https://www.reuters.com/world/asia-pacific/iran-warns-against-new-escalation-by-us-allies-2026-09-20/",
+      "summary_zh": "路透社报道，在也门胡塞武装袭击沙特首都利雅得后，美国与伊朗再次相互发出军事威胁。伊朗军方称若遭新一轮攻击将持续报复美国基地与利益，并把协助美国的地区盟友视为冲突参与方；特朗普则再次要求伊朗达成协议，同时表示愿在联合国大会期间与伊朗总统会面。报道指出，胡塞武装在曼德海峡附近的军事推进与霍尔木兹海峡航运受阻，进一步加重了海湾能源运输风险。各方威胁与责任说法均属其公开立场。"
+    },
+    {
+      "id": "politics-002",
+      "category": "俄乌战争与欧洲安全",
+      "original_title": "Russia strikes Kyiv and other Ukrainian cities, Poland scrambles jets",
+      "source_name": "Reuters",
+      "source_level": "media",
+      "published_at": "2026-09-17",
+      "url": "https://www.reuters.com/world/europe/russia-strikes-ukraines-kyiv-injures-three-odesa-officials-say-2026-09-17/",
+      "summary_zh": "俄罗斯以导弹和无人机袭击基辅及乌克兰多地，乌方称超过 20 人受伤，并有能源、通信和工业设施受损。由于俄军同时攻击靠近波兰边境的乌克兰西部地区，北约成员国波兰一度出动军机并临时关闭两座机场；波兰军方表示未发现其领空遭侵犯。俄乌双方同日继续打击对方能源基础设施。人员伤亡、目标性质和战果主要依据交战各方及当地官员通报。"
+    },
+    {
+      "id": "politics-003",
+      "category": "欧洲对俄制裁",
+      "original_title": "EU envoys extend Russia sanctions by seven days to debate six-month renewal, EU presidency says",
+      "source_name": "Reuters",
+      "source_level": "media",
+      "published_at": "2026-09-14",
+      "url": "https://www.reuters.com/world/europe/eu-envoys-extend-russia-sanctions-by-seven-days-debate-six-month-renewal-eu-2026-09-14/",
+      "summary_zh": "欧盟成员国大使未能就对俄个人和实体制裁名单的六个月续期达成一致，因此把原定 9 月 15 日到期的制裁临时延长七天至 9 月 22 日。争议焦点之一是是否将俄乌兹别克富商阿利舍尔·乌斯马诺夫移出名单，法国与斯洛伐克提出相关要求。该名单涉及近 3000 个个人和实体，并包含资产冻结与旅行限制；由于欧盟制裁续期需要 27 国一致同意，谈判结果直接关系到下一周期措施能否继续生效。"
+    },
+    {
+      "id": "politics-004",
+      "category": "国际刑事司法与美国制裁",
+      "original_title": "Trump administration prepares sanctions against International Criminal Court, sources say",
+      "source_name": "Reuters",
+      "source_level": "media",
+      "published_at": "2026-09-20",
+      "url": "https://www.reuters.com/world/trump-administration-prepares-sanction-international-criminal-court-wsj-reports-2026-09-20/",
+      "summary_zh": "两名知情人士向路透社表示，特朗普政府已准备针对国际刑事法院整体实施制裁，但公告时间仍未确定；截至报道发布时，这并非已正式生效的措施。美国此前已制裁部分国际刑事法院法官和检察官，并要求该院撤销针对以色列领导人的逮捕令。国际刑事法院官员警告，若美国把制裁扩大到整个机构，可能影响其信息技术、保险、调查人员聘用及向美国雇员付款等日常运作。相关计划细节主要来自匿名消息人士。"
+    },
+    {
+      "id": "politics-005",
+      "category": "俄乌战争与外交",
+      "original_title": "Ukraine's Zelenskiy says he and Trump agree to meet in New York",
+      "source_name": "Reuters",
+      "source_level": "media",
+      "published_at": "2026-09-20",
+      "url": "https://www.reuters.com/world/us/ukraines-zelenskiy-says-he-trump-agree-meet-new-york-2026-09-20/",
+      "summary_zh": "乌克兰总统泽连斯基表示，他与美国总统特朗普通话后同意在纽约联合国大会期间会面，并称双方正讨论降级、能源安全、粮食安全和人员保护等议题。泽连斯基还感谢特朗普签署新的对俄制裁法案，并把和平谈判称为乌方首要任务。截至报道时，美方未公布这次纽约会面的具体议程或任何协议，因此有关其可能带来的外交突破仍属于泽连斯基方面的预期与表述。"
+    },
+    {
+      "id": "politics-006",
+      "category": "苏丹人道危机",
+      "original_title": "World Food Programme funding for Sudan plummets as more go hungry, head says",
+      "source_name": "Reuters",
+      "source_level": "media",
+      "published_at": "2026-09-14",
+      "url": "https://www.reuters.com/world/africa/world-food-programme-funding-sudan-plummets-more-go-hungry-head-says-2026-09-14/",
+      "summary_zh": "世界粮食计划署代理负责人告诉路透社，该机构今年用于苏丹的资金较去年约减半，维持现有行动仍存在接近 3 亿美元缺口。其数据称，苏丹近 2000 万人面临饥饿，但预算限制迫使援助重点集中于最需要帮助的约 500 万人，目前覆盖约 400 万人，部分地区只能发放半额口粮。苏丹内战已造成大规模流离失所，而国际移民组织也警告其紧急物资可能在数周内耗尽，显示资金不足正成为与准入问题同等关键的救援约束。"
+    },
+    {
+      "id": "politics-007",
+      "category": "美洲安全与禁毒政策",
+      "original_title": "US drops Venezuela from drug list, may remove Colombia, Trump says",
+      "source_name": "Reuters",
+      "source_level": "media",
+      "published_at": "2026-09-16",
+      "url": "https://www.reuters.com/world/americas/us-drops-venezuela-drug-list-may-remove-colombia-trump-says-2026-09-16/",
+      "summary_zh": "特朗普在美国国务院公布的总统认定中表示，美国已把委内瑞拉从“未能明显履行国际禁毒义务”的国家名单中移除，这是二十多年来首次；他同时表示，若哥伦比亚在未来一年推进古柯清除和打击贩毒网络，也可能取消其相关认定。美国仍把两国列为主要毒品生产或转运地。有关委内瑞拉合作成效及哥伦比亚未来表现的判断属于美国政府立场，后续政策变化取决于其评估。"
+    }
+  ]
+}
