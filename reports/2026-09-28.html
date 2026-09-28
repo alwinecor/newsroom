@@ -1,0 +1,862 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Newsroom</title>
+<style>:root{
+  --paper:#f4f0e7;
+  --ink:#11100e;
+  --muted:#6d6962;
+  --line:#1a1916;
+  --soft-line:#b8b2a7;
+  --accent:#9d241e;
+  --page:1320px;
+  --masthead-height:88px;
+  --section-nav-height:62px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scrollbar-gutter:stable}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+.site-header{
+  max-width:var(--page);
+  margin:0 auto;
+  padding:24px 28px 18px;
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:end;
+  border-bottom:2px solid var(--line);
+}
+.brand{
+  font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;
+  font-weight:700;
+  font-size:28px;
+  letter-spacing:-.03em;
+}
+.header-center{
+  font-size:11px;
+  letter-spacing:.16em;
+  font-weight:700;
+  text-align:center;
+}
+.header-right{
+  text-align:right;
+  font-size:11px;
+  letter-spacing:.10em;
+  color:var(--muted);
+}
+main{max-width:var(--page);margin:0 auto;padding:0 28px 80px}
+.hero{
+  padding:58px 0 36px;
+  display:grid;
+  grid-template-columns:8fr 4fr;
+  gap:54px;
+  border-bottom:1px solid var(--line);
+}
+.eyebrow{
+  margin:0 0 18px;
+  color:var(--accent);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+.hero h1{
+  max-width:780px;
+  margin:0;
+  font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;
+  font-size:clamp(54px,7vw,104px);
+  line-height:.92;
+  letter-spacing:-.055em;
+  font-weight:500;
+}
+.hero-deck{
+  margin:28px 0 0;
+  max-width:700px;
+  font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;
+  font-size:23px;
+  line-height:1.55;
+}
+.hero-side{
+  align-self:end;
+  border-top:1px solid var(--line);
+}
+.fact{
+  display:flex;
+  justify-content:space-between;
+  gap:22px;
+  padding:13px 0;
+  border-bottom:1px solid var(--soft-line);
+  font-size:12px;
+}
+.fact dt{
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:.1em;
+}
+.fact dd{margin:0;text-align:right;font-weight:650}
+.section-nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  min-height:62px;
+  display:flex;
+  gap:30px;
+  align-items:center;
+  border-bottom:1px solid var(--line);
+  background:rgba(244,240,231,.96);
+  backdrop-filter:blur(8px);
+  font-size:10px;
+  font-weight:760;
+  letter-spacing:.09em;
+}
+.section-nav .nav-label{
+  color:var(--muted);
+  letter-spacing:.14em;
+}
+.section-nav a{
+  text-decoration:none;
+  display:flex;
+  align-items:baseline;
+  gap:7px;
+}
+.section-nav .zh{
+  font-size:12px;
+  letter-spacing:.04em;
+}
+.section-nav .en{
+  font-size:9px;
+  letter-spacing:.14em;
+  color:var(--muted);
+}
+.section-nav a:hover,
+.section-nav a:hover .en{color:var(--accent)}
+.news-section{padding-top:70px;scroll-margin-top:60px}
+.section-rule{border-top:4px solid var(--line)}
+.section-header{
+  display:grid;
+  grid-template-columns:95px 1fr auto;
+  align-items:end;
+  gap:18px;
+  padding:12px 0 25px;
+  border-bottom:1px solid var(--line);
+}
+.section-number{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:48px;
+  line-height:1;
+  color:var(--accent);
+}
+.section-en{
+  font-size:11px;
+  letter-spacing:.18em;
+  font-weight:800;
+}
+.section-header h2{
+  margin:3px 0 0;
+  font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;
+  font-size:38px;
+  line-height:1;
+  font-weight:500;
+}
+.section-count{
+  font-size:11px;
+  letter-spacing:.13em;
+  font-weight:750;
+  padding-bottom:4px;
+}
+.lead-grid{
+  display:grid;
+  grid-template-columns:95px 1fr;
+  gap:18px;
+  border-bottom:1px solid var(--line);
+}
+.lead-index{
+  padding-top:34px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:15px;
+  color:var(--muted);
+}
+.story{padding:30px 0 34px}
+.story-kicker{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  color:var(--accent);
+}
+.story-kicker .dot{color:var(--muted)}
+.story h3{
+  font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;
+  font-weight:500;
+  letter-spacing:-.025em;
+  line-height:1.08;
+  margin:12px 0 12px;
+  font-size:30px;
+}
+.lead-story{
+  display:grid;
+  grid-template-columns:minmax(0,7fr) minmax(300px,5fr);
+  column-gap:60px;
+  align-items:start;
+}
+.lead-story .story-kicker,
+.lead-story h3,
+.lead-story .story-meta{grid-column:1}
+.lead-story h3{font-size:52px;line-height:1.02;margin-top:15px}
+.lead-story .story-summary{
+  grid-column:2;
+  grid-row:1 / span 4;
+  margin:0;
+  padding-top:1px;
+  font-size:17px;
+  line-height:1.9;
+  border-left:1px solid var(--soft-line);
+  padding-left:28px;
+}
+.lead-story .source-link{grid-column:1;margin-top:28px}
+.story-meta{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+  color:var(--muted);
+  font-size:11px;
+  letter-spacing:.03em;
+}
+.story-summary{
+  font-size:15px;
+  line-height:1.9;
+  margin:18px 0 22px;
+}
+.source-link{
+  display:inline-block;
+  font-size:10px;
+  font-weight:850;
+  letter-spacing:.13em;
+  text-decoration:none;
+  border-bottom:1px solid var(--ink);
+  padding-bottom:2px;
+}
+.source-link:hover{color:var(--accent);border-color:var(--accent)}
+.secondary-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+}
+.secondary-grid .story{
+  border-bottom:1px solid var(--soft-line);
+  padding-right:40px;
+}
+.secondary-grid .story:nth-child(even){
+  border-left:1px solid var(--line);
+  padding-left:40px;
+  padding-right:0;
+}
+.secondary-grid .story:nth-last-child(-n+2){border-bottom:none}
+.footer{
+  max-width:var(--page);
+  margin:0 auto;
+  padding:20px 28px 42px;
+  border-top:2px solid var(--line);
+  display:flex;
+  justify-content:space-between;
+  gap:24px;
+  font-size:11px;
+  color:var(--muted);
+  letter-spacing:.04em;
+}
+
+/* --- Sidebar + two-level sticky navigation --- */
+.top-shell{
+  position:sticky;
+  top:0;
+  z-index:180;
+  background:rgba(244,240,231,.97);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.top-shell .site-header{
+  max-width:var(--page);
+  border-bottom:1px solid var(--soft-line);
+}
+main > .section-nav{top:var(--masthead-height)}
+.header-left{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  min-width:0;
+}
+.menu-button{
+  text-decoration:none;
+  appearance:none;
+  border:0;
+  background:transparent;
+  color:var(--ink);
+  width:34px;
+  height:34px;
+  padding:0;
+  cursor:pointer;
+  display:grid;
+  place-items:center;
+}
+.menu-icon,
+.menu-icon::before,
+.menu-icon::after{
+  content:"";
+  display:block;
+  width:20px;
+  height:1.5px;
+  background:currentColor;
+}
+.menu-icon{position:relative}
+.menu-icon::before{position:absolute;top:-6px;left:0}
+.menu-icon::after{position:absolute;top:6px;left:0}
+.menu-button:hover{color:var(--accent)}
+.brand a{text-decoration:none}
+.brand a:hover{color:var(--accent)}
+
+.archive-overlay{
+  position:fixed;
+  inset:0;
+  z-index:240;
+  background:rgba(17,16,14,.28);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .22s ease;
+}
+.archive-drawer{
+  position:fixed;
+  inset:0 auto 0 0;
+  z-index:250;
+  width:min(390px,88vw);
+  background:var(--paper);
+  border-right:1px solid var(--line);
+  transform:translateX(-100%);
+  transition:transform .24s ease;
+  display:flex;
+  flex-direction:column;
+}
+body:not(.archive-enhanced) #archive-drawer:target,
+#archive-drawer.is-open{transform:translateX(0)}
+body:not(.archive-enhanced) #archive-drawer:target + .archive-overlay,
+#archive-drawer.is-open + .archive-overlay{
+  opacity:1;
+  pointer-events:auto;
+}
+.drawer-head{
+  min-height:78px;
+  padding:20px 24px;
+  border-bottom:2px solid var(--line);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+.drawer-kicker{
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.16em;
+  color:var(--muted);
+  text-transform:uppercase;
+}
+.drawer-title{
+  margin-top:2px;
+  font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;
+  font-size:24px;
+  font-weight:700;
+  letter-spacing:-.03em;
+}
+.drawer-close{
+  text-decoration:none;
+  appearance:none;
+  border:0;
+  background:transparent;
+  color:var(--ink);
+  font-size:28px;
+  line-height:1;
+  cursor:pointer;
+  padding:6px;
+}
+.drawer-close:hover{color:var(--accent)}
+.archive-list{padding:38px 24px 48px;overflow:auto}
+.archive-year{
+  margin:0;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:54px;
+  line-height:.95;
+  font-weight:500;
+  letter-spacing:-.045em;
+  padding-bottom:18px;
+  border-bottom:1px solid var(--line);
+}
+.archive-dates{list-style:none;padding:0;margin:0}
+.archive-dates li{border-bottom:1px solid var(--soft-line)}
+.archive-dates a{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:19px 0;
+  text-decoration:none;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:28px;
+  letter-spacing:-.02em;
+}
+.archive-dates a::after{
+  content:"↗";
+  font-family:Inter,ui-sans-serif,sans-serif;
+  font-size:13px;
+  color:var(--muted);
+}
+.archive-dates a:hover{color:var(--accent)}
+.archive-dates a[aria-current="page"]{color:var(--accent)}
+.archive-dates a[aria-current="page"]::after{
+  content:"CURRENT";
+  font-size:9px;
+  letter-spacing:.14em;
+  font-weight:800;
+  color:var(--accent);
+}
+.news-section{scroll-margin-top:calc(var(--masthead-height) + var(--section-nav-height) + 12px)}
+
+@media(max-width:900px){
+  .top-shell .site-header{grid-template-columns:1fr auto;padding:14px 18px 12px}
+  :root{--masthead-height:68px}
+  .menu-button{width:30px;height:30px}
+  .header-left{gap:10px}
+}
+
+@media(max-width:900px){
+  .site-header{grid-template-columns:1fr auto;padding:18px 18px 14px}
+  .header-center{display:none}
+  .header-right{font-size:10px}
+  main{padding:0 18px 56px}
+  .hero{grid-template-columns:1fr;padding-top:38px;gap:36px}
+  .hero h1{font-size:58px}
+  .hero-side{max-width:none}
+  .section-nav{overflow:auto;white-space:nowrap}
+  .section-header{grid-template-columns:58px 1fr;gap:12px}
+  .section-number{font-size:35px}
+  .section-count{display:none}
+  .lead-grid{grid-template-columns:1fr}
+  .lead-index{display:none}
+  .lead-story{display:block}
+  .lead-story h3{font-size:38px}
+  .lead-story .story-summary{
+    border-left:0;
+    padding-left:0;
+    margin-top:22px;
+    font-size:16px;
+  }
+  .secondary-grid{grid-template-columns:1fr}
+  .secondary-grid .story,
+  .secondary-grid .story:nth-child(even){
+    border-left:0;
+    border-bottom:1px solid var(--soft-line);
+    padding-left:0;
+    padding-right:0;
+  }
+  .secondary-grid .story:last-child{border-bottom:none}
+  .footer{padding-left:18px;padding-right:18px;flex-direction:column}
+}
+@media(max-width:560px){
+  .brand{font-size:23px}
+  .hero h1{font-size:46px}
+  .hero-deck{font-size:19px}
+  .section-header h2{font-size:31px}
+  .lead-story h3{font-size:32px}
+  .story h3{font-size:25px}
+}
+.archive-drawer{visibility:hidden}
+body:not(.archive-enhanced) #archive-drawer:target,
+#archive-drawer.is-open{visibility:visible}
+.story h3,.story-summary{overflow-wrap:anywhere}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.archive-drawer,.archive-overlay{transition:none}}
+
+/* Markets use the same paper, rules, serif headings and two-column stories. */
+.market-report{padding:30px 0;border-bottom:1px solid var(--line)}
+.market-report:last-child{border-bottom:0}
+.market-title{font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;font-size:30px;font-weight:500;margin:0 0 14px}
+.story h4{font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;font-size:30px;font-weight:500;letter-spacing:-.025em;line-height:1.08;margin:12px 0;overflow-wrap:anywhere}
+.lead-story h4{grid-column:1;font-size:52px;line-height:1.02;margin-top:15px}
+@media(max-width:900px){.lead-story h4{font-size:38px}}
+@media(max-width:560px){.story h4{font-size:25px}.market-title{font-size:27px}}
+@media(max-width:560px){.lead-story h4{font-size:32px}}
+</style>
+</head>
+<body id="page-top" data-issue="2026-09-28">
+<div class="top-shell">
+  <header class="site-header">
+    <div class="header-left">
+      <a class="menu-button" href="#archive-drawer" aria-label="打开历史期刊" aria-controls="archive-drawer"><span class="menu-icon" aria-hidden="true"></span></a>
+      <div class="brand"><a href="#page-top" aria-label="返回页面顶部">NEWSROOM</a></div>
+    </div>
+    <div class="header-center">WEEKLY INTERNATIONAL DIGEST</div>
+    <div class="header-right">ISSUE 004 · 2026-09-28</div>
+  </header>
+</div>
+
+<aside class="archive-drawer" id="archive-drawer" aria-label="历史期刊">
+  <div class="drawer-head">
+    <div>
+      <div class="drawer-kicker">ARCHIVE</div>
+      <div class="drawer-title">历史期刊</div>
+    </div>
+    <a class="drawer-close" href="#page-top" aria-label="关闭历史期刊">×</a>
+  </div>
+  <div class="archive-list">
+<section><h2 class="archive-year">2026</h2>
+          <ul class="archive-dates"><li><a href="#page-top" aria-current="page">09.28</a></li></ul></section>
+          <noscript>完整归档导航需要启用 JavaScript。</noscript>
+</div>
+</aside>
+<a class="archive-overlay" href="#page-top" aria-label="关闭历史期刊" tabindex="-1"></a>
+
+<main>
+  <section class="hero">
+    <div>
+      <p class="eyebrow">International briefing / 7-day edition</p>
+      <h1>一周世界，<br>四个视角。</h1>
+      <p class="hero-deck">聚焦科技、时政、财经与市场。中文摘要保留事实边界，明确机构观点归属，并始终附上原始来源。</p>
+    </div>
+    <dl class="hero-side">
+      <div class="fact"><dt>Observation window</dt><dd>2026-09-21 — 2026-09-28</dd></div>
+      <div class="fact"><dt>Published · UTC</dt><dd>2026-09-28 · 06:00</dd></div>
+      <div class="fact"><dt>Berlin · 柏林</dt><dd>2026-09-28 · 08:00</dd></div>
+      <div class="fact"><dt>Beijing · 北京</dt><dd>2026-09-28 · 14:00</dd></div>
+    </dl>
+  </section>
+
+  <nav class="section-nav" aria-label="sections">
+    <a href="#technology"><span class="zh">01 科技</span><span class="en">TECHNOLOGY</span></a>
+<a href="#politics"><span class="zh">02 时政</span><span class="en">POLITICS</span></a>
+<a href="#finance"><span class="zh">03 财经</span><span class="en">FINANCE</span></a>
+<a href="#markets"><span class="zh">04 市场</span><span class="en">MARKETS</span></a>
+  </nav>
+
+  <section class="news-section" id="technology">
+      <div class="section-rule"></div>
+      <header class="section-header">
+        <div class="section-number">01</div>
+        <div class="section-title-wrap"><div class="section-en">TECHNOLOGY</div><h2>科技</h2></div>
+        <div class="section-count">07 STORIES</div>
+      </header>
+      <div class="lead-grid"><div class="lead-index">A</div><article class="story lead-story">
+      <div class="story-kicker"><span>前沿人工智能模型</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
+      <h3>Claude Opus 5.5</h3>
+      <div class="story-meta"><span>Anthropic</span><time datetime="2026-09-22">2026-09-22</time></div>
+      <p class="story-summary">Anthropic 发布 Claude Opus 5.5，称其在多数任务上的能力接近 Fable 5.1，但典型工作负载的运行成本比 Opus 5 低约 40%，输出速度快逾 30%。其每百万输入与输出词元价格分别为 4 美元和 20 美元，缓存读取价格下调至 0.20 美元。公司称新模型尤其强化长时程编程、计算机操作和知识工作，并在发布前接受外部评估；相关性能与安全结论主要来自 Anthropic 自身基准及早期客户测试。</p>
+      <a class="source-link" href="https://www.anthropic.com/claude-opus-5-5" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article></div>
+      <div class="secondary-grid"><article class="story">
+      <div class="story-kicker"><span>人工智能模型与半导体</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
+      <h3>Alibaba Unveils Roadmap on Full-Stack AI Strategy from Chips, Cloud Infrastructure, Models to Agents</h3>
+      <div class="story-meta"><span>Alibaba Cloud</span><time datetime="2026-09-22">2026-09-22</time></div>
+      <p class="story-summary">阿里巴巴在云栖大会公布从芯片、云基础设施到模型和智能体的全栈 AI 路线：Qwen 4 已开始训练，后续 Qwen 4.5 与 Qwen 5 计划扩展至 5 万亿至 10 万亿参数；平头哥同时发布面向训练与推理的真武 V900 加速器，称其性能为前代三倍，配备 216 GB 显存并原生支持 FP8、FP4，预计 2027 年第一季度量产。阿里云还把 2032 年全球数据中心容量目标设为超过 20 GW。</p>
+      <a class="source-link" href="https://www.alibabacloud.com/blog/alibaba-unveils-roadmap-on-full-stack-ai-strategy-from-chips-cloud-infrastructure-models-to-agents_603589" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
+      <div class="story-kicker"><span>人工智能终端与虚拟现实</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
+      <h3>The Biggest News From Connect 2026</h3>
+      <div class="story-meta"><span>Meta</span><time datetime="2026-09-24">2026-09-24</time></div>
+      <p class="story-summary">Meta 在 Connect 2026 集中发布可穿戴设备与个人智能体路线：约 100 克的 Meta VR Glasses 把显示、运算等部件缩入眼镜形态，定位于观影、沉浸式体育、游戏与移动办公；Muse 个人 AI 智能体将在未来数月接入 Meta AI 眼镜，可结合佩戴者所见内容执行任务，并新增购物、支付、旅行和办公连接器。公司还发布 Ray-Ban Meta Audio、第三代 Ray-Ban Meta 及听力增强等功能。</p>
+      <a class="source-link" href="https://about.fb.com/news/2026/09/the-biggest-news-from-connect-2026/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
+      <div class="story-kicker"><span>人工智能标准与治理</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
+      <h3>Building standards for the next phase of AI</h3>
+      <div class="story-meta"><span>OpenAI</span><time datetime="2026-09-21">2026-09-21</time></div>
+      <p class="story-summary">OpenAI 提议由美国牵头制定前沿 AI 及递归式自我改进的全球技术标准，建立共同的能力测量、风险评估、安全措施充分性与事件分级报告机制。其设想借助各国 AI 安全机构、美国先进 AI 标准与创新中心以及现有国际标准组织协同推进，并主张美中建立安全沟通渠道。OpenAI 强调这些标准不是模型许可、强制发布前审查或审批制度，各国仍可自行决定是否纳入法律。</p>
+      <a class="source-link" href="https://openai.com/index/building-standards-next-phase-ai/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
+      <div class="story-kicker"><span>全球网络基础设施</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
+      <h3>Announcing Petal, a First-of-its-Kind Transoceanic Subsea Cable</h3>
+      <div class="story-meta"><span>Meta</span><time datetime="2026-09-21">2026-09-21</time></div>
+      <p class="story-summary">Meta 宣布建设连接美国与法国、全长约 7000 公里的 Petal 海底光缆，计划首次在跨洋距离部署多芯光纤并实现每秒 1 拍比特容量。公司称这一容量约为当前领先跨洋光缆的两倍，同时无需按比例增加功耗和物理基础设施。项目将与 NEC、住友电工合作，法国登陆部分由 Orange 支持，预计 2029 年投入使用；具体容量、效率与进度目前仍是项目方公布的设计目标。</p>
+      <a class="source-link" href="https://about.fb.com/news/2026/09/announcing-petal-meta-petabit-transoceanic-cable/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
+      <div class="story-kicker"><span>个人计算与端侧人工智能</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
+      <h3>The new Mac mini and Mac Studio are available today</h3>
+      <div class="story-meta"><span>Apple</span><time datetime="2026-09-22">2026-09-22</time></div>
+      <p class="story-summary">Apple 宣布搭载 M6、M5 Pro、M5 Max 与 M5 Ultra 的新款 Mac mini 和 Mac Studio 正式上市。两类桌面电脑配备在每个图形核心中集成神经网络加速器的新一代 GPU，并结合 CPU、神经网络引擎与 macOS 27 支持端侧 AI。Apple 将 Mac mini 定位于常开智能体计算，将高配 Mac Studio 面向可在本地运行大型模型的专业用户；产品此前已发布，本次更新确认其在本观察窗口内开始销售。</p>
+      <a class="source-link" href="https://www.apple.com/newsroom/2026/09/the-new-mac-mini-and-mac-studio-are-available-today/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
+      <div class="story-kicker"><span>人工智能开发者生态</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
+      <h3>Build plugins for Claude</h3>
+      <div class="story-meta"><span>Anthropic</span><time datetime="2026-09-25">2026-09-25</time></div>
+      <p class="story-summary">Anthropic 向付费 Claude 用户开放插件目录提交门户，开发者可提交单个远程 MCP 连接器，或把 MCP 服务器与 Agent Skills 打包为托管在 GitHub 的插件；门户提供自动校验、安全扫描、审核反馈、发布控制及上线后的安装和搜索数据分析。Claude 同时支持被称为 MCP 2.0 的最新规范，以及用于聊天内交互界面的 MCP Apps 和面向企业免配置 OAuth 的 Enterprise Managed Auth 扩展。</p>
+      <a class="source-link" href="https://claude.com/blog/build-plugins-for-claude" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article></div>
+    </section>
+<section class="news-section" id="politics">
+      <div class="section-rule"></div>
+      <header class="section-header">
+        <div class="section-number">02</div>
+        <div class="section-title-wrap"><div class="section-en">POLITICS</div><h2>时政</h2></div>
+        <div class="section-count">07 STORIES</div>
+      </header>
+      <div class="lead-grid"><div class="lead-index">A</div><article class="story lead-story">
+      <div class="story-kicker"><span>大国关系与经贸外交</span><span class="dot">•</span><span>MEDIA SOURCE</span></div>
+      <h3>Five takeaways from Trump&#x27;s summit with Xi in Washington</h3>
+      <div class="story-meta"><span>Reuters</span><time datetime="2026-09-24">2026-09-24</time></div>
+      <p class="story-summary">美国总统特朗普在白宫接待中国国家主席习近平，双方把贸易、人工智能、台湾及战略竞争列为会谈重点，并将原定 11 月到期的贸易休战延长两个月。短期安排为关税、中国采购、稀土供应与技术限制的后续谈判争取时间，但未形成长期经贸协议。习近平同时要求美方明确反对“台独”，显示双方虽恢复高层接触并建立人工智能安全沟通渠道，核心战略分歧仍未解决。</p>
+      <a class="source-link" href="https://www.reuters.com/world/china/four-takeaways-trumps-summit-with-xi-washington-2026-09-24/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article></div>
+      <div class="secondary-grid"><article class="story">
+      <div class="story-kicker"><span>俄罗斯选举与乌克兰战争</span><span class="dot">•</span><span>MEDIA SOURCE</span></div>
+      <h3>Pro-Putin party gets record 355 parliamentary seats, anti-war party a tiny regional foothold</h3>
+      <div class="story-meta"><span>Reuters</span><time datetime="2026-09-21">2026-09-21</time></div>
+      <p class="story-summary">俄罗斯近乎完成计票的官方结果显示，执政党统一俄罗斯党获 57.83% 选票和国家杜马 450 席中的 355 席，创该党纪录并继续掌握修宪所需多数。普京把这场全面入侵乌克兰后的首次议会选举描述为对战争支持度的检验；唯一登记参选的反战党亚博卢党未进入国家议会，仅在诺夫哥罗德地方议会越过门槛。反对派指控投票舞弊，选举官员则称程序公正。</p>
+      <a class="source-link" href="https://www.reuters.com/world/europe/pro-putin-party-keeps-grip-parliament-anti-war-party-gains-tiny-regional-2026-09-21/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
+      <div class="story-kicker"><span>欧洲联盟与对俄制裁</span><span class="dot">•</span><span>MEDIA SOURCE</span></div>
+      <h3>EU renews Russia sanctions, drops Russian billionaires Usmanov and Fridman</h3>
+      <div class="story-meta"><span>Reuters</span><time datetime="2026-09-22">2026-09-22</time></div>
+      <p class="story-summary">欧盟成员国以妥协方案续期对约 3000 名俄罗斯个人与实体的制裁：其余名单延长三年，不再沿用常见的六个月周期，但应法国与卢森堡要求，将富豪阿利舍尔·乌斯马诺夫和米哈伊尔·弗里德曼除名。制裁需要全体一致，最后反对的拉脱维亚改为弃权后方案获批。乌克兰谴责除名决定，拉脱维亚表示考虑采取本国限制，争议暴露欧盟在维持对俄统一战线时的内部交易与法律压力。</p>
+      <a class="source-link" href="https://www.reuters.com/world/eu-renews-russia-sanctions-drops-russian-billionaires-usmanov-fridman-2026-09-22/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
+      <div class="story-kicker"><span>中东安全与国际航运</span><span class="dot">•</span><span>MEDIA SOURCE</span></div>
+      <h3>France mulls new UN Security Council resolution on Hormuz, diplomats say</h3>
+      <div class="story-meta"><span>Reuters</span><time datetime="2026-09-22">2026-09-22</time></div>
+      <p class="story-summary">法国开始与美国协调起草联合国安理会决议，拟设国际任务机制以恢复霍尔木兹海峡商业航运。草案设想把水道安全与美伊更广泛冲突分开，强调各国共同维护航行与能源运输自由，并避免形成针对伊朗的进攻性安排。此前类似努力因中国、俄罗斯担忧方案偏向而受阻；本轮倡议发生在油价上升、也门胡塞武装推进又威胁曼德海峡之际，能否在五个常任理事国间取得妥协仍不确定。</p>
+      <a class="source-link" href="https://www.reuters.com/world/france-mulls-new-un-security-council-resolution-hormuz-diplomats-say-2026-09-22/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
+      <div class="story-kicker"><span>拉丁美洲政治转型</span><span class="dot">•</span><span>MEDIA SOURCE</span></div>
+      <h3>Venezuelan delegation in NY seeks debt, energy deals</h3>
+      <div class="story-meta"><span>Reuters</span><time datetime="2026-09-21">2026-09-21</time></div>
+      <p class="story-summary">委内瑞拉临时总统德尔西·罗德里格斯率团在纽约分别接触美洲开发银行、国际货币基金组织和世界银行，讨论能源、矿业、地震重建及估计达 1500 亿至 2000 亿美元的主权和国有石油公司债务重组。这是她在美国监督下接任临时总统后首次访美；代表团还与联合国及英美官员讨论人权、经济改革和民主转型，并为同特朗普会面以及美国企业重返该国油气与金矿项目铺路。</p>
+      <a class="source-link" href="https://www.reuters.com/world/americas/venezuelan-delegation-led-by-rodriguez-discuss-debt-energy-us-sources-say-2026-09-21/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
+      <div class="story-kicker"><span>也门冲突与人道危机</span><span class="dot">•</span><span>MEDIA SOURCE</span></div>
+      <h3>World Food Programme ramps up response in Yemen as hunger fears escalate, official says</h3>
+      <div class="story-meta"><span>Reuters</span><time datetime="2026-09-21">2026-09-21</time></div>
+      <p class="story-summary">胡塞武装夺取也门红海沿岸后，联合国称近 700 人死亡、超过 12 万人在国内流离失所，冲突同时威胁区域航运与能源供应。世界粮食计划署已为约 6 万人提供热食和粮食，并准备扩大至数十万人；但也门逾 1800 万人面临严重粮食不安全，约 220 万名五岁以下儿童急性营养不良。该机构还称北部办公室和资产被占、数十名联合国人员遭拘押，严重限制援助行动。</p>
+      <a class="source-link" href="https://www.reuters.com/world/middle-east/world-food-programme-ramps-up-response-yemen-hunger-fears-escalate-official-says-2026-09-21/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
+      <div class="story-kicker"><span>联合国与全球治理</span><span class="dot">•</span><span>MEDIA SOURCE</span></div>
+      <h3>UN chief calls for AI curbs and end to wars in his last assembly address</h3>
+      <div class="story-meta"><span>Reuters</span><time datetime="2026-09-22">2026-09-22</time></div>
+      <p class="story-summary">联合国秘书长古特雷斯在任内最后一次联大一般性辩论讲话中，要求各国结束战争、推动气候责任并改革反映旧有权力格局的国际机构。他尤其主张主要人工智能国家共享新出现的安全风险、协作测试与评估，并在独立监督下建立多边风险管理框架。讲话同时呼吁中东降级、恢复人道援助和依法保障航行权；联合国正面对美国削减资金、安理会僵局及主要国家绕开多边机制等压力。</p>
+      <a class="source-link" href="https://www.reuters.com/world/europe/un-chief-calls-ai-curbs-end-wars-his-last-assembly-address-2026-09-22/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article></div>
+    </section>
+<section class="news-section" id="finance">
+      <div class="section-rule"></div>
+      <header class="section-header">
+        <div class="section-number">03</div>
+        <div class="section-title-wrap"><div class="section-en">FINANCE</div><h2>财经</h2></div>
+        <div class="section-count">05 ANALYSES</div>
+      </header>
+      <div class="lead-grid"><div class="lead-index">A</div><article class="story lead-story">
+      <div class="story-kicker"><span>欧元区增长、通胀与能源冲击</span><span class="dot">•</span><span>INSTITUTIONAL ANALYSIS</span></div>
+      <h3>The outlook for the euro area economy</h3>
+      <div class="story-meta"><span>European Central Bank</span><time datetime="2026-09-24">2026-09-24</time></div>
+      <p class="story-summary">欧洲央行执委菲利普·莱恩以 9 月工作人员预测分析欧元区前景：基准情景预计调和消费物价指数通胀 2026 年为 3.0%、2027 年为 2.5%、2028 年为 2.1%，实际国内生产总值同期分别增长 0.9%、1.4% 和 1.5%。中东冲突引发的第二轮油气涨价令能源通胀更持久，并可能逐步推高食品、电力和商品价格；政府支出短期支撑需求，但若能源价格走向更严峻情景，增长和实际收入面临更大下行压力。</p>
+      <a class="source-link" href="https://www.ecb.europa.eu/press/key/date/2026/html/ecb.sp260924~e0eceef02c.en.pdf" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article></div>
+      <div class="secondary-grid"><article class="story">
+      <div class="story-kicker"><span>全球失衡与跨境金融风险</span><span class="dot">•</span><span>INSTITUTIONAL ANALYSIS</span></div>
+      <h3>Unraveling the cobweb of global imbalances: drivers, vulnerabilities, and adjustment scenarios</h3>
+      <div class="story-meta"><span>Bank for International Settlements</span><time datetime="2026-09-23">2026-09-23</time></div>
+      <p class="story-summary">国际清算银行工作论文分析覆盖约全球国内生产总值 85% 的 28 个经济体，发现美国净国际投资头寸恶化与多数主要经济体头寸改善相互对应。作者认为，资产估值变化和投资收益流等金融因素是短期及长期失衡的首要驱动，贸易在长期也有重要作用。对美元大幅贬值、全球股市重新定价、利率上升及贸易失衡减半的模拟显示，任何再平衡都可能经复杂跨境头寸产生显著且不均衡的外溢，尤其美国股市调整会普遍带来负面影响。</p>
+      <a class="source-link" href="https://www.bis.org/publications/working-paper-1379-unraveling-cobweb-global-imbalances-drivers-vulnerabilities-and-adjustment-scenarios" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
+      <div class="story-kicker"><span>低收入国家债务可持续性</span><span class="dot">•</span><span>INSTITUTIONAL ANALYSIS</span></div>
+      <h3>IMF Executive Board Reviews the Joint IMF-World Bank Debt Sustainability Framework for Low Income Countries</h3>
+      <div class="story-meta"><span>International Monetary Fund</span><time datetime="2026-09-21">2026-09-21</time></div>
+      <p class="story-summary">国际货币基金组织与世界银行完成低收入国家债务可持续性框架评估，认为许多国家债务上升、融资来源更复杂，商业条款下的境内外借款占比增加。修订方案将更清楚地区分债务压力风险与不可持续债务，重新校准承债能力、预警阈值和压力测试，并加强公共债务数据的覆盖、透明度与可靠性；统一贴现率维持 5%。新框架预计 2027 年下半年启用，仍需编制实施指引并培训国别团队与当局。</p>
+      <a class="source-link" href="https://www.imf.org/en/news/articles/2026/09/21/pr26296-lics-imf-executive-board-reviews-the-joint-world-bank-debt-sustainability-framework" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
+      <div class="story-kicker"><span>美中直接投资与地缘经济碎片化</span><span class="dot">•</span><span>INSTITUTIONAL ANALYSIS</span></div>
+      <h3>Decoupling Direct Investment: American Firms’ Retreat from China</h3>
+      <div class="story-meta"><span>Board of Governors of the Federal Reserve System</span><time datetime="2026-09-25">2026-09-25</time></div>
+      <p class="story-summary">美联储研究人员结合官方双边统计、穿透香港等投资中心的数据以及绿地项目、跨境并购和子公司微观数据，发现美国企业对华直接投资呈广泛下降。美国在华绿地项目自 2020 年骤减后未恢复，收购交易自 2022 年维持低位；现有子公司的资本开支率下降、分红超过再投资，出售固定资产或资本存量负增长的比例上升。作者认为这表明数十年深化的一体化正在逆转，但研究不能把变化单独归因于关税、疫情、地缘政治或投资审查中的某一项。</p>
+      <a class="source-link" href="https://www.federalreserve.gov/econres/notes/feds-notes/decoupling-direct-investment-american-firms-retreat-from-china-20260925.html" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
+      <div class="story-kicker"><span>人口老龄化、自动化与生产率</span><span class="dot">•</span><span>INSTITUTIONAL ANALYSIS</span></div>
+      <h3>Old workers, young machines: can AI and automation offset population ageing?</h3>
+      <div class="story-meta"><span>Bank for International Settlements</span><time datetime="2026-09-24">2026-09-24</time></div>
+      <p class="story-summary">国际清算银行公告利用覆盖 130 多个经济体的“老龄化—自动化”评分表评估人工智能和机器人能否缓解劳动年龄人口缩减。作者发现，技术最容易替代的岗位更多集中在金融等劳动力较年轻的行业，而农业、医疗等就业规模大且从业者年龄较高的行业自动化空间较小。因此，部分老龄化最快的经济体未必能靠现有技术充分抵消劳动力约束；自动化的宏观效果不仅取决于技术能力，也取决于人口老化发生在哪些行业及其就业结构。</p>
+      <a class="source-link" href="https://www.bis.org/publications/bulletin-135-old-workers-young-machines-can-ai-and-automation-offset-population-ageing" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article></div>
+    </section>
+<section class="news-section" id="markets">
+      <div class="section-rule"></div><header class="section-header">
+        <div class="section-number">04</div>
+        <div class="section-title-wrap"><div class="section-en">MARKETS</div><h2>市场</h2></div>
+        <div class="section-count">03 MARKETS</div>
+      </header><section class="market-report" id="market-gold">
+          <h3 class="market-title">国际金价</h3>
+          <div class="lead-grid"><div class="lead-index">A</div><article class="story institutional-view lead-story">
+              <div class="story-kicker"><span>World Gold Council</span><span class="dot">•</span><span>INSTITUTIONAL ANALYSIS</span></div>
+              <h4>Weekly Markets Monitor - All together now</h4>
+              <div class="story-meta"><span>World Gold Council</span><time datetime="2026-09-21">2026-09-21</time></div>
+              <p class="story-summary">世界黄金协会指出，尽管美联储和日本银行加息、债券收益率上行且美元走强，黄金在截至 9 月 18 日的一周仍继续上涨，涨幅主要出现在亚洲交易时段；其黄金回报归因模型同时显示，各地区黄金交易所交易基金均录得净流入。协会认为当周驱动因素难以精确拆分，但市场参与者的结构性信念可能已扩展至不同类别投资者，因此黄金有时会弱化对收益率和美元短期变化的传统敏感度；这一判断仍需后续资金流与价格数据验证。</p>
+              <a class="source-link" href="https://www.gold.org/goldhub/gold-focus/2026/09/weekly-markets-monitor-all-together-now" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+            </article></div>
+          <div class="secondary-grid"><article class="story institutional-view">
+              <div class="story-kicker"><span>World Gold Council</span><span class="dot">•</span><span>INSTITUTIONAL ANALYSIS</span></div>
+              <h4>You asked, we answered: The AI boom and gold</h4>
+              <div class="story-meta"><span>World Gold Council</span><time datetime="2026-09-24">2026-09-24</time></div>
+              <p class="story-summary">世界黄金协会分析人工智能扩张对黄金工业需求的影响：2025 年电子、牙科等技术用途合计消耗 323 吨黄金，与 2024 年基本持平，尚未随人工智能芯片需求同步上升。高金价促使厂商节省或替代黄金，芯片小型化也降低单位用量，而人工智能计算设备形成反向拉力。协会认为共封装光学若在超大规模数据中心普及，可能成为规模不大但有意义的新需求；不过该技术仍处早期，工业需求对总体金价的作用也小于投资和央行需求。</p>
+              <a class="source-link" href="https://www.gold.org/goldhub/gold-focus/2026/09/you-asked-we-answered-ai-boom-and-gold" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+            </article></div>
+        </section><section class="market-report" id="market-us_equities">
+          <h3 class="market-title">美国股市</h3>
+          <div class="lead-grid"><div class="lead-index">A</div><article class="story institutional-view lead-story">
+              <div class="story-kicker"><span>BlackRock Investment Institute</span><span class="dot">•</span><span>INSTITUTIONAL ANALYSIS</span></div>
+              <h4>The AI buildout meets the 5% world</h4>
+              <div class="story-meta"><span>BlackRock Investment Institute</span><time datetime="2026-09-21">2026-09-21</time></div>
+              <p class="story-summary">贝莱德投资研究院估计，人工智能基础设施资本需求叠加政府借款，可能令美国年度融资需求到 2030 年超过 7.5 万亿美元；人工智能和数据中心债券已占 2026 年美国投资级发行约 14%，高于 2025 年的 5%。机构认为这会维持高融资成本并扩大企业间分化，但推理计算需求仍强，前沿模型开发放缓不等同于实体建设放缓。强劲盈利和资产负债表更能吸收成本，因此其仍超配美国股票及人工智能主题，同时将高杠杆和大规模发债列为风险。</p>
+              <a class="source-link" href="https://www.blackrock.com/corporate/insights/blackrock-investment-institute/global-weekly-commentary" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+            </article></div>
+          <div class="secondary-grid"><article class="story institutional-view">
+              <div class="story-kicker"><span>UBS Chief Investment Office</span><span class="dot">•</span><span>INSTITUTIONAL ANALYSIS</span></div>
+              <h4>Can equities withstand higher yields after the Fed&#x27;s hawkish hike?</h4>
+              <div class="story-meta"><span>UBS Chief Investment Office</span><time datetime="2026-09-21">2026-09-21</time></div>
+              <p class="story-summary">瑞银全球财富管理首席投资办公室认为，美联储加息 25 个基点并把政策区间升至 3.75%–4.00% 后，十年期美国国债收益率触及 5.02%，但标普 500 仅小幅回落，说明市场仍重视增长与盈利韧性。其基准情景为 12 月再加息 25 个基点，预计这种幅度不足以终结股市升势；瑞银预计标普 500 每股收益 2026 年增长 25%、2027 年增长 14%，且中位数成分股盈利约增 14%。主要风险是能源成本和供应约束令通胀扩散、迫使利率超出其浅加息路径。</p>
+              <a class="source-link" href="https://www.ubs.com/us/en/wealth-management/insights/market-news/article.3775879.html" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+            </article><article class="story institutional-view">
+              <div class="story-kicker"><span>UBS Chief Investment Office</span><span class="dot">•</span><span>INSTITUTIONAL ANALYSIS</span></div>
+              <h4>Consumer agents may power the next phase of the AI trade</h4>
+              <div class="story-meta"><span>UBS Chief Investment Office</span><time datetime="2026-09-22">2026-09-22</time></div>
+              <p class="story-summary">瑞银以 Meta 的 Muse 为案例判断，消费者人工智能智能体可能把变现方式从订阅和广告扩展到代购、订票、缴费等交易抽成，并以更高云使用率改善大型云平台的人工智能投入回报。Muse 上线 13 天下载量超过 250 万，带动费城半导体指数单日上涨 4.3%，但瑞银强调应用层领先者仍可能快速更替。智能体的多步骤执行会增加推理算力需求，或支撑处理器、存储、先进封装、服务器、网络、电力和散热链条；各环节表现不会一致，竞争与资本开支回报是主要风险。</p>
+              <a class="source-link" href="https://www.ubs.com/global/en/wealthmanagement/insights/chief-investment-office/house-view/daily/2026/latest-22092026.html" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+            </article></div>
+        </section><section class="market-report" id="market-china_equities">
+          <h3 class="market-title">中国股市</h3>
+          <div class="lead-grid"><div class="lead-index">A</div><article class="story institutional-view lead-story">
+              <div class="story-kicker"><span>UOB Kay Hian</span><span class="dot">•</span><span>INSTITUTIONAL ANALYSIS</span></div>
+              <h4>Awaiting Policy Transmission to Real Economy</h4>
+              <div class="story-meta"><span>UOB Kay Hian</span><time datetime="2026-09-21">2026-09-21</time></div>
+              <p class="story-summary">大华继显认为，中国生产和出口仍在托底，但 8 月零售销售同比仅增 0.4%、前八个月固定资产投资下降 7.2%，尚无充分证据表明财政资金已传导至项目活动与私人需求。此前两周恒生指数跌 3.5%，弱于上证综指的 0.5% 跌幅；美联储紧缩和香港科技股转弱共同压制离岸估值，南向资金净买入 321 亿港元也未扭转下跌。机构对香港股市保持谨慎，并提示低静态市盈率可能成为价值陷阱，应更重视前瞻盈利、现金创造以及地产和消费疲弱风险。</p>
+              <a class="source-link" href="https://www.uobkh.com.hk/en/research/china-bi-weekly-outlook-21092026" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+            </article></div>
+          <div class="secondary-grid"></div>
+        </section></section>
+</main>
+
+<footer class="footer">
+  <span>NEWSROOM · AI-assisted international news digest</span>
+  <span>© 2026 alwinecor</span>
+</footer>
+
+<script data-archive>
+(() => {
+  const drawer = document.querySelector('#archive-drawer');
+  const menu = document.querySelector('.menu-button');
+  const current = document.body.dataset.issue;
+  const archiveURL = new URL(
+    /\/reports\/\d{4}-\d{2}-\d{2}\.html$/.test(location.pathname)
+      ? '../archive.json' : './archive.json', location.href);
+
+  let returnURL = location.hash === '#archive-drawer'
+    ? location.href.replace(/#.*$/, '') : location.href;
+
+  function closeDrawer(event) {
+    event.preventDefault();
+    history.replaceState(history.state, '', returnURL);
+    syncDrawer();
+    menu.focus({preventScroll: true});
+  }
+
+  menu.addEventListener('click', event => {
+    event.preventDefault();
+    returnURL = location.href;
+    history.replaceState(history.state, '', '#archive-drawer');
+    syncDrawer();
+  });
+  drawer.querySelector('.drawer-close').addEventListener('click', closeDrawer);
+  document.querySelector('.archive-overlay').addEventListener('click', closeDrawer);
+
+  document.body.classList.add('archive-enhanced');
+
+  function syncDrawer() {
+    const open = location.hash === '#archive-drawer';
+    drawer.classList.toggle('is-open', open);
+    drawer.inert = !open;
+    menu.setAttribute('aria-expanded', String(open));
+    document.body.style.overflow = open ? 'hidden' : '';
+    if (open) drawer.querySelector('.drawer-close').focus({preventScroll: true});
+  }
+  addEventListener('hashchange', syncDrawer);
+  syncDrawer();
+  document.addEventListener('keydown', event => {
+    if (location.hash !== '#archive-drawer') return;
+    if (event.key === 'Escape') {
+      closeDrawer(event);
+    }
+    if (event.key === 'Tab') {
+      const links = [...drawer.querySelectorAll('a[href]')];
+      const first = links[0], last = links[links.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault(); last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault(); first.focus();
+      }
+    }
+  });
+
+  async function refreshArchive() {
+    try {
+      const response = await fetch(archiveURL, {cache: 'no-store'});
+      if (!response.ok) throw new Error('Archive unavailable');
+      const dates = await response.json();
+      if (!Array.isArray(dates) || !dates.every(day => typeof day === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(day))) {
+        throw new Error('Invalid archive');
+      }
+      const fragment = document.createDocumentFragment();
+      let year, list;
+      for (const day of [...new Set(dates)].sort().reverse()) {
+        if (year !== day.slice(0, 4)) {
+          year = day.slice(0, 4);
+          const section = document.createElement('section');
+          const heading = document.createElement('h2');
+          heading.className = 'archive-year'; heading.textContent = year;
+          list = document.createElement('ul'); list.className = 'archive-dates';
+          section.append(heading, list); fragment.append(section);
+        }
+        const li = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = new URL(`reports/${day}.html`, archiveURL).href;
+        link.textContent = day.slice(5).replace('-', '.');
+        if (day === current) link.setAttribute('aria-current', 'page');
+        li.append(link); list.append(li);
+      }
+      document.querySelector('.archive-list').replaceChildren(fragment);
+    } catch {
+      // The current-issue fallback remains usable when offline or opened via file://.
+    }
+  }
+  refreshArchive();
+  addEventListener('pageshow', refreshArchive);
+})();
+
+</script>
+<script data-navigation>
+(() => {
+  const root = document.documentElement;
+  const masthead = document.querySelector('.top-shell');
+  const nav = document.querySelector('.section-nav');
+  const syncHeights = () => {
+    root.style.setProperty('--masthead-height', `${masthead.getBoundingClientRect().height}px`);
+    root.style.setProperty('--section-nav-height', `${nav.getBoundingClientRect().height}px`);
+  };
+  syncHeights();
+  const observer = new ResizeObserver(syncHeights);
+  observer.observe(masthead);
+  observer.observe(nav);
+})();
+</script>
+</body>
+</html>
