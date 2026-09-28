@@ -1,0 +1,64 @@
+{
+  "module": "markets",
+  "issue_date": "2026-09-28",
+  "window": {
+    "start": "2026-09-21",
+    "end": "2026-09-28"
+  },
+  "markets": {
+    "gold": {
+      "institutional_views": [
+        {
+          "institution": "World Gold Council",
+          "original_title": "Weekly Markets Monitor - All together now",
+          "published_at": "2026-09-21",
+          "url": "https://www.gold.org/goldhub/gold-focus/2026/09/weekly-markets-monitor-all-together-now",
+          "summary_zh": "世界黄金协会指出，尽管美联储和日本银行加息、债券收益率上行且美元走强，黄金在截至 9 月 18 日的一周仍继续上涨，涨幅主要出现在亚洲交易时段；其黄金回报归因模型同时显示，各地区黄金交易所交易基金均录得净流入。协会认为当周驱动因素难以精确拆分，但市场参与者的结构性信念可能已扩展至不同类别投资者，因此黄金有时会弱化对收益率和美元短期变化的传统敏感度；这一判断仍需后续资金流与价格数据验证。"
+        },
+        {
+          "institution": "World Gold Council",
+          "original_title": "You asked, we answered: The AI boom and gold",
+          "published_at": "2026-09-24",
+          "url": "https://www.gold.org/goldhub/gold-focus/2026/09/you-asked-we-answered-ai-boom-and-gold",
+          "summary_zh": "世界黄金协会分析人工智能扩张对黄金工业需求的影响：2025 年电子、牙科等技术用途合计消耗 323 吨黄金，与 2024 年基本持平，尚未随人工智能芯片需求同步上升。高金价促使厂商节省或替代黄金，芯片小型化也降低单位用量，而人工智能计算设备形成反向拉力。协会认为共封装光学若在超大规模数据中心普及，可能成为规模不大但有意义的新需求；不过该技术仍处早期，工业需求对总体金价的作用也小于投资和央行需求。"
+        }
+      ]
+    },
+    "us_equities": {
+      "institutional_views": [
+        {
+          "institution": "BlackRock Investment Institute",
+          "original_title": "The AI buildout meets the 5% world",
+          "published_at": "2026-09-21",
+          "url": "https://www.blackrock.com/corporate/insights/blackrock-investment-institute/global-weekly-commentary",
+          "summary_zh": "贝莱德投资研究院估计，人工智能基础设施资本需求叠加政府借款，可能令美国年度融资需求到 2030 年超过 7.5 万亿美元；人工智能和数据中心债券已占 2026 年美国投资级发行约 14%，高于 2025 年的 5%。机构认为这会维持高融资成本并扩大企业间分化，但推理计算需求仍强，前沿模型开发放缓不等同于实体建设放缓。强劲盈利和资产负债表更能吸收成本，因此其仍超配美国股票及人工智能主题，同时将高杠杆和大规模发债列为风险。"
+        },
+        {
+          "institution": "UBS Chief Investment Office",
+          "original_title": "Can equities withstand higher yields after the Fed's hawkish hike?",
+          "published_at": "2026-09-21",
+          "url": "https://www.ubs.com/us/en/wealth-management/insights/market-news/article.3775879.html",
+          "summary_zh": "瑞银全球财富管理首席投资办公室认为，美联储加息 25 个基点并把政策区间升至 3.75%–4.00% 后，十年期美国国债收益率触及 5.02%，但标普 500 仅小幅回落，说明市场仍重视增长与盈利韧性。其基准情景为 12 月再加息 25 个基点，预计这种幅度不足以终结股市升势；瑞银预计标普 500 每股收益 2026 年增长 25%、2027 年增长 14%，且中位数成分股盈利约增 14%。主要风险是能源成本和供应约束令通胀扩散、迫使利率超出其浅加息路径。"
+        },
+        {
+          "institution": "UBS Chief Investment Office",
+          "original_title": "Consumer agents may power the next phase of the AI trade",
+          "published_at": "2026-09-22",
+          "url": "https://www.ubs.com/global/en/wealthmanagement/insights/chief-investment-office/house-view/daily/2026/latest-22092026.html",
+          "summary_zh": "瑞银以 Meta 的 Muse 为案例判断，消费者人工智能智能体可能把变现方式从订阅和广告扩展到代购、订票、缴费等交易抽成，并以更高云使用率改善大型云平台的人工智能投入回报。Muse 上线 13 天下载量超过 250 万，带动费城半导体指数单日上涨 4.3%，但瑞银强调应用层领先者仍可能快速更替。智能体的多步骤执行会增加推理算力需求，或支撑处理器、存储、先进封装、服务器、网络、电力和散热链条；各环节表现不会一致，竞争与资本开支回报是主要风险。"
+        }
+      ]
+    },
+    "china_equities": {
+      "institutional_views": [
+        {
+          "institution": "UOB Kay Hian",
+          "original_title": "Awaiting Policy Transmission to Real Economy",
+          "published_at": "2026-09-21",
+          "url": "https://www.uobkh.com.hk/en/research/china-bi-weekly-outlook-21092026",
+          "summary_zh": "大华继显认为，中国生产和出口仍在托底，但 8 月零售销售同比仅增 0.4%、前八个月固定资产投资下降 7.2%，尚无充分证据表明财政资金已传导至项目活动与私人需求。此前两周恒生指数跌 3.5%，弱于上证综指的 0.5% 跌幅；美联储紧缩和香港科技股转弱共同压制离岸估值，南向资金净买入 321 亿港元也未扭转下跌。机构对香港股市保持谨慎，并提示低静态市盈率可能成为价值陷阱，应更重视前瞻盈利、现金创造以及地产和消费疲弱风险。"
+        }
+      ]
+    }
+  }
+}

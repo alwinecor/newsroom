@@ -1,0 +1,55 @@
+{
+  "module": "finance",
+  "issue_date": "2026-09-28",
+  "window": {
+    "start": "2026-09-21",
+    "end": "2026-09-28"
+  },
+  "items": [
+    {
+      "id": "finance-001",
+      "category": "欧元区增长、通胀与能源冲击",
+      "original_title": "The outlook for the euro area economy",
+      "source_name": "European Central Bank",
+      "published_at": "2026-09-24",
+      "url": "https://www.ecb.europa.eu/press/key/date/2026/html/ecb.sp260924~e0eceef02c.en.pdf",
+      "summary_zh": "欧洲央行执委菲利普·莱恩以 9 月工作人员预测分析欧元区前景：基准情景预计调和消费物价指数通胀 2026 年为 3.0%、2027 年为 2.5%、2028 年为 2.1%，实际国内生产总值同期分别增长 0.9%、1.4% 和 1.5%。中东冲突引发的第二轮油气涨价令能源通胀更持久，并可能逐步推高食品、电力和商品价格；政府支出短期支撑需求，但若能源价格走向更严峻情景，增长和实际收入面临更大下行压力。"
+    },
+    {
+      "id": "finance-002",
+      "category": "全球失衡与跨境金融风险",
+      "original_title": "Unraveling the cobweb of global imbalances: drivers, vulnerabilities, and adjustment scenarios",
+      "source_name": "Bank for International Settlements",
+      "published_at": "2026-09-23",
+      "url": "https://www.bis.org/publications/working-paper-1379-unraveling-cobweb-global-imbalances-drivers-vulnerabilities-and-adjustment-scenarios",
+      "summary_zh": "国际清算银行工作论文分析覆盖约全球国内生产总值 85% 的 28 个经济体，发现美国净国际投资头寸恶化与多数主要经济体头寸改善相互对应。作者认为，资产估值变化和投资收益流等金融因素是短期及长期失衡的首要驱动，贸易在长期也有重要作用。对美元大幅贬值、全球股市重新定价、利率上升及贸易失衡减半的模拟显示，任何再平衡都可能经复杂跨境头寸产生显著且不均衡的外溢，尤其美国股市调整会普遍带来负面影响。"
+    },
+    {
+      "id": "finance-003",
+      "category": "低收入国家债务可持续性",
+      "original_title": "IMF Executive Board Reviews the Joint IMF-World Bank Debt Sustainability Framework for Low Income Countries",
+      "source_name": "International Monetary Fund",
+      "published_at": "2026-09-21",
+      "url": "https://www.imf.org/en/news/articles/2026/09/21/pr26296-lics-imf-executive-board-reviews-the-joint-world-bank-debt-sustainability-framework",
+      "summary_zh": "国际货币基金组织与世界银行完成低收入国家债务可持续性框架评估，认为许多国家债务上升、融资来源更复杂，商业条款下的境内外借款占比增加。修订方案将更清楚地区分债务压力风险与不可持续债务，重新校准承债能力、预警阈值和压力测试，并加强公共债务数据的覆盖、透明度与可靠性；统一贴现率维持 5%。新框架预计 2027 年下半年启用，仍需编制实施指引并培训国别团队与当局。"
+    },
+    {
+      "id": "finance-004",
+      "category": "美中直接投资与地缘经济碎片化",
+      "original_title": "Decoupling Direct Investment: American Firms’ Retreat from China",
+      "source_name": "Board of Governors of the Federal Reserve System",
+      "published_at": "2026-09-25",
+      "url": "https://www.federalreserve.gov/econres/notes/feds-notes/decoupling-direct-investment-american-firms-retreat-from-china-20260925.html",
+      "summary_zh": "美联储研究人员结合官方双边统计、穿透香港等投资中心的数据以及绿地项目、跨境并购和子公司微观数据，发现美国企业对华直接投资呈广泛下降。美国在华绿地项目自 2020 年骤减后未恢复，收购交易自 2022 年维持低位；现有子公司的资本开支率下降、分红超过再投资，出售固定资产或资本存量负增长的比例上升。作者认为这表明数十年深化的一体化正在逆转，但研究不能把变化单独归因于关税、疫情、地缘政治或投资审查中的某一项。"
+    },
+    {
+      "id": "finance-005",
+      "category": "人口老龄化、自动化与生产率",
+      "original_title": "Old workers, young machines: can AI and automation offset population ageing?",
+      "source_name": "Bank for International Settlements",
+      "published_at": "2026-09-24",
+      "url": "https://www.bis.org/publications/bulletin-135-old-workers-young-machines-can-ai-and-automation-offset-population-ageing",
+      "summary_zh": "国际清算银行公告利用覆盖 130 多个经济体的“老龄化—自动化”评分表评估人工智能和机器人能否缓解劳动年龄人口缩减。作者发现，技术最容易替代的岗位更多集中在金融等劳动力较年轻的行业，而农业、医疗等就业规模大且从业者年龄较高的行业自动化空间较小。因此，部分老龄化最快的经济体未必能靠现有技术充分抵消劳动力约束；自动化的宏观效果不仅取决于技术能力，也取决于人口老化发生在哪些行业及其就业结构。"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "module": "technology",
+  "issue_date": "2026-09-28",
+  "window": {
+    "start": "2026-09-21",
+    "end": "2026-09-28"
+  },
+  "items": [
+    {
+      "id": "technology-001",
+      "category": "前沿人工智能模型",
+      "original_title": "Claude Opus 5.5",
+      "source_name": "Anthropic",
+      "source_level": "primary",
+      "published_at": "2026-09-22",
+      "url": "https://www.anthropic.com/claude-opus-5-5",
+      "summary_zh": "Anthropic 发布 Claude Opus 5.5，称其在多数任务上的能力接近 Fable 5.1，但典型工作负载的运行成本比 Opus 5 低约 40%，输出速度快逾 30%。其每百万输入与输出词元价格分别为 4 美元和 20 美元，缓存读取价格下调至 0.20 美元。公司称新模型尤其强化长时程编程、计算机操作和知识工作，并在发布前接受外部评估；相关性能与安全结论主要来自 Anthropic 自身基准及早期客户测试。"
+    },
+    {
+      "id": "technology-002",
+      "category": "人工智能模型与半导体",
+      "original_title": "Alibaba Unveils Roadmap on Full-Stack AI Strategy from Chips, Cloud Infrastructure, Models to Agents",
+      "source_name": "Alibaba Cloud",
+      "source_level": "primary",
+      "published_at": "2026-09-22",
+      "url": "https://www.alibabacloud.com/blog/alibaba-unveils-roadmap-on-full-stack-ai-strategy-from-chips-cloud-infrastructure-models-to-agents_603589",
+      "summary_zh": "阿里巴巴在云栖大会公布从芯片、云基础设施到模型和智能体的全栈 AI 路线：Qwen 4 已开始训练，后续 Qwen 4.5 与 Qwen 5 计划扩展至 5 万亿至 10 万亿参数；平头哥同时发布面向训练与推理的真武 V900 加速器，称其性能为前代三倍，配备 216 GB 显存并原生支持 FP8、FP4，预计 2027 年第一季度量产。阿里云还把 2032 年全球数据中心容量目标设为超过 20 GW。"
+    },
+    {
+      "id": "technology-003",
+      "category": "人工智能终端与虚拟现实",
+      "original_title": "The Biggest News From Connect 2026",
+      "source_name": "Meta",
+      "source_level": "primary",
+      "published_at": "2026-09-24",
+      "url": "https://about.fb.com/news/2026/09/the-biggest-news-from-connect-2026/",
+      "summary_zh": "Meta 在 Connect 2026 集中发布可穿戴设备与个人智能体路线：约 100 克的 Meta VR Glasses 把显示、运算等部件缩入眼镜形态，定位于观影、沉浸式体育、游戏与移动办公；Muse 个人 AI 智能体将在未来数月接入 Meta AI 眼镜，可结合佩戴者所见内容执行任务，并新增购物、支付、旅行和办公连接器。公司还发布 Ray-Ban Meta Audio、第三代 Ray-Ban Meta 及听力增强等功能。"
+    },
+    {
+      "id": "technology-004",
+      "category": "人工智能标准与治理",
+      "original_title": "Building standards for the next phase of AI",
+      "source_name": "OpenAI",
+      "source_level": "primary",
+      "published_at": "2026-09-21",
+      "url": "https://openai.com/index/building-standards-next-phase-ai/",
+      "summary_zh": "OpenAI 提议由美国牵头制定前沿 AI 及递归式自我改进的全球技术标准，建立共同的能力测量、风险评估、安全措施充分性与事件分级报告机制。其设想借助各国 AI 安全机构、美国先进 AI 标准与创新中心以及现有国际标准组织协同推进，并主张美中建立安全沟通渠道。OpenAI 强调这些标准不是模型许可、强制发布前审查或审批制度，各国仍可自行决定是否纳入法律。"
+    },
+    {
+      "id": "technology-005",
+      "category": "全球网络基础设施",
+      "original_title": "Announcing Petal, a First-of-its-Kind Transoceanic Subsea Cable",
+      "source_name": "Meta",
+      "source_level": "primary",
+      "published_at": "2026-09-21",
+      "url": "https://about.fb.com/news/2026/09/announcing-petal-meta-petabit-transoceanic-cable/",
+      "summary_zh": "Meta 宣布建设连接美国与法国、全长约 7000 公里的 Petal 海底光缆，计划首次在跨洋距离部署多芯光纤并实现每秒 1 拍比特容量。公司称这一容量约为当前领先跨洋光缆的两倍，同时无需按比例增加功耗和物理基础设施。项目将与 NEC、住友电工合作，法国登陆部分由 Orange 支持，预计 2029 年投入使用；具体容量、效率与进度目前仍是项目方公布的设计目标。"
+    },
+    {
+      "id": "technology-006",
+      "category": "个人计算与端侧人工智能",
+      "original_title": "The new Mac mini and Mac Studio are available today",
+      "source_name": "Apple",
+      "source_level": "primary",
+      "published_at": "2026-09-22",
+      "url": "https://www.apple.com/newsroom/2026/09/the-new-mac-mini-and-mac-studio-are-available-today/",
+      "summary_zh": "Apple 宣布搭载 M6、M5 Pro、M5 Max 与 M5 Ultra 的新款 Mac mini 和 Mac Studio 正式上市。两类桌面电脑配备在每个图形核心中集成神经网络加速器的新一代 GPU，并结合 CPU、神经网络引擎与 macOS 27 支持端侧 AI。Apple 将 Mac mini 定位于常开智能体计算，将高配 Mac Studio 面向可在本地运行大型模型的专业用户；产品此前已发布，本次更新确认其在本观察窗口内开始销售。"
+    },
+    {
+      "id": "technology-007",
+      "category": "人工智能开发者生态",
+      "original_title": "Build plugins for Claude",
+      "source_name": "Anthropic",
+      "source_level": "primary",
+      "published_at": "2026-09-25",
+      "url": "https://claude.com/blog/build-plugins-for-claude",
+      "summary_zh": "Anthropic 向付费 Claude 用户开放插件目录提交门户，开发者可提交单个远程 MCP 连接器，或把 MCP 服务器与 Agent Skills 打包为托管在 GitHub 的插件；门户提供自动校验、安全扫描、审核反馈、发布控制及上线后的安装和搜索数据分析。Claude 同时支持被称为 MCP 2.0 的最新规范，以及用于聊天内交互界面的 MCP Apps 和面向企业免配置 OAuth 的 Enterprise Managed Auth 扩展。"
+    }
+  ]
+}

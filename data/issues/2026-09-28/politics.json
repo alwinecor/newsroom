@@ -1,0 +1,80 @@
+{
+  "module": "politics",
+  "issue_date": "2026-09-28",
+  "window": {
+    "start": "2026-09-21",
+    "end": "2026-09-28"
+  },
+  "items": [
+    {
+      "id": "politics-001",
+      "category": "大国关系与经贸外交",
+      "original_title": "Five takeaways from Trump's summit with Xi in Washington",
+      "source_name": "Reuters",
+      "source_level": "media",
+      "published_at": "2026-09-24",
+      "url": "https://www.reuters.com/world/china/four-takeaways-trumps-summit-with-xi-washington-2026-09-24/",
+      "summary_zh": "美国总统特朗普在白宫接待中国国家主席习近平，双方把贸易、人工智能、台湾及战略竞争列为会谈重点，并将原定 11 月到期的贸易休战延长两个月。短期安排为关税、中国采购、稀土供应与技术限制的后续谈判争取时间，但未形成长期经贸协议。习近平同时要求美方明确反对“台独”，显示双方虽恢复高层接触并建立人工智能安全沟通渠道，核心战略分歧仍未解决。"
+    },
+    {
+      "id": "politics-002",
+      "category": "俄罗斯选举与乌克兰战争",
+      "original_title": "Pro-Putin party gets record 355 parliamentary seats, anti-war party a tiny regional foothold",
+      "source_name": "Reuters",
+      "source_level": "media",
+      "published_at": "2026-09-21",
+      "url": "https://www.reuters.com/world/europe/pro-putin-party-keeps-grip-parliament-anti-war-party-gains-tiny-regional-2026-09-21/",
+      "summary_zh": "俄罗斯近乎完成计票的官方结果显示，执政党统一俄罗斯党获 57.83% 选票和国家杜马 450 席中的 355 席，创该党纪录并继续掌握修宪所需多数。普京把这场全面入侵乌克兰后的首次议会选举描述为对战争支持度的检验；唯一登记参选的反战党亚博卢党未进入国家议会，仅在诺夫哥罗德地方议会越过门槛。反对派指控投票舞弊，选举官员则称程序公正。"
+    },
+    {
+      "id": "politics-003",
+      "category": "欧洲联盟与对俄制裁",
+      "original_title": "EU renews Russia sanctions, drops Russian billionaires Usmanov and Fridman",
+      "source_name": "Reuters",
+      "source_level": "media",
+      "published_at": "2026-09-22",
+      "url": "https://www.reuters.com/world/eu-renews-russia-sanctions-drops-russian-billionaires-usmanov-fridman-2026-09-22/",
+      "summary_zh": "欧盟成员国以妥协方案续期对约 3000 名俄罗斯个人与实体的制裁：其余名单延长三年，不再沿用常见的六个月周期，但应法国与卢森堡要求，将富豪阿利舍尔·乌斯马诺夫和米哈伊尔·弗里德曼除名。制裁需要全体一致，最后反对的拉脱维亚改为弃权后方案获批。乌克兰谴责除名决定，拉脱维亚表示考虑采取本国限制，争议暴露欧盟在维持对俄统一战线时的内部交易与法律压力。"
+    },
+    {
+      "id": "politics-004",
+      "category": "中东安全与国际航运",
+      "original_title": "France mulls new UN Security Council resolution on Hormuz, diplomats say",
+      "source_name": "Reuters",
+      "source_level": "media",
+      "published_at": "2026-09-22",
+      "url": "https://www.reuters.com/world/france-mulls-new-un-security-council-resolution-hormuz-diplomats-say-2026-09-22/",
+      "summary_zh": "法国开始与美国协调起草联合国安理会决议，拟设国际任务机制以恢复霍尔木兹海峡商业航运。草案设想把水道安全与美伊更广泛冲突分开，强调各国共同维护航行与能源运输自由，并避免形成针对伊朗的进攻性安排。此前类似努力因中国、俄罗斯担忧方案偏向而受阻；本轮倡议发生在油价上升、也门胡塞武装推进又威胁曼德海峡之际，能否在五个常任理事国间取得妥协仍不确定。"
+    },
+    {
+      "id": "politics-005",
+      "category": "拉丁美洲政治转型",
+      "original_title": "Venezuelan delegation in NY seeks debt, energy deals",
+      "source_name": "Reuters",
+      "source_level": "media",
+      "published_at": "2026-09-21",
+      "url": "https://www.reuters.com/world/americas/venezuelan-delegation-led-by-rodriguez-discuss-debt-energy-us-sources-say-2026-09-21/",
+      "summary_zh": "委内瑞拉临时总统德尔西·罗德里格斯率团在纽约分别接触美洲开发银行、国际货币基金组织和世界银行，讨论能源、矿业、地震重建及估计达 1500 亿至 2000 亿美元的主权和国有石油公司债务重组。这是她在美国监督下接任临时总统后首次访美；代表团还与联合国及英美官员讨论人权、经济改革和民主转型，并为同特朗普会面以及美国企业重返该国油气与金矿项目铺路。"
+    },
+    {
+      "id": "politics-006",
+      "category": "也门冲突与人道危机",
+      "original_title": "World Food Programme ramps up response in Yemen as hunger fears escalate, official says",
+      "source_name": "Reuters",
+      "source_level": "media",
+      "published_at": "2026-09-21",
+      "url": "https://www.reuters.com/world/middle-east/world-food-programme-ramps-up-response-yemen-hunger-fears-escalate-official-says-2026-09-21/",
+      "summary_zh": "胡塞武装夺取也门红海沿岸后，联合国称近 700 人死亡、超过 12 万人在国内流离失所，冲突同时威胁区域航运与能源供应。世界粮食计划署已为约 6 万人提供热食和粮食，并准备扩大至数十万人；但也门逾 1800 万人面临严重粮食不安全，约 220 万名五岁以下儿童急性营养不良。该机构还称北部办公室和资产被占、数十名联合国人员遭拘押，严重限制援助行动。"
+    },
+    {
+      "id": "politics-007",
+      "category": "联合国与全球治理",
+      "original_title": "UN chief calls for AI curbs and end to wars in his last assembly address",
+      "source_name": "Reuters",
+      "source_level": "media",
+      "published_at": "2026-09-22",
+      "url": "https://www.reuters.com/world/europe/un-chief-calls-ai-curbs-end-wars-his-last-assembly-address-2026-09-22/",
+      "summary_zh": "联合国秘书长古特雷斯在任内最后一次联大一般性辩论讲话中，要求各国结束战争、推动气候责任并改革反映旧有权力格局的国际机构。他尤其主张主要人工智能国家共享新出现的安全风险、协作测试与评估，并在独立监督下建立多边风险管理框架。讲话同时呼吁中东降级、恢复人道援助和依法保障航行权；联合国正面对美国削减资金、安理会僵局及主要国家绕开多边机制等压力。"
+    }
+  ]
+}
