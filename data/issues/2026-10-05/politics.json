@@ -1,0 +1,77 @@
+{
+  "module": "politics",
+  "issue_date": "2026-10-05",
+  "window": {"start": "2026-09-28", "end": "2026-10-05"},
+  "items": [
+    {
+      "id": "politics-001",
+      "category": "中东外交与航运安全",
+      "original_title": "Iran says Strait of Hormuz will not reopen until conditions are met",
+      "source_name": "Reuters",
+      "source_level": "media",
+      "published_at": "2026-10-04",
+      "url": "https://www.reuters.com/world/middle-east/iran-says-strait-hormuz-will-not-reopen-until-conditions-are-met-2026-10-04/",
+      "summary_zh": "伊朗议会议长兼首席谈判代表卡利巴夫表示，只有满足6月临时协议中的七项条件，霍尔木兹海峡才会重新开放。伊朗此前提出，条件满足后七天内恢复正常航运，美国经卡塔尔中间人回复。伊朗外交部称现阶段只讨论海峡安全，否认以接受核设施检查换取制裁减免；一名了解谈判的官员则称，争议主要在执行步骤顺序。双方表述存在差异，尚未达成公布的新协议。伊朗外长同时警告，如美方再次采取军事行动，伊朗已准备回应。"
+    },
+    {
+      "id": "politics-002",
+      "category": "俄乌战争",
+      "original_title": "Russia to intensify strikes on Ukraine after Zelenskiy interview",
+      "source_name": "Reuters",
+      "source_level": "media",
+      "published_at": "2026-10-04",
+      "url": "https://www.reuters.com/world/europe/russia-intensify-strikes-ukraine-after-zelenskiy-interview-2026-10-04/",
+      "summary_zh": "俄罗斯国防部宣布，将加强对基辅和乌克兰其他地区军事设施、国防工业及相关基础设施的打击。此前泽连斯基在路透社采访中表示，乌方会加大攻击俄罗斯炼油设施，以回应俄方近期空袭，但不会针对平民。俄军最近强化对基辅基础设施及第聂伯河桥梁的攻击，已扰乱首都居民生活。俄方把行动解释为对乌方攻击俄境内平民目标的回应；俄乌双方均否认故意针对平民。这些关于目标与动机的表述分别来自交战双方，不能视作独立确认。"
+    },
+    {
+      "id": "politics-003",
+      "category": "能源安全与国际协调",
+      "original_title": "G7 countries agree on release of diesel and oil stocks after US pressure",
+      "source_name": "Reuters",
+      "source_level": "media",
+      "published_at": "2026-10-02",
+      "url": "https://www.reuters.com/business/energy/europe-discussing-plan-diesel-stock-releases-after-us-pressure-source-says-2026-10-02/",
+      "summary_zh": "七国集团同意协调释放一亿桶柴油及原油紧急储备，并承诺不在成员间限制能源产品出口。释放计划立即开始、持续四个月，其中相当数量柴油拟在二十天内投放。特朗普随后表示美国不会实施此前考虑的柴油出口禁令。联合声明未列出各国参与量或产品分配，也不清楚一亿桶中多少属于3月既有四亿桶释放承诺的剩余额度。协议发生于伊朗战争引发供应扰动、燃料价格上涨及欧美围绕出口限制施压的背景下。"
+    },
+    {
+      "id": "politics-004",
+      "category": "中欧贸易关系",
+      "original_title": "China vows response if EU introduces moves targeting Chinese trade",
+      "source_name": "Reuters",
+      "source_level": "media",
+      "published_at": "2026-09-29",
+      "url": "https://www.reuters.com/world/asia-pacific/china-vows-response-if-eu-introduces-moves-targeting-chinese-trade-2026-09-29/",
+      "summary_zh": "中国商务部警告，若欧盟出台针对中国产品或企业的限制，将坚决回应以维护产业权益，并称一边磋商一边加压会损害互信。回应所针对的是部分欧盟成员国拟推动的新贸易工具；报道援引研究人士称，德法正在准备文件，倡议欧盟加快建立类似美国第301条款的反不公平贸易措施。欧方工具仍是被报道的政策倡议，并非已实施规则。中国官方媒体提及反歧视、产业链安全及外国补贴调查等可能选项，但未宣布具体反制措施。"
+    },
+    {
+      "id": "politics-005",
+      "category": "欧洲安全与核威慑",
+      "original_title": "No imminent threat to NATO territory from Russia, Rutte says",
+      "source_name": "Reuters",
+      "source_level": "media",
+      "published_at": "2026-09-30",
+      "url": "https://www.reuters.com/business/aerospace-defense/no-imminent-threat-nato-territory-russia-rutte-says-2026-09-30/",
+      "summary_zh": "北约秘书长吕特回应俄方围绕加里宁格勒的核警告，表示联盟评估俄罗斯对北约领土没有迫在眉睫的威胁，判断并未因该警告改变。路透社看到的俄方文件称，若北约切断这块飞地，俄方可能动用核武器。吕特强调北约是防御联盟，并认为攻击北约国家前应出现可观察的军事集结；他称美国将继续以常规和核力量参与欧洲防务。北约仍会支持乌克兰并增加防务投入。这是北约领导人的风险判断和政策表态，不是对未来行动的保证。"
+    },
+    {
+      "id": "politics-006",
+      "category": "乌克兰加入欧盟谈判",
+      "original_title": "Hungary welcomes Ukraine's bill strengthening Hungarian minority rights",
+      "source_name": "Reuters",
+      "source_level": "media",
+      "published_at": "2026-10-02",
+      "url": "https://www.reuters.com/world/hungary-welcomes-ukraines-bill-strengthening-hungarian-minority-rights-2026-10-02/",
+      "summary_zh": "匈牙利欢迎乌克兰提交强化匈牙利族少数群体教育权的法案，称其加强了匈牙利语教学和教育机构网络的法律保障。两名欧盟外交官告诉路透社，双方商定，如果乌议会通过法案，匈方将解除对乌克兰入盟谈判中内部市场与竞争力两个领域的阻碍。乌方计划本月表决，法案尚未通过，谈判解锁也仍取决于条件落实。少数群体语言、文化和教育权长期影响双边关系，匈方新政府仍把相关进展作为支持入盟的重要前提。"
+    },
+    {
+      "id": "politics-007",
+      "category": "波罗的海国家选举",
+      "original_title": "Latvian PM on track to lead pro-Ukraine coalition after election win",
+      "source_name": "Reuters",
+      "source_level": "media",
+      "published_at": "2026-10-04",
+      "url": "https://www.reuters.com/world/europe/latvian-pm-track-lead-pro-ukraine-coalition-after-election-win-2026-10-04/",
+      "summary_zh": "拉脱维亚议会选举已计票97%时，总理库尔贝格斯领导的中间派联合名单获得35.3%选票，预计赢得一百席中的四十二席，有望与其他政党组建支持乌克兰的多数联盟。经济表现及国家安全是主要议题，亲俄政党虽增加席位，仍处于政治孤立状态。库尔贝格斯承诺继续支持乌克兰并对俄罗斯保持强硬。投票率为51.8%，低于2022年的59.4%。报道中的席位与执政前景依据接近完成的计票和组阁判断，并不表示新政府已经成立。"
+    }
+  ]
+}

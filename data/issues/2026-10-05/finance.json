@@ -1,0 +1,52 @@
+{
+  "module": "finance",
+  "issue_date": "2026-10-05",
+  "window": {"start": "2026-09-28", "end": "2026-10-05"},
+  "items": [
+    {
+      "id": "finance-001",
+      "category": "能源冲击与海湾经济",
+      "original_title": "Managing Director’s Remarks at the Meeting of the Ministers of Finance and Central Bank Governors of the Gulf Cooperation Council",
+      "source_name": "IMF",
+      "published_at": "2026-10-01",
+      "url": "https://www.imf.org/en/news/articles/2026/10/01/sp10012026-managing-director-remarks-meeting-gulf-cooperation-council",
+      "summary_zh": "国际货币基金组织总裁表示，战争持续七个月后，供应改道、新增供应、库存和需求收缩部分缓解了能源冲击，但海湾国家仍面临油气出口受限、设施受损及非油部门信心下降。基金组织预计海湾合作委员会经济2026年收缩、2027年反弹，前提是航运逐步正常化。她建议按财政空间提供临时、精准且透明的支持，供应瓶颈仍存时避免广泛刺激，复苏后重建缓冲。长期韧性需结合储存、替代航运和陆路物流，并继续推动经济多元化；这些属于机构判断与政策建议。"
+    },
+    {
+      "id": "finance-002",
+      "category": "美国通胀与货币政策",
+      "original_title": "The U.S. Economy and Monetary Policy",
+      "source_name": "Federal Reserve",
+      "published_at": "2026-10-01",
+      "url": "https://www.federalreserve.gov/newsevents/speech/jefferson20261001a.htm",
+      "summary_zh": "美联储副主席杰斐逊认为，美国增长与就业风险大致平衡，但通胀风险偏上行。上半年经济按年率增长2.4%，8月失业率4.1%、个人消费支出价格同比上涨3.4%；能源、关税及人工智能投资热潮共同增加政策判断难度。他支持9月把联邦基金利率目标区间上调25个基点至3.75%—4%，以维护长期通胀预期。其基准情景是短期通胀偏高、冲击消退后恢复回落，未来调整仍须观察数据、前景和风险，未承诺下一次行动。讲话明确属于个人观点，不代表委员会共识。"
+    },
+    {
+      "id": "finance-003",
+      "category": "银行资本与金融稳定",
+      "original_title": "The leverage ratio and the output floor: complementarities and overlaps",
+      "source_name": "BIS",
+      "published_at": "2026-09-28",
+      "url": "https://www.bis.org/publications/fsi-paper-29-leverage-ratio-and-output-floor-complementarities-and-overlaps",
+      "summary_zh": "国际清算银行金融稳定学院研究杠杆率与风险加权资本输出下限的相互作用：前者限制过度杠杆，后者约束内部模型低估风险，两者不宜视为可替代工具。对29家全球系统重要性银行2014—2025年的分析发现，具有约束力的要求曾切换55次。在披露相关数据的13家银行中，2025年底尚无银行受输出下限约束，但若完整实施72.5%的下限，六家可能受其约束。作者强调，应保留风险敏感的资本框架与缓冲安排；测算反映完整实施情景，并非当前全部银行的实际资本缺口。"
+    },
+    {
+      "id": "finance-004",
+      "category": "欧元区企业融资与 AI 投资",
+      "original_title": "How firms are planning to finance AI adoption",
+      "source_name": "ECB",
+      "published_at": "2026-10-02",
+      "url": "https://www.ecb.europa.eu/press/blog/date/2026/html/ecb.blog20261002~7e82912ad5.en.html",
+      "summary_zh": "欧洲央行研究人员利用约五千家欧元区企业调查，分析未来十二个月的人工智能投资融资。计划投资的企业中，72%预计使用内部现金流或留存收益，银行贷款、补助和租赁各约16%，股权或风险投资约6%；调查允许多选，这些比例不能相加。硬件及数据设施比培训等无形投入更容易获得外部资金，与抵押物可用性有关。作者认为，对内部资金的依赖可能限制人工智能普及的规模与速度，企业融资结构需适应无形资本；结果描述计划与统计关联，不是实际支出或央行政策承诺。"
+    },
+    {
+      "id": "finance-005",
+      "category": "美国投入成本与通胀监测",
+      "original_title": "Pricing Sentiment: Measuring Input Cost Pressure from ISM Survey Responses",
+      "source_name": "Federal Reserve / FEDS Notes",
+      "published_at": "2026-10-01",
+      "url": "https://www.federalreserve.gov/econres/notes/feds-notes/pricing-sentiment-measuring-input-cost-pressure-from-ism-survey-responses-20261001.html",
+      "summary_zh": "美联储研究人员把供应管理协会调查中的价格上涨和下降文字回复分为约五十类，构建投入成本情绪指标，用来补充生产者价格指数。调查通常比该指数早约两周公布，可较快识别钢铁关税、能源与运输冲击，以及人工智能需求推升存储器价格等压力。2024—2026年的分析中，两种文本分类方法给出相近信号，部分品类领先官方价格数据。但仅约四分之一至三分之一受访者提供文字回复，指标并非全面物价测量；研究属于作者观点，不能直接解释为消费者通胀或利率政策结论。"
+    }
+  ]
+}

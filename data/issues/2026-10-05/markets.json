@@ -1,0 +1,68 @@
+{
+  "module": "markets",
+  "issue_date": "2026-10-05",
+  "window": {"start": "2026-09-28", "end": "2026-10-05"},
+  "markets": {
+    "gold": {
+      "institutional_views": [
+        {
+          "institution": "World Gold Council",
+          "original_title": "Weekly Markets Monitor - Golden Week in China",
+          "published_at": "2026-09-28",
+          "url": "https://www.gold.org/goldhub/gold-focus/2026/09/weekly-markets-monitor-golden-week-china",
+          "summary_zh": "世界黄金协会周报指出，中国10月1日至7日黄金周通常开启传统购金旺季，珠宝销售、行业补库存和本地溢价往往增强。高金价与低迷消费者信心已压抑2026年中国金饰需求，但近期价格较稳定，叠加假期消费，可能释放部分延后的需求，并在年底前提供季节性支撑。报告同时关注美伊僵局维持高能源价格、通胀忧虑，以及债券收益率和美元上行的环境。其中国溢价图采用截至9月25日的周均价；季节性规律只是分析依据，不代表假期需求或金价必然上升。"
+        },
+        {
+          "institution": "World Gold Council",
+          "original_title": "Gold in Pension Funds: Case studies",
+          "published_at": "2026-10-01",
+          "url": "https://www.gold.org/goldhub/gold-focus/2026/10/gold-pension-funds-case-studies",
+          "summary_zh": "世界黄金协会以荷兰、美国、英国和澳大利亚养老金案例，解释黄金的机构投资需求不只来自短期看涨判断，也来自资产负债管理、流动性、通胀风险及压力时期分散化需要。债券与股票相关性增强，使部分基金重新评估传统组合。案例既有实物持有，也有通过期货获得敞口，具体方式取决于治理、风险预算和投资理念。协会强调，这些是已实施安排的个别案例，不构成统一配置比例；黄金的通胀对冲效果依时期与指标而异，历史相关性也不保证未来收益或风险消除。"
+        },
+        {
+          "institution": "Standard Chartered CIO",
+          "original_title": "Opportunities from the bond sell-off",
+          "published_at": "2026-10-02",
+          "url": "https://www.sc.com/zm/market-outlook/weekly-market-view-2-10-2026/?mvog=1",
+          "summary_zh": "渣打在周度市场分析的黄金部分认为，近期回调与美国收益率、美元反弹有关，但新兴市场央行持续购金仍提供中期支撑。该行预计，短中期美国债券收益率和美元可能在未来数周见顶，油价及关税影响在明年减弱后，通胀回落有望恢复；因此它认为市场对美联储加息路径的定价偏鹰派。报告把每盎司四千美元视为重要技术支撑，同时提醒美国实际可支配收入停滞、消费者信心低迷，过度紧缩可能威胁金融稳定。上述内容属于机构情景与技术分析，并非确定价格路径或本栏目交易建议。"
+        }
+      ]
+    },
+    "us_equities": {
+      "institutional_views": [
+        {
+          "institution": "UBS CIO",
+          "original_title": "Resilient growth should underpin equity gains",
+          "published_at": "2026-09-30",
+          "url": "https://www.ubs.com/global/en/wealthmanagement/insights/chief-investment-office/house-view/daily/2026/latest-30092026.html",
+          "summary_zh": "瑞银认为，尽管长期美国国债收益率升至多年高位、消费者信心走弱，低裁员率和稳健就业仍支持收入、增长与美股盈利。该行预计标普五百盈利2026年增长25%、2027年增长14%，有望抵消高收益率对估值的压力。人工智能采用、投资和智能体交易收入也可能推动利润增长，但更高资本成本会增加大型数据中心融资难度。瑞银判断，只有政策显著收紧，融资才会成为实质约束，并预计未来六个月逐步降通胀。上述盈利数字和政策路径是该行预测，不能解释为已经实现的利润或未来回报保证。"
+        },
+        {
+          "institution": "J.P. Morgan Asset Management",
+          "original_title": "Review of Markets over the third quarter of 2026",
+          "published_at": "2026-10-01",
+          "url": "https://am.jpmorgan.com/ie/en/asset-management/liq/insights/market-insights/market-updates/monthly-market-review/",
+          "summary_zh": "摩根资产管理的季度回顾认为，美国经济韧性与科技、能源及银行盈利改善，帮助股市承受能源、关税和加息压力。盈利预期上修快于股价上涨，使估值下降；报告称标普五百十二个月预期市盈率约十九倍，比一年前低四倍数点、接近长期均值。半导体向大型云平台和软件的轮动也有利于美股相对表现。与此同时，收益率上升使价值股优于成长股，小盘股与房地产投资信托承压。机构认为人工智能投资仍有支撑，但收益分布不均，高融资成本、通胀与地缘风险仍是约束。"
+        },
+        {
+          "institution": "WisdomTree / Jeremy Siegel",
+          "original_title": "Surging Real Yields Test a Resilient Market",
+          "published_at": "2026-09-28",
+          "url": "https://resources.wisdomtree.com/weekly-siegel-commentary/",
+          "summary_zh": "智慧树高级经济学家西格尔指出，近三周实际利率约升四十个基点，而长期通胀预期略降，反映市场重估经济强度，不只是通胀恐慌。十年期实际收益率接近2.8%，开始明显压缩股票相对债券的优势；美股仍坚挺，是因为强增长同时提高企业盈利。他把核心矛盾概括为盈利增强与折现率上升的较量。若就业、物价与货币增长持续强劲，美联储可能进一步加息。小公司虽受益于增长，却更依赖短期融资，高杠杆企业与住房也会承受成本压力；这些判断属于作者个人研究观点。"
+        }
+      ]
+    },
+    "china_equities": {
+      "institutional_views": [
+        {
+          "institution": "BlackRock Investment Institute",
+          "original_title": "China: up the value chain",
+          "published_at": "2026-09-28",
+          "url": "https://www.blackrock.com/corporate/insights/blackrock-investment-institute/global-weekly-commentary",
+          "summary_zh": "贝莱德智库认为，中国在电动车、先进机械与人工智能领域提高竞争力，但产业规模和出口份额并不自动转化为股东回报。它援引统计称，2026年前七个月电子设备制造商利润同比增110%，汽车行业利润降20.4%；截至9月21日，美元计价的明晟中国指数年内跌11%，信息技术分项涨7%，显示分化。机构维持中国股票中性判断，关注增长能转化为利润率的人工智能硬件和先进制造。廉价技术有利于使用者，却挤压竞争者；内需疲弱、房地产低迷及出口管制仍限制盈利和市场准入。"
+        }
+      ]
+    }
+  }
+}

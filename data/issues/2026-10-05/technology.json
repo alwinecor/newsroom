@@ -1,0 +1,77 @@
+{
+  "module": "technology",
+  "issue_date": "2026-10-05",
+  "window": {"start": "2026-09-28", "end": "2026-10-05"},
+  "items": [
+    {
+      "id": "technology-001",
+      "category": "前沿 AI 模型",
+      "original_title": "Gemini 4 Argon: our next era of frontier intelligence",
+      "source_name": "Google",
+      "source_level": "primary",
+      "published_at": "2026-09-30",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+      "summary_zh": "谷歌发布 Gemini 4 Argon，先通过专门计划向可信网络防御者开放，再逐步扩大至开发者、企业和消费者。模型面向长流程软件工程、法律与金融工作，把单次输出上限从6.4万提高到100万词元。谷歌称，其软件工程评测得分为77.9%，并已用于内部代码迁移和内存优化。公司在广泛开放前继续强化防滥用、提示注入防御、行为监控和沙箱隔离；公布的优惠期接口价格为每百万输入词元2美元、输出词元10美元，能力与收益数据属于厂商披露。"
+    },
+    {
+      "id": "technology-002",
+      "category": "AI 平台与开发工具",
+      "original_title": "DevDay 2026 Recap",
+      "source_name": "OpenAI",
+      "source_level": "primary",
+      "published_at": "2026-09-29",
+      "url": "https://openai.com/index/devday-2026-recap/",
+      "summary_zh": "OpenAI在开发者大会集中公布二十余项更新，包括 GPT-6.1 Sol、持续运行的智能体 Dots、重新设计的云端 Codex 和插件扩展。公司称 Sol 强化了编程、计算机操作与专业任务能力，标准接口价格约为 Astra 的五分之一。云端 Codex 支持可复用开发环境和跨设备任务，安全版本可按计划扫描代码库、核查漏洞并准备修复。智能体接口新增计算机操作，插件可创建侧栏面板与文件查看器。各项功能适用订阅和开放阶段不同，部分仍处于预览或受限开放。"
+    },
+    {
+      "id": "technology-003",
+      "category": "智能体安全",
+      "original_title": "NVIDIA Launches Open Agent Safety Platform to Secure Agents From Testing to Deployment",
+      "source_name": "NVIDIA",
+      "source_level": "primary",
+      "published_at": "2026-09-28",
+      "url": "https://nvidianews.nvidia.com/news/open-agent-safety-platform",
+      "summary_zh": "英伟达推出开放智能体安全平台，将 OpenShell 运行时与 Sentry 参考系统设计结合，用于测试及部署阶段的控制和监测。OpenShell 在模型和智能体进程之外设定执行边界、记录操作并实施策略；开源实现可扩展到其他厂商计算平台。Sentry 运行于 BlueField-4 数据处理器，在独立于主机软件的信任域监控行为。英伟达称，该系统能在智能体越界时于毫秒内将其隔离并停止，支持细粒度数据、工具和服务访问控制，相关表现仍是公司公布的技术能力。"
+    },
+    {
+      "id": "technology-004",
+      "category": "编程工具扩展",
+      "original_title": "Customize Claude Code with mods",
+      "source_name": "Anthropic",
+      "source_level": "primary",
+      "published_at": "2026-10-01",
+      "url": "https://claude.com/blog/claude-code-mods",
+      "summary_zh": "Anthropic为 Claude Code 推出以 TypeScript 编写的自定义扩展，可修改提示、工具调用、权限请求和界面，也能替换内置功能。扩展随插件安装和分享，同时适用于命令行与桌面应用；多个扩展按载入次序处理同一事件。公司明确提醒，这些扩展不在沙箱内运行，拥有与 Claude Code 相同的机器访问权限，应仅安装可信代码。受管理环境默认先载入安全扩展，阻止用户扩展覆盖拒绝规则；团队还可加入生产操作确认、调用审计与持续集成状态展示。"
+    },
+    {
+      "id": "technology-005",
+      "category": "企业智能体",
+      "original_title": "The Future Is for Everyone: Muse for Small Business",
+      "source_name": "Meta",
+      "source_level": "primary",
+      "published_at": "2026-09-29",
+      "url": "https://about.fb.com/news/2026/09/introducing-muse-small-business/",
+      "summary_zh": "Meta扩展 Muse 的小企业能力，新增技能及连接器，使智能体可读取品牌、店铺、账目和客户资料，协助分析销售、广告表现、开支与待办事项。连接范围包括 Facebook、Instagram 商业账户及 Notion、Shopify、Slack、Stripe 等常用服务，也支持自定义连接器。此前 Muse 已在美国和加拿大提供。Meta强调发布内容、发送消息或花费资金都需要用户批准；产品多数基础用途免费，另提供订阅方案。此次公告描述的是工作流与服务整合，未给出独立验证的企业生产率提升数据。"
+    },
+    {
+      "id": "technology-006",
+      "category": "公共部门 AI",
+      "original_title": "Claude for Government is now generally available",
+      "source_name": "Anthropic",
+      "source_level": "primary",
+      "published_at": "2026-09-30",
+      "url": "https://claude.com/blog/claude-for-government-is-now-generally-available",
+      "summary_zh": "Anthropic宣布面向美国联邦及州机构的 Claude for Government 正式开放，该平台自7月公开测试，通过获高等级联邦云安全授权的环境提供编程与智能体功能。机构可用桌面应用处理文件、采购文件审查和个案工作，并获得部门级配置、预算上限、身份管理与审计记录。计费采用预付用量和不可超出的支出上限，不另收席位费；对话历史留在机构管理设备。Claude Code 命令行与 Microsoft 365 集成同时进入早期开放阶段，尚不等同于全部正式可用。"
+    },
+    {
+      "id": "technology-007",
+      "category": "机器人与劳动研究",
+      "original_title": "What work can robots do?",
+      "source_name": "Anthropic",
+      "source_level": "primary",
+      "published_at": "2026-09-30",
+      "url": "https://www.anthropic.com/research/what-work-can-robots-do",
+      "summary_zh": "Anthropic发布机器人任务暴露指数，用职业任务资料与 Claude 评分衡量现有机器人在不同环境中的工作能力。研究估计，机器人可执行美国74%的体力任务，涉及34%的工作时间，但多数需要受控环境；机器人与大语言模型合计涉及约80%的任务时间。能力不等于经济可行性：按研究口径，目前仅0.3%的任务具有机器人替代的成本竞争力，沿历史降价趋势达到10%仍需约40年。研究还指出灵巧操作、人员偏好和监管构成约束，暴露程度不能直接解释为岗位即将消失。"
+    }
+  ]
+}
