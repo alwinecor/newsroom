@@ -1,0 +1,868 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Newsroom</title>
+<style>:root{
+  --paper:#f4f0e7;
+  --ink:#11100e;
+  --muted:#6d6962;
+  --line:#1a1916;
+  --soft-line:#b8b2a7;
+  --accent:#9d241e;
+  --page:1320px;
+  --masthead-height:88px;
+  --section-nav-height:62px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scrollbar-gutter:stable}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+.site-header{
+  max-width:var(--page);
+  margin:0 auto;
+  padding:24px 28px 18px;
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:end;
+  border-bottom:2px solid var(--line);
+}
+.brand{
+  font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;
+  font-weight:700;
+  font-size:28px;
+  letter-spacing:-.03em;
+}
+.header-center{
+  font-size:11px;
+  letter-spacing:.16em;
+  font-weight:700;
+  text-align:center;
+}
+.header-right{
+  text-align:right;
+  font-size:11px;
+  letter-spacing:.10em;
+  color:var(--muted);
+}
+main{max-width:var(--page);margin:0 auto;padding:0 28px 80px}
+.hero{
+  padding:58px 0 36px;
+  display:grid;
+  grid-template-columns:8fr 4fr;
+  gap:54px;
+  border-bottom:1px solid var(--line);
+}
+.eyebrow{
+  margin:0 0 18px;
+  color:var(--accent);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+.hero h1{
+  max-width:780px;
+  margin:0;
+  font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;
+  font-size:clamp(54px,7vw,104px);
+  line-height:.92;
+  letter-spacing:-.055em;
+  font-weight:500;
+}
+.hero-deck{
+  margin:28px 0 0;
+  max-width:700px;
+  font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;
+  font-size:23px;
+  line-height:1.55;
+}
+.hero-side{
+  align-self:end;
+  border-top:1px solid var(--line);
+}
+.fact{
+  display:flex;
+  justify-content:space-between;
+  gap:22px;
+  padding:13px 0;
+  border-bottom:1px solid var(--soft-line);
+  font-size:12px;
+}
+.fact dt{
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:.1em;
+}
+.fact dd{margin:0;text-align:right;font-weight:650}
+.section-nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  min-height:62px;
+  display:flex;
+  gap:30px;
+  align-items:center;
+  border-bottom:1px solid var(--line);
+  background:rgba(244,240,231,.96);
+  backdrop-filter:blur(8px);
+  font-size:10px;
+  font-weight:760;
+  letter-spacing:.09em;
+}
+.section-nav .nav-label{
+  color:var(--muted);
+  letter-spacing:.14em;
+}
+.section-nav a{
+  text-decoration:none;
+  display:flex;
+  align-items:baseline;
+  gap:7px;
+}
+.section-nav .zh{
+  font-size:12px;
+  letter-spacing:.04em;
+}
+.section-nav .en{
+  font-size:9px;
+  letter-spacing:.14em;
+  color:var(--muted);
+}
+.section-nav a:hover,
+.section-nav a:hover .en{color:var(--accent)}
+.news-section{padding-top:70px;scroll-margin-top:60px}
+.section-rule{border-top:4px solid var(--line)}
+.section-header{
+  display:grid;
+  grid-template-columns:95px 1fr auto;
+  align-items:end;
+  gap:18px;
+  padding:12px 0 25px;
+  border-bottom:1px solid var(--line);
+}
+.section-number{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:48px;
+  line-height:1;
+  color:var(--accent);
+}
+.section-en{
+  font-size:11px;
+  letter-spacing:.18em;
+  font-weight:800;
+}
+.section-header h2{
+  margin:3px 0 0;
+  font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;
+  font-size:38px;
+  line-height:1;
+  font-weight:500;
+}
+.section-count{
+  font-size:11px;
+  letter-spacing:.13em;
+  font-weight:750;
+  padding-bottom:4px;
+}
+.lead-grid{
+  display:grid;
+  grid-template-columns:95px 1fr;
+  gap:18px;
+  border-bottom:1px solid var(--line);
+}
+.lead-index{
+  padding-top:34px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:15px;
+  color:var(--muted);
+}
+.story{padding:30px 0 34px}
+.story-kicker{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  color:var(--accent);
+}
+.story-kicker .dot{color:var(--muted)}
+.story h3{
+  font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;
+  font-weight:500;
+  letter-spacing:-.025em;
+  line-height:1.08;
+  margin:12px 0 12px;
+  font-size:30px;
+}
+.lead-story{
+  display:grid;
+  grid-template-columns:minmax(0,7fr) minmax(300px,5fr);
+  column-gap:60px;
+  align-items:start;
+}
+.lead-story .story-kicker,
+.lead-story h3,
+.lead-story .story-meta{grid-column:1}
+.lead-story h3{font-size:52px;line-height:1.02;margin-top:15px}
+.lead-story .story-summary{
+  grid-column:2;
+  grid-row:1 / span 4;
+  margin:0;
+  padding-top:1px;
+  font-size:17px;
+  line-height:1.9;
+  border-left:1px solid var(--soft-line);
+  padding-left:28px;
+}
+.lead-story .source-link{grid-column:1;margin-top:28px}
+.story-meta{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+  color:var(--muted);
+  font-size:11px;
+  letter-spacing:.03em;
+}
+.story-summary{
+  font-size:15px;
+  line-height:1.9;
+  margin:18px 0 22px;
+}
+.source-link{
+  display:inline-block;
+  font-size:10px;
+  font-weight:850;
+  letter-spacing:.13em;
+  text-decoration:none;
+  border-bottom:1px solid var(--ink);
+  padding-bottom:2px;
+}
+.source-link:hover{color:var(--accent);border-color:var(--accent)}
+.secondary-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+}
+.secondary-grid .story{
+  border-bottom:1px solid var(--soft-line);
+  padding-right:40px;
+}
+.secondary-grid .story:nth-child(even){
+  border-left:1px solid var(--line);
+  padding-left:40px;
+  padding-right:0;
+}
+.secondary-grid .story:nth-last-child(-n+2){border-bottom:none}
+.footer{
+  max-width:var(--page);
+  margin:0 auto;
+  padding:20px 28px 42px;
+  border-top:2px solid var(--line);
+  display:flex;
+  justify-content:space-between;
+  gap:24px;
+  font-size:11px;
+  color:var(--muted);
+  letter-spacing:.04em;
+}
+
+/* --- Sidebar + two-level sticky navigation --- */
+.top-shell{
+  position:sticky;
+  top:0;
+  z-index:180;
+  background:rgba(244,240,231,.97);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.top-shell .site-header{
+  max-width:var(--page);
+  border-bottom:1px solid var(--soft-line);
+}
+main > .section-nav{top:var(--masthead-height)}
+.header-left{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  min-width:0;
+}
+.menu-button{
+  text-decoration:none;
+  appearance:none;
+  border:0;
+  background:transparent;
+  color:var(--ink);
+  width:34px;
+  height:34px;
+  padding:0;
+  cursor:pointer;
+  display:grid;
+  place-items:center;
+}
+.menu-icon,
+.menu-icon::before,
+.menu-icon::after{
+  content:"";
+  display:block;
+  width:20px;
+  height:1.5px;
+  background:currentColor;
+}
+.menu-icon{position:relative}
+.menu-icon::before{position:absolute;top:-6px;left:0}
+.menu-icon::after{position:absolute;top:6px;left:0}
+.menu-button:hover{color:var(--accent)}
+.brand a{text-decoration:none}
+.brand a:hover{color:var(--accent)}
+
+.archive-overlay{
+  position:fixed;
+  inset:0;
+  z-index:240;
+  background:rgba(17,16,14,.28);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .22s ease;
+}
+.archive-drawer{
+  position:fixed;
+  inset:0 auto 0 0;
+  z-index:250;
+  width:min(390px,88vw);
+  background:var(--paper);
+  border-right:1px solid var(--line);
+  transform:translateX(-100%);
+  transition:transform .24s ease;
+  display:flex;
+  flex-direction:column;
+}
+body:not(.archive-enhanced) #archive-drawer:target,
+#archive-drawer.is-open{transform:translateX(0)}
+body:not(.archive-enhanced) #archive-drawer:target + .archive-overlay,
+#archive-drawer.is-open + .archive-overlay{
+  opacity:1;
+  pointer-events:auto;
+}
+.drawer-head{
+  min-height:78px;
+  padding:20px 24px;
+  border-bottom:2px solid var(--line);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+.drawer-kicker{
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.16em;
+  color:var(--muted);
+  text-transform:uppercase;
+}
+.drawer-title{
+  margin-top:2px;
+  font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;
+  font-size:24px;
+  font-weight:700;
+  letter-spacing:-.03em;
+}
+.drawer-close{
+  text-decoration:none;
+  appearance:none;
+  border:0;
+  background:transparent;
+  color:var(--ink);
+  font-size:28px;
+  line-height:1;
+  cursor:pointer;
+  padding:6px;
+}
+.drawer-close:hover{color:var(--accent)}
+.archive-list{padding:38px 24px 48px;overflow:auto}
+.archive-year{
+  margin:0;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:54px;
+  line-height:.95;
+  font-weight:500;
+  letter-spacing:-.045em;
+  padding-bottom:18px;
+  border-bottom:1px solid var(--line);
+}
+.archive-dates{list-style:none;padding:0;margin:0}
+.archive-dates li{border-bottom:1px solid var(--soft-line)}
+.archive-dates a{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:19px 0;
+  text-decoration:none;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:28px;
+  letter-spacing:-.02em;
+}
+.archive-dates a::after{
+  content:"↗";
+  font-family:Inter,ui-sans-serif,sans-serif;
+  font-size:13px;
+  color:var(--muted);
+}
+.archive-dates a:hover{color:var(--accent)}
+.archive-dates a[aria-current="page"]{color:var(--accent)}
+.archive-dates a[aria-current="page"]::after{
+  content:"CURRENT";
+  font-size:9px;
+  letter-spacing:.14em;
+  font-weight:800;
+  color:var(--accent);
+}
+.news-section{scroll-margin-top:calc(var(--masthead-height) + var(--section-nav-height) + 12px)}
+
+@media(max-width:900px){
+  .top-shell .site-header{grid-template-columns:1fr auto;padding:14px 18px 12px}
+  :root{--masthead-height:68px}
+  .menu-button{width:30px;height:30px}
+  .header-left{gap:10px}
+}
+
+@media(max-width:900px){
+  .site-header{grid-template-columns:1fr auto;padding:18px 18px 14px}
+  .header-center{display:none}
+  .header-right{font-size:10px}
+  main{padding:0 18px 56px}
+  .hero{grid-template-columns:1fr;padding-top:38px;gap:36px}
+  .hero h1{font-size:58px}
+  .hero-side{max-width:none}
+  .section-nav{overflow:auto;white-space:nowrap}
+  .section-header{grid-template-columns:58px 1fr;gap:12px}
+  .section-number{font-size:35px}
+  .section-count{display:none}
+  .lead-grid{grid-template-columns:1fr}
+  .lead-index{display:none}
+  .lead-story{display:block}
+  .lead-story h3{font-size:38px}
+  .lead-story .story-summary{
+    border-left:0;
+    padding-left:0;
+    margin-top:22px;
+    font-size:16px;
+  }
+  .secondary-grid{grid-template-columns:1fr}
+  .secondary-grid .story,
+  .secondary-grid .story:nth-child(even){
+    border-left:0;
+    border-bottom:1px solid var(--soft-line);
+    padding-left:0;
+    padding-right:0;
+  }
+  .secondary-grid .story:last-child{border-bottom:none}
+  .footer{padding-left:18px;padding-right:18px;flex-direction:column}
+}
+@media(max-width:560px){
+  .brand{font-size:23px}
+  .hero h1{font-size:46px}
+  .hero-deck{font-size:19px}
+  .section-header h2{font-size:31px}
+  .lead-story h3{font-size:32px}
+  .story h3{font-size:25px}
+}
+.archive-drawer{visibility:hidden}
+body:not(.archive-enhanced) #archive-drawer:target,
+#archive-drawer.is-open{visibility:visible}
+.story h3,.story-summary{overflow-wrap:anywhere}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.archive-drawer,.archive-overlay{transition:none}}
+
+/* Markets use the same paper, rules, serif headings and two-column stories. */
+.market-report{padding:30px 0;border-bottom:1px solid var(--line)}
+.market-report:last-child{border-bottom:0}
+.market-title{font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;font-size:30px;font-weight:500;margin:0 0 14px}
+.story h4{font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;font-size:30px;font-weight:500;letter-spacing:-.025em;line-height:1.08;margin:12px 0;overflow-wrap:anywhere}
+.lead-story h4{grid-column:1;font-size:52px;line-height:1.02;margin-top:15px}
+@media(max-width:900px){.lead-story h4{font-size:38px}}
+@media(max-width:560px){.story h4{font-size:25px}.market-title{font-size:27px}}
+@media(max-width:560px){.lead-story h4{font-size:32px}}
+</style>
+</head>
+<body id="page-top" data-issue="2026-10-05">
+<div class="top-shell">
+  <header class="site-header">
+    <div class="header-left">
+      <a class="menu-button" href="#archive-drawer" aria-label="打开历史期刊" aria-controls="archive-drawer"><span class="menu-icon" aria-hidden="true"></span></a>
+      <div class="brand"><a href="#page-top" aria-label="返回页面顶部">NEWSROOM</a></div>
+    </div>
+    <div class="header-center">WEEKLY INTERNATIONAL DIGEST</div>
+    <div class="header-right">ISSUE 005 · 2026-10-05</div>
+  </header>
+</div>
+
+<aside class="archive-drawer" id="archive-drawer" aria-label="历史期刊">
+  <div class="drawer-head">
+    <div>
+      <div class="drawer-kicker">ARCHIVE</div>
+      <div class="drawer-title">历史期刊</div>
+    </div>
+    <a class="drawer-close" href="#page-top" aria-label="关闭历史期刊">×</a>
+  </div>
+  <div class="archive-list">
+<section><h2 class="archive-year">2026</h2>
+          <ul class="archive-dates"><li><a href="#page-top" aria-current="page">10.05</a></li></ul></section>
+          <noscript>完整归档导航需要启用 JavaScript。</noscript>
+</div>
+</aside>
+<a class="archive-overlay" href="#page-top" aria-label="关闭历史期刊" tabindex="-1"></a>
+
+<main>
+  <section class="hero">
+    <div>
+      <p class="eyebrow">International briefing / 7-day edition</p>
+      <h1>一周世界，<br>四个视角。</h1>
+      <p class="hero-deck">聚焦科技、时政、财经与市场。中文摘要保留事实边界，明确机构观点归属，并始终附上原始来源。</p>
+    </div>
+    <dl class="hero-side">
+      <div class="fact"><dt>Observation window</dt><dd>2026-09-28 — 2026-10-05</dd></div>
+      <div class="fact"><dt>Published · UTC</dt><dd>2026-10-05 · 06:00</dd></div>
+      <div class="fact"><dt>Berlin · 柏林</dt><dd>2026-10-05 · 08:00</dd></div>
+      <div class="fact"><dt>Beijing · 北京</dt><dd>2026-10-05 · 14:00</dd></div>
+    </dl>
+  </section>
+
+  <nav class="section-nav" aria-label="sections">
+    <a href="#technology"><span class="zh">01 科技</span><span class="en">TECHNOLOGY</span></a>
+<a href="#politics"><span class="zh">02 时政</span><span class="en">POLITICS</span></a>
+<a href="#finance"><span class="zh">03 财经</span><span class="en">FINANCE</span></a>
+<a href="#markets"><span class="zh">04 市场</span><span class="en">MARKETS</span></a>
+  </nav>
+
+  <section class="news-section" id="technology">
+      <div class="section-rule"></div>
+      <header class="section-header">
+        <div class="section-number">01</div>
+        <div class="section-title-wrap"><div class="section-en">TECHNOLOGY</div><h2>科技</h2></div>
+        <div class="section-count">07 STORIES</div>
+      </header>
+      <div class="lead-grid"><div class="lead-index">A</div><article class="story lead-story">
+      <div class="story-kicker"><span>前沿 AI 模型</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
+      <h3>Gemini 4 Argon: our next era of frontier intelligence</h3>
+      <div class="story-meta"><span>Google</span><time datetime="2026-09-30">2026-09-30</time></div>
+      <p class="story-summary">谷歌发布 Gemini 4 Argon，先通过专门计划向可信网络防御者开放，再逐步扩大至开发者、企业和消费者。模型面向长流程软件工程、法律与金融工作，把单次输出上限从6.4万提高到100万词元。谷歌称，其软件工程评测得分为77.9%，并已用于内部代码迁移和内存优化。公司在广泛开放前继续强化防滥用、提示注入防御、行为监控和沙箱隔离；公布的优惠期接口价格为每百万输入词元2美元、输出词元10美元，能力与收益数据属于厂商披露。</p>
+      <a class="source-link" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article></div>
+      <div class="secondary-grid"><article class="story">
+      <div class="story-kicker"><span>AI 平台与开发工具</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
+      <h3>DevDay 2026 Recap</h3>
+      <div class="story-meta"><span>OpenAI</span><time datetime="2026-09-29">2026-09-29</time></div>
+      <p class="story-summary">OpenAI在开发者大会集中公布二十余项更新，包括 GPT-6.1 Sol、持续运行的智能体 Dots、重新设计的云端 Codex 和插件扩展。公司称 Sol 强化了编程、计算机操作与专业任务能力，标准接口价格约为 Astra 的五分之一。云端 Codex 支持可复用开发环境和跨设备任务，安全版本可按计划扫描代码库、核查漏洞并准备修复。智能体接口新增计算机操作，插件可创建侧栏面板与文件查看器。各项功能适用订阅和开放阶段不同，部分仍处于预览或受限开放。</p>
+      <a class="source-link" href="https://openai.com/index/devday-2026-recap/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
+      <div class="story-kicker"><span>智能体安全</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
+      <h3>NVIDIA Launches Open Agent Safety Platform to Secure Agents From Testing to Deployment</h3>
+      <div class="story-meta"><span>NVIDIA</span><time datetime="2026-09-28">2026-09-28</time></div>
+      <p class="story-summary">英伟达推出开放智能体安全平台，将 OpenShell 运行时与 Sentry 参考系统设计结合，用于测试及部署阶段的控制和监测。OpenShell 在模型和智能体进程之外设定执行边界、记录操作并实施策略；开源实现可扩展到其他厂商计算平台。Sentry 运行于 BlueField-4 数据处理器，在独立于主机软件的信任域监控行为。英伟达称，该系统能在智能体越界时于毫秒内将其隔离并停止，支持细粒度数据、工具和服务访问控制，相关表现仍是公司公布的技术能力。</p>
+      <a class="source-link" href="https://nvidianews.nvidia.com/news/open-agent-safety-platform" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
+      <div class="story-kicker"><span>编程工具扩展</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
+      <h3>Customize Claude Code with mods</h3>
+      <div class="story-meta"><span>Anthropic</span><time datetime="2026-10-01">2026-10-01</time></div>
+      <p class="story-summary">Anthropic为 Claude Code 推出以 TypeScript 编写的自定义扩展，可修改提示、工具调用、权限请求和界面，也能替换内置功能。扩展随插件安装和分享，同时适用于命令行与桌面应用；多个扩展按载入次序处理同一事件。公司明确提醒，这些扩展不在沙箱内运行，拥有与 Claude Code 相同的机器访问权限，应仅安装可信代码。受管理环境默认先载入安全扩展，阻止用户扩展覆盖拒绝规则；团队还可加入生产操作确认、调用审计与持续集成状态展示。</p>
+      <a class="source-link" href="https://claude.com/blog/claude-code-mods" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
+      <div class="story-kicker"><span>企业智能体</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
+      <h3>The Future Is for Everyone: Muse for Small Business</h3>
+      <div class="story-meta"><span>Meta</span><time datetime="2026-09-29">2026-09-29</time></div>
+      <p class="story-summary">Meta扩展 Muse 的小企业能力，新增技能及连接器，使智能体可读取品牌、店铺、账目和客户资料，协助分析销售、广告表现、开支与待办事项。连接范围包括 Facebook、Instagram 商业账户及 Notion、Shopify、Slack、Stripe 等常用服务，也支持自定义连接器。此前 Muse 已在美国和加拿大提供。Meta强调发布内容、发送消息或花费资金都需要用户批准；产品多数基础用途免费，另提供订阅方案。此次公告描述的是工作流与服务整合，未给出独立验证的企业生产率提升数据。</p>
+      <a class="source-link" href="https://about.fb.com/news/2026/09/introducing-muse-small-business/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
+      <div class="story-kicker"><span>公共部门 AI</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
+      <h3>Claude for Government is now generally available</h3>
+      <div class="story-meta"><span>Anthropic</span><time datetime="2026-09-30">2026-09-30</time></div>
+      <p class="story-summary">Anthropic宣布面向美国联邦及州机构的 Claude for Government 正式开放，该平台自7月公开测试，通过获高等级联邦云安全授权的环境提供编程与智能体功能。机构可用桌面应用处理文件、采购文件审查和个案工作，并获得部门级配置、预算上限、身份管理与审计记录。计费采用预付用量和不可超出的支出上限，不另收席位费；对话历史留在机构管理设备。Claude Code 命令行与 Microsoft 365 集成同时进入早期开放阶段，尚不等同于全部正式可用。</p>
+      <a class="source-link" href="https://claude.com/blog/claude-for-government-is-now-generally-available" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
+      <div class="story-kicker"><span>机器人与劳动研究</span><span class="dot">•</span><span>PRIMARY SOURCE</span></div>
+      <h3>What work can robots do?</h3>
+      <div class="story-meta"><span>Anthropic</span><time datetime="2026-09-30">2026-09-30</time></div>
+      <p class="story-summary">Anthropic发布机器人任务暴露指数，用职业任务资料与 Claude 评分衡量现有机器人在不同环境中的工作能力。研究估计，机器人可执行美国74%的体力任务，涉及34%的工作时间，但多数需要受控环境；机器人与大语言模型合计涉及约80%的任务时间。能力不等于经济可行性：按研究口径，目前仅0.3%的任务具有机器人替代的成本竞争力，沿历史降价趋势达到10%仍需约40年。研究还指出灵巧操作、人员偏好和监管构成约束，暴露程度不能直接解释为岗位即将消失。</p>
+      <a class="source-link" href="https://www.anthropic.com/research/what-work-can-robots-do" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article></div>
+    </section>
+<section class="news-section" id="politics">
+      <div class="section-rule"></div>
+      <header class="section-header">
+        <div class="section-number">02</div>
+        <div class="section-title-wrap"><div class="section-en">POLITICS</div><h2>时政</h2></div>
+        <div class="section-count">07 STORIES</div>
+      </header>
+      <div class="lead-grid"><div class="lead-index">A</div><article class="story lead-story">
+      <div class="story-kicker"><span>中东外交与航运安全</span><span class="dot">•</span><span>MEDIA SOURCE</span></div>
+      <h3>Iran says Strait of Hormuz will not reopen until conditions are met</h3>
+      <div class="story-meta"><span>Reuters</span><time datetime="2026-10-04">2026-10-04</time></div>
+      <p class="story-summary">伊朗议会议长兼首席谈判代表卡利巴夫表示，只有满足6月临时协议中的七项条件，霍尔木兹海峡才会重新开放。伊朗此前提出，条件满足后七天内恢复正常航运，美国经卡塔尔中间人回复。伊朗外交部称现阶段只讨论海峡安全，否认以接受核设施检查换取制裁减免；一名了解谈判的官员则称，争议主要在执行步骤顺序。双方表述存在差异，尚未达成公布的新协议。伊朗外长同时警告，如美方再次采取军事行动，伊朗已准备回应。</p>
+      <a class="source-link" href="https://www.reuters.com/world/middle-east/iran-says-strait-hormuz-will-not-reopen-until-conditions-are-met-2026-10-04/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article></div>
+      <div class="secondary-grid"><article class="story">
+      <div class="story-kicker"><span>俄乌战争</span><span class="dot">•</span><span>MEDIA SOURCE</span></div>
+      <h3>Russia to intensify strikes on Ukraine after Zelenskiy interview</h3>
+      <div class="story-meta"><span>Reuters</span><time datetime="2026-10-04">2026-10-04</time></div>
+      <p class="story-summary">俄罗斯国防部宣布，将加强对基辅和乌克兰其他地区军事设施、国防工业及相关基础设施的打击。此前泽连斯基在路透社采访中表示，乌方会加大攻击俄罗斯炼油设施，以回应俄方近期空袭，但不会针对平民。俄军最近强化对基辅基础设施及第聂伯河桥梁的攻击，已扰乱首都居民生活。俄方把行动解释为对乌方攻击俄境内平民目标的回应；俄乌双方均否认故意针对平民。这些关于目标与动机的表述分别来自交战双方，不能视作独立确认。</p>
+      <a class="source-link" href="https://www.reuters.com/world/europe/russia-intensify-strikes-ukraine-after-zelenskiy-interview-2026-10-04/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
+      <div class="story-kicker"><span>能源安全与国际协调</span><span class="dot">•</span><span>MEDIA SOURCE</span></div>
+      <h3>G7 countries agree on release of diesel and oil stocks after US pressure</h3>
+      <div class="story-meta"><span>Reuters</span><time datetime="2026-10-02">2026-10-02</time></div>
+      <p class="story-summary">七国集团同意协调释放一亿桶柴油及原油紧急储备，并承诺不在成员间限制能源产品出口。释放计划立即开始、持续四个月，其中相当数量柴油拟在二十天内投放。特朗普随后表示美国不会实施此前考虑的柴油出口禁令。联合声明未列出各国参与量或产品分配，也不清楚一亿桶中多少属于3月既有四亿桶释放承诺的剩余额度。协议发生于伊朗战争引发供应扰动、燃料价格上涨及欧美围绕出口限制施压的背景下。</p>
+      <a class="source-link" href="https://www.reuters.com/business/energy/europe-discussing-plan-diesel-stock-releases-after-us-pressure-source-says-2026-10-02/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
+      <div class="story-kicker"><span>中欧贸易关系</span><span class="dot">•</span><span>MEDIA SOURCE</span></div>
+      <h3>China vows response if EU introduces moves targeting Chinese trade</h3>
+      <div class="story-meta"><span>Reuters</span><time datetime="2026-09-29">2026-09-29</time></div>
+      <p class="story-summary">中国商务部警告，若欧盟出台针对中国产品或企业的限制，将坚决回应以维护产业权益，并称一边磋商一边加压会损害互信。回应所针对的是部分欧盟成员国拟推动的新贸易工具；报道援引研究人士称，德法正在准备文件，倡议欧盟加快建立类似美国第301条款的反不公平贸易措施。欧方工具仍是被报道的政策倡议，并非已实施规则。中国官方媒体提及反歧视、产业链安全及外国补贴调查等可能选项，但未宣布具体反制措施。</p>
+      <a class="source-link" href="https://www.reuters.com/world/asia-pacific/china-vows-response-if-eu-introduces-moves-targeting-chinese-trade-2026-09-29/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
+      <div class="story-kicker"><span>欧洲安全与核威慑</span><span class="dot">•</span><span>MEDIA SOURCE</span></div>
+      <h3>No imminent threat to NATO territory from Russia, Rutte says</h3>
+      <div class="story-meta"><span>Reuters</span><time datetime="2026-09-30">2026-09-30</time></div>
+      <p class="story-summary">北约秘书长吕特回应俄方围绕加里宁格勒的核警告，表示联盟评估俄罗斯对北约领土没有迫在眉睫的威胁，判断并未因该警告改变。路透社看到的俄方文件称，若北约切断这块飞地，俄方可能动用核武器。吕特强调北约是防御联盟，并认为攻击北约国家前应出现可观察的军事集结；他称美国将继续以常规和核力量参与欧洲防务。北约仍会支持乌克兰并增加防务投入。这是北约领导人的风险判断和政策表态，不是对未来行动的保证。</p>
+      <a class="source-link" href="https://www.reuters.com/business/aerospace-defense/no-imminent-threat-nato-territory-russia-rutte-says-2026-09-30/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
+      <div class="story-kicker"><span>乌克兰加入欧盟谈判</span><span class="dot">•</span><span>MEDIA SOURCE</span></div>
+      <h3>Hungary welcomes Ukraine&#x27;s bill strengthening Hungarian minority rights</h3>
+      <div class="story-meta"><span>Reuters</span><time datetime="2026-10-02">2026-10-02</time></div>
+      <p class="story-summary">匈牙利欢迎乌克兰提交强化匈牙利族少数群体教育权的法案，称其加强了匈牙利语教学和教育机构网络的法律保障。两名欧盟外交官告诉路透社，双方商定，如果乌议会通过法案，匈方将解除对乌克兰入盟谈判中内部市场与竞争力两个领域的阻碍。乌方计划本月表决，法案尚未通过，谈判解锁也仍取决于条件落实。少数群体语言、文化和教育权长期影响双边关系，匈方新政府仍把相关进展作为支持入盟的重要前提。</p>
+      <a class="source-link" href="https://www.reuters.com/world/hungary-welcomes-ukraines-bill-strengthening-hungarian-minority-rights-2026-10-02/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
+      <div class="story-kicker"><span>波罗的海国家选举</span><span class="dot">•</span><span>MEDIA SOURCE</span></div>
+      <h3>Latvian PM on track to lead pro-Ukraine coalition after election win</h3>
+      <div class="story-meta"><span>Reuters</span><time datetime="2026-10-04">2026-10-04</time></div>
+      <p class="story-summary">拉脱维亚议会选举已计票97%时，总理库尔贝格斯领导的中间派联合名单获得35.3%选票，预计赢得一百席中的四十二席，有望与其他政党组建支持乌克兰的多数联盟。经济表现及国家安全是主要议题，亲俄政党虽增加席位，仍处于政治孤立状态。库尔贝格斯承诺继续支持乌克兰并对俄罗斯保持强硬。投票率为51.8%，低于2022年的59.4%。报道中的席位与执政前景依据接近完成的计票和组阁判断，并不表示新政府已经成立。</p>
+      <a class="source-link" href="https://www.reuters.com/world/europe/latvian-pm-track-lead-pro-ukraine-coalition-after-election-win-2026-10-04/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article></div>
+    </section>
+<section class="news-section" id="finance">
+      <div class="section-rule"></div>
+      <header class="section-header">
+        <div class="section-number">03</div>
+        <div class="section-title-wrap"><div class="section-en">FINANCE</div><h2>财经</h2></div>
+        <div class="section-count">05 ANALYSES</div>
+      </header>
+      <div class="lead-grid"><div class="lead-index">A</div><article class="story lead-story">
+      <div class="story-kicker"><span>能源冲击与海湾经济</span><span class="dot">•</span><span>INSTITUTIONAL ANALYSIS</span></div>
+      <h3>Managing Director’s Remarks at the Meeting of the Ministers of Finance and Central Bank Governors of the Gulf Cooperation Council</h3>
+      <div class="story-meta"><span>IMF</span><time datetime="2026-10-01">2026-10-01</time></div>
+      <p class="story-summary">国际货币基金组织总裁表示，战争持续七个月后，供应改道、新增供应、库存和需求收缩部分缓解了能源冲击，但海湾国家仍面临油气出口受限、设施受损及非油部门信心下降。基金组织预计海湾合作委员会经济2026年收缩、2027年反弹，前提是航运逐步正常化。她建议按财政空间提供临时、精准且透明的支持，供应瓶颈仍存时避免广泛刺激，复苏后重建缓冲。长期韧性需结合储存、替代航运和陆路物流，并继续推动经济多元化；这些属于机构判断与政策建议。</p>
+      <a class="source-link" href="https://www.imf.org/en/news/articles/2026/10/01/sp10012026-managing-director-remarks-meeting-gulf-cooperation-council" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article></div>
+      <div class="secondary-grid"><article class="story">
+      <div class="story-kicker"><span>美国通胀与货币政策</span><span class="dot">•</span><span>INSTITUTIONAL ANALYSIS</span></div>
+      <h3>The U.S. Economy and Monetary Policy</h3>
+      <div class="story-meta"><span>Federal Reserve</span><time datetime="2026-10-01">2026-10-01</time></div>
+      <p class="story-summary">美联储副主席杰斐逊认为，美国增长与就业风险大致平衡，但通胀风险偏上行。上半年经济按年率增长2.4%，8月失业率4.1%、个人消费支出价格同比上涨3.4%；能源、关税及人工智能投资热潮共同增加政策判断难度。他支持9月把联邦基金利率目标区间上调25个基点至3.75%—4%，以维护长期通胀预期。其基准情景是短期通胀偏高、冲击消退后恢复回落，未来调整仍须观察数据、前景和风险，未承诺下一次行动。讲话明确属于个人观点，不代表委员会共识。</p>
+      <a class="source-link" href="https://www.federalreserve.gov/newsevents/speech/jefferson20261001a.htm" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
+      <div class="story-kicker"><span>银行资本与金融稳定</span><span class="dot">•</span><span>INSTITUTIONAL ANALYSIS</span></div>
+      <h3>The leverage ratio and the output floor: complementarities and overlaps</h3>
+      <div class="story-meta"><span>BIS</span><time datetime="2026-09-28">2026-09-28</time></div>
+      <p class="story-summary">国际清算银行金融稳定学院研究杠杆率与风险加权资本输出下限的相互作用：前者限制过度杠杆，后者约束内部模型低估风险，两者不宜视为可替代工具。对29家全球系统重要性银行2014—2025年的分析发现，具有约束力的要求曾切换55次。在披露相关数据的13家银行中，2025年底尚无银行受输出下限约束，但若完整实施72.5%的下限，六家可能受其约束。作者强调，应保留风险敏感的资本框架与缓冲安排；测算反映完整实施情景，并非当前全部银行的实际资本缺口。</p>
+      <a class="source-link" href="https://www.bis.org/publications/fsi-paper-29-leverage-ratio-and-output-floor-complementarities-and-overlaps" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
+      <div class="story-kicker"><span>欧元区企业融资与 AI 投资</span><span class="dot">•</span><span>INSTITUTIONAL ANALYSIS</span></div>
+      <h3>How firms are planning to finance AI adoption</h3>
+      <div class="story-meta"><span>ECB</span><time datetime="2026-10-02">2026-10-02</time></div>
+      <p class="story-summary">欧洲央行研究人员利用约五千家欧元区企业调查，分析未来十二个月的人工智能投资融资。计划投资的企业中，72%预计使用内部现金流或留存收益，银行贷款、补助和租赁各约16%，股权或风险投资约6%；调查允许多选，这些比例不能相加。硬件及数据设施比培训等无形投入更容易获得外部资金，与抵押物可用性有关。作者认为，对内部资金的依赖可能限制人工智能普及的规模与速度，企业融资结构需适应无形资本；结果描述计划与统计关联，不是实际支出或央行政策承诺。</p>
+      <a class="source-link" href="https://www.ecb.europa.eu/press/blog/date/2026/html/ecb.blog20261002~7e82912ad5.en.html" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article><article class="story">
+      <div class="story-kicker"><span>美国投入成本与通胀监测</span><span class="dot">•</span><span>INSTITUTIONAL ANALYSIS</span></div>
+      <h3>Pricing Sentiment: Measuring Input Cost Pressure from ISM Survey Responses</h3>
+      <div class="story-meta"><span>Federal Reserve / FEDS Notes</span><time datetime="2026-10-01">2026-10-01</time></div>
+      <p class="story-summary">美联储研究人员把供应管理协会调查中的价格上涨和下降文字回复分为约五十类，构建投入成本情绪指标，用来补充生产者价格指数。调查通常比该指数早约两周公布，可较快识别钢铁关税、能源与运输冲击，以及人工智能需求推升存储器价格等压力。2024—2026年的分析中，两种文本分类方法给出相近信号，部分品类领先官方价格数据。但仅约四分之一至三分之一受访者提供文字回复，指标并非全面物价测量；研究属于作者观点，不能直接解释为消费者通胀或利率政策结论。</p>
+      <a class="source-link" href="https://www.federalreserve.gov/econres/notes/feds-notes/pricing-sentiment-measuring-input-cost-pressure-from-ism-survey-responses-20261001.html" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+    </article></div>
+    </section>
+<section class="news-section" id="markets">
+      <div class="section-rule"></div><header class="section-header">
+        <div class="section-number">04</div>
+        <div class="section-title-wrap"><div class="section-en">MARKETS</div><h2>市场</h2></div>
+        <div class="section-count">03 MARKETS</div>
+      </header><section class="market-report" id="market-gold">
+          <h3 class="market-title">国际金价</h3>
+          <div class="lead-grid"><div class="lead-index">A</div><article class="story institutional-view lead-story">
+              <div class="story-kicker"><span>World Gold Council</span><span class="dot">•</span><span>INSTITUTIONAL ANALYSIS</span></div>
+              <h4>Weekly Markets Monitor - Golden Week in China</h4>
+              <div class="story-meta"><span>World Gold Council</span><time datetime="2026-09-28">2026-09-28</time></div>
+              <p class="story-summary">世界黄金协会周报指出，中国10月1日至7日黄金周通常开启传统购金旺季，珠宝销售、行业补库存和本地溢价往往增强。高金价与低迷消费者信心已压抑2026年中国金饰需求，但近期价格较稳定，叠加假期消费，可能释放部分延后的需求，并在年底前提供季节性支撑。报告同时关注美伊僵局维持高能源价格、通胀忧虑，以及债券收益率和美元上行的环境。其中国溢价图采用截至9月25日的周均价；季节性规律只是分析依据，不代表假期需求或金价必然上升。</p>
+              <a class="source-link" href="https://www.gold.org/goldhub/gold-focus/2026/09/weekly-markets-monitor-golden-week-china" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+            </article></div>
+          <div class="secondary-grid"><article class="story institutional-view">
+              <div class="story-kicker"><span>World Gold Council</span><span class="dot">•</span><span>INSTITUTIONAL ANALYSIS</span></div>
+              <h4>Gold in Pension Funds: Case studies</h4>
+              <div class="story-meta"><span>World Gold Council</span><time datetime="2026-10-01">2026-10-01</time></div>
+              <p class="story-summary">世界黄金协会以荷兰、美国、英国和澳大利亚养老金案例，解释黄金的机构投资需求不只来自短期看涨判断，也来自资产负债管理、流动性、通胀风险及压力时期分散化需要。债券与股票相关性增强，使部分基金重新评估传统组合。案例既有实物持有，也有通过期货获得敞口，具体方式取决于治理、风险预算和投资理念。协会强调，这些是已实施安排的个别案例，不构成统一配置比例；黄金的通胀对冲效果依时期与指标而异，历史相关性也不保证未来收益或风险消除。</p>
+              <a class="source-link" href="https://www.gold.org/goldhub/gold-focus/2026/10/gold-pension-funds-case-studies" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+            </article><article class="story institutional-view">
+              <div class="story-kicker"><span>Standard Chartered CIO</span><span class="dot">•</span><span>INSTITUTIONAL ANALYSIS</span></div>
+              <h4>Opportunities from the bond sell-off</h4>
+              <div class="story-meta"><span>Standard Chartered CIO</span><time datetime="2026-10-02">2026-10-02</time></div>
+              <p class="story-summary">渣打在周度市场分析的黄金部分认为，近期回调与美国收益率、美元反弹有关，但新兴市场央行持续购金仍提供中期支撑。该行预计，短中期美国债券收益率和美元可能在未来数周见顶，油价及关税影响在明年减弱后，通胀回落有望恢复；因此它认为市场对美联储加息路径的定价偏鹰派。报告把每盎司四千美元视为重要技术支撑，同时提醒美国实际可支配收入停滞、消费者信心低迷，过度紧缩可能威胁金融稳定。上述内容属于机构情景与技术分析，并非确定价格路径或本栏目交易建议。</p>
+              <a class="source-link" href="https://www.sc.com/zm/market-outlook/weekly-market-view-2-10-2026/?mvog=1" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+            </article></div>
+        </section><section class="market-report" id="market-us_equities">
+          <h3 class="market-title">美国股市</h3>
+          <div class="lead-grid"><div class="lead-index">A</div><article class="story institutional-view lead-story">
+              <div class="story-kicker"><span>UBS CIO</span><span class="dot">•</span><span>INSTITUTIONAL ANALYSIS</span></div>
+              <h4>Resilient growth should underpin equity gains</h4>
+              <div class="story-meta"><span>UBS CIO</span><time datetime="2026-09-30">2026-09-30</time></div>
+              <p class="story-summary">瑞银认为，尽管长期美国国债收益率升至多年高位、消费者信心走弱，低裁员率和稳健就业仍支持收入、增长与美股盈利。该行预计标普五百盈利2026年增长25%、2027年增长14%，有望抵消高收益率对估值的压力。人工智能采用、投资和智能体交易收入也可能推动利润增长，但更高资本成本会增加大型数据中心融资难度。瑞银判断，只有政策显著收紧，融资才会成为实质约束，并预计未来六个月逐步降通胀。上述盈利数字和政策路径是该行预测，不能解释为已经实现的利润或未来回报保证。</p>
+              <a class="source-link" href="https://www.ubs.com/global/en/wealthmanagement/insights/chief-investment-office/house-view/daily/2026/latest-30092026.html" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+            </article></div>
+          <div class="secondary-grid"><article class="story institutional-view">
+              <div class="story-kicker"><span>J.P. Morgan Asset Management</span><span class="dot">•</span><span>INSTITUTIONAL ANALYSIS</span></div>
+              <h4>Review of Markets over the third quarter of 2026</h4>
+              <div class="story-meta"><span>J.P. Morgan Asset Management</span><time datetime="2026-10-01">2026-10-01</time></div>
+              <p class="story-summary">摩根资产管理的季度回顾认为，美国经济韧性与科技、能源及银行盈利改善，帮助股市承受能源、关税和加息压力。盈利预期上修快于股价上涨，使估值下降；报告称标普五百十二个月预期市盈率约十九倍，比一年前低四倍数点、接近长期均值。半导体向大型云平台和软件的轮动也有利于美股相对表现。与此同时，收益率上升使价值股优于成长股，小盘股与房地产投资信托承压。机构认为人工智能投资仍有支撑，但收益分布不均，高融资成本、通胀与地缘风险仍是约束。</p>
+              <a class="source-link" href="https://am.jpmorgan.com/ie/en/asset-management/liq/insights/market-insights/market-updates/monthly-market-review/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+            </article><article class="story institutional-view">
+              <div class="story-kicker"><span>WisdomTree / Jeremy Siegel</span><span class="dot">•</span><span>INSTITUTIONAL ANALYSIS</span></div>
+              <h4>Surging Real Yields Test a Resilient Market</h4>
+              <div class="story-meta"><span>WisdomTree / Jeremy Siegel</span><time datetime="2026-09-28">2026-09-28</time></div>
+              <p class="story-summary">智慧树高级经济学家西格尔指出，近三周实际利率约升四十个基点，而长期通胀预期略降，反映市场重估经济强度，不只是通胀恐慌。十年期实际收益率接近2.8%，开始明显压缩股票相对债券的优势；美股仍坚挺，是因为强增长同时提高企业盈利。他把核心矛盾概括为盈利增强与折现率上升的较量。若就业、物价与货币增长持续强劲，美联储可能进一步加息。小公司虽受益于增长，却更依赖短期融资，高杠杆企业与住房也会承受成本压力；这些判断属于作者个人研究观点。</p>
+              <a class="source-link" href="https://resources.wisdomtree.com/weekly-siegel-commentary/" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+            </article></div>
+        </section><section class="market-report" id="market-china_equities">
+          <h3 class="market-title">中国股市</h3>
+          <div class="lead-grid"><div class="lead-index">A</div><article class="story institutional-view lead-story">
+              <div class="story-kicker"><span>BlackRock Investment Institute</span><span class="dot">•</span><span>INSTITUTIONAL ANALYSIS</span></div>
+              <h4>China: up the value chain</h4>
+              <div class="story-meta"><span>BlackRock Investment Institute</span><time datetime="2026-09-28">2026-09-28</time></div>
+              <p class="story-summary">贝莱德智库认为，中国在电动车、先进机械与人工智能领域提高竞争力，但产业规模和出口份额并不自动转化为股东回报。它援引统计称，2026年前七个月电子设备制造商利润同比增110%，汽车行业利润降20.4%；截至9月21日，美元计价的明晟中国指数年内跌11%，信息技术分项涨7%，显示分化。机构维持中国股票中性判断，关注增长能转化为利润率的人工智能硬件和先进制造。廉价技术有利于使用者，却挤压竞争者；内需疲弱、房地产低迷及出口管制仍限制盈利和市场准入。</p>
+              <a class="source-link" href="https://www.blackrock.com/corporate/insights/blackrock-investment-institute/global-weekly-commentary" target="_blank" rel="noopener noreferrer">READ ORIGINAL <span>↗</span></a>
+            </article></div>
+          <div class="secondary-grid"></div>
+        </section></section>
+</main>
+
+<footer class="footer">
+  <span>NEWSROOM · AI-assisted international news digest</span>
+  <span>© 2026 alwinecor</span>
+</footer>
+
+<script data-archive>
+(() => {
+  const drawer = document.querySelector('#archive-drawer');
+  const menu = document.querySelector('.menu-button');
+  const current = document.body.dataset.issue;
+  const archiveURL = new URL(
+    /\/reports\/\d{4}-\d{2}-\d{2}\.html$/.test(location.pathname)
+      ? '../archive.json' : './archive.json', location.href);
+
+  let returnURL = location.hash === '#archive-drawer'
+    ? location.href.replace(/#.*$/, '') : location.href;
+
+  function closeDrawer(event) {
+    event.preventDefault();
+    history.replaceState(history.state, '', returnURL);
+    syncDrawer();
+    menu.focus({preventScroll: true});
+  }
+
+  menu.addEventListener('click', event => {
+    event.preventDefault();
+    returnURL = location.href;
+    history.replaceState(history.state, '', '#archive-drawer');
+    syncDrawer();
+  });
+  drawer.querySelector('.drawer-close').addEventListener('click', closeDrawer);
+  document.querySelector('.archive-overlay').addEventListener('click', closeDrawer);
+
+  document.body.classList.add('archive-enhanced');
+
+  function syncDrawer() {
+    const open = location.hash === '#archive-drawer';
+    drawer.classList.toggle('is-open', open);
+    drawer.inert = !open;
+    menu.setAttribute('aria-expanded', String(open));
+    document.body.style.overflow = open ? 'hidden' : '';
+    if (open) drawer.querySelector('.drawer-close').focus({preventScroll: true});
+  }
+  addEventListener('hashchange', syncDrawer);
+  syncDrawer();
+  document.addEventListener('keydown', event => {
+    if (location.hash !== '#archive-drawer') return;
+    if (event.key === 'Escape') {
+      closeDrawer(event);
+    }
+    if (event.key === 'Tab') {
+      const links = [...drawer.querySelectorAll('a[href]')];
+      const first = links[0], last = links[links.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault(); last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault(); first.focus();
+      }
+    }
+  });
+
+  async function refreshArchive() {
+    try {
+      const response = await fetch(archiveURL, {cache: 'no-store'});
+      if (!response.ok) throw new Error('Archive unavailable');
+      const dates = await response.json();
+      if (!Array.isArray(dates) || !dates.every(day => typeof day === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(day))) {
+        throw new Error('Invalid archive');
+      }
+      const fragment = document.createDocumentFragment();
+      let year, list;
+      for (const day of [...new Set(dates)].sort().reverse()) {
+        if (year !== day.slice(0, 4)) {
+          year = day.slice(0, 4);
+          const section = document.createElement('section');
+          const heading = document.createElement('h2');
+          heading.className = 'archive-year'; heading.textContent = year;
+          list = document.createElement('ul'); list.className = 'archive-dates';
+          section.append(heading, list); fragment.append(section);
+        }
+        const li = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = new URL(`reports/${day}.html`, archiveURL).href;
+        link.textContent = day.slice(5).replace('-', '.');
+        if (day === current) link.setAttribute('aria-current', 'page');
+        li.append(link); list.append(li);
+      }
+      document.querySelector('.archive-list').replaceChildren(fragment);
+    } catch {
+      // The current-issue fallback remains usable when offline or opened via file://.
+    }
+  }
+  refreshArchive();
+  addEventListener('pageshow', refreshArchive);
+})();
+
+</script>
+<script data-navigation>
+(() => {
+  const root = document.documentElement;
+  const masthead = document.querySelector('.top-shell');
+  const nav = document.querySelector('.section-nav');
+  const syncHeights = () => {
+    root.style.setProperty('--masthead-height', `${masthead.getBoundingClientRect().height}px`);
+    root.style.setProperty('--section-nav-height', `${nav.getBoundingClientRect().height}px`);
+  };
+  syncHeights();
+  const observer = new ResizeObserver(syncHeights);
+  observer.observe(masthead);
+  observer.observe(nav);
+})();
+</script>
+</body>
+</html>
