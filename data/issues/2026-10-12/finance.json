@@ -1,0 +1,55 @@
+{
+  "module": "finance",
+  "issue_date": "2026-10-12",
+  "window": {
+    "start": "2026-10-05",
+    "end": "2026-10-12"
+  },
+  "items": [
+    {
+      "id": "finance-001",
+      "category": "美国货币政策",
+      "original_title": "The Signaling Value of the Summary of Economic Projections",
+      "source_name": "Federal Reserve",
+      "published_at": "2026-10-08",
+      "url": "https://www.federalreserve.gov/newsevents/speech/waller20261008a.htm",
+      "summary_zh": "美联储理事沃勒解释，9月加息25个基点至3.75%至4%的区间，源于就业稳定、能源价格、AI 建设成本和贸易摩擦等数月累积证据，而非单次通胀数据。他指出8月核心个人消费支出价格同比上涨3%，通胀仍未充分接近2%目标；若数据符合预期，他预计还需加息，但节奏可灵活调整。沃勒强调经济预测概要起信号作用，并不承诺固定路径；18名参会者中16人预计年内至少再加息一次。这是其个人观点，不代表整个委员会的既定决定。"
+    },
+    {
+      "id": "finance-002",
+      "category": "全球金融稳定",
+      "original_title": "The role of central banks in managing financial crises in times of rapid change",
+      "source_name": "BIS",
+      "published_at": "2026-10-05",
+      "url": "https://www.bis.org/speeches/20261005-role-central-banks-managing-financial-crises-times-rapid-change",
+      "summary_zh": "BIS 总经理埃尔南德斯·德科斯分析，高政府债务、非银行金融机构扩张和数字创新正在改变央行危机应对。杠杆基金及短期融资使主权债市场易受追加保证金和被迫出售冲击，数字银行与社交媒体又加快资金撤离；稳定币及相似 AI 策略可能进一步传播压力。他主张可信财政路径、对相同风险实施相称监管、完善流动性后盾及跨境合作，并明确区分恢复市场功能的资产购买与货币刺激，避免临时救助演变为持续支持或诱发道德风险。"
+    },
+    {
+      "id": "finance-003",
+      "category": "税收竞争与跨境投资",
+      "original_title": "Policies to Curb Tax Avoidance Are Changing How Countries Court Global Business",
+      "source_name": "IMF",
+      "published_at": "2026-10-05",
+      "url": "https://www.imf.org/en/blogs/articles/2026/10/05/blog-policies-to-curb-tax-avoidance-are-changing-how-countries-court-global-business",
+      "summary_zh": "IMF 研究认为，反避税规则使跨国企业报告利润与实际投资地点更一致：利润对税差的敏感度下降，真实投资却更敏感。分析发现，一国企业所得税率相对其他国家上升1个百分点，与三年内外商直接投资累计减少约 GDP 的0.5%相关；其他国家税率下降1个百分点，平均伴随本国下降0.4个百分点。模型显示，举债减税可能推高全球实际利率，其他国家跟进则削弱先行动者收益。作者强调税收竞争的财政代价，并指出反避税对依赖企业税收的发展中经济体尤其重要。"
+    },
+    {
+      "id": "finance-004",
+      "category": "欧洲融资与生产率",
+      "original_title": "Funding the AI revolution: evidence from euro area sectors",
+      "source_name": "ECB Blog",
+      "published_at": "2026-10-06",
+      "url": "https://www.ecb.europa.eu/press/blog/date/2026/html/ecb.blog20261006~35bf3c24cb.en.html",
+      "summary_zh": "欧洲央行博客作者分析欧元区 AI 密集行业的融资结构，发现其总体杠杆较低，更依赖股权和内部资金，近期债务融资也更多转向证券市场。软件、数据和算法等无形资产不易作为银行贷款抵押，AI 开发又比采用现成工具更需要高风险投入。作者认为，较长债券期限及较低负债比例可能减弱加息的现金流传导，却提高长期收益率的重要性。美国更深的股权与创投市场可能解释其较强投资响应，欧洲应深化资本市场一体化；结论为作者观点。"
+    },
+    {
+      "id": "finance-005",
+      "category": "欧洲财政与增长",
+      "original_title": "Hungary: Staff Concluding Statement of the 2026 Article IV Mission",
+      "source_name": "IMF",
+      "published_at": "2026-10-08",
+      "url": "https://www.imf.org/en/news/articles/2026/10/07/cs-hungary-staff-concluding-statement-of-the-2026-article-iv-mission",
+      "summary_zh": "IMF 工作人员预计匈牙利2026年增长约2%，财政赤字可能达到 GDP 的7%至7.5%；此前冻结的约160亿欧元欧盟资金若在改善治理后使用，可促进投资并缓解融资压力。团队建议推出可信、前置且兼顾增长的财政调整，并等待更持久的通胀回落证据再降息。银行总体资本与流动性充足，但主权债敞口、住房估值和企业外币债务仍构成风险。工作人员分析认为，结合财政、货币与结构改革可使2030年实际 GDP 累计提高最多2%；该声明尚非执行董事会正式结论。"
+    }
+  ]
+}

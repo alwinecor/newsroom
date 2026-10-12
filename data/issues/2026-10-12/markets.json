@@ -1,0 +1,64 @@
+{
+  "module": "markets",
+  "issue_date": "2026-10-12",
+  "window": {
+    "start": "2026-10-05",
+    "end": "2026-10-12"
+  },
+  "markets": {
+    "gold": {
+      "institutional_views": [
+        {
+          "institution": "World Gold Council",
+          "original_title": "Weekly Markets Monitor - Out of the ordinary",
+          "published_at": "2026-10-05",
+          "url": "https://www.gold.org/goldhub/gold-focus/2026/10/weekly-markets-monitor-out-ordinary",
+          "summary_zh": "世界黄金协会指出，截至10月2日的一周，伦敦午盘基准金价下跌1.7%至每盎司4190美元，连续第六周回落；收益率及美元上升构成压力，较弱就业数据与较温和通胀随后帮助金价收复部分失地。协会特别分析9月投资者行为分化：美元金价跌逾8%，全球黄金 ETF 却流入逾70吨；COMEX 管理资金持仓减少约84吨等值，跨期价差类持仓减少约156吨等值。协会认为，期货去杠杆有助解释 ETF 买入与金价下跌并存，地缘冲突经通胀及政策预期传导仍是重要驱动。"
+        },
+        {
+          "institution": "World Gold Council",
+          "original_title": "Central Bank Gold Statistics: Central banks continue summer spree in August",
+          "published_at": "2026-10-06",
+          "url": "https://www.gold.org/goldhub/gold-focus/2026/10/central-bank-gold-statistics-central-banks-continue-summer-spree-august",
+          "summary_zh": "世界黄金协会统计，8月各国央行已报告净购金39吨，年内累计净购买170吨，主要买家继续执行多年储备积累计划。中国当月增加20吨，波兰和乌兹别克斯坦各增加8吨，俄罗斯出售6吨；中国连续第22个月购金，黄金储备约2387吨、占总储备9%。协会认为，持续需求更多反映长期储备目标，月度变化则受实施节奏、市场条件及各国流动性需要影响。2016至2025年数据显示温和季节差异，但年份差异较大，不能据此确认稳定驱动机制；统计以已报告数据为限。"
+        }
+      ]
+    },
+    "us_equities": {
+      "institutional_views": [
+        {
+          "institution": "BlackRock Investment Institute",
+          "original_title": "U.S. dollar: surprisingly resilient",
+          "published_at": "2026-10-05",
+          "url": "https://www.blackrock.com/us/individual/literature/market-commentary/weekly-investment-commentary-en-us-20261005-us-dollar-surprisingly-resilient.pdf",
+          "summary_zh": "贝莱德在全球周报的美国股票分析中认为，强劲经济、企业盈利和 AI 投资推动美股相对表现并吸引国际资本；其引用数据显示，截至7月的12个月内，外国投资者向美国股票及投资基金份额投入近一万亿美元。机构预计盈利支撑将持续，维持偏积极的美国股票观点，并关注电力、芯片和数据中心瓶颈。与此同时，长期收益率仍受资本竞争等结构因素推动，政策预期变化可引发波动；贝莱德认为市场计入的后续加息幅度偏多，若重新定价，可能缓解部分利率压力。"
+        },
+        {
+          "institution": "J.P. Morgan Asset Management",
+          "original_title": "When will higher Treasury yields pressure equities?",
+          "published_at": "2026-10-09",
+          "url": "https://am.jpmorgan.com/us/en/asset-management/per/insights/market-insights/market-updates/on-the-minds-of-investors/when-will-higher-treasury-yields-pressure-equities/",
+          "summary_zh": "摩根资产管理分析指出，美国十年期国债收益率年内上升112个基点，9月单月上升53个基点，一度触及5.36%；能源通胀、经济韧性及大量债券发行共同推高资金成本。作者认为，股票与收益率的关系随宏观和盈利环境变化，2021年以来不存在清晰、固定的转折门槛。标普500前十大公司占指数约40%，盈利更多受 AI 投资而非一般经济周期驱动，当前利率未必打断其扩张。但较高通胀、利润率压力、估值折现与债券资金竞争仍是风险，AI 投资变现和跨行业采用更值得观察。"
+        },
+        {
+          "institution": "J.P. Morgan Asset Management",
+          "original_title": "How do markets perform post-midterms?",
+          "published_at": "2026-10-07",
+          "url": "https://am.jpmorgan.com/us/en/asset-management/per/insights/market-insights/market-updates/on-the-minds-of-investors/how-do-markets-perform-post-midterms/",
+          "summary_zh": "摩根资产管理回顾1950年以来美国中期选举，指出标普500在每次选举后的12个月均录得正收益，平均约15%，中期选举年的第四季度平均上涨6.6%。作者认为，选举后政治格局更清晰，可使市场重新聚焦盈利和政策，但历史统计不能脱离经济背景。其当前积极判断基于分析师预期未来12个月盈利增长约37%、美国经济保持约2%增长及 AI 资本开支持续；机构也预计美联储紧缩弱于市场预期。上述均为机构观点与预测，历史规律不保证本次周期重复。"
+        }
+      ]
+    },
+    "china_equities": {
+      "institutional_views": [
+        {
+          "institution": "DBS Chief Investment Office",
+          "original_title": "China AI Hardware: Valuation Reset",
+          "published_at": "2026-10-07",
+          "url": "https://www.dbs.com.tw/personal/aics/templatedata/article/generic/data/en/CIO/102026/261007CIOP.xml",
+          "summary_zh": "星展银行分析中国 AI 硬件股票，认为科创50、创业板及相关芯片与光通信企业的回调主要是稀缺性估值溢价重置，尚不意味着 AI 建设逻辑失效。机构依据大型云企业资本开支加速、云业务增长及国产化需求，判断实际投入仍有支撑；但 NVIDIA 产品可能重新进入、光通信采购规则、库存及限售股解禁会改变收益分配。星展强调，政策重要性并不自动转化为利润，须核实出货、现金流和订单兑现；其更关注已有盈利证据的芯片设计、国产供应链及服务器企业，分析范围为中国科技硬件股票。"
+        }
+      ]
+    }
+  }
+}

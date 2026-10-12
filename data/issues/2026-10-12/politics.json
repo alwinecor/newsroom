@@ -1,0 +1,80 @@
+{
+  "module": "politics",
+  "issue_date": "2026-10-12",
+  "window": {
+    "start": "2026-10-05",
+    "end": "2026-10-12"
+  },
+  "items": [
+    {
+      "id": "politics-001",
+      "category": "俄乌战争与外交",
+      "original_title": "Trump announces Ukraine energy ceasefire with Russia, surprising Zelenskiy",
+      "source_name": "Reuters",
+      "source_level": "media",
+      "published_at": "2026-10-11",
+      "url": "https://www.reuters.com/world/europe/ukraine-will-halt-strikes-refineries-if-russia-stops-energy-attacks-zelenskiy-2026-10-11/",
+      "summary_zh": "特朗普宣布俄乌已同意停止攻击能源设施，但报道时双方尚未共同确认具体安排。泽连斯基表示支持停火、等待美方细节，并称俄方仍在攻击乌克兰能源设施；乌方只有在俄罗斯停止此类攻击时才会停止打击俄炼油厂。他同时回应美方要求举行选举的压力，称若俄罗斯同意停火60天，可组织投票，领导人应由乌克兰人决定。乌克兰法律因安全原因禁止戒严期间举行选举。此次宣布发生在全球柴油价格上涨及美俄燃料供应交易争议背景下。"
+    },
+    {
+      "id": "politics-002",
+      "category": "中东冲突与航空安全",
+      "original_title": "Saudi Arabia: 12 killed, hundreds injured in Riyadh strike",
+      "source_name": "DW",
+      "source_level": "media",
+      "published_at": "2026-10-10",
+      "url": "https://amp.dw.com/en/saudi-arabia-12-killed-hundreds-injured-in-riyadh-airport-attack/a-79628862",
+      "summary_zh": "沙特民航部门称，利雅得哈立德国王国际机场10月10日遭袭，造成12人死亡、309人受伤，机场暂停运营。沙特主导的联军指责也门胡塞武装实施袭击，并表示将作出坚决回应；报道指出胡塞武装未立即认领这次袭击，其发言人转发了此前要求航班避开机场的警告。多国使馆劝本国公民远离机场，阿提哈德、卡塔尔及科威特等航空公司取消航班。该事件发生在沙特支持的也门政府军与胡塞武装冲突加剧期间，伤亡及责任说法均按相关方归属表述。"
+    },
+    {
+      "id": "politics-003",
+      "category": "巴勒斯坦选举",
+      "original_title": "Abbas postpones Palestinian elections, sets presidential poll for September 2027",
+      "source_name": "Reuters",
+      "source_level": "media",
+      "published_at": "2026-10-10",
+      "url": "https://www.reuters.com/world/middle-east/abbas-postpones-palestinian-elections-sets-presidential-poll-september-2027-2026-10-10/",
+      "summary_zh": "巴勒斯坦总统阿巴斯将原定11月举行的立法选举推迟至2027年9月11日，并将总统选举安排在同一天。法令称以色列军事行动、定居点扩张、行动限制，以及加沙安全和人道状况妨碍自由、公平且包容的选举；以色列外长否认其解释并指责阿巴斯逃避责任。决定经过巴勒斯坦派别磋商，拟为民族对话争取时间。巴勒斯坦自2005至2006年以来未举行总统或立法选举，阿巴斯数周前仍曾在联合国重申11月投票安排。"
+    },
+    {
+      "id": "politics-004",
+      "category": "巴西选举与治理",
+      "original_title": "Right-wing wave in Brazil's Congress boosts Bolsonaro camp ahead of presidential runoff",
+      "source_name": "Reuters",
+      "source_level": "media",
+      "published_at": "2026-10-05",
+      "url": "https://www.reuters.com/world/americas/right-wing-wave-brazils-congress-boosts-bolsonaro-camp-ahead-presidential-runoff-2026-10-05/",
+      "summary_zh": "巴西自由党在国会选举中成为两院最大单一政党，参议院席位由15席增至28席；众议院预测席位为121席，高于现有98席。弗拉维奥·博索纳罗在总统首轮投票中领先卢拉，两人将于10月25日进行第二轮角逐。路透社指出，中右翼盟友的席位增长可能使博索纳罗阵营获得工作多数，也将影响最高法院任命、弹劾和财政政策。工人党阵营的众议院席位亦预计增加，但分析人士认为，若卢拉连任，偏右国会仍将构成治理挑战。"
+    },
+    {
+      "id": "politics-005",
+      "category": "国际法与人权",
+      "original_title": "Nobel Peace Prize for 2026",
+      "source_name": "Norwegian Nobel Committee",
+      "source_level": "primary",
+      "published_at": "2026-10-09",
+      "url": "https://www.nobelpeaceprize.org/press/press-releases/nobel-peace-prize-for-2026",
+      "summary_zh": "挪威诺贝尔委员会宣布将2026年诺贝尔和平奖授予南非法学家纳维·皮莱，表彰她为和平与国际法作出的努力。委员会强调，维护有组织的国际秩序及法律约束对于和平至关重要，并将皮莱长期推动追究战争罪、反人类罪和种族灭绝责任的工作作为授奖依据。她曾在国际刑事法院及卢旺达问题国际刑事法庭任职，并担任联合国人权事务高级专员。委员会指出，国际法机构正承受政治压力，希望通过授奖重申法治、问责与和平的联系，并表彰皮莱在拓展国际司法规范方面的贡献。"
+    },
+    {
+      "id": "politics-006",
+      "category": "欧洲政治与公共治理",
+      "original_title": "France suspends use of stun grenades to police student protests",
+      "source_name": "Reuters",
+      "source_level": "media",
+      "published_at": "2026-10-07",
+      "url": "https://www.reuters.com/world/europe/france-suspends-use-stun-grenades-police-student-protests-2026-10-07/",
+      "summary_zh": "法国政府暂停在学生抗议中使用震撼弹，此前一名15岁少年在与警察冲突中失去一只手，内政部长称震撼弹可能导致伤害，18起事件已交警察监察机构调查。超过500所学校关闭，学生与教师要求改善校舍、师资和教育条件。总理勒科尔尼表示将审查诉求，并于10月底提出具体、有资金支持的措施。抗议发生在总统选举约六个月前及财政紧张背景下，部分比利时、葡萄牙和西班牙学生或教师也围绕教育条件展开抗议。"
+    },
+    {
+      "id": "politics-007",
+      "category": "外国干预与欧洲关系",
+      "original_title": "UK PM Burnham says Russia interfered in 2016 Brexit vote",
+      "source_name": "Reuters",
+      "source_level": "media",
+      "published_at": "2026-10-11",
+      "url": "https://www.reuters.com/world/uk/uk-pm-burnham-says-russia-interfered-2016-brexit-vote-2026-10-11/",
+      "summary_zh": "英国首相伯纳姆在播客中称，入主唐宁街后询问俄罗斯是否干预2016年脱欧公投，得到明确肯定答复；但他未披露干预方式或证据细节。俄罗斯此前否认干预，驻英使馆未立即回应。这是英国首相首次公开作出此类判断，与约翰逊2020年称没有证据的立场不同。伯纳姆还警告法国和德国选民关注外国影响政治的活动。英国议会情报与安全委员会2020年报告曾批评政府没有充分调查脱欧公投中的俄方干预问题。"
+    }
+  ]
+}
