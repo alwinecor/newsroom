@@ -1,0 +1,80 @@
+{
+  "module": "technology",
+  "issue_date": "2026-10-19",
+  "window": {
+    "start": "2026-10-12",
+    "end": "2026-10-19"
+  },
+  "items": [
+    {
+      "id": "technology-001",
+      "category": "基础模型",
+      "original_title": "Google launches flagship AI model Gemini 4 Argon for developers, businesses",
+      "source_name": "Reuters",
+      "source_level": "media",
+      "published_at": "2026-10-13",
+      "url": "https://www.reuters.com/business/google-launches-flagship-ai-model-gemini-4-argon-developers-businesses-2026-10-13/",
+      "summary_zh": "Google 向全球开发者和企业推出旗舰模型 Gemini 4 Argon，定位于编程、金融、法律、网络安全和科学等复杂多步骤任务。首发 API 定价为每百万输入词元2美元、输出词元10美元，11月30日后价格将翻倍；Deloitte、LexisNexis、Ambience Healthcare 和 Isomorphic Labs 等参与早期测试。Google 称，在 Antigravity 中使用 Argon 的团队智能体代码提交量提高逾35%、代码回滚减少近三分之一；这些性能数据属于公司提供的测试结果。"
+    },
+    {
+      "id": "technology-002",
+      "category": "智能体与网络安全",
+      "original_title": "AI models may be capable of self-replicating without access to a datacenter",
+      "source_name": "Anthropic",
+      "source_level": "primary",
+      "published_at": "2026-10-12",
+      "url": "https://www.anthropic.com/research/self-replicating-ai",
+      "summary_zh": "Anthropic 的实验显示，小型 AI 模型在商用物联网设备上实现自主复制所需的能力可能正快速接近。9B 模型在9类测试硬件中的8类成功部署推理；研究团队还让26B模型跨15台廉价 Android TV 盒运行。简化的8节点实验中，GLM-5.2 有4次在5次试验里感染全部节点，另一次感染7个；但实验刻意简化了入侵环节，团队明确称目前尚未得到完整的现实“失控复制器”，并把年底能力阈值预测视为粗略外推。"
+    },
+    {
+      "id": "technology-003",
+      "category": "模型安全与知识产权",
+      "original_title": "Strengthening our defenses against distillation attacks",
+      "source_name": "Anthropic",
+      "source_level": "primary",
+      "published_at": "2026-10-12",
+      "url": "https://www.anthropic.com/research/distillation-defenses",
+      "summary_zh": "Anthropic 公布针对模型蒸馏攻击的新防御方法，并称早期证据显示，攻击者能够从 Claude 获取的数据量已减少约90%至99%。公司将此类攻击描述为利用大量欺诈账户，以工业规模提取前沿模型能力并训练另一模型的活动；其防御包括账户、流量与行为层面的组合措施，同时承认会带来误拦截和集成调整等代价。上述下降幅度来自 Anthropic 自身监测，文章未把它描述为对所有蒸馏路径都有效的通用保证。"
+    },
+    {
+      "id": "technology-004",
+      "category": "AI for Science",
+      "original_title": "Accelerating the search for antimicrobial peptides with Google Antigravity",
+      "source_name": "Google DeepMind",
+      "source_level": "primary",
+      "published_at": "2026-10-15",
+      "url": "https://deepmind.google/blog/accelerating-antimicrobial-discovery/",
+      "summary_zh": "Google DeepMind 展示利用智能体科学工作台 Google Antigravity 加速抗菌肽发现的流程：系统把多个数据库检索与分析步骤整合进单次会话，并结合 ProtNLM 从氨基酸序列预测蛋白功能，可筛查 UniProt 中数百万个尚未注释的蛋白。团队据此找到一个预测可作用于呼吸道感染相关病原体的新抗菌肽候选，目前仍处于湿实验验证阶段；因此现阶段成果是候选发现与工作流演示，而非已经证实的新药或临床疗效。"
+    },
+    {
+      "id": "technology-005",
+      "category": "AI 治理与评测",
+      "original_title": "An update on independent evaluators",
+      "source_name": "Anthropic",
+      "source_level": "primary",
+      "published_at": "2026-10-15",
+      "url": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
+      "summary_zh": "Anthropic 开始给予非营利评测机构 METR 一支团队接近“员工级”的内部访问权限，以支持对前沿模型和安全流程的独立风险评估。6名 METR 员工获得公司硬件、办公空间及大体相当于内部风险团队的工具和系统访问，但客户数据、律师保密信息及部分模型架构等类别除外。METR 可公开风险、事件和实践评估，Anthropic 不能否决发表，只能要求按预先界定类别删去机密内容；公司还与 SecureBio、Accenture 合作，并与 Hugging Face 等讨论类似安排。"
+    },
+    {
+      "id": "technology-006",
+      "category": "AI 与量子计算",
+      "original_title": "Designing more efficient quantum circuits with Claude",
+      "source_name": "Anthropic",
+      "source_level": "primary",
+      "published_at": "2026-10-16",
+      "url": "https://www.anthropic.com/research/designing-efficient-quantum-circuits",
+      "summary_zh": "Anthropic 与哈佛、QuEra 研究者测试 Claude 是否能优化量子电路：研究者给出来自化学、优化、物理模拟和数论的8类电路自然语言规格及自动评分器，让模型较为自主地搜索设计。团队称 Claude 在多项任务上找到优于已发表方案的电路，个别资源开销改善达到一个数量级以上。文章强调这些结果针对特定自动评测问题，实际量子计算收益仍取决于硬件、误差校正及完整算法栈；相关研究同时发布论文供进一步检验。"
+    },
+    {
+      "id": "technology-007",
+      "category": "AI 安全基础设施",
+      "original_title": "Nvidia pledges $250 million to UK AI safety research",
+      "source_name": "Reuters",
+      "source_level": "media",
+      "published_at": "2026-10-14",
+      "url": "https://www.reuters.com/technology/nvidia-pledges-250-million-boost-uk-ai-safety-research-2026-10-14/",
+      "summary_zh": "NVIDIA 承诺未来五年向英国提供价值2.5亿美元的加速计算资源，用于 AI 安全研究，相当于每年约5000万美元，重点支持智能体安全测试。资源将与英国 AI Security Institute 及高校研究相衔接，包括牛津大学牵头的 BOLD、帝国理工的机器人安全工作和伦敦大学学院项目。英国希望借国家支持的模型评估与治理体系形成国际 AI 安全中心；这笔投入以计算资源形式提供，属于未来五年的企业承诺，而非已拨付的现金科研经费。"
+    }
+  ]
+}

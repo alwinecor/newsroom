@@ -1,0 +1,64 @@
+{
+  "module": "markets",
+  "issue_date": "2026-10-19",
+  "window": {
+    "start": "2026-10-12",
+    "end": "2026-10-19"
+  },
+  "markets": {
+    "gold": {
+      "institutional_views": [
+        {
+          "institution": "World Gold Council",
+          "original_title": "Weekly Markets Monitor - Pricing fiscal risk",
+          "published_at": "2026-10-12",
+          "url": "https://www.gold.org/goldhub/gold-focus/2026/10/weekly-markets-monitor-pricing-fiscal-risk",
+          "summary_zh": "世界黄金协会把本周黄金配置背景与财政可持续性风险联系起来：法国国债市场动荡使期限溢价升至本世纪初以来高位，同时美国财政与贸易赤字扩大、消费信心走弱，美联储会议纪要偏鹰。协会观察到，尽管近期金价走弱，欧洲和美国投资者过去数月仍持续增加黄金 ETF 配置，并认为这一资金行为与主要经济体主权债务负担及期限溢价上升的担忧一致。该周报同时强调中东地缘风险和高能源价格仍在影响全球资产定价。"
+        },
+        {
+          "institution": "UBS Chief Investment Office",
+          "original_title": "Commodity fundamentals speak for further upside",
+          "published_at": "2026-10-12",
+          "url": "https://www.ubs.com/global/en/wealthmanagement/insights/chief-investment-office/house-view/daily/2026/latest-12102026.html",
+          "summary_zh": "UBS CIO 判断，实际收益率上升和美元走强可能使金价短期回落至每盎司4000美元附近，但黄金 ETF 持仓近期仍有稳定流入，9月初步数据也显示央行需求持续：中国、波兰和乌兹别克斯坦分别购买约23、25和7吨。机构据此认为，央行储备多元化、公共债务与偿债成本担忧以及中国需求构成比以往周期更强的结构性支撑，并预计金价在调整后于年底至2027年重新恢复上行；这些价格路径属于 UBS 的机构预测。"
+        }
+      ]
+    },
+    "us_equities": {
+      "institutional_views": [
+        {
+          "institution": "UBS Chief Investment Office",
+          "original_title": "Strong 3Q earnings can send US equities higher",
+          "published_at": "2026-10-13",
+          "url": "https://www.ubs.com/global/en/wealthmanagement/insights/chief-investment-office/house-view/daily/2026/latest-13102026.html",
+          "summary_zh": "UBS CIO 预计标普500第三季度每股收益同比增长约28%，认为 AI 需求、周期性行业改善和消费韧性可抵消能源价格和利率上升的部分压力。其估算2026年 AI 相关支出将增长84%至9000亿美元，半导体利润约贡献本季标普500盈利增长的一半；超大规模云厂商平均云收入同比增速预计从二季度48%加速至三季度58%。机构也指出10年期美债收益率年内已上升逾1个百分点，但标普500非金融企业债务加权平均期限约11年，短期再融资冲击相对可控。"
+        },
+        {
+          "institution": "Standard Chartered",
+          "original_title": "Staying defensive and diversified",
+          "published_at": "2026-10-16",
+          "url": "https://www.sc.com/je/market-outlook/weekly-market-view-16-10-2026/",
+          "summary_zh": "渣打财富管理在美国股市上保持防御立场，将美国通信服务股降至中性、医疗股升至超配，并表示在更明确的 AI 利润率与资本开支指引、更广泛盈利增长或债券波动下降出现前，不急于转为全面看多。报告发布时纳斯达克100较纪录高点回落约4.5%，VIX 升至18.2但仍低于其通常视为“投降式抛售”的25至30区间。机构仍看好美国金融板块，认为大型银行贷款、存款、消费与并购融资活动总体稳健，但更高利率会抬升融资成本并增加借款人压力。"
+        },
+        {
+          "institution": "DBS Chief Investment Office",
+          "original_title": "股票策略 – 強勁的人工智慧（AI）獲利成長可望抵消收益率上揚壓力",
+          "published_at": "2026-10-13",
+          "url": "https://www.dbs.com.tw/personal-zh/aics/investment-strategy/templatedata/article/generic/data/zh/GR/102026/tw_261013_insights1.xml",
+          "summary_zh": "星展投資總監辦公室认为，10年期美债收益率升破5.2%会提高股票折现率和风险溢价门槛，但并不必然结束美股上升周期，关键在于企业盈利能否持续兑现。其判断 AI 资本开支正在半导体、记忆体、网络、数据中心、电力和软件链条扩散，且获得战略性支出与私募资本支持；文章指出当前科技估值与2000年网络泡沫存在显著差异，并以 NVIDIA 约19倍市盈率对比当年 Cisco 超过100倍为例。机构因此把观察重点从估值扩张转向 AI 投入能否转化为收入、利润率和盈利预期上调。"
+        }
+      ]
+    },
+    "china_equities": {
+      "institutional_views": [
+        {
+          "institution": "DBS Chief Investment Office",
+          "original_title": "Market Pulse: Cross-Asset Divergence",
+          "published_at": "2026-10-12",
+          "url": "https://www.dbs.com.tw/personal/aics/templatedata/article/generic/data/en/CIO/102026/261012CIOMarketPulse.xml",
+          "summary_zh": "星展投資總監辦公室在周度跨资产报告中把中国银行业整合作为中国股票市场的重点判断之一。机构认为，银行整合有助于加强监管监督并处理资产质量问题，而大型银行和国有银行可能因市场份额提高、以及获得吸收优质资产的机会而相对受益。该观点嵌在更广泛的跨资产周报中，原文没有给出整体中国股市目标位或统一指数预测，因此这里只保留其对中国银行板块的明确机构判断。"
+        }
+      ]
+    }
+  }
+}

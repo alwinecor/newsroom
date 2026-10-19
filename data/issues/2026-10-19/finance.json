@@ -1,0 +1,55 @@
+{
+  "module": "finance",
+  "issue_date": "2026-10-19",
+  "window": {
+    "start": "2026-10-12",
+    "end": "2026-10-19"
+  },
+  "items": [
+    {
+      "id": "finance-001",
+      "category": "全球经济展望",
+      "original_title": "Resilience Under Strain, Urgent Choices",
+      "source_name": "IMF",
+      "published_at": "2026-10-13",
+      "url": "https://www.imf.org/en/publications/weo/issues/2026/10/13/world-economic-outlook-october-2026",
+      "summary_zh": "IMF《世界经济展望》预计全球实际增长率2026年放缓至3.1%，2027年回升至3.4%；全球总体通胀预计2026年升至4.7%，2027年回落至4.1%。报告认为冲突升级、AI 预期重新定价、贸易摩擦和财政脆弱性构成主要下行风险，并敦促各国重建财政缓冲、维护货币与金融稳定。针对生活成本冲击，IMF 认为临时、定向收入支持通常比压低价格更有效率，后者可能需要前者3至22倍的财政资源。"
+    },
+    {
+      "id": "finance-002",
+      "category": "亚太宏观经济",
+      "original_title": "Regional Economic Outlook: Asia and Pacific, October 2026",
+      "source_name": "IMF",
+      "published_at": "2026-10-15",
+      "url": "https://www.imf.org/en/publications/reo/apac/issues/2026/10/15/regional-economic-outlook-for-asia-and-pacific-october-2026",
+      "summary_zh": "IMF 亚太区域展望认为，中东冲突造成的能源冲击、AI 驱动的科技繁荣及贸易政策冲击后的供应链重组，正在共同塑造亚洲经济。区域整体表现强于此前预期，但国家与行业间分化明显，缓冲空间也有限。报告基于19个亚洲经济体约4000万条在线招聘信息发现，AI 暴露度较高职业的雇主需求相对下降近10%，但影响趋于稳定；另估计若降低服务贸易限制，区域长期 GDP 可提高接近1%。政策重点是短期稳定与重建缓冲并重，并强化社保、劳动力改革和服务贸易整合。"
+    },
+    {
+      "id": "finance-003",
+      "category": "美国经济与劳动力市场",
+      "original_title": "Beige Book - October 2026",
+      "source_name": "Federal Reserve",
+      "published_at": "2026-10-14",
+      "url": "https://www.federalreserve.gov/monetarypolicy/beigebook202610-summary.htm",
+      "summary_zh": "美联储10月褐皮书显示，12个联储地区中2个报告经济温和增长、3个小幅增长、4个轻微增长、3个基本不变；制造业相对最强，而总体消费支出多数地区几乎没有变化。就业整体也变化不大，5个地区提到部分企业因 AI 投资提升生产率而通过自然减员、延后招聘或下调未来招聘计划来控制用工。价格压力仍偏高，8个地区称价格温和上涨、3个称强劲上涨，柴油、能源、关税和保险成本继续向供应链传导。报告汇总的是截至10月5日的企业与社区联系人信息，并非联储官员政策立场。"
+    },
+    {
+      "id": "finance-004",
+      "category": "债券与通胀机制",
+      "original_title": "Government Bonds’ Safe-Haven Property and Inflationary Pressures",
+      "source_name": "Federal Reserve",
+      "published_at": "2026-10-16",
+      "url": "https://www.federalreserve.gov/econres/notes/feds-notes/government-bonds-safe-haven-property-and-inflationary-pressures-20261016.html",
+      "summary_zh": "美联储 FEDS Notes 研究美国、欧元区和英国的股债相关性，认为政府债券能否在风险事件中发挥避险作用，关键取决于通胀环境和冲击类型。2000至2021年股票收益与10年期收益率相关性在三地均约为正0.31至0.41，债券通常可在股市下跌时上涨；2022年以来相关性转为负值。当通胀高于目标且供应冲击可能推高通胀预期时，市场会预期央行维持更紧政策，股票和债券价格可能同步下跌，因此不能把长期国债的避险属性视为固定不变。"
+    },
+    {
+      "id": "finance-005",
+      "category": "美国利率与固定收益",
+      "original_title": "Quality bonds for income and diversification",
+      "source_name": "UBS Chief Investment Office",
+      "published_at": "2026-10-16",
+      "url": "https://www.ubs.com/global/en/wealthmanagement/insights/chief-investment-office/house-view/daily/2026/latest-16102026.html",
+      "summary_zh": "UBS CIO 认为市场对美联储未来一年接近90个基点的进一步紧缩定价偏鹰，而其自身基准预测为再加息50个基点，因此预计国债收益率随政策预期回调而有下行空间。文章发布时10年期美债收益率约5.09%。UBS 测算，2年、5年和10年期收益率分别还需上升约257、113和65个基点，资本损失才会抵消当前票息收入；同时提醒重债务供给、财政担忧和通胀仍会造成波动，对超长期期限保持谨慎。"
+    }
+  ]
+}

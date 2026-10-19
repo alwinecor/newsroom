@@ -1,0 +1,80 @@
+{
+  "module": "politics",
+  "issue_date": "2026-10-19",
+  "window": {
+    "start": "2026-10-12",
+    "end": "2026-10-19"
+  },
+  "items": [
+    {
+      "id": "politics-001",
+      "category": "俄乌战争与制裁",
+      "original_title": "Russia’s war of aggression against Ukraine: EU agrees largest-ever package of listings targeting almost 1600 individuals and entities in Russia’s military-industrial complex",
+      "source_name": "Council of the European Union",
+      "source_level": "primary",
+      "published_at": "2026-10-12",
+      "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/10/12/russia-s-war-of-aggression-against-ukraine-eu-agrees-largest-ever-package-of-listings-targeting-almost-1600-individuals-and-entities-in-russia-s-military-industrial-complex/",
+      "summary_zh": "欧盟理事会新增制裁1569名俄罗斯个人和实体，包括826家公司及743名公司首席执行官，是欧盟该制裁框架迄今最大一次集中列名，使相关制裁对象总数接近4600。欧盟称本轮重点锁定俄罗斯军工体系中游供应商，相关企业合计年营业额至少200亿欧元、雇员逾25万，涉及导弹、无人机和飞机所需电子、通信、导航、爆炸物等部件。被列名者面临资产冻结、资金和经济资源提供禁令，个人另受欧盟旅行禁令。"
+    },
+    {
+      "id": "politics-002",
+      "category": "俄乌停火外交",
+      "original_title": "Kyiv says Russia hits energy targets despite Trump ceasefire announcement",
+      "source_name": "Reuters",
+      "source_level": "media",
+      "published_at": "2026-10-12",
+      "url": "https://www.reuters.com/business/energy/ukraine-accuses-russia-violating-trumps-energy-ceasefire-eu-imposes-new-2026-10-12/",
+      "summary_zh": "特朗普宣布俄乌已同意立即停止攻击彼此能源系统后，乌克兰总统泽连斯基称俄军仍袭击至少6个能源目标，并表示乌方当夜未攻击俄罗斯炼油厂、愿意接受能源停火。报道指出，特朗普的宣布并未获得交战双方共同确认；克里姆林宫称相关谈判仍在进行，但拒绝泽连斯基提出的60天全面停火方案，并重申俄方寻求“长期和平”而非临时停火。泽连斯基同时表示，如俄方同意全面停火60天，乌克兰可以举行因战时状态暂停的选举。"
+    },
+    {
+      "id": "politics-003",
+      "category": "NATO 与欧洲安全",
+      "original_title": "NATO general sets out tough military response to any 'foolish' Russian attack",
+      "source_name": "Reuters",
+      "source_level": "media",
+      "published_at": "2026-10-12",
+      "url": "https://www.reuters.com/world/nato-general-sets-out-tough-military-response-any-foolish-russian-attack-2026-10-12/",
+      "summary_zh": "北约欧洲盟军最高司令、美国空军上将 Alexus Grynkewich 在华沙安全论坛公开阐述遭攻击时的三阶段军事思路：阻挡、削弱并摧毁来袭力量，使对北约成员的攻击“完全徒劳”。他表示反击不会只针对前线进攻部队，还可延伸至支撑、维持和指挥这些部队的体系。讲话背景包括欧洲对破坏、纵火、无人机和网络攻击的担忧，以及部分盟国对美国集体防御承诺的疑虑；俄罗斯否认参与欧洲混合行动，并称无意攻击欧洲国家。"
+    },
+    {
+      "id": "politics-004",
+      "category": "中东与欧盟安全政策",
+      "original_title": "Lebanon: EU establishes new CSDP support mission to strengthen defence and security institutions",
+      "source_name": "Council of the European Union",
+      "source_level": "primary",
+      "published_at": "2026-10-12",
+      "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/10/12/lebanon-eu-establishes-new-csdp-support-mission-to-strengthen-defence-and-security-institutions/",
+      "summary_zh": "欧盟理事会决定在共同安全与防务政策框架下设立黎巴嫩支持任务 EUSM Lebanon，初始授权期三年，以加强黎巴嫩国家机构并支持联合国安理会第1701号决议相关的和平与安全目标。任务同时设军事和文职支柱：前者向黎巴嫩武装部队提供边境、海上安全、侦察、反走私和协调方面的培训与顾问支持；后者协助国内安全部队提升网络犯罪、反走私和港口安全治理能力。当前决定是建立任务，正式部署仍待后续行动规划和另行启动决定。"
+    },
+    {
+      "id": "politics-005",
+      "category": "欧盟扩员",
+      "original_title": "4th Accession Conference with the Republic of Moldova, 13 October 2026",
+      "source_name": "Council of the European Union",
+      "source_level": "primary",
+      "published_at": "2026-10-13",
+      "url": "https://www.consilium.europa.eu/en/meetings/international-ministerial-meetings/2026/10/13/moldova/",
+      "summary_zh": "欧盟与摩尔多瓦在卢森堡举行第四次入盟会议，正式开启第2谈判集群“内部市场”和第3集群“竞争力与包容性增长”的谈判。这意味着摩尔多瓦入盟谈判从此前已开启的对外关系领域进一步扩展到欧盟单一市场和经济政策核心章节。欧方由爱尔兰轮值主席国国务部长 Thomas Byrne 率团，扩大事务委员 Marta Kos 参加；摩方由负责欧洲一体化的副总理兼首席谈判代表 Cristina Gherasimov 率团。"
+    },
+    {
+      "id": "politics-006",
+      "category": "欧洲防务与乌克兰",
+      "original_title": "European Council conclusions, 15 and 16 October 2026",
+      "source_name": "European Council",
+      "source_level": "primary",
+      "published_at": "2026-10-16",
+      "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/10/16/european-council-conclusions-15-and-16-october-2026/",
+      "summary_zh": "欧洲理事会10月15日至16日峰会通过涉及乌克兰、欧洲防务与安全、中东、扩员和下一轮多年预算等议题的结论。乌克兰部分重申继续提供政治、财政和军事支持，并强调加强防空反导、关键基础设施和能源安全；欧盟领导人还确认继续推进对乌安全保证、欧洲训练任务和既定融资安排，同时要求进一步压缩俄罗斯能源收入、打击规避制裁及“影子船队”。这些内容构成峰会层面的共同政治指引，具体军事援助和制裁措施仍需按相应欧盟程序落实。"
+    },
+    {
+      "id": "politics-007",
+      "category": "以色列选举与美以关系",
+      "original_title": "Trump endorses Netanyahu in close Israeli election",
+      "source_name": "Reuters",
+      "source_level": "media",
+      "published_at": "2026-10-18",
+      "url": "https://www.reuters.com/world/middle-east/trump-endorses-netanyahu-israeli-election-2026-10-18/",
+      "summary_zh": "美国总统特朗普在以色列10月27日议会选举前公开支持总理内塔尼亚胡。路透社报道，民调显示目前没有候选人拥有清晰执政路径，而以色列总理由议会联盟谈判产生，因此选后组阁将决定内塔尼亚胡能否留任。这是2023年10月7日哈马斯袭击后以色列首次全国选举，发生在加沙、黎巴嫩和伊朗冲突重塑地区安全格局之后。特朗普虽长期支持内塔尼亚胡，但两国近期在伊朗问题上出现分歧，其公开背书能否显著改变选情仍不确定。"
+    }
+  ]
+}
